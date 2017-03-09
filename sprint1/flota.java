@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 
-public class flota {
+public class Flota {
 	private ArrayList<Ontzia> f;
 	private Armamentua armamentua;
 	private int dirua; //ELEGIR LA CANTIDAD
 
-	public flota(){
+	public Flota(){
 		this.f= new ArrayList<Ontzia>();	
 	}
 	
@@ -33,9 +33,7 @@ public class flota {
 		return this.f.size();
 }
 //	public boolean ezkutuakDitu(){
-//
 //		return !(this.armamentua.getEzkutua()<=0);
-//
 //	}
 
 	public boolean ezkutuaDauka(Ontzia ontzia) {
@@ -79,8 +77,15 @@ public class flota {
 	}
 
 	public void egoeraAldatu(Ontzia ontzi) {
-		ontzi.egoeraAldatu(new EzkutuOsoa());
-		
+		ontzi.egoeraAldatu(new EzkutuOsoa());	
+	}
+	
+	public void armaErosi(){
+		if(this.dirua >= armaMta.prezioa ){
+			this.armamentua.armaGehitu(mota);  //pasatuko diogu armaren biltegizenbakia
+		}else{
+			System.out.print("Ez duzu dirurik eskatutako arma erosteko");
+		}
 	}
 	
 
