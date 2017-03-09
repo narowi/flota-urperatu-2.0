@@ -51,14 +51,16 @@ public class Ordenagailua extends Jokalaria  {
 	
 	
 	public void ezkutuaJarri(){
+		
 		int i= 0;
 		while(i!=super.flota.ezkutuKop()){
 			int x = (int)(Math.random()*(super.nireTablero.getTamaina()));
 			int y = (int)(Math.random()*(super.nireTablero.getTamaina()));
 			Ontzia ontzi=super.nireTablero.itsasontzirikDago(x,y);
 			if(ontzi!=null){
-				if(!super.flota.ezkutuaDauka(ontzi)) {
-					super.flota.ezkutuaJarri(ontzi);
+				if(!super.flota.ezkutuaDauka(ontzi) && super.flota.urperatuGabekoKop(ontzi)>0) {
+					super.flota.ezkutuaJarri(ontzi); //como hacer para solo tener que utilizar la egoera comparandolo con ezkutuOsoa y ezkutuBakarra
+					super.flota.egoeraAldatu(ontzi);
 					super.flota.ezkutuKopuruaTxikitu();
 				}
 			}

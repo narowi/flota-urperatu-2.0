@@ -8,7 +8,7 @@ public abstract class Jokalaria {
 	protected Tablero etsaiarenTableroa;
 
 	protected flota flota;
-
+	protected int radarKontsultaKop=2;
 	
 
 

@@ -68,7 +68,19 @@ public class flota {
 	public Ontzia lortuOntzia() {
 		Iterator<Ontzia> itr =this.getIteradorea();
 		Ontzia aux=null;
-		return itr.next();
+		while(itr.hasNext()){
+			aux=itr.next();
+		}
+		return aux;
+	}
+
+	public int urperatuGabekoKop(Ontzia ontzi) {
+		return ontzi.getHondoratuGabekoZatiKop();
+	}
+
+	public void egoeraAldatu(Ontzia ontzi) {
+		ontzi.egoeraAldatu(new EzkutuOsoa());
+		
 	}
 	
 

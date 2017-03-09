@@ -10,7 +10,7 @@ public class Ontzia {
 
 	protected int konponketaPrezioa;
 	protected boolean ezkutuaDauka=false;
-
+	protected Egoera egoera;
 
 
 	
@@ -93,5 +93,20 @@ public class Ontzia {
 		this.ezkutuaDauka=true;
 		
 	}
+
+
+
+	public void egoeraAldatu(Egoera pEgoera) {
+		egoera=pEgoera;
+		
+	}
+
+
+
+	public Egoera getEgoera() {
+		// TODO Auto-generated method stub
+		return this.egoera;
+	}
+	
 
 }

@@ -6,4 +6,6 @@ public class Ezkutua extends Arma {
 		super.biltegiZenbakia=1;
 
 	}
+
+	
 }
