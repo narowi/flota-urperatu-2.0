@@ -8,7 +8,7 @@ public class Armamentua {
 
 	private ArrayList<Arma> armamentua;
 
-	private ArrayList<Integer> armaKopurua;
+	//private ArrayList<Integer> armaKopurua;
 
 	private int bonba;
 
