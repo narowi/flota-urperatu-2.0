@@ -43,10 +43,7 @@ public class Flota {
 		return on.ezkutuaDu();
 	}
 
-//	public void ezkutuaJarri(Ontzia ontzi) {
-//		Ontzia on=ontzi;
-//		on.jarriEzkutua();	
-//	}
+
 	 public int ezkutuKop(){
 		 return armamentua.getEzkutuKop();
 	 }
