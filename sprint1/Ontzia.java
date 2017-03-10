@@ -9,7 +9,7 @@ public class Ontzia {
 	protected int urperatuGabekoZatiKop;
 
 	protected int konponketaPrezioa;
-	protected boolean ezkutuaDauka=false;
+	//protected boolean ezkutuaDauka=false;
 	protected Egoera egoera;
 
 
@@ -80,19 +80,19 @@ public class Ontzia {
 	}
 	
 	public boolean ezkutuaDu(){ 
-		if(this.ezkutuaDauka==false){
-			return false;
-		}else{
+		if(this.egoera instanceof EzkutuOsoa || this.egoera instanceof EzkutuBakarra ){
 			return true;
+		}else{
+			return false;
 		}
 	}
 
 
 
-	public void jarriEzkutua() {
-		this.ezkutuaDauka=true;
-		
-	}
+//	public void jarriEzkutua() {
+//		this.ezkutuaDauka=true;
+//		
+//	}
 
 
 

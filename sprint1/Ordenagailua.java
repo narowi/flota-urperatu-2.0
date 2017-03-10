@@ -59,7 +59,7 @@ public class Ordenagailua extends Jokalaria  {
 			Ontzia ontzi=super.nireTablero.itsasontzirikDago(x,y);
 			if(ontzi!=null){
 				if(!super.flota.ezkutuaDauka(ontzi) && super.flota.urperatuGabekoKop(ontzi)>0) {
-					super.flota.ezkutuaJarri(ontzi); //como hacer para solo tener que utilizar la egoera comparandolo con ezkutuOsoa y ezkutuBakarra
+					//super.flota.ezkutuaJarri(ontzi); 
 					super.flota.egoeraAldatu(ontzi);
 					super.flota.ezkutuKopuruaTxikitu();
 				}
