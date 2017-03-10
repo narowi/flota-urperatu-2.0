@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 
 public class main extends JFrame{
 	private Tablero mTablero = new Tablero();
+	private Biltegia biltegi = Biltegia.getNireBiltegia();
 	
 	public main(){
 		try{
@@ -27,6 +28,7 @@ public class main extends JFrame{
 		mTablero.hasieratu();
 		mTablero.setSize(200,200);
 		mTablero.ordenatu();
+		biltegi.hasieratu();
 		this.setVisible(true);
 	}
 }
