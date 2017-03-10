@@ -13,13 +13,20 @@ public class Armamentua {
 	private int misilzuzendua;
 	private int radar;
 
-	public Armamentua(int pBonba, int pEzkutua, int pMisila, int pMisilZuzendua, int pRadar){
+	//public Armamentua(int pBonba, int pEzkutua, int pMisila, int pMisilZuzendua, int pRadar){
+//		this.bonba=pBonba;
+//		this.ezkutua=pEzkutua;
+//		this.misila=pMisila;
+//		this.misilzuzendua=pMisilZuzendua;
+//		this.radar=pRadar;
+	
+	public Armamentua(){
 		this.armamentua= new ArrayList<Arma>();	
-		this.bonba=pBonba;
-		this.ezkutua=pEzkutua;
-		this.misila=pMisila;
-		this.misilzuzendua=pMisilZuzendua;
-		this.radar=pRadar;
+		this.bonba=4;
+		this.ezkutua=3;
+		this.misila=2;
+		this.misilzuzendua=3;  //bakoitza mota desberdinetakoa
+		this.radar=2;
 	}
 
 	public Arma armaSortu(String mota){
@@ -47,16 +54,18 @@ public class Armamentua {
 	
 	public void armaKenduKop(int mota) {
 		//Arma a=bilatuMota(mota);
-		if(mota==0){
+		if(mota==0 && this.bonba>0){
 			this.bonba--;
-		}else if(mota==1){
+		}else if(mota==1 && this.ezkutua>0){
 			ezkutuKoptxikitu();
-		}else if(mota==2){
+		}else if(mota==2 && this.misila>0){
 			this.misila--;
-		}else if(mota==3){
+		}else if(mota==3 && this.misilzuzendua>0){
 			this.misilzuzendua--;
-		}else if(mota==4){
+		}else if(mota==4 && this.radar>0){
 			this.radar--;
+		}else{
+			System.out.println("Arma horren alerik ez da gelditzen");
 		}
 		
 	}

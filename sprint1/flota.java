@@ -7,10 +7,11 @@ import java.util.Iterator;
 public class Flota {
 	private ArrayList<Ontzia> f;
 	private Armamentua armamentua;
-	private int dirua; //ELEGIR LA CANTIDAD
+	private int dirua; 
 
 	public Flota(){
-		this.f= new ArrayList<Ontzia>();	
+		this.f= new ArrayList<Ontzia>();
+		this.dirua=500;
 	}
 	
 	private Iterator<Ontzia> getIteradorea(){

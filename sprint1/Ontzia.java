@@ -9,41 +9,21 @@ public class Ontzia {
 	protected int urperatuGabekoZatiKop;
 
 	protected int konponketaPrezioa;
-	//protected boolean ezkutuaDauka=false;
+	
 	protected Egoera egoera;
 
 
-	
-
-	public Ontzia (int pLuz, String pMot, int pUrGa, int pPrez){
-
-		this.luzera=pLuz;
-
+	public Ontzia(String pMot){
 		this.mota=pMot;
-
-		this.urperatuGabekoZatiKop=pUrGa;
-
-		this.konponketaPrezioa=pPrez;
-
-		//this.ezkutuan=ezkut;
-
+		this.konponketaPrezioa=50; // zati bakoitza
 	}
 
 	
 
 	public int getHondoratuGabekoZatiKop() {
-
 		return urperatuGabekoZatiKop;
-
 	}
 
-	
-
-//	public boolean getEzkutua(){
-
-//		return this.ezkutuan;
-
-//	}
 
 
 
@@ -88,20 +68,10 @@ public class Ontzia {
 	}
 
 
-
-//	public void jarriEzkutua() {
-//		this.ezkutuaDauka=true;
-//		
-//	}
-
-
-
 	public void egoeraAldatu(Egoera pEgoera) {
 		egoera=pEgoera;
 		
 	}
-
-
 
 	public Egoera getEgoera() {
 		// TODO Auto-generated method stub
