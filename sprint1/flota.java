@@ -41,10 +41,10 @@ public class Flota {
 		return on.ezkutuaDu();
 	}
 
-	public void ezkutuaJarri(Ontzia ontzi) {
-		Ontzia on=ontzi;
-		on.jarriEzkutua();	
-	}
+//	public void ezkutuaJarri(Ontzia ontzi) {
+//		Ontzia on=ontzi;
+//		on.jarriEzkutua();	
+//	}
 	 public int ezkutuKop(){
 		 return armamentua.getEzkutuKop();
 	 }
@@ -79,13 +79,12 @@ public class Flota {
 		ontzi.egoeraAldatu(new EzkutuOsoa());	
 	}
 	
-	public void armaErosi(){
-		if(this.dirua >= armaMta.prezioa ){
-			this.armamentua.armaGehitu(mota);  //pasatuko diogu armaren biltegizenbakia
+	public void armaErosi(Arma pArma){
+		if(this.dirua >= pArma.prezioa ){
+			this.armamentua.armaGehituZerrendan(pArma.biltegiZenbakia);  //pasatuko diogu armaren biltegizenbakia
 		}else{
 			System.out.print("Ez duzu dirurik eskatutako arma erosteko");
 		}
 	}
 	
-
 }

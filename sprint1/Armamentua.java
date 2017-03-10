@@ -34,6 +34,7 @@ public class Armamentua {
 	public void armaGehitu(String mota) {
 		Arma arma = this.armaSortu(mota);
 		this.armamentua.add(arma);
+		
 	}
 
 	public int getEzkutuKop() {  //Hau ez da beharrezkoa ez?????????????
@@ -58,6 +59,21 @@ public class Armamentua {
 			this.radar--;
 		}
 		
+	}
+
+	public void armaGehituZerrendan(int mota) {
+		// Biltegian kop-- egin beharko da mota horretako arman
+		if(mota==0){
+			this.bonba++;
+		}else if(mota==1){
+			this.ezkutua++;
+		}else if(mota==2){
+			this.misila++;
+		}else if(mota==3){
+			this.misilzuzendua++;
+		}else if(mota==4){
+			this.radar++;
+		}
 	}
 
 }

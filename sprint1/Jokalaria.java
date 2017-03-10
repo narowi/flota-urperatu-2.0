@@ -43,8 +43,5 @@ public abstract class Jokalaria {
 
 	public abstract void ezkutuaJarri();
 	
-	public void armaErosiNahi(){
-		this.flota.armaErosi();
-	}
 }
 		
