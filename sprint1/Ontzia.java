@@ -13,8 +13,7 @@ public class Ontzia {
 	protected Egoera egoera;
 
 
-	public Ontzia(String pMot){
-		this.mota=pMot;
+	public Ontzia(){
 		this.konponketaPrezioa=50; // zati bakoitza
 	}
 

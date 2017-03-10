@@ -1,8 +1,7 @@
 package sprint1;
 
 public class Fragata extends Ontzia {
-	public Fragata(String pMot){
-		this.mota=pMot;
+	public Fragata(){
 		super.luzera=1;
 		super.urperatuGabekoZatiKop=1;
 	}	
