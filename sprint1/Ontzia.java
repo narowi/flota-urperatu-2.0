@@ -15,7 +15,7 @@ public class Ontzia {
 
 	
 
-	public Ontzia (int pLuz, String pMot, int pUrGa, int pPrez, boolean ezkut){
+	public Ontzia (int pLuz, String pMot, int pUrGa, int pPrez){
 
 		this.luzera=pLuz;
 
