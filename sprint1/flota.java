@@ -9,9 +9,10 @@ public class Flota {
 	private Armamentua armamentua;
 	private int dirua; 
 
-	public Flota(){
+	public Flota(int pDirua){
 		this.f= new ArrayList<Ontzia>();
-		this.dirua=500;
+		this.dirua=pDirua;
+		this.armamentua= new Armamentua();
 	}
 	
 	private Iterator<Ontzia> getIteradorea(){
@@ -86,6 +87,13 @@ public class Flota {
 		}else{
 			System.out.print("Ez duzu dirurik eskatutako arma erosteko");
 		}
+	}
+
+	public void hasieratu(int zenb) {
+		// TODO Auto-generated method stub
+		this.f=new ArrayList<Ontzia>();
+		this.armamentua= new Armamentua();
+		this.dirua=zenb;
 	}
 	
 }

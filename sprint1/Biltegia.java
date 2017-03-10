@@ -23,6 +23,11 @@ public class Biltegia {
 		this.nireBiltegia.armamentua.armaKenduKop(mota);  
 	}
 
+	public void hasieratu() {
+		// TODO Auto-generated method stub
+		this.armamentua.hasieratu();
+	}
+
 	//arma saldu
 
 	//arma erosi

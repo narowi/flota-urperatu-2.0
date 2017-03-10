@@ -85,4 +85,10 @@ public class Armamentua {
 		}
 	}
 
+	public void hasieratu() {
+		// TODO Auto-generated method stub
+		this.armamentua.clear();
+		this.armamentua= new ArrayList<Arma>();
+	}
+
 }

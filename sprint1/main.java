@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 public class main extends JFrame{
 	private Tablero mTablero = new Tablero();
 	private Biltegia biltegi = Biltegia.getNireBiltegia();
-	
+	private Flota flota = new Flota(500);
 	public main(){
 		try{
 			jbInit();
@@ -29,6 +29,7 @@ public class main extends JFrame{
 		mTablero.setSize(200,200);
 		mTablero.ordenatu();
 		biltegi.hasieratu();
+		flota.hasieratu(200);
 		this.setVisible(true);
 	}
 }
