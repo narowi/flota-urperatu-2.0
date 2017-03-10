@@ -32,12 +32,4 @@ public class Biltegia {
 
 	//arma erosi
 
-	
-
-
-
-
-
-
-
 }
