@@ -59,10 +59,5 @@ public class Tablero {
 		return this.tablero[x][y].getOntzia();
 	}
 
-	public void ontziInguruanUraJarri(int x, int y, int tamaina2, String posHoriBert) {
-		while(){
-			tamaina[][].setUra(true);
-		}
 		
-	}
 }

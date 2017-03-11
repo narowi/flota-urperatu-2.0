@@ -4,7 +4,7 @@ public class Kasilla {
 	private boolean begiratuta=false;
 	//private boolean ezkutua=false;
 	private Ontzia ontzi;
-	private boolean ura=false;
+	private boolean ura=true;
 	private int x=0;
 	private int y=0;
 	
@@ -21,7 +21,7 @@ public class Kasilla {
 	}
 	
 	public void setUra(){
-		this.ura=true;
+		this.ura=false;
 	}
 
 }
