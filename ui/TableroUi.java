@@ -16,7 +16,7 @@ public class TableroUi extends JPanel implements ActionListener {
 	private int nFilaKop = 10;
 	private int nZutabeKop = 10;
 	
-	public TableroUi(){
+	public void main(String[] args){
 		try{
 			jbInit();
 		} catch (Exception e){

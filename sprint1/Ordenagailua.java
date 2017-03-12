@@ -1,5 +1,7 @@
 package sprint1;
 
+import java.util.Random;
+
 public class Ordenagailua extends Jokalaria  {
 	
 	public void ontziakKokatu(){
@@ -16,7 +18,7 @@ public class Ordenagailua extends Jokalaria  {
 	public void ontziaKokatu(Ontzia o){
 		int x;
 		int y;
-		String horBert;
+		//String horBert;
 		int tamaina=0;
 		boolean koordenatuZuzenak;
 			do{
@@ -25,7 +27,10 @@ public class Ordenagailua extends Jokalaria  {
 				y= this.lortuKoordenatua();
 				horBert= this.lortuPos();
 				koordenatuZuzenak = super.kokapenZuzena(x,y,horBert,tamaina); 
-			
+			//Random..=3
+					//if(norabidePosible[3]!=null){
+						//badaukatNorabidea=true
+					}
 			}while(!koordenatuZuzenak);
 			super.flota.kenduOntzia(o);
 			super.nireTablero.ontziaKokatu(x,y,horBert,o);

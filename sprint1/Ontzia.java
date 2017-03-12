@@ -4,13 +4,13 @@ public class Ontzia {
 
 	protected int luzera;
 
-	protected String mota;
+	protected String mota;//falta en las clase de los barcos
 
 	protected int urperatuGabekoZatiKop;
 
-	protected int konponketaPrezioa;
+	protected int konponketaPrezioa;//falta en las clases de los barcos
 	
-	protected Egoera egoera;
+	protected Egoera egoera;//falta en las clase de los barcos
 
 
 	public Ontzia(){

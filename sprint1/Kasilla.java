@@ -24,4 +24,22 @@ public class Kasilla {
 		this.ura=false;
 	}
 
+	public void ontziaJarri(Ontzia o) {
+		this.ontzi=o;
+	}
+
+	public void kenduUra() {
+		this.ura=false;
+	}
+
+	public char getZerNahiz() {
+		if(ontzi!=null){
+			return 'U';
+		}
+		else{
+			return 'B';
+		}
+		
+	}
+
 }

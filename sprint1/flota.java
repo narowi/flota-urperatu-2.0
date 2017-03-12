@@ -7,7 +7,7 @@ import java.util.Iterator;
 public class Flota {
 	private ArrayList<Ontzia> f;
 	private Armamentua armamentua;
-	private int dirua; 
+	private int dirua;// no deberia tener ya puesto el dinero??? 
 
 	public Flota(int pDirua){
 		this.f= new ArrayList<Ontzia>();
@@ -18,7 +18,7 @@ public class Flota {
 	private Iterator<Ontzia> getIteradorea(){
 		return this.f.iterator();
 	}
-	public Ontzia flotaSortu(String mota){
+	public Ontzia flotaSortu(String mota){//solo creas uno 
 		Ontzia nireOntzia = OntziFactory.getOntziFactory().createOntzia(mota);
 		return nireOntzia;
 	}
