@@ -2,8 +2,8 @@ package sprint1;
 
 public class Pertsona extends Jokalaria {
 
-	public Pertsona(){
-
+	public Pertsona(Tablero nireT, Tablero etsaiaT, Flota f){
+		super(nireT, etsaiaT, f);
 	}
 	public void ontziakKokatu(){
 	//TO DO	
