@@ -7,9 +7,12 @@ public class Jokoa {
 	private Pertsona per;
 	private int txanda;
 	private static Jokoa nireJokoa = null;
+	private Tablero nireTableroa;
+	private Tablero etsaiarenTableroa;
+	private Flota flota;
 	
 	private Jokoa() {
-		this.ord= new Ordenagailua();
+		this.ord= new Ordenagailua(nireTableroa, etsaiarenTableroa, flota);
 		this.per= new Pertsona();
     	this.txanda=0;
 	}
