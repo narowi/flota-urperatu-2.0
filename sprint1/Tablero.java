@@ -128,7 +128,7 @@ public class Tablero {
 		}
 		return ahalDu;
 	}
-	private void kokatu(int x,int y,Ontzia o,char norabidea){
+	public void kokatu(int x,int y,Ontzia o,char norabidea){
 		int i;
 		if(norabidea=='s'){
 			for(i=x;i<x+o.luzera;i++){

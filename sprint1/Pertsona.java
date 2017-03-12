@@ -5,6 +5,9 @@ public class Pertsona extends Jokalaria {
 	public Pertsona(){
 
 	}
+	public void ontziakKokatu(){
+	//TO DO	
+	}
 	public void ezkutuaJarri(int x,int y){
 			//banaka jarriko ditu ontziak eskutuan
 			if(super.flota.ezkutuKop()>0){ 

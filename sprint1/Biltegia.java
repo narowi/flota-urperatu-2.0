@@ -10,7 +10,9 @@ public class Biltegia {
 	private ArrayList<Integer> armaKopurua;
 	private EgoeraBiltegia e;
 
-	private Biltegia(){}
+	private Biltegia(){
+		
+	}
 
 	public static Biltegia getNireBiltegia(){
 		if(Biltegia.nireBiltegia==null){

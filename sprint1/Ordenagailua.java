@@ -4,6 +4,10 @@ import java.util.Random;
 
 public class Ordenagailua extends Jokalaria  {
 	
+	public Ordenagailua(Tablero nireTablero, Tablero etsaiarenTableroa, Flota flota){
+		super(nireTablero, etsaiarenTableroa, flota);
+	}
+	
 	public void ontziakKokatu(){
 		Ontzia o;
 		while(!super.flota.isEmpty()){
@@ -18,23 +22,21 @@ public class Ordenagailua extends Jokalaria  {
 	public void ontziaKokatu(Ontzia o){
 		int x;
 		int y;
-		//String horBert;
+		char[] horBert;
+		char pos;
 		int tamaina=0;
-		boolean koordenatuZuzenak;
-			do{
+		//boolean koordenatuZuzenak;
+			//do{
 				tamaina=o.getHondoratuGabekoZatiKop();
 				x=this.lortuKoordenatua();
 				y= this.lortuKoordenatua();
-				horBert= this.lortuPos();
-				koordenatuZuzenak = super.kokapenZuzena(x,y,horBert,tamaina); 
-			//Random..=3
-					//if(norabidePosible[3]!=null){
-						//badaukatNorabidea=true
-					}
-			}while(!koordenatuZuzenak);
+				horBert= super.nireTablero.norabideaAukeratu(x, y, o);
+				pos= this.lortuPos(horBert);
+				//koordenatuZuzenak = super.kokapenZuzena(x,y,horBert,tamaina); 
+	
+			//}while(!koordenatuZuzenak);
 			super.flota.kenduOntzia(o);
-			super.nireTablero.ontziaKokatu(x,y,horBert,o);
-		
+			super.nireTablero.kokatu(x, y, o, pos);	
 	}
 	
 	private int lortuKoordenatua(){
@@ -42,13 +44,25 @@ public class Ordenagailua extends Jokalaria  {
 		return pos;
 	}
 	
-	private String lortuPos(){
-		int pos = (int)(Math.random()*2);
-		if(pos==0){
-			return ("Bertikal");
-		} else{
-			return ("Horizontal");
+	private char lortuPos(char[] pos){
+		int i=0;
+		boolean zuzena=false;
+		while(!zuzena){
+			 i = (int)(Math.random()*3);
+			if(pos[i]!=0){
+				zuzena=true;
+			}
 		}
+		if(i == 0){
+			return 's';
+		}else if(i == 1){
+			return 'z';
+		}else if (i==2){
+			return 'g';
+		}else{
+			return 'b';
+		}
+		
 	}
 	
 	

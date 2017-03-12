@@ -13,7 +13,7 @@ public class Ontzia {
 	protected Egoera egoera;//falta en las clase de los barcos
 
 
-	public Ontzia(){
+	public Ontzia(){ //meter en el eraikitzaile luz...
 		this.konponketaPrezioa=50; // zati bakoitza
 	}
 
