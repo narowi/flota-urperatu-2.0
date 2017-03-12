@@ -102,7 +102,7 @@ package ui;
 	             public void windowClosing(WindowEvent e) {System.exit(0);}
 	         };
 	 
-	         frame = new JFrame("Ontzi motak");
+	         frame = new JFrame("Kokapen aukerak");
 	         frame.addWindowListener(l);
 	         frame.getContentPane().add("Center", new KokapenAukerak());
 	         frame.pack();
