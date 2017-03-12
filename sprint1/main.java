@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 public class main extends JFrame{
 	private Tablero mTablero = new Tablero();
 	private Biltegia biltegi = Biltegia.getNireBiltegia();
-	private Flota flota = new Flota(500);
+	private Flota flota = new Flota();
 	public main(){
 		try{
 			jbInit();
