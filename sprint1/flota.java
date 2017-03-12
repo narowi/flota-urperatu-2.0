@@ -10,7 +10,7 @@ public class Flota {
 	private Armamentua armamentua;
 	private int dirua;// no deberia tener ya puesto el dinero??? 
 	private int hegazkinOntzi;
-	private int itsaspeko=2;
+	private int itsaspeko;
 	private int suntsitzaile;
 	private int fragata;
 	
