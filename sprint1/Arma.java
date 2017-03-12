@@ -7,5 +7,4 @@ public class Arma {
 		prezioa=prez;
 		biltegiZenbakia=bilZenb;
 	}
-
 }

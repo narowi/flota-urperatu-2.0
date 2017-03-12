@@ -4,17 +4,21 @@ public class Ontzia {
 
 	protected int luzera;
 
-	protected String mota;//falta en las clase de los barcos
+	protected String mota;
 
 	protected int urperatuGabekoZatiKop;
 
-	protected int konponketaPrezioa;//falta en las clases de los barcos
+	protected int konponketaPrezioa;
 	
-	protected Egoera egoera;//falta en las clase de los barcos
+	protected Egoera egoera;
 
 
-	public Ontzia(){ //meter en el eraikitzaile luz...
-		this.konponketaPrezioa=50; // zati bakoitza
+	public Ontzia(/*int pLuz, String pMot, int pUgz, int pKp, Egoera pE*/){
+//		this.luzera=pLuz;
+//		this.mota=pMot;
+//		this.urperatuGabekoZatiKop=pUgz;
+//		this.konponketaPrezioa=pKp;
+//		this.egoera=pE;
 	}
 
 	

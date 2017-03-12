@@ -27,7 +27,8 @@ public class Biltegia {
 
 	public void hasieratu() {
 		// TODO Auto-generated method stub
-		this.armamentua.hasieratu();
+		this.armamentua.hasieratu(20, 20, 20, 20, 20);
+		this.armaKopurua= new ArrayList<Integer>();
 	}
 
 	//arma saldu

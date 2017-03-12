@@ -2,6 +2,7 @@ package sprint1;
 
 import java.util.ArrayList;
 
+
 public class Armamentua {
 
 	private ArrayList<Arma> armamentua;
@@ -85,10 +86,36 @@ public class Armamentua {
 		}
 	}
 
-	public void hasieratu() {
+	public void hasieratu(int bonba, int ezkutua, int misila, int misilZuzendua, int radar) {
 		// TODO Auto-generated method stub
 		this.armamentua.clear();
 		this.armamentua= new ArrayList<Arma>();
+		int i = 0;
+		while(i< bonba){
+			this.armaGehitu("Bonba");
+			i++;
+		}
+		i=0;
+		while(i< ezkutua){
+			this.armaGehitu("Ezkutua");
+			i++;
+		}
+		i=0;
+		while(i < misila){
+			this.armaGehitu("Misila");
+			i++;
+		}
+		i=0;
+		while(i < misilZuzendua){
+			this.armaGehitu("MisilZuzendua");
+			i++;
+		}
+		i=0;
+		while(i < radar){
+			this.armaGehitu("radar");
+			i++;
+		}
+		
 	}
 
 }

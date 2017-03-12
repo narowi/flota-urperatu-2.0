@@ -4,15 +4,24 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 
+
 public class Flota {
 	private ArrayList<Ontzia> f;
 	private Armamentua armamentua;
 	private int dirua;// no deberia tener ya puesto el dinero??? 
-
-	public Flota(int pDirua){
+	private int hegazkinOntzi;
+	private int itsaspeko=2;
+	private int suntsitzaile;
+	private int fragata;
+	
+	public Flota(){
 		this.f= new ArrayList<Ontzia>();
-		this.dirua=pDirua;
+		this.dirua=200;
 		this.armamentua= new Armamentua();
+		this.hegazkinOntzi=1;
+		this.itsaspeko=2;
+		this.suntsitzaile=3;
+		this.fragata=4;
 	}
 	
 	private Iterator<Ontzia> getIteradorea(){
@@ -33,10 +42,8 @@ public class Flota {
 
 	public int zenbatOntzi() {
 		return this.f.size();
-}
-//	public boolean ezkutuakDitu(){
-//		return !(this.armamentua.getEzkutua()<=0);
-//	}
+	}
+
 
 	public boolean ezkutuaDauka(Ontzia ontzia) {
 		Ontzia on=ontzia;
@@ -89,8 +96,30 @@ public class Flota {
 	public void hasieratu(int zenb) {
 		// TODO Auto-generated method stub
 		this.f=new ArrayList<Ontzia>();
-		this.armamentua= new Armamentua();
+		this.armamentua.hasieratu(4, 3, 2, 3, 2);
 		this.dirua=zenb;
+		int i=0;
+		boolean guztiak=false;
+		while(!guztiak){
+			while(i<this.hegazkinOntzi){
+				this.gehituOntzia("HegazkinOntzi");
+				i++;
+			}
+			i=0;
+			while(i<this.itsaspeko){
+				this.gehituOntzia("Itsaspeko");
+				i++;
+			}
+			i=0;
+			while(i<this.suntsitzaile){
+				this.gehituOntzia("Suntsitzaile");
+			}
+			i=0;
+			while(i<this.fragata){
+				this.gehituOntzia("Fragata");
+			}
+			guztiak=true;
+		}	
 	}
 	
 }

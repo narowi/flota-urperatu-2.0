@@ -5,5 +5,8 @@ public class Itsaspeko extends Ontzia {
 		
 		super.luzera=3;
 		super.urperatuGabekoZatiKop=3;
+		super.mota="Itsaspeko";
+		super.konponketaPrezioa=50;
+		super.egoera= new Osorik();
 	}
 }
