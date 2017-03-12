@@ -13,7 +13,7 @@ public class Jokoa {
 	
 	private Jokoa() {
 		this.ord= new Ordenagailua(nireTableroa, etsaiarenTableroa, flota);
-		this.per= new Pertsona();
+		this.per= new Pertsona(nireTableroa, etsaiarenTableroa, flota);
     	this.txanda=0;
 	}
 	
