@@ -8,7 +8,7 @@ public class Tablero {
 		this.tablero = new Kasilla[tamaina][tamaina];
 		for(int i=0;i<tamaina;i++){
 			for(int j=0;j<tamaina;j++){
-				this.tablero[i][j]= new Kasilla();
+				this.tablero[i][j]= new Kasilla(i,j);
 			}
 		}
 	}
@@ -30,13 +30,6 @@ public class Tablero {
 		this.kokatu(x, y, o, norabidea);
 	}
 
-	public boolean koordenatuEgokiak(int x, int y) {
-		if(x<0 || x>= tamaina || y<0 || y>= tamaina || this.tablero[x][y].getUra()==true){
-			return false;
-		}else{
-			return true;
-		}
-	}
 	public Kasilla[][] getNireTableroa(){
 		return this.tablero;
 	}
@@ -52,13 +45,13 @@ public class Tablero {
 		if(eskumaraAhal(x,y,o.luzera)){
 			ahalDu[0]='s';
 		}
-		else if(ezkerreraAhal(x,y,o.luzera)){
+		if(ezkerreraAhal(x,y,o.luzera)){
 			ahalDu[1]='z';
 		}
-		else if(goraAhal(x,y,o.luzera)){
+		if(goraAhal(x,y,o.luzera)){
 			ahalDu[2]='g';
 		}
-		else if(beheraAhal(x,y,o.luzera)){
+		if(beheraAhal(x,y,o.luzera)){
 			ahalDu[3]='b';
 		}
 		
@@ -68,15 +61,19 @@ public class Tablero {
 	private boolean beheraAhal(int x, int y, int luzera) {
 		boolean ahalDu=true;
 		int xOrain=x-1;
-		while(xOrain<=x+1 && ahalDu){
-			int yOrain=y-1;
-			while(yOrain<=y+luzera && ahalDu){
-				if(tablero[xOrain][yOrain].getOntzia()!=null){
-					ahalDu=false;
+		if(y+(luzera-1)<=9){
+			while(xOrain<=x+1 && ahalDu){
+				int yOrain=y-1;
+				while(yOrain<=y+luzera && ahalDu){
+					if(xOrain<=9 && yOrain<=9 && xOrain>=0 && yOrain>=0){
+						if(tablero[xOrain][yOrain].getOntzia()!=null){
+							ahalDu=false;
+						}
+					}
+						yOrain++;
 				}
-					yOrain++;
+				xOrain++;
 			}
-			xOrain++;
 		}
 		return ahalDu;
 	}
@@ -84,15 +81,19 @@ public class Tablero {
 	private boolean goraAhal(int x, int y, int luzera) {
 		boolean ahalDu=true;
 		int xOrain=x-1;
-		while(xOrain<=x+1 && ahalDu){
-			int yOrain=y+1;
-			while(yOrain<=y-luzera && ahalDu){
-				if(tablero[xOrain][yOrain].getOntzia()!=null){
-					ahalDu=false;
+		if(y-(luzera-1)>=0){
+			while(xOrain<=x+1 && ahalDu){
+				int yOrain=y+1;
+				while(yOrain<=y-luzera && ahalDu){
+					if(xOrain<=9 && yOrain<=9 && xOrain>=0 && yOrain>=0){
+						if(tablero[xOrain][yOrain].getOntzia()!=null){
+							ahalDu=false;
+						}
+					}
+						yOrain--;
 				}
-					yOrain--;
+				xOrain++;
 			}
-			xOrain++;
 		}
 		return ahalDu;
 	}
@@ -100,15 +101,19 @@ public class Tablero {
 	private boolean ezkerreraAhal(int x, int y, int luzera) {
 		boolean ahalDu=true;
 		int yOrain=y-1;
-		while(yOrain<=y+1 && ahalDu){
-			int xOrain=x+1;
-			while(xOrain<=x-luzera && ahalDu){
-				if(tablero[xOrain][yOrain].getOntzia()!=null){
-					ahalDu=false;
+		if(x-(luzera-1)>=0){
+			while(yOrain<=y+1 && ahalDu){
+				int xOrain=x+1;
+				while(xOrain<=x-luzera && ahalDu){
+					if(xOrain<=9 && yOrain<=9 && xOrain>=0 && yOrain>=0){
+						if(tablero[xOrain][yOrain].getOntzia()!=null){
+							ahalDu=false;
+						}
+					}
+						xOrain--;
 				}
-					xOrain--;
+				yOrain++;
 			}
-			yOrain++;
 		}
 		return ahalDu;
 	}
@@ -116,15 +121,22 @@ public class Tablero {
 	private boolean eskumaraAhal(int x, int y, int luzera) {
 		boolean ahalDu=true;
 		int yOrain=y-1;
-		while(yOrain<=y+1 && ahalDu){
-			int xOrain=x-1;
-			while(xOrain<=x+luzera && ahalDu){
-				if(tablero[xOrain][yOrain].getOntzia()!=null){
-					ahalDu=false;
+		if(x+(luzera-1)<=9){
+			while(yOrain<=y+1 && ahalDu){
+				int xOrain=x-1;
+				while(xOrain<=x+luzera && ahalDu){
+					if(xOrain<=9 && yOrain<=9 && xOrain>=0 && yOrain>=0){
+						if(tablero[xOrain][yOrain].getOntzia()!=null){
+							ahalDu=false;
+						}
+					}
+						xOrain++;
 				}
-					xOrain++;
+				yOrain++;
 			}
-			yOrain++;
+		}
+		else{
+			ahalDu=false;
 		}
 		return ahalDu;
 	}

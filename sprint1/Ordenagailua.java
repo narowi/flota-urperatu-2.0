@@ -1,11 +1,9 @@
 package sprint1;
 
-import java.util.Random;
 
 public class Ordenagailua extends Jokalaria  {
-	
-	public Ordenagailua(Tablero nireTablero, Tablero etsaiarenTableroa, Flota flota){
-		super(nireTablero, etsaiarenTableroa, flota);
+	public Ordenagailua(){
+		
 	}
 	
 	public void ontziakKokatu(){
@@ -24,17 +22,11 @@ public class Ordenagailua extends Jokalaria  {
 		int y;
 		char[] horBert;
 		char pos;
-		int tamaina=0;
-		//boolean koordenatuZuzenak;
-			//do{
-				tamaina=o.getHondoratuGabekoZatiKop();
 				x=this.lortuKoordenatua();
 				y= this.lortuKoordenatua();
 				horBert= super.nireTablero.norabideaAukeratu(x, y, o);
 				pos= this.lortuPos(horBert);
-				//koordenatuZuzenak = super.kokapenZuzena(x,y,horBert,tamaina); 
 	
-			//}while(!koordenatuZuzenak);
 			super.flota.kenduOntzia(o);
 			super.nireTablero.kokatu(x, y, o, pos);	
 	}
@@ -71,23 +63,27 @@ public class Ordenagailua extends Jokalaria  {
 	
 	public void ezkutuaJarri(){
 		
-		int i= 0;
-		while(i!=super.flota.ezkutuKop()){
+		while(super.flota.badagoEzkuturik()){
 			int x = (int)(Math.random()*(super.nireTablero.getTamaina()));
 			int y = (int)(Math.random()*(super.nireTablero.getTamaina()));
 			Ontzia ontzi=super.nireTablero.itsasontzirikDago(x,y);
 			if(ontzi!=null){
-				if(!super.flota.ezkutuaDauka(ontzi) && super.flota.urperatuGabekoKop(ontzi)>0) {
-					//super.flota.ezkutuaJarri(ontzi); 
+				if(!super.flota.barkuakEzkutuaDauka(ontzi) && super.flota.urperatuGabekoKop(ontzi)>0) { 
 					super.flota.egoeraAldatu(ontzi);
 					super.flota.ezkutuKopuruaTxikitu();
 				}
-			}
-			i++;			
+			}			
 			
 		}
-			
+	}
+	
+	public void lortuEtsaiarenTableroa(Tablero pTablero){
+		super.lortuEtsaiarenTableroa(pTablero);
+	}
+	public Tablero lortuNireTableroa(){
+		return super.lortuNireTableroa();
+	}	
 		
 	}
 
-}
+

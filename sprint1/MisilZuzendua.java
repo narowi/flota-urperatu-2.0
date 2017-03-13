@@ -1,9 +1,8 @@
 package sprint1;
 
 public class MisilZuzendua extends Arma {
-	public MisilZuzendua(int prez, int bilZenb){
-		super(prez, bilZenb);
+	public MisilZuzendua(){
 		super.biltegiZenbakia=3;
-		super.prezioa=80;
+		super.prezioa=60;
 	}
 }

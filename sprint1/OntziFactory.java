@@ -11,16 +11,16 @@ public class OntziFactory {
 		return nOntziFactory;
 	}
 	
-	public Ontzia createOntzia(String mota){ //super(pLuz, pMot, pUgz, pKp, pE);
+	public Ontzia createOntzia(String mota){ 
 		Ontzia nireOntzia=null;
 		if(mota=="HegazkinOntzi"){
-			nireOntzia= new HegazkinOntzi(4, "HegazkinOntzi", 4, 60, new Osorik());
+			nireOntzia= new HegazkinOntzi();
 		}else if(mota=="Itsaspeko"){
-			nireOntzia= new Itsaspeko(3, "Itsaspeko", 3, 50, new Osorik());
+			nireOntzia= new Itsaspeko();
 		}else if(mota=="Suntsitzaile"){
-			nireOntzia= new Suntsitzaile(2, "Suntsitzaile", 2, 40, new Osorik());
+			nireOntzia= new Suntsitzaile();
 		}else if(mota=="Fragata"){
-			nireOntzia= new Fragata(1, "Fragata", 1, 30, new Osorik());
+			nireOntzia= new Fragata();
 		}
 		return nireOntzia;
 	}

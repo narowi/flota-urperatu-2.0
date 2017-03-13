@@ -13,12 +13,8 @@ public class Ontzia {
 	protected Egoera egoera;
 
 
-	public Ontzia(int pLuz, String pMot, int pUgz, int pKp, Egoera pE){
-		this.luzera=pLuz;
-		this.mota=pMot;
-		this.urperatuGabekoZatiKop=pUgz;
-		this.konponketaPrezioa=pKp;
-		this.egoera=pE;
+	public Ontzia(){
+		
 	}
 
 	

@@ -8,7 +8,7 @@ import java.util.Iterator;
 public class Flota {
 	private ArrayList<Ontzia> f;
 	private Armamentua armamentua;
-	private int dirua;// no deberia tener ya puesto el dinero??? 
+	private int dirua;
 	private int hegazkinOntzi;
 	private int itsaspeko;
 	private int suntsitzaile;
@@ -16,7 +16,7 @@ public class Flota {
 	
 	public Flota(){
 		this.f= new ArrayList<Ontzia>();
-		this.dirua=200;
+		this.dirua=700;
 		this.armamentua= new Armamentua();
 		this.hegazkinOntzi=1;
 		this.itsaspeko=2;
@@ -27,12 +27,12 @@ public class Flota {
 	private Iterator<Ontzia> getIteradorea(){
 		return this.f.iterator();
 	}
-	public Ontzia flotaSortu(String mota){//solo creas uno 
+	public Ontzia ontziaSortu(String mota){//solo creas uno 
 		Ontzia nireOntzia = OntziFactory.getOntziFactory().createOntzia(mota);
 		return nireOntzia;
 	}
 	public void gehituOntzia(String mota) {
-		Ontzia ontzi=this.flotaSortu(mota);
+		Ontzia ontzi=this.ontziaSortu(mota);
 		this.f.add(ontzi);
 	}
 
@@ -45,18 +45,18 @@ public class Flota {
 	}
 
 
-	public boolean ezkutuaDauka(Ontzia ontzia) {
+	public boolean barkuakEzkutuaDauka(Ontzia ontzia) {
 		Ontzia on=ontzia;
 		return on.ezkutuaDu();
 	}
 
 
-	 public int ezkutuKop(){
-		 return armamentua.getEzkutuKop();
+	 public boolean badagoEzkuturik(){
+		 return armamentua.badagoEzkuturik();
 	 }
 
 	public void ezkutuKopuruaTxikitu() {
-		armamentua.ezkutuKoptxikitu();
+		armamentua.armaKenduKop(1);;
 		
 	}
 
@@ -93,11 +93,7 @@ public class Flota {
 		}
 	}
 
-	public void hasieratu(int zenb) {
-		// TODO Auto-generated method stub
-		this.f=new ArrayList<Ontzia>();
-		this.armamentua.hasieratu(4, 3, 2, 3, 2);
-		this.dirua=zenb;
+	public void flotaSortu() {
 		int i=0;
 		boolean guztiak=false;
 		while(!guztiak){
@@ -113,10 +109,12 @@ public class Flota {
 			i=0;
 			while(i<this.suntsitzaile){
 				this.gehituOntzia("Suntsitzaile");
+				i++;
 			}
 			i=0;
 			while(i<this.fragata){
 				this.gehituOntzia("Fragata");
+				i++;
 			}
 			guztiak=true;
 		}	

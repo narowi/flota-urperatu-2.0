@@ -14,15 +14,15 @@ public class ArmaFactory {
 	public Arma createArma(String mota){
 		Arma nireArma=null;
 		if(mota=="Radar"){
-			nireArma= new Radar(70, 4);
+			nireArma= new Radar();
 		}else if(mota=="Bonba"){
-			nireArma= new Bonba(50, 0);
+			nireArma= new Bonba();
 		}else if(mota=="Misila"){
-			nireArma= new Misila(60, 2);
+			nireArma= new Misila();
 		}else if(mota=="MisilZuzendua"){
-			nireArma= new MisilZuzendua(80, 3);
+			nireArma= new MisilZuzendua();
 		}else if(mota=="Ezkutua"){
-			nireArma= new Ezkutua(30, 1);
+			nireArma= new Ezkutua();
 		}
 		return nireArma;
 	}

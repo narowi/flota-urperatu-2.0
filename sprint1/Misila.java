@@ -1,9 +1,8 @@
 package sprint1;
 
 public class Misila extends Arma {
-	public Misila(int prez, int bilZenb){
-		super(prez, bilZenb);
+	public Misila(){
 		super.biltegiZenbakia=2;
-		super.prezioa=60;
+		super.prezioa=80;
 	}
 }

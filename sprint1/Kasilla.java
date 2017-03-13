@@ -2,26 +2,18 @@ package sprint1;
 
 public class Kasilla {
 	private boolean begiratuta=false;
-	//private boolean ezkutua=false;
-	private Ontzia ontzi;
+	private Ontzia ontzi=null;
 	private boolean ura=true;
 	private int x=0;
 	private int y=0;
 	
-	//public void setEzkutua(boolean pEzkutua){
-		//ezkutua=pEzkutua;
-	//}
-
-	public Ontzia getOntzia() {
-		return this.ontzi;
-	}
-
-	public boolean getUra() {
-		return this.ura; // si ura esta a true es que al lado hay un ontzi
+	public Kasilla(int px,int py){
+		this.x=px;
+		this.y=py;
 	}
 	
-	public void setUra(){
-		this.ura=false;
+	public Ontzia getOntzia() {
+		return this.ontzi;
 	}
 
 	public void ontziaJarri(Ontzia o) {
@@ -32,7 +24,7 @@ public class Kasilla {
 		this.ura=false;
 	}
 
-	public char getZerNahiz() {
+	public char getZerNahiz() {// para que la interfaz mire que es
 		if(ontzi!=null){
 			return 'U';
 		}

@@ -14,13 +14,6 @@ public class Armamentua {
 	private int misilzuzendua;
 	private int radar;
 
-	//public Armamentua(int pBonba, int pEzkutua, int pMisila, int pMisilZuzendua, int pRadar){
-//		this.bonba=pBonba;
-//		this.ezkutua=pEzkutua;
-//		this.misila=pMisila;
-//		this.misilzuzendua=pMisilZuzendua;
-//		this.radar=pRadar;
-	
 	public Armamentua(){
 		this.armamentua= new ArrayList<Arma>();	
 		this.bonba=4;
@@ -45,12 +38,12 @@ public class Armamentua {
 		
 	}
 
-	public int getEzkutuKop() {  //Hau ez da beharrezkoa ez?????????????
-		return this.ezkutua;
-	}
-
-	public void ezkutuKoptxikitu() {
-		this.ezkutua--;	
+	public boolean badagoEzkuturik(){
+		boolean badago=false;
+		if(this.ezkutua>0){
+			badago=true;
+		}
+		return badago;
 	}
 	
 	public void armaKenduKop(int mota) {
@@ -58,7 +51,7 @@ public class Armamentua {
 		if(mota==0 && this.bonba>0){
 			this.bonba--;
 		}else if(mota==1 && this.ezkutua>0){
-			ezkutuKoptxikitu();
+			this.ezkutua--;
 		}else if(mota==2 && this.misila>0){
 			this.misila--;
 		}else if(mota==3 && this.misilzuzendua>0){
@@ -71,6 +64,9 @@ public class Armamentua {
 		
 	}
 
+	public int armaMotaKopuru(){
+		return armamentua.size();
+	}
 	public void armaGehituZerrendan(int mota) {
 		// Biltegian kop-- egin beharko da mota horretako arman
 		if(mota==0){
@@ -86,32 +82,31 @@ public class Armamentua {
 		}
 	}
 
-	public void hasieratu(int bonba, int ezkutua, int misila, int misilZuzendua, int radar) {
-		// TODO Auto-generated method stub
+	public void hasieratu(int pBonba, int pEzkutua, int pMisila, int pMisilZuzendua, int pRadar) {
 		this.armamentua.clear();
 		this.armamentua= new ArrayList<Arma>();
 		int i = 0;
-		while(i< bonba){
+		while(i< pBonba){
 			this.armaGehitu("Bonba");
 			i++;
 		}
 		i=0;
-		while(i< ezkutua){
+		while(i< pEzkutua){
 			this.armaGehitu("Ezkutua");
 			i++;
 		}
 		i=0;
-		while(i < misila){
+		while(i < pMisila){
 			this.armaGehitu("Misila");
 			i++;
 		}
 		i=0;
-		while(i < misilZuzendua){
+		while(i < pMisilZuzendua){
 			this.armaGehitu("MisilZuzendua");
 			i++;
 		}
 		i=0;
-		while(i < radar){
+		while(i < pRadar){
 			this.armaGehitu("radar");
 			i++;
 		}

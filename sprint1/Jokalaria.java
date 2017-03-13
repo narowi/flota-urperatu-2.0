@@ -8,16 +8,22 @@ public abstract class Jokalaria {
 	protected Flota flota;
 	protected int radarKontsultaKop;
 	
-	public Jokalaria(Tablero nireT, Tablero etsaiaT, Flota f){
-		nireTablero=nireT;
-		etsaiarenTableroa=etsaiaT;
-		flota=f;
+	public Jokalaria(){
+		nireTablero=new Tablero();
+		flota=new Flota();
 		radarKontsultaKop=2;
 	}
 	
 	public abstract void ontziakKokatu(); 
 
 	public abstract void ezkutuaJarri();
+	
+	public void lortuEtsaiarenTableroa(Tablero pTablero){
+		etsaiarenTableroa=pTablero;
+	}
+	public Tablero lortuNireTableroa(){
+		return nireTablero;
+	}
 	
 }
 		
