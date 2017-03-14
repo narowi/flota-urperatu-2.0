@@ -1,14 +1,15 @@
 package ui;
 
-
+//SORRY IRUNE POR JODERTE LA CLASE PERO NO SABIA COMO HACERLO....
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
 public class OntziMotak extends JPanel {
     static JFrame frame;
-
-    static String hegazkinOntziString = "Hegazkin-Ontzi";
+    static String aukeratutakoOntzia = "HegazkinOntzi";
+    static boolean listo = false;
+    static String hegazkinOntziString = "HegazkinOntzi";
     static String itsaspekoString = "Itsaspeko";
     static String suntsitzaileString = "Suntsitzaile";
     static String fragataString = "Fragata";
@@ -19,32 +20,71 @@ public class OntziMotak extends JPanel {
 
     public OntziMotak() {
     	
-    	
+    //CADA RADIOBUTTON CAMBIA LA STRING AUKERATUTAKOONTZIA CON SU NOMBRE	
+    
         JRadioButton hegazkinOntziButton = new JRadioButton(hegazkinOntziString);
         hegazkinOntziButton.setMnemonic('b');
         hegazkinOntziButton.setActionCommand(hegazkinOntziString);
         hegazkinOntziButton.setSelected(true);
+        hegazkinOntziButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				aukeratutakoOntzia = hegazkinOntziString;
+			}
+		});
 
         JRadioButton itsaspekoButton = new JRadioButton(itsaspekoString);
         itsaspekoButton.setMnemonic('c');
         itsaspekoButton.setActionCommand(itsaspekoString);
+        itsaspekoButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				aukeratutakoOntzia = itsaspekoString;	
+			}
+		});
 
         JRadioButton suntsitzaileButton = new JRadioButton(suntsitzaileString);
         suntsitzaileButton.setMnemonic('d');
         suntsitzaileButton.setActionCommand(suntsitzaileString);
+        suntsitzaileButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				aukeratutakoOntzia = suntsitzaileString;
+			}
+		});
 
         JRadioButton fragataButton = new JRadioButton(fragataString);
         fragataButton.setMnemonic('r');
         fragataButton.setActionCommand(fragataString);
+        fragataButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				aukeratutakoOntzia = fragataString;
+			}
+		});
         
         JButton sartu = new JButton(sartuString);
-        fragataButton.setMnemonic('s');
-        fragataButton.setActionCommand(sartuString);
+        sartu.setMnemonic('s');
+        sartu.setActionCommand(sartuString);
+        sartu.addActionListener(new ActionListener() {
+			
+       //AQUI ROMPO EL WHILE CON LISTO
+        	
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				listo = true;
+				frame.dispose();
+			}
+		});
 
         
         JButton irten = new JButton(irtenString);
-        fragataButton.setMnemonic('i');
-        fragataButton.setActionCommand(irtenString);
+        irten.setMnemonic('i');
+        irten.setActionCommand(irtenString);
 
 
         // Group the radio buttons.
@@ -116,6 +156,18 @@ public class OntziMotak extends JPanel {
          frame.addWindowListener(l);
          frame.getContentPane().add("Center", new OntziMotak());
          frame.pack();
+         listo=false;
          frame.setVisible(true);
+    }
+    
+//MIRAROS EL METODO PLS
+    
+    public static String ontziaItzuli(){
+    	main(null);
+    	while(!listo){
+    		System.out.println("estoy en 1"+listo);
+    		System.out.println(aukeratutakoOntzia);
+    	}
+    	return aukeratutakoOntzia;
     }
 }

@@ -8,7 +8,8 @@ package ui;
 
 	public class KokapenAukerak extends JPanel {
 	    static JFrame frame;
-
+	    static char kokapena =' ';
+	    static boolean listo = false;
 	    static String goraString = "Gora";
 	    static String beheraString = "Behera";
 	    static String ezkerreraString = "Ezkerra";
@@ -19,24 +20,63 @@ package ui;
 
 	    public KokapenAukerak() {
 	    	
+	    	JButton onartu = new JButton("Onartu");
+	    	onartu.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					listo =true;
+					frame.dispose();
+				}
+			});
+	    	
 	    	
 	        JRadioButton goraButton = new JRadioButton(goraString);
 	        goraButton.setMnemonic('b');
 	        goraButton.setActionCommand(goraString);
 	        goraButton.setSelected(true);
+	        goraButton.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					kokapena = 'g';
+					
+				}
+			});
 
 	        JRadioButton beheraButton = new JRadioButton(beheraString);
 	        beheraButton.setMnemonic('c');
 	        beheraButton.setActionCommand(beheraString);
+	        beheraButton.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					kokapena = 'b';
+					
+				}
+			});
 
 	        JRadioButton ezkerraButton = new JRadioButton(ezkerreraString);
 	        ezkerraButton.setMnemonic('d');
 	        ezkerraButton.setActionCommand(ezkerreraString);
+	        ezkerraButton.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					kokapena = 'z';
+				}
+			});
 
 	        JRadioButton eskumaButton = new JRadioButton(eskumaraString);
 	        eskumaButton.setMnemonic('r');
 	        eskumaButton.setActionCommand(eskumaraString);
-	        
+	        eskumaButton.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					kokapena = 's';
+				}
+			});
 	      
 
 
@@ -79,8 +119,9 @@ package ui;
 	      
 
 	        setLayout(new BorderLayout());
-	        add(radioPanel, "West");
+	        add(radioPanel,"West");
 	        add(picture, "Center");
+	        add(onartu, "South");
 	        setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
 	        
 	        
@@ -106,7 +147,46 @@ package ui;
 	         frame.addWindowListener(l);
 	         frame.getContentPane().add("Center", new KokapenAukerak());
 	         frame.pack();
+	         listo = false;
+
+	    }
+	    
+	    public static char kokapena(char[] a){
+	    	char b = 'a';
+	    	main(null);
+	    	if(a[0]==' '){
+	    		apaga("Eskuma");
+	    	}
+	    	else if(a[1]==' '){
+	    		apaga("Ezkerra");
+	    	}
+	    	else if(a[2]==' '){
+	    		apaga("Gora");
+	    	}
+	    	else if(a[3]==' '){
+	    		apaga("Behera");
+	    	}
 	         frame.setVisible(true);
+	    	
+	    	while(!listo){
+	    		System.out.println(kokapena);
+	    	}
+	    	
+	    	return b;
+	    }
+	    public static void apaga(String i){
+	    	if(i == eskumaraString){
+	    		frame.getRootPane().getComponent(0).setEnabled(false);
+	    	}
+	    	if(i == ezkerreraString){
+	    		frame.getRootPane().getComponent(2).setEnabled(false);
+	    	}
+	    	if(i == goraString){
+	    		frame.getRootPane().getComponent(3).setEnabled(false);
+	    	}
+	    	if(i == beheraString){
+	    		frame.getRootPane().getComponent(1).setEnabled(false);
+	    	}
 	    }
 	}
 

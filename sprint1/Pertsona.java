@@ -6,7 +6,9 @@ public class Pertsona extends Jokalaria {
 		
 	}
 	public void ontziakKokatu(){
-	//TO DO	
+		while(!super.flota.isEmpty()){
+			super.nireTablero.ontziaKokatu();
+		}
 	}
 	public void ezkutuaJarri(int x,int y){//mirar como pasar la posicion para el ezkutu
 			//banaka jarriko ditu ontziak eskutuan
