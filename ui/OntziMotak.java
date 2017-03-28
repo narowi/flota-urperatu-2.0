@@ -13,8 +13,8 @@ public class OntziMotak extends JPanel {
     static String itsaspekoString = "Itsaspeko";
     static String suntsitzaileString = "Suntsitzaile";
     static String fragataString = "Fragata";
-    static String sartuString = "Onartu";
-    static String irtenString = "Ezeztatu";
+    //static String sartuString = "Onartu";
+  //  static String irtenString = "Ezeztatu";
 
     JLabel picture;
 
@@ -67,24 +67,24 @@ public class OntziMotak extends JPanel {
 			}
 		});
         
-        JButton sartu = new JButton(sartuString);
-        sartu.setMnemonic('s');
-        sartu.setActionCommand(sartuString);
-        sartu.addActionListener(new ActionListener() {
-			
+//        JButton sartu = new JButton(sartuString);
+//        sartu.setMnemonic('s');
+//        sartu.setActionCommand(sartuString);
+//        sartu.addActionListener(new ActionListener() {
+//			
        //AQUI ROMPO EL WHILE CON LISTO
         	
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				listo = true;
-				frame.dispose();
-			}
-		});
-
-        
-        JButton irten = new JButton(irtenString);
-        irten.setMnemonic('i');
-        irten.setActionCommand(irtenString);
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				listo = true;
+//				frame.dispose();
+//			}
+//		});
+//
+//        
+//        JButton irten = new JButton(irtenString);
+//        irten.setMnemonic('i');
+//        irten.setActionCommand(irtenString);
 
 
         // Group the radio buttons.
@@ -93,8 +93,8 @@ public class OntziMotak extends JPanel {
         group.add(itsaspekoButton);
         group.add(suntsitzaileButton);
         group.add(fragataButton);
-        group.add(sartu);
-        group.add(irten);
+//        group.add(sartu);
+//        group.add(irten);
 
         // Register a listener for the radio buttons.
         RadioListener myListener = new RadioListener();
@@ -103,8 +103,8 @@ public class OntziMotak extends JPanel {
         suntsitzaileButton.addActionListener(myListener);
         fragataButton.addActionListener(myListener);
        
-        sartu.addActionListener(myListener);
-        irten.addActionListener(myListener);
+//        sartu.addActionListener(myListener);
+//        irten.addActionListener(myListener);
 
 
         // Set up the picture label
@@ -115,23 +115,23 @@ public class OntziMotak extends JPanel {
         // The preferred size is hard-coded to be the width of the
         // widest image and the height of the tallest image.
         // A real program would compute this.
-        picture.setPreferredSize(new Dimension(177, 122));
+        picture.setPreferredSize(new Dimension(10, 10));
 
 
         // Put the radio buttons in a column in a panel
         JPanel radioPanel = new JPanel();
-        radioPanel.setLayout(new GridLayout(0, 1));
+        radioPanel.setLayout(new GridLayout(1, 4));
         radioPanel.add(hegazkinOntziButton);
         radioPanel.add(itsaspekoButton);
         radioPanel.add(suntsitzaileButton);
         radioPanel.add(fragataButton);
-        radioPanel.add(sartu);
-        radioPanel.add(irten);
+//        radioPanel.add(sartu);
+//        radioPanel.add(irten);
 
         setLayout(new BorderLayout());
         add(radioPanel, "West");
         add(picture, "Center");
-        setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
+        setBorder(BorderFactory.createEmptyBorder(10,5,10,5));
         
         
         

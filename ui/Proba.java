@@ -12,12 +12,15 @@ public class Proba {
 	static boolean listo = false;
 	private JPanel contentPane;
 	private JPanel tableroa;
+	private OntziMotak ontziak=new OntziMotak();
+	private KokapenAukerak norantzak=new KokapenAukerak();
 	private JPanel menua;
 	private JButton[][] botoiak = new JButton[10][10];
 	private JFrame frame;
 	private JMenuBar menuBar;
 	private JMenu menu, menu_1;
 	private JMenuItem menuItem_1;
+	static String sartuString = "Onartu";
 
 
 	/**
@@ -49,7 +52,7 @@ public class Proba {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(300, 50, 500, 500);
+		frame.setBounds(500, 50, 500, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
 		frame.setTitle("Flota urperatu 2.0");
@@ -74,15 +77,21 @@ public class Proba {
 		menu_1.add(menuItem_1);
 		
 		this.contentPane = new JPanel(new BorderLayout());
-		this.contentPane.setBorder(new EmptyBorder(50, 50, 50, 50));
+		this.contentPane.setBorder(new EmptyBorder(10, 50, 10, 50));
 		frame.setContentPane(contentPane);
 		
 		this.tableroa = new JPanel(new GridLayout(10, 10));
 		botoiakJarri();
+		
+		this.contentPane.add(ontziak,BorderLayout.NORTH);
+		this.contentPane.add(norantzak,BorderLayout.SOUTH);
 		this.contentPane.add(tableroa,BorderLayout.CENTER);
+		
+		
 
 		
 	}
+	
 
 	private void botoiakJarri() {
 		for(int i=0;i<10;i++){

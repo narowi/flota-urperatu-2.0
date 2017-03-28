@@ -19,16 +19,16 @@ package ui;
 	    JLabel picture;
 
 	    public KokapenAukerak() {
-	    	
-	    	JButton onartu = new JButton("Onartu");
-	    	onartu.addActionListener(new ActionListener() {
-				
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					listo =true;
-					frame.dispose();
-				}
-			});
+//	    	
+////	    	JButton onartu = new JButton("Onartu");
+////	    	onartu.addActionListener(new ActionListener() {
+//				
+//				@Override
+//				public void actionPerformed(ActionEvent e) {
+//					listo =true;
+//					frame.dispose();
+//				}
+//			});
 	    	
 	    	
 	        JRadioButton goraButton = new JRadioButton(goraString);
@@ -106,12 +106,12 @@ package ui;
 	        // The preferred size is hard-coded to be the width of the
 	        // widest image and the height of the tallest image.
 	        // A real program would compute this.
-	        picture.setPreferredSize(new Dimension(177, 122));
+	        picture.setPreferredSize(new Dimension(10, 10));
 
 
 	        // Put the radio buttons in a column in a panel
 	        JPanel radioPanel = new JPanel();
-	        radioPanel.setLayout(new GridLayout(0, 1));
+	        radioPanel.setLayout(new GridLayout(1, 4));
 	        radioPanel.add(goraButton);
 	        radioPanel.add(beheraButton);
 	        radioPanel.add(ezkerraButton);
@@ -121,8 +121,8 @@ package ui;
 	        setLayout(new BorderLayout());
 	        add(radioPanel,"West");
 	        add(picture, "Center");
-	        add(onartu, "South");
-	        setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
+	        //add(onartu, "South");
+	        setBorder(BorderFactory.createEmptyBorder(10,5,10,5));
 	        
 	        
 	        
@@ -148,6 +148,7 @@ package ui;
 	         frame.getContentPane().add("Center", new KokapenAukerak());
 	         frame.pack();
 	         listo = false;
+	         frame.setVisible(true);
 
 	    }
 	    

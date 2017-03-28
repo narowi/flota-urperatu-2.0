@@ -27,26 +27,26 @@ public class Tablero {
 	 }
 
 
-	public void ontziaKokatu(){
-		//miradolo bien por que en fin, mas chapuza que otra cosa.
-		
-		//ONTZIA ESKURATU
-		Ontzia o=null;
-		String aux = OntziMotak.ontziaItzuli();
-		System.out.println(aux);
-		o = OntziFactory.getOntziFactory().createOntzia(aux);
-		
-		
-		//KOORDENATUAK LORTU (aqui es donde la matan)
-		Integer[] aux2 = new Integer[2];
-		aux2 = Proba.koordenatuakItzuli();
-		int x=aux2[0];
-		int y=aux2[1];
-		char[] norabidePosible=this.norabideaAukeratu(x, y, o);
-		//aqui llamo a la interfaz otra vez.
-		char norabidea=KokapenAukerak.kokapena(norabidePosible);
-		this.kokatu(x, y, o, norabidea);
-	}
+////	public void ontziaKokatu(Ontzia o,int x,int y){
+//		//miradolo bien por que en fin, mas chapuza que otra cosa.
+//		
+//		//ONTZIA ESKURATU
+//		Ontzia o=null;
+//		String aux = OntziMotak.ontziaItzuli();
+//		System.out.println(aux);
+//		o = OntziFactory.getOntziFactory().createOntzia(aux);
+//		
+//		
+//		//KOORDENATUAK LORTU (aqui es donde la matan)
+//		Integer[] aux2 = new Integer[2];
+//		aux2 = Proba.koordenatuakItzuli();
+//		int x=aux2[0];
+//		int y=aux2[1];
+//		char[] norabidePosible=this.norabideaAukeratu(x, y, o);
+//		//aqui llamo a la interfaz otra vez.
+//		char norabidea=KokapenAukerak.kokapena(norabidePosible);
+//		this.kokatu(x, y, o, norabidea);
+//	}
 
 	
 	public Kasilla[][] getNireTableroa(){
@@ -173,25 +173,25 @@ public class Tablero {
 	    
 	    public void kokatu(int x,int y,Ontzia o,char norabidea){
 			int i;
-			if(norabidea=='s'){
+			if(norabidea=='s' && eskumaraAhal(x, y, o.getHondoratuGabekoZatiKop())){
 				for(i=x;i<x+o.luzera;i++){
 					tablero[i][y].ontziaJarri(o);
 					tablero[i][y].kenduUra();
 				}	
 			}
-			if(norabidea=='z'){
+			if(norabidea=='z' && ezkerreraAhal(x, y, o.getHondoratuGabekoZatiKop())){
 				for(i=x;i<x-o.luzera;i--){
 					tablero[i][y].ontziaJarri(o);
 					tablero[i][y].kenduUra();
 				}
 			}
-			if(norabidea=='g'){
+			if(norabidea=='g' && goraAhal(x, y, o.getHondoratuGabekoZatiKop())){
 				for(i=y;i<y-o.luzera;i--){
 					tablero[x][i].ontziaJarri(o);
 					tablero[x][i].kenduUra();
 				}
 			}
-			if(norabidea=='b'){
+			if(norabidea=='b' && beheraAhal(x, y, o.getHondoratuGabekoZatiKop())){
 				for(i=y;i<y+o.luzera;i++){
 					tablero[x][i].ontziaJarri(o);
 					tablero[x][i].kenduUra();

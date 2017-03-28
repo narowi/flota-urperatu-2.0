@@ -8,7 +8,7 @@ public class Pertsona extends Jokalaria {
 	}
 	public void ontziakKokatu(){
 		while(!super.flota.isEmpty()){
-			super.nireTablero.ontziaKokatu();
+			super.nireTablero.kokatu(x,y,o,norabide);
 		}
 	}
 	public void ezkutuaJarri(){
