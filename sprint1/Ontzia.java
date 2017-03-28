@@ -14,7 +14,6 @@ public class Ontzia {
 
 
 	public Ontzia(){
-		
 	}
 
 	

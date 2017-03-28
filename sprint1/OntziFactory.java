@@ -11,18 +11,18 @@ public class OntziFactory {
 		return nOntziFactory;
 	}
 	
-	public Ontzia createOntzia(String mota){ 
-		Ontzia nireOntzia=null;
-		if(mota=="HegazkinOntzi"){
-			nireOntzia= new HegazkinOntzi();
-		}else if(mota=="Itsaspeko"){
-			nireOntzia= new Itsaspeko();
-		}else if(mota=="Suntsitzaile"){
-			nireOntzia= new Suntsitzaile();
-		}else if(mota=="Fragata"){
-			nireOntzia= new Fragata();
-		}
-		return nireOntzia;
+	 public Ontzia createOntzia(String mota){ 
+		  Ontzia nireOntzia=null;
+		  if(mota=="HegazkinOntzi"){
+		   nireOntzia= new HegazkinOntzi();
+		  }else if(mota=="Itsaspeko"){
+		   nireOntzia= new Itsaspeko();
+		  }else if(mota=="Suntsitzaile"){
+		   nireOntzia= new Suntsitzaile();
+		  }else if(mota=="Fragata"){
+		   nireOntzia= new Fragata();
+		  }
+		  return nireOntzia;
 	}
 
 }

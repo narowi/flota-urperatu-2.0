@@ -1,5 +1,7 @@
 package sprint1;
 
+import java.io.File;
+
 public class Jokoa {
 	private Ordenagailua ord;
 	private Pertsona per;
@@ -7,9 +9,9 @@ public class Jokoa {
 	private static Jokoa nireJokoa = null;
 	
 	private Jokoa() {
-    	this.txanda=0;
-    	this.ord= new Ordenagailua();
+		this.ord= new Ordenagailua();
 		this.per= new Pertsona();
+    	this.txanda=0;
 	}
 	
 	public static Jokoa getNireJokoa() {
@@ -21,14 +23,14 @@ public class Jokoa {
 	
 	public static void main(String[] args) {
 		nireJokoa = Jokoa.getNireJokoa();
-		nireJokoa.jokoaHasieratu();
+		nireJokoa.partidaBatJolastu();
 	}
 
-	private void jokoaHasieratu() {
-		ord.ontziakKokatu();
-		per.ontziakKokatu();
-		ord.lortuEtsaiarenTableroa(per.lortuNireTableroa());
-    	per.lortuEtsaiarenTableroa(ord.lortuNireTableroa());
+	private void partidaBatJolastu() {
+		per.nireTablero.ontziaKokatu();
+		ord.nireTablero.ontziaKokatu();
+		per.etsaiarenTableroa=ord.nireTablero;
+		ord.etsaiarenTableroa=per.nireTablero;
 		
 		
 	}

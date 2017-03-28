@@ -50,6 +50,8 @@ public class login {
 			loginButton.setBounds(10, 80, 80, 25);
 			panel.add(loginButton);
 			
+			
+			
 			      
 			
 			

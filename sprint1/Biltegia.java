@@ -1,14 +1,17 @@
 package sprint1;
 
+import java.util.ArrayList;
+
+import java.util.ArrayList;
 
 public class Biltegia {
 	private Armamentua armamentua;
 	private static Biltegia nireBiltegia;
-	private Integer[] armaKopurua;
+	private ArrayList<Integer> armaKopurua;
 	private EgoeraBiltegia e;
 
 	private Biltegia(){
-		this.armaKopurua= new Integer[armamentua.armaMotaKopuru()-1];
+		
 	}
 
 	public static Biltegia getNireBiltegia(){
@@ -23,13 +26,9 @@ public class Biltegia {
 	}
 
 	public void hasieratu() {
-		this.armamentua.hasieratu(20, 2, 4, 6, 2);
-		this.armaKopurua[0]=20;
-		this.armaKopurua[1]=2;
-		this.armaKopurua[2]=4;
-		this.armaKopurua[3]=6;
-		this.armaKopurua[4]=2;
-		
+		// TODO Auto-generated method stub
+		this.armamentua.hasieratu(20, 20, 20, 20, 20);
+		this.armaKopurua= new ArrayList<Integer>();
 	}
 
 	//arma saldu
