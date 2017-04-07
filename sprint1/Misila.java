@@ -5,4 +5,11 @@ public class Misila extends Arma {
 		super.biltegiZenbakia=2;
 		super.prezioa=80;
 	}
+	public  boolean posizioHorretakoArmaDa(int pos){
+		if(pos==this.biltegiZenbakia){
+			return true;
+		}else{
+			return false;
+		}
+	}
 }

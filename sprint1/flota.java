@@ -119,5 +119,22 @@ public class Flota {
 			guztiak=true;
 		}	
 	}
-	
+	public int armamentuarenLuzera() {
+		return this.armamentua.luzera();
+	}
+
+	public boolean armaIsEmpty(int pos) {
+		return armamentua.armaIsEmpty(pos);
+	}
+
+	public Arma lortuArma(int pos) {
+		
+		return armamentua.lortuArma(pos);
+		
+	}
+
+	public void kenduArmaKopBat(Arma arma) {
+		this.armamentua.armaKenduKop(arma.biltegiZenbakia);
+		
+	}
 }

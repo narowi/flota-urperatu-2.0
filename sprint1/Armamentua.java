@@ -1,6 +1,7 @@
 package sprint1;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 
 public class Armamentua {
@@ -111,6 +112,42 @@ public class Armamentua {
 			i++;
 		}
 		
+	}
+
+	public int luzera() {
+		return this.armamentua.size();
+	}
+
+	public boolean armaIsEmpty(int pos) {
+		if((pos==0 && bonba>0) || (pos==1 && misila>0) || (pos==3 && misilzuzendua>0)) {
+			return false;
+		}else{
+			return true;
+		}
+	}
+	public Iterator<Arma> getIteradorea(){
+
+		return this.armamentua.iterator();
+
+	}
+	public Arma lortuArma(int pos) {
+		boolean aurkitua=false;
+		Iterator<Arma>itr=this.getIteradorea();
+		Arma aux=null;
+		while(itr.hasNext() && !aurkitua){
+			aux=itr.next();
+			if(aux.posizioHorretakoArmaDa(pos)){
+				aurkitua=true;
+			}
+		}
+		return aux;
+	}
+	//junit
+	public int zenbatArma() {
+		return this.armamentua.size();
+	}
+	public void armaGehitu2(Arma a){
+		this.armamentua.add(a);
 	}
 
 }

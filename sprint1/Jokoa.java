@@ -34,4 +34,11 @@ public class Jokoa {
 		
 		
 	}
+	public Jokalaria aurkariaLortu() {
+		if((this.txanda)%2==0){
+			return per;
+		}else{
+			return ord;
+		}
+	}
 }

@@ -24,6 +24,17 @@ public abstract class Jokalaria {
 	public Tablero lortuNireTableroa(){
 		return nireTablero;
 	}
+	public Tablero lortuEtsaiarenTableroa2(){
+		return this.etsaiarenTableroa;
+	}
+
+	public Flota getListaOntziak() {
+		return this.flota;
+		
+	}
 	
+	public int zenbatOntzi(){
+		return this.flota.zenbatOntzi();
+	}
 }
 		

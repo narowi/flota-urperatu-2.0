@@ -7,6 +7,8 @@ public class Kasilla {
 	private boolean ura=true;
 	private int x=0;
 	private int y=0;
+	//junit
+		private boolean ikutuGabe=true;
 	
 	//public void setEzkutua(boolean pEzkutua){
 		//ezkutua=pEzkutua;
@@ -43,6 +45,35 @@ public class Kasilla {
 		else{
 			return 'B';
 		}
+	}
+	public int getX() {
+		return x;
+	}
+	public int getY() {
+		return y;
+	}
+
+	public void setBegiratuta(boolean b) {
+		begiratuta=b;
+		
+	}
+
+	public boolean getBegiratuta() {
+		return begiratuta;
+	}
+
+	//junit
+	public int ikutuGabe() {
+		if(this.ikutuGabe){
+			return 1;
+		}else{
+			return 0;
+		}
+		
+	}
+
+	public void setIkutuGabe(boolean b) {
+		this.ikutuGabe=b;
 		
 	}
 

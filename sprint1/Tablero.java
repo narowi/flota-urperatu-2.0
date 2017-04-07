@@ -198,6 +198,41 @@ public class Tablero {
 				}
 			}
 	}
+		public void setBegiratuta(int x, int y, boolean b) {
+			this.tablero[x][y].setBegiratuta(b);
+			
+		}
+		public boolean begiratutaDago(int pX, int pY) {
+
+			return this.tablero[pX][pY].getBegiratuta();
+
+		}
+
+		
+
+		public boolean koordenatuEgokiak(int pX, int pY) {
+
+			if(pX < 0 || pX >= tamaina || pY < 0 || pY >= tamaina ) {
+
+				return false;
+
+			}
+
+			else {
+
+				return true;
+
+			}
+		}
+
+		public int kasillaIkutuGabe(int x, int y) {
+			return this.tablero[x][y].ikutuGabe();
+		}
+
+		public void aldatuKasillaUkituta(int x, int y) {
+			this.tablero[x][y].setIkutuGabe(false);
+			
+		}
 
 		
 }

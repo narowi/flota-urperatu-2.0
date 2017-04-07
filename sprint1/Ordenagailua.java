@@ -83,7 +83,51 @@ public class Ordenagailua extends Jokalaria  {
 	public Tablero lortuNireTableroa(){
 		return super.lortuNireTableroa();
 	}	
-		
+	public void tiroEgin(){ //random
+		int x;
+		int y;
+		//Tablero aurkariarenTableroa=pAurkari.lortuNireTableroa();
+		Arma arma= this.lortuArma();
+		System.out.println(arma);
+		x=this.lortuKoordenatua();
+		y=this.lortuKoordenatua();
+		if(arma!=null){
+			this.flota.kenduArmaKopBat(arma);
+			//if(arma instanceof MisilZuzendua){
+				int aukera=this.aukeraLortu();
+				arma.tiroEgin(x,y,aukera);
+			//}else{
+				//arma.tiroEgin(x, y);
+			//}
+		}else{
+			System.out.println("arma barik gelditu zara");
+		}
+	}
+	
+	
+	private int aukeraLortu() {
+		 int i = (int)(Math.random()*3);
+		 return i;
+	}
+	private Arma lortuArma(){ 
+		int pos = (int)(Math.random()*5);
+		System.out.println(pos);
+		Jokalaria pAurkari= Jokoa.getNireJokoa().aurkariaLortu();
+		boolean ahalDa=false;
+		while(!ahalDa && !pAurkari.getListaOntziak().isEmpty()){
+			if(pos!=1 && pos!=4){
+				if(!super.flota.armaIsEmpty(pos)){ //tener en cuenta que no se puede hacer tiro ni con ezkutua ni con radar
+					ahalDa=true;
+				}	
+			}
+		}
+		if(ahalDa){
+			return super.flota.lortuArma(pos);
+		}else{
+			return null;
+		}
+
+	}
 	}
 
 
