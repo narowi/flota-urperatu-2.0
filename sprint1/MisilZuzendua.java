@@ -40,7 +40,7 @@ public void tiroEgin(int x, int y,int aukera){
 			int lagx=0;
 			int lagy=0;
 			//lehenengo horizontalean begiratu
-			while(i<0){
+			while(i<10){
 				Ontzia its = aurkariarenTableroa.itsasontzirikDago(lagx,y);
 				lagx++;
 				if(its!=null){

@@ -118,14 +118,7 @@ public class Armamentua {
 		return this.armamentua.size();
 	}
 
-	public boolean armaIsEmpty(int pos) {
-		if((pos==0 && bonba>0) || (pos==1 && misila>0) || (pos==3 && misilzuzendua>0)) {
-			return false;
-		}else{
-			return true;
-		}
-	}
-	public Iterator<Arma> getIteradorea(){
+	private Iterator<Arma> getIteradorea(){
 
 		return this.armamentua.iterator();
 
@@ -142,6 +135,19 @@ public class Armamentua {
 		}
 		return aux;
 	}
+	
+	public boolean armarikDago(int biltegiZenbakikoArma) {
+		if(biltegiZenbakikoArma==0 && this.bonba>0){
+			return true;
+		}else if(biltegiZenbakikoArma==2 && this.misila>0){
+			return true;
+		}else if(biltegiZenbakikoArma==3 && this.misilzuzendua>0){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
 	//junit
 	public int zenbatArma() {
 		return this.armamentua.size();

@@ -123,9 +123,7 @@ public class Flota {
 		return this.armamentua.luzera();
 	}
 
-	public boolean armaIsEmpty(int pos) {
-		return armamentua.armaIsEmpty(pos);
-	}
+	
 
 	public Arma lortuArma(int pos) {
 		
@@ -135,7 +133,9 @@ public class Flota {
 
 	public void kenduArmaKopBat(Arma arma) {
 		this.armamentua.armaKenduKop(arma.biltegiZenbakia);
-		
+	}
+	public boolean armarikDago(int biltegiZenbakikoArma) {
+		return this.armamentua.armarikDago(biltegiZenbakikoArma);
 	}
 }
 

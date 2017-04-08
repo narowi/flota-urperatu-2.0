@@ -111,25 +111,51 @@ public class Ordenagailua extends Jokalaria  {
 		 return i;
 	}
 	
-	private Arma lortuArma(){ 
-		int pos = (int)(Math.random()*5);
-		System.out.println(pos);
+//	private Arma lortuArma(){ 
+//		int pos = (int)(Math.random()*5);
+//		System.out.println(pos);
+//		Jokalaria pAurkari= Jokoa.getNireJokoa().aurkariaLortu();
+//		boolean ahalDa=false;
+//		while(!ahalDa && !pAurkari.getListaOntziak().isEmpty()){
+//			if(pos!=1 && pos!=4){
+//				if(!super.flota.armaIsEmpty(pos)){ //tener en cuenta que no se puede hacer tiro ni con ezkutua ni con radar
+//					ahalDa=true;
+//				}	
+//			}
+//		}
+//		if(ahalDa){
+//			return super.flota.lortuArma(pos);
+//		}else{
+//			return null;
+//		}
+//
+//	}
+
+	public Arma lortuArma(){
+		int biltegiZenbakikoArma= (int)(Math.random()*5);
+		boolean armaEgokia=false;
 		Jokalaria pAurkari= Jokoa.getNireJokoa().aurkariaLortu();
-		boolean ahalDa=false;
-		while(!ahalDa && !pAurkari.getListaOntziak().isEmpty()){
-			if(pos!=1 && pos!=4){
-				if(!super.flota.armaIsEmpty(pos)){ //tener en cuenta que no se puede hacer tiro ni con ezkutua ni con radar
-					ahalDa=true;
-				}	
+		System.out.println(pAurkari);
+		if(pAurkari.zenbatOntzi()!=0){
+			System.out.println(pAurkari.zenbatOntzi());
+			while(!armaEgokia){
+				if((biltegiZenbakikoArma!=1 && biltegiZenbakikoArma!=4) && super.flota.armarikDago(biltegiZenbakikoArma)){
+					armaEgokia=true;
+				}else{
+				 biltegiZenbakikoArma= (int)(Math.random()*5);
+				} 
 			}
-		}
-		if(ahalDa){
-			return super.flota.lortuArma(pos);
+			if(armaEgokia){
+				return super.flota.lortuArma(biltegiZenbakikoArma);
+			}else{
+				return null;
+			}
 		}else{
+			System.out.println("aurkariaren ontzi guztiak urperatu dituzu");
 			return null;
 		}
-
 	}
+	
 	}
 
 
