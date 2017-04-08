@@ -16,6 +16,14 @@ public class Misila extends Arma {
 	}
 	
 	public void tiroEgin(int x, int y,int aukera){
+		Jokalaria pAurkari= Jokoa.getNireJokoa().aurkariaLortu();
+		Tablero aurkariarenTableroa =pAurkari.lortuEtsaiarenTableroa2();
+		aurkariarenTableroa.setBegiratuta(x, y, true);
 		
+		Ontzia o = aurkariarenTableroa.itsasontzirikDago(x,y);
+		
+		if(o!=null){ // kasu honetan ontzia osorik deuseztatuko da.
+			o.jo(this);
+		}	
 	}
 }
