@@ -6,7 +6,7 @@ public class EzkutuOsoa implements Egoera{
 		//if(arma instanceof MisilZuzendua || arma instanceof Misila){
 			//arma.eskutuOsoaKenduBehar() boolean
 			//irsasontzi antesestabastocado() boolran mirar urperatuako zariak y luzera
-			if(arma.eskutuOsoaKenduBehar()){ // si le a caido un misil
+			if(arma.ezkutuOsoaKenduBehar()){ // si le a caido un misil
 				if(ontzia.lehenIkututa()){
 					ontzia.egoeraAldatu(new Ikututa());
 				}else{
@@ -14,6 +14,7 @@ public class EzkutuOsoa implements Egoera{
 				}
 			}else{ //una bonba
 				ontzia.egoeraAldatu(new EzkutuBakarra());
+				
 			}
 	}
 }

@@ -80,6 +80,7 @@ public class Ordenagailua extends Jokalaria  {
 	public void lortuEtsaiarenTableroa(Tablero pTablero){
 		super.lortuEtsaiarenTableroa(pTablero);
 	}
+	
 	public Tablero lortuNireTableroa(){
 		return super.lortuNireTableroa();
 	}	
@@ -109,6 +110,7 @@ public class Ordenagailua extends Jokalaria  {
 		 int i = (int)(Math.random()*3);
 		 return i;
 	}
+	
 	private Arma lortuArma(){ 
 		int pos = (int)(Math.random()*5);
 		System.out.println(pos);

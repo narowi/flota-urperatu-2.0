@@ -6,7 +6,7 @@ public abstract class Arma {
 	public Arma(){
 	}
 	public abstract void tiroEgin(int x, int y,int aukera);
-	public Boolean eskutuOsoaKenduBehar() {
+	public Boolean ezkutuOsoaKenduBehar() {
 		if(this instanceof MisilZuzendua || this instanceof Misila){
 			return true;
 			
