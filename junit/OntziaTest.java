@@ -38,7 +38,7 @@ private Ontzia o;
 	public void test() {
 		o.egoeraAldatu(new Ikututa());
 		Arma a= new Misila();
-		o.jo(a);
+		o.jo(a, false);
 		//Egoera e=new Urperatuta();
 		//System.out.println(o.getEgoera());
 		//System.out.println(o.getEgoera().toString());
@@ -55,94 +55,94 @@ private Ontzia o;
 		
 		o.egoeraAldatu(new Osorik());
 		Arma b = new Bonba();
-		o.jo(b); 
+		o.jo(b, false); 
 		System.out.println("Egoera Osorik, bonba jo ondoren" + o.getEgoera());
 		
 		o.egoeraAldatu(new Ikututa());
-		o.jo(b); 
+		o.jo(b, false); 
 		System.out.println("Egoera Ikututa, bonba jo ondoren"+o.getEgoera());
 		
 		o.egoeraAldatu(new EzkutuOsoa());
-		o.jo(b); 
+		o.jo(b, false); 
 		System.out.println("Egoera EzkutuOsoa, bonba jo ondoren"+o.getEgoera());
 		
 		o.egoeraAldatu(new EzkutuBakarra());
-		o.jo(b); 
+		o.jo(b, false); 
 		System.out.println("Egoera EzkutuBAkarra, bonba jo ondoren"+o.getEgoera());
 		//-----------------------------------
-		o.jo(a); 
+		o.jo(a, false); 
 		System.out.println(o.getEgoera());
 		
 		o.egoeraAldatu(new Ikututa());
-		o.jo(a); 
+		o.jo(a, false); 
 		System.out.println("Egoera Ikututa, misila jo ondoren"+o.getEgoera());
 		
 		o.egoeraAldatu(new EzkutuOsoa());
-		o.jo(a); 
+		o.jo(a, false); 
 		System.out.println("Egoera EzkutuOsoa, misila jo ondoren"+o.getEgoera());
 		
 		o.egoeraAldatu(new EzkutuBakarra());
-		o.jo(a); 
+		o.jo(a, false); 
 		System.out.println("Egoera EzkutuBakarra, misila jo ondoren"+o.getEgoera());
 		
 		o = new HegazkinOntzi();
 		System.out.println("HegazkinOntzi"+o.getEgoera());
 		
 		o.egoeraAldatu(new Ikututa());
-		o.jo(b); 
+		o.jo(b, false); 
 		System.out.println("Egoera Ikututa, bonba jo ondoren"+o.getEgoera());
 		
 		o.egoeraAldatu(new EzkutuOsoa());
-		o.jo(b); 
+		o.jo(b, false); 
 		System.out.println("Egoera EzkutuOsoa, bonba jo ondoren"+o.getEgoera());
 		
 		o.egoeraAldatu(new EzkutuBakarra());
-		o.jo(b); 
+		o.jo(b, false); 
 		System.out.println("Egoera EzkutuBakarra, bonba jo ondoren"+o.getEgoera());
 		
-		o.jo(a); 
+		o.jo(a, false); 
 		System.out.println("Arma misila"+o.getEgoera());
 		
 		o.egoeraAldatu(new Ikututa());
-		o.jo(a); 
+		o.jo(a, false); 
 		System.out.println("Egoera Ikututa, misila jo ondoren"+o.getEgoera());
 		
 		o.egoeraAldatu(new EzkutuOsoa());
-		o.jo(a); 
+		o.jo(a, false); 
 		System.out.println("Egoera EZkutuOsoa, misila jo ondoren"+o.getEgoera());
 		
 		o.egoeraAldatu(new EzkutuBakarra());
-		o.jo(a); 
+		o.jo(a, false); 
 		System.out.println("Egoera EzkutuBakarra, misila jo ondoren"+o.getEgoera());
 		
 		o = new Itsaspeko();
 		System.out.println("Itsaspeko"+o.getEgoera());
 		
 		o.egoeraAldatu(new Ikututa());
-		o.jo(b); 
+		o.jo(b, false); 
 		System.out.println("Egoera Ikututa, bonba jo ondoren"+o.getEgoera());
 		
 		o.egoeraAldatu(new EzkutuOsoa());
-		o.jo(b); 
+		o.jo(b, false); 
 		System.out.println("Egoera EzkutuOsoa, bonba jo ondoren"+o.getEgoera());
 		
 		o.egoeraAldatu(new EzkutuBakarra());
-		o.jo(b); 
+		o.jo(b, false); 
 		System.out.println("Egoera EzkutuBakarra, bonba jo ondoren"+o.getEgoera());
 		
-		o.jo(a); 
+		o.jo(a, false); 
 		System.out.println(o.getEgoera());
 		
 		o.egoeraAldatu(new Ikututa());
-		o.jo(a); 
+		o.jo(a, false); 
 		System.out.println("Egoera Ikututa, misila jo ondoren"+o.getEgoera());
 		
 		o.egoeraAldatu(new EzkutuOsoa());
-		o.jo(a); 
+		o.jo(a, false); 
 		System.out.println("Egoera EzkutuOsoa, misila jo ondoren"+o.getEgoera());
 		
 		o.egoeraAldatu(new EzkutuBakarra());
-		o.jo(a); 
+		o.jo(a, false); 
 		System.out.println("Egoera EzkutuBakarra, misila jo ondoren"+o.getEgoera());
 		
 		o = new Suntsitzaile();
@@ -150,30 +150,30 @@ private Ontzia o;
 		System.out.println(o.getEgoera());
 		
 		o.egoeraAldatu(new Ikututa());
-		o.jo(b); 
+		o.jo(b, false); 
 		System.out.println("Egoera Ikututa, bonba jo ondoren"+o.getEgoera());
 		
 		o.egoeraAldatu(new EzkutuOsoa());
-		o.jo(b); 
+		o.jo(b, false); 
 		System.out.println("Egoera EzkutuOsoa, bonba jo ondoren"+o.getEgoera());
 		
 		o.egoeraAldatu(new EzkutuBakarra());
-		o.jo(b); 
+		o.jo(b, false); 
 		System.out.println("Egoera EzkutuBakarra, bonba jo ondoren"+o.getEgoera());
 		
-		o.jo(a); 
+		o.jo(a, false); 
 		System.out.println(o.getEgoera());
 		
 		o.egoeraAldatu(new Ikututa());
-		o.jo(a); 
+		o.jo(a, false); 
 		System.out.println("Egoera Ikututa, misila jo ondoren"+o.getEgoera());
 		
 		o.egoeraAldatu(new EzkutuOsoa());
-		o.jo(a); 
+		o.jo(a, false); 
 		System.out.println("Egoera EzkutuOsoa, misila jo ondoren"+o.getEgoera());
 		
 		o.egoeraAldatu(new EzkutuBakarra());
-		o.jo(a); 
+		o.jo(a, false); 
 		System.out.println("Egoera EzkutuBakarra, misila jo ondoren"+o.getEgoera());
 	}
 
