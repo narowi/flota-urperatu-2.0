@@ -109,7 +109,7 @@ public class Ordenagailua extends Jokalaria  {
 		 return i;
 	}
 
-	public Arma lortuArma(){
+	private Arma lortuArma(){
 		int biltegiZenbakikoArma= (int)(Math.random()*5);
 		boolean armaEgokia=false;
 		Jokalaria pAurkari= Jokoa.getNireJokoa().aurkariaLortu();
