@@ -36,5 +36,15 @@ public abstract class Jokalaria {
 	public int zenbatOntzi(){
 		return this.flota.zenbatOntzi();
 	}
+
+	public Arma lortuArma(int biltegiZenbakikoArma) {
+		return this.flota.lortuArma(biltegiZenbakikoArma);
+	}
+	
+	public boolean armarikDago(int biltegiZenbakikoArma){
+		return this.flota.armarikDago(biltegiZenbakikoArma);
+	}
+
+	
 }
 		

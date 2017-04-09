@@ -125,5 +125,10 @@ public class Ontzia {
 		}
 	}
 	
+	//juit
+	public String getMota(){
+		return this.mota;
+	}
+	
 
 }

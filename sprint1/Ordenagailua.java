@@ -136,17 +136,18 @@ public class Ordenagailua extends Jokalaria  {
 		boolean armaEgokia=false;
 		Jokalaria pAurkari= Jokoa.getNireJokoa().aurkariaLortu();
 		System.out.println(pAurkari);
+		System.out.println(pAurkari.zenbatOntzi() + "ontzi ditut");
 		if(pAurkari.zenbatOntzi()!=0){
-			System.out.println(pAurkari.zenbatOntzi());
+			
 			while(!armaEgokia){
-				if((biltegiZenbakikoArma!=1 && biltegiZenbakikoArma!=4) && super.flota.armarikDago(biltegiZenbakikoArma)){
+				if((biltegiZenbakikoArma!=1 && biltegiZenbakikoArma!=4) && super.armarikDago(biltegiZenbakikoArma)){
 					armaEgokia=true;
 				}else{
 				 biltegiZenbakikoArma= (int)(Math.random()*5);
 				} 
 			}
 			if(armaEgokia){
-				return super.flota.lortuArma(biltegiZenbakikoArma);
+				return super.lortuArma(biltegiZenbakikoArma);
 			}else{
 				return null;
 			}
