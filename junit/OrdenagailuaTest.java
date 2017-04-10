@@ -2,13 +2,12 @@ package junit;
 
 import static org.junit.Assert.*;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
 import sprint1.Armamentua;
 import sprint1.Bonba;
 import sprint1.Flota;
+import sprint1.Fragata;
 import sprint1.Itsaspeko;
 import sprint1.MisilZuzendua;
 import sprint1.Misila;
@@ -16,83 +15,110 @@ import sprint1.Ordenagailua;
 import sprint1.Pertsona;
 import sprint1.Tablero;
 
+
 public class OrdenagailuaTest {
+	
 	private Ordenagailua o;
 	private Pertsona p;
-	private Flota f; 
+	private Flota flota; 
 	private Flota nireFlota;
 	private Itsaspeko o1;
 	private Armamentua armak;
 	private MisilZuzendua mz;
 	private Misila m;
 	private Bonba b;
-
-	@Before
-	public void setUp() throws Exception {
+	private Fragata o2;
+	private Tablero etsaiarenTableroa;
+	private Tablero nireTableroa;
+	
+	public void setUp() throws Exception{
 		o=new Ordenagailua();
 		p = new Pertsona();
-		f= new Flota();
+		flota= new Flota();
 		nireFlota= new Flota();
 		o1=new Itsaspeko();
+		o2=new Fragata();
 		armak=new Armamentua();
 		mz=new MisilZuzendua();
 		m=new Misila();
 		b=new Bonba();
+		etsaiarenTableroa= new Tablero();
+		nireTableroa= new Tablero();
+		
+		
+		
 	}
+	
 
-	@After
 	public void tearDown() throws Exception {
+
 		o=null;
 		p=null;
-		f= null;
+		flota= null;
 		nireFlota= null;
 		o1=null;
+		o2=null;
 		armak=null;
 		mz=null;
 		m=null;
 		b=null;
 		p=null;
+		etsaiarenTableroa=null;
+		nireTableroa=null;
+
 	}
 
 	@Test
 	public void tiroEgin() {
-		Ordenagailua o= new Ordenagailua();
+		etsaiarenTableroa=new Tablero();
+		nireTableroa=new Tablero();
+		o1= new Itsaspeko();
+		o2 = new Fragata();
+		o= new Ordenagailua();
 		armak=new Armamentua();
 		mz=new MisilZuzendua();
 		m=new Misila();
 		b=new Bonba();
-		f= new Flota();
-		o1= new Itsaspeko();
+		flota= new Flota();
 		p= new Pertsona();
-		//Tablero tablero=p.lortuNireTableroa();
-		//assertSame(f.zenbatOntzi(), 0);
-		
-		p.getListaOntziak().gehituOntzia(o1.getMota()); // PROBLEMA AQUI NO SUMA EL BARCO!!!!!	
-		//o.ontziaKokatu(o1);
+		flota.gehituOntzi(o1);
+		flota.gehituOntzi(o2);
+		System.out.println("test:" + flota.zenbatOntzi());
+		p.setFlota(flota);
+		System.out.println("pertsona"+ p.flota.zenbatOntzi());
 	
+		o.setEtsaiarenTablero(etsaiarenTableroa);
+		o.setNireTablero(nireTableroa);
+		p.setEtsaiarenTablero(nireTableroa);
+		p.setNireTablero(etsaiarenTableroa);
 		assertSame(armak.zenbatArma(),0);
 		armak.armaGehitu2(b);
 		armak.armaGehitu2(m);
 		armak.armaGehitu2(mz);
 		assertSame(armak.zenbatArma(),3);
+		o.setArmamentua(armak);
 		
 		o.tiroEgin();
+		
+		Tablero aurkariarenTableroa=p.lortuNireTableroa();
 		int lehen= 0;
 		int gero= 0;
-		Tablero tablero= o.lortuEtsaiarenTableroa2();
-		for(int x=0; x < tablero.getTamaina(); x++){
-			for(int y=0; y < tablero.getTamaina(); y++){
-				lehen= lehen+ tablero.kasillaIkutuGabe(x,y);
-				//lehen =zenbatu zenbat parte ikutu gabe ==osoa
+		for(int x=0; x < etsaiarenTableroa.getTamaina(); x++){
+			for(int y=0; y < etsaiarenTableroa.getTamaina(); y++){
+				if(aurkariarenTableroa.getIkutua(x, y)){
+					lehen++;
+				}
 			}
 		}
 		o.tiroEgin();
-		for(int x=0; x < tablero.getTamaina(); x++){
-			for(int y=0; y < tablero.getTamaina(); y++){
-				gero = gero + tablero.kasillaIkutuGabe(x,y);//zenbatu zenbat parte ikutu gabe
+		for(int x=0; x < etsaiarenTableroa.getTamaina(); x++){
+			for(int y=0; y < etsaiarenTableroa.getTamaina(); y++){
+				if(aurkariarenTableroa.getIkutua(x, y)){
+					gero++;
+				}
 			}
 		}
-		assertTrue(gero<lehen);
+		assertTrue(gero>=lehen);
 		
 	}
 

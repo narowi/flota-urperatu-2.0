@@ -19,11 +19,11 @@ public class Bonba extends Arma {
 		Jokalaria pAurkari= Jokoa.getNireJokoa().aurkariaLortu();
 		Tablero aurkariarenTableroa =pAurkari.lortuEtsaiarenTableroa2();
 		aurkariarenTableroa.setBegiratuta(x, y, true);
-		
+		boolean kasillaUrperatuta = aurkariarenTableroa.getKasillaUrperatuta(x,y);
 		Ontzia o = aurkariarenTableroa.itsasontzirikDago(x,y);
 		
 		if(o!=null){
-			o.jo(this); // hemen pasatu beharko diot zein posiziotan egin den tiro
+			o.jo(this,kasillaUrperatuta); // hemen pasatu beharko diot zein posiziotan egin den tiro
 			//posizio horretan bakarrik izango du eragina
 			//o.joZatia(x,y);
 			

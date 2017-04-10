@@ -12,6 +12,7 @@ public void tiroEgin(int x, int y,int aukera){
 		Tablero aurkariarenTableroa =pAurkari.lortuEtsaiarenTableroa2();
 		aurkariarenTableroa.setBegiratuta(x, y, true);
 		int i=0;
+		boolean kasillaUrperatuta = aurkariarenTableroa.getKasillaUrperatuta(x,y);
 		if(aukera==0){
 			//puede haber mas de uno, while que mire todas las posiciones en horizontal y fija, x+1 hasta llegar a la luzera del tablero, y que urperatutako zatiak sean!=0
 			x=0;
@@ -20,7 +21,7 @@ public void tiroEgin(int x, int y,int aukera){
 				x++;
 				if(its!=null){
 				
-					its.jo(this);
+					its.jo(this,kasillaUrperatuta);
 					//junit
 					aurkariarenTableroa.aldatuKasillaUkituta(x,y);
 				}
@@ -33,7 +34,7 @@ public void tiroEgin(int x, int y,int aukera){
 				Ontzia its = aurkariarenTableroa.itsasontzirikDago(x,y);
 				y++;
 				if(its!=null){
-					its.jo(this);
+					its.jo(this,kasillaUrperatuta);
 				}
 			}
 		}else{
@@ -44,7 +45,7 @@ public void tiroEgin(int x, int y,int aukera){
 				Ontzia its = aurkariarenTableroa.itsasontzirikDago(lagx,y);
 				lagx++;
 				if(its!=null){
-					its.jo(this);
+					its.jo(this,kasillaUrperatuta);
 				}
 				i++;
 			}
@@ -54,7 +55,7 @@ public void tiroEgin(int x, int y,int aukera){
 				Ontzia its = aurkariarenTableroa.itsasontzirikDago(x,lagy);
 				lagy++;
 				if(its!=null){
-					its.jo(this);
+					its.jo(this,kasillaUrperatuta);
 				}
 			}
 				

@@ -187,4 +187,10 @@ public class Armamentua {
 		return this.radar;
 	}
 
+	public int zenbatArma() {
+		return this.armamentua.size();
+	}
+	
+
+
 }

@@ -224,7 +224,7 @@ public class Tablero {
 
 			}
 		}
-
+//junit
 		public int kasillaIkutuGabe(int x, int y) {
 			return this.tablero[x][y].ikutuGabe();
 		}
@@ -236,6 +236,10 @@ public class Tablero {
 		public void aldatuKasillaUrperatuta(int x, int y) {
 			this.tablero[x][y].setUrperatuta(true);
 			
+		}
+
+		public boolean getKasillaUrperatuta(int x, int y) {
+			return tablero[x][y].getUrperatuta();
 		}
 
 		

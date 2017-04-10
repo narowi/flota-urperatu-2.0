@@ -100,8 +100,8 @@ public class Ontzia {
 
 
 
-	public void jo(Arma arma) {
-		this.egoera.jo(this, arma);
+	public void jo(Arma arma, boolean kasillaUrperatuta) {
+		this.egoera.jo(this, arma, kasillaUrperatuta);
 		
 	}
 

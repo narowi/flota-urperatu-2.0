@@ -5,4 +5,12 @@ public class Radar extends Arma {
 		super.biltegiZenbakia=4;
 		super.prezioa=70;
 	}
+	public void tiroEgin(int x, int y,int aukera){}
+	public  boolean posizioHorretakoArmaDa(int pos){
+		if(pos==this.biltegiZenbakia){
+			return true;
+		}else{
+			return false;
+		}
+	}
 }

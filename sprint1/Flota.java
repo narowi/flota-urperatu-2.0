@@ -137,5 +137,14 @@ public class Flota {
 	public boolean armarikDago(int biltegiZenbakikoArma) {
 		return this.armamentua.armarikDago(biltegiZenbakikoArma);
 	}
+	
+	//junit
+	public void gehituOntzi(Ontzia o){
+		this.f.add(o);
+	}
+	public void setArmamentua(Armamentua a) {
+		this.armamentua=a;
+		
+	}
 }
 

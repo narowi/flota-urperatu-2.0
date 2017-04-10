@@ -44,6 +44,21 @@ public abstract class Jokalaria {
 	public boolean armarikDago(int biltegiZenbakikoArma){
 		return this.flota.armarikDago(biltegiZenbakikoArma);
 	}
+	
+	//junit
+		public void setFlota(Flota pFlota){
+			this.flota=pFlota;
+		}
+
+		public void setArmamentua(Armamentua a){
+			this.flota.setArmamentua(a);
+		}
+		public void setEtsaiarenTablero(Tablero t){
+			this.etsaiarenTableroa=t;
+		}
+		public void setNireTablero(Tablero t){
+			this.nireTablero=t;
+		}
 
 	
 }
