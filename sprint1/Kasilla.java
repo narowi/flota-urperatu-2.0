@@ -7,8 +7,11 @@ public class Kasilla {
 	private boolean ura=true;
 	private int x=0;
 	private int y=0;
+	
+	private boolean urperatuta=false;
 	//junit
 		private boolean ikutuGabe=true;
+		
 	
 	//public void setEzkutua(boolean pEzkutua){
 		//ezkutua=pEzkutua;
@@ -74,6 +77,11 @@ public class Kasilla {
 
 	public void setIkutuGabe(boolean b) {
 		this.ikutuGabe=b;
+		
+	}
+
+	public void setUrperatuta(boolean b) {
+		this.urperatuta=b;
 		
 	}
 

@@ -25,6 +25,16 @@ public class Bonba extends Arma {
 		if(o!=null){
 			o.jo(this); // hemen pasatu beharko diot zein posiziotan egin den tiro
 			//posizio horretan bakarrik izango du eragina
+			//o.joZatia(x,y);
+			
+			if(o.ezkutuaDu()){
+			//egoera begiratu ezkutua badu
+				aurkariarenTableroa.aldatuKasillaUkituta(x, y);
+			}else{
+			//bestela urperatuta
+				o.kenduZatia();
+				aurkariarenTableroa.aldatuKasillaUrperatuta(x,y);
+			}	
 		}
 	}
 }

@@ -31,6 +31,17 @@ public class Armamentua {
 
 	public void armaKendu(Arma mota) {
 		this.armamentua.remove(mota);
+		if(mota.biltegiZenbakia==0){
+			this.bonba=0;
+		}else if(mota.biltegiZenbakia==1){
+			this.ezkutua=0;
+		}else if(mota.biltegiZenbakia==2){
+			this.misila=0;
+		}else if(mota.biltegiZenbakia==3){
+			this.misilzuzendua=0;
+		}else{
+			this.radar=0;
+		}
 	}
 
 	public void armaGehitu(String mota) {
@@ -114,9 +125,6 @@ public class Armamentua {
 		
 	}
 
-	public int luzera() {
-		return this.armamentua.size();
-	}
 
 	private Iterator<Arma> getIteradorea(){
 
@@ -146,14 +154,37 @@ public class Armamentua {
 		}else{
 			return false;
 		}
+		
 	}
 	
 	//junit
-	public int zenbatArma() {
+	
+	public int luzera() {
 		return this.armamentua.size();
 	}
+	
 	public void armaGehitu2(Arma a){
 		this.armamentua.add(a);
+	}
+	
+	public int bonbaKop(){
+		return this.bonba;
+	}
+	
+	public int misilKop(){
+		return this.misila;
+	}
+	
+	public int misilZ(){
+		return this.misilzuzendua;
+	}
+	
+	public int ezkutuKop(){
+		return this.ezkutua;
+	}
+	
+	public int radarKop(){
+		return this.radar;
 	}
 
 }

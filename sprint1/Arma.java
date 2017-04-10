@@ -16,5 +16,9 @@ public abstract class Arma {
 			return null;
 		}
 	}
-	public abstract boolean posizioHorretakoArmaDa(int pos);	
+	public abstract boolean posizioHorretakoArmaDa(int pos);
+	
+	public int getBiltegiZenbakia() {
+		return this.biltegiZenbakia;
+	}	
 }

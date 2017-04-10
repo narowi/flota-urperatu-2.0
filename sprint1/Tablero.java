@@ -231,6 +231,10 @@ public class Tablero {
 
 		public void aldatuKasillaUkituta(int x, int y) {
 			this.tablero[x][y].setIkutuGabe(false);
+		}
+
+		public void aldatuKasillaUrperatuta(int x, int y) {
+			this.tablero[x][y].setUrperatuta(true);
 			
 		}
 

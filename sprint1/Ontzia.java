@@ -83,20 +83,20 @@ public class Ontzia {
 
 
 
-	public void egoeraBegiratu(Arma arma) {
-		if(arma instanceof Bonba && this.getHondoratuGabekoZatiKop()!=1 && this.getEgoera() instanceof EzkutuOsoa){
-			//si el barco estaba ikututa que siga ikututa y si no ondo
-			this.egoeraAldatu(new Ikututa());
-			this.kenduZatia();
-		}else if(arma instanceof Bonba && this.getHondoratuGabekoZatiKop()==1){
-			this.egoeraAldatu(new Urperatuta());
-			this.zatiGuztiakUrperatu();
-		}else if(arma instanceof Misila){
-			this.egoeraAldatu(new Urperatuta());
-			this.zatiGuztiakUrperatu();
-		}
-		
-	}
+//	public void egoeraBegiratu(Arma arma) {
+//		if(arma instanceof Bonba && this.getHondoratuGabekoZatiKop()!=1 && this.getEgoera() instanceof EzkutuOsoa){
+//			//si el barco estaba ikututa que siga ikututa y si no ondo
+//			this.egoeraAldatu(new Ikututa());
+//			this.kenduZatia();
+//		}else if(arma instanceof Bonba && this.getHondoratuGabekoZatiKop()==1){
+//			this.egoeraAldatu(new Urperatuta());
+//			this.zatiGuztiakUrperatu();
+//		}else if(arma instanceof Misila){
+//			this.egoeraAldatu(new Urperatuta());
+//			this.zatiGuztiakUrperatu();
+//		}
+//		
+//	}
 
 
 
