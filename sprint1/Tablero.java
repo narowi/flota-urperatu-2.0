@@ -242,5 +242,11 @@ public class Tablero {
 			return tablero[x][y].getUrperatuta();
 		}
 
+		public boolean getIkutua(int x, int y) {
+			return tablero[x][y].getIkututa();
+		}
+		public void markatuIkututa(int x, int y) {
+			this.tablero[x][y].markatuIkututa(true);			
+		}
 		
 }

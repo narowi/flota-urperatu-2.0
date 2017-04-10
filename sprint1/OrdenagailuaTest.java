@@ -1,4 +1,4 @@
-package junit;
+package sprint1;
 
 import static org.junit.Assert.*;
 
@@ -83,7 +83,7 @@ public class OrdenagailuaTest {
 		p= new Pertsona();
 		flota.gehituOntzi(o1);
 		flota.gehituOntzi(o2);
-		//System.out.println("test:" + flota.zenbatOntzi());
+		System.out.println("test:" + flota.zenbatOntzi());
 		p.setFlota(flota);
 		//System.out.println("pertsona"+ p.flota.zenbatOntzi());
 	

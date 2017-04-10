@@ -8,8 +8,9 @@ public class Kasilla {
 	private int x=0;
 	private int y=0;
 	private boolean urperatuta=false;
+	private boolean ikutuGabe=true;
 	//junit
-		private boolean ikutuGabe=true;
+		private boolean ikututa=true;
 		
 	
 	//public void setEzkutua(boolean pEzkutua){
@@ -65,19 +66,19 @@ public class Kasilla {
 	}
 
 	//junit
-	public int ikutuGabe() {
-		if(this.ikutuGabe){
-			return 1;
-		}else{
-			return 0;
-		}
-		
-	}
+//	public int ikutuGabe() {
+//		if(this.ikutuGabe){
+//			return 1;
+//		}else{
+//			return 0;
+//		}
+//		
+//	}
 
-	public void setIkutuGabe(boolean b) {
-		this.ikutuGabe=b;
-		
-	}
+//	public void setIkutuGabe(boolean b) {
+//		this.ikutuGabe=b;
+//		
+//	}
 
 	public void setUrperatuta(boolean b) {
 		this.urperatuta=b;
@@ -86,6 +87,26 @@ public class Kasilla {
 
 	public boolean getUrperatuta() {
 		return this.urperatuta;
+	}
+	public void markatuIkututa(boolean b) {
+		this.ikututa=b;
+		
+	}
+
+	public boolean getIkututa() {
+		return this.ikututa;
+	}
+
+	public int ikutuGabe() {
+		if(this.ikutuGabe){
+			return 1;
+		}else{
+			return 0;
+		}
+	}
+
+	public void setIkutuGabe(boolean b) {
+		this.ikutuGabe=b;
 	}
 
 }

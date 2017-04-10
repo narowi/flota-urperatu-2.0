@@ -87,11 +87,13 @@ public class Ordenagailua extends Jokalaria  {
 	public void tiroEgin(){ //random
 		int x;
 		int y;
+		Jokalaria pAurkari= Jokoa.getNireJokoa().aurkariaLortu();
 		//Tablero aurkariarenTableroa=pAurkari.lortuNireTableroa();
 		Arma arma= this.lortuArma();
 		System.out.println(arma);
 		x=this.lortuKoordenatua();
 		y=this.lortuKoordenatua();
+		pAurkari.markatuIkututa(x,y);
 		if(arma!=null){
 			this.flota.kenduArmaKopBat(arma);
 				int aukera=this.aukeraLortu();

@@ -59,7 +59,10 @@ public abstract class Jokalaria {
 		public void setNireTablero(Tablero t){
 			this.nireTablero=t;
 		}
-
+		public void markatuIkututa(int x, int y) {
+			this.nireTablero.markatuIkututa(x,y);
+			
+		}
 	
 }
 		
