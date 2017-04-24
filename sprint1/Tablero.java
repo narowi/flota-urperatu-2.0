@@ -171,8 +171,10 @@ public class Tablero {
 	    }	
 	    
 	    
-	    public void kokatu(int x,int y,Ontzia o,char norabidea){
+	    public void kokatu(int x,int y,String oIzena,char norabidea){
 			int i;
+			Jokalaria j=Jokoa.getNireJokoa().jokalariaLortu();
+			Ontzia o=j.getListaOntziak().lortuOntziaStringetik(oIzena);
 			if(norabidea=='s' && eskumaraAhal(x, y, o.getHondoratuGabekoZatiKop())){
 				for(i=x;i<x+o.luzera;i++){
 					tablero[i][y].ontziaJarri(o);

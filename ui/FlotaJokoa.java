@@ -1,0 +1,419 @@
+package ui;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+
+import sprint1.Tablero;
+import sprint1.Jokoa;
+
+public class FlotaJokoa {
+
+	private JFrame frame;
+	private JPanel content;
+	private JPanel goikoBotoiak;
+	private JPanel barkuak;
+	private JPanel norantzak;
+	private JPanel erdikoBotoiak;
+	private JPanel nireTablero;
+	private JPanel aurkariTablero;
+	private JPanel behekoBotoiak;
+	private JPanel armak;
+	private JPanel onarpenBotoiak;
+	private String aukeratutakoOntzia;
+	private char kokapena;
+	private String arma;
+	static Integer[] koordenatuak = new Integer[2];
+	
+	
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					FlotaJokoa window = new FlotaJokoa();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public FlotaJokoa() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(500, 100, 500, 500);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		content = new JPanel();
+		content.setLayout(new BorderLayout());
+		goikoBotoiak = goikoBotoiakJarri();
+		erdikoBotoiak = erdikoBotoiakJarri();
+		behekoBotoiak = behekoBotoiakJarri();
+		content.add(goikoBotoiak, BorderLayout.NORTH);
+		content.add(erdikoBotoiak, BorderLayout.CENTER);
+		content.add(behekoBotoiak, BorderLayout.SOUTH);
+		frame.setContentPane(content);
+		frame.pack();
+		frame.setResizable(false);
+	}
+
+	private JPanel behekoBotoiakJarri() {
+		JPanel botoiak = new JPanel();
+		botoiak.setLayout(new BorderLayout());
+		armak = armakJarri();
+		onarpenBotoiak = onarpenBotoiakJarri();
+		botoiak.add(armak, BorderLayout.NORTH);
+		botoiak.add(onarpenBotoiak, BorderLayout.SOUTH);
+		return botoiak;
+	}
+
+	private JPanel onarpenBotoiakJarri() {
+		JPanel botoiak = new JPanel();
+		botoiak.setLayout(new BorderLayout());
+		JButton ontziaKokatu = new JButton("OntziaKokatu");
+		JButton ezkutuaJarri = new JButton("EzkutuaJarri");
+		JButton tiroEgin = new JButton("TiroEgin");
+		ontziaKokatu.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				boolean listo=false;
+				Jokoa.getNireJokoa().getTablero().kokatu(koordenatuak[0], koordenatuak[1], aukeratutakoOntzia, kokapena);
+				while(!listo){
+					int luzera=0;
+					if(aukeratutakoOntzia.equals("fragata")){
+						luzera=1;
+					}
+					else if(aukeratutakoOntzia.equals("itsaspeko")){
+						luzera=3;
+					}
+					else if(aukeratutakoOntzia.equals("suntsitzaile")){
+						luzera=2;
+					}
+					else if(aukeratutakoOntzia.equals("hegazkin-ontzi")){
+						luzera=4;
+					}
+					if(kokapena=='g'){
+						for(int i=koordenatuak[0];i<=koordenatuak[0]+(luzera-1);i++){
+							
+						}
+						
+						
+						
+					}
+				}
+			}
+		});
+		ezkutuaJarri.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				
+			}
+		});
+		tiroEgin.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				
+			}
+		});
+		botoiak.add(ontziaKokatu, BorderLayout.EAST);
+		botoiak.add(ezkutuaJarri, BorderLayout.CENTER);
+		botoiak.add(tiroEgin, BorderLayout.WEST);
+		return botoiak;
+	}
+
+	private JPanel armakJarri() {
+		JPanel botoiak = new JPanel();
+		botoiak.setLayout(new GridLayout());
+		 JRadioButton bonbaButton = new JRadioButton("bonba");
+	        bonbaButton.setMnemonic('b');
+	        bonbaButton.setActionCommand("Bonba");
+	        bonbaButton.setSelected(true);
+	        bonbaButton.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					arma = "bonba";
+					
+				}
+			});
+
+
+	        JRadioButton radarButton = new JRadioButton("Radarra");
+	        radarButton.setMnemonic('c');
+	        radarButton.setActionCommand("Radarra");
+	        radarButton.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					arma = "radarra";
+					
+				}
+			});
+	        
+	        JRadioButton misilaButton = new JRadioButton("Misila");
+	        misilaButton.setMnemonic('d');
+	        misilaButton.setActionCommand("Misila");
+	        misilaButton.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					arma = "misila";
+					
+				}
+			});
+	        
+
+	        JRadioButton misilZuzenduaButton = new JRadioButton("MisilZuzendua");
+	        misilZuzenduaButton.setMnemonic('r');
+	        misilZuzenduaButton.setActionCommand("MisilZuzendua");
+	        misilZuzenduaButton.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					arma = "misilZuzendua";
+					
+				}
+			});
+	        
+	        JRadioButton ezkutuaButton = new JRadioButton("Ezkutua");
+	        ezkutuaButton.setMnemonic('e');
+	        ezkutuaButton.setActionCommand("Ezkutua");
+	        ezkutuaButton.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					arma = "ezkutua";
+					
+				}
+			});
+	      
+
+
+	        // Group the radio buttons.
+	        ButtonGroup group = new ButtonGroup();
+	        group.add(bonbaButton);
+	        group.add(radarButton);
+	        group.add(misilaButton);
+	        group.add(misilZuzenduaButton);
+	        group.add(ezkutuaButton);
+
+        //botoiak gehitu
+	        botoiak.add(bonbaButton);
+	        botoiak.add(radarButton);
+	        botoiak.add(misilaButton);
+	        botoiak.add(misilZuzenduaButton);
+	        botoiak.add(ezkutuaButton);
+        
+        return botoiak;
+	}
+
+	private JPanel erdikoBotoiakJarri() {
+		JPanel botoiak = new JPanel();
+		botoiak.setLayout(new BorderLayout());
+		nireTablero = tableroaBete();
+		aurkariTablero = tableroaBete();
+		botoiak.add(nireTablero, BorderLayout.NORTH);
+		botoiak.add(new JPanel(), BorderLayout.CENTER);
+		botoiak.add(aurkariTablero, BorderLayout.SOUTH);
+		return botoiak;
+	}
+
+	private JPanel tableroaBete() {
+		JPanel tablero = new JPanel();
+		tablero.setBorder(new EmptyBorder(20, 20, 20, 20));
+		//tablero.setSize(150, 150);
+		tablero.setLayout(new GridLayout(10, 10));
+		
+		JButton[][] botoiak = new JButton[10][10];
+		for(int i=0;i<10;i++){
+			for(int j=0;j<10;j++){
+				botoiak[i][j] = new JButton();
+				botoiak[i][j].setText(i + "/" + j);
+				//botoiak[i][j].setText("("+ i + "," + j + ")");
+				//botoiak[i][j].setIcon(new ImageIcon(this.getClass().getResource("/argaziak/ura.jpg")));
+				botoiak[i][j].setBackground(new Color(0,255,255));
+				
+		//AQUI LE METO AL BOTON QUE BUSQUE SUS KOORDENADAS Y RONPO EL WHILE CON LISTO
+				
+				botoiak[i][j].addActionListener(new ActionListener() {
+					
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						for(int i=0;i<10;i++){
+							for(int j=0;j<10;j++){
+								if (e.getSource().equals(botoiak[i][j])){
+									koordenatuak[0]= i;
+									koordenatuak[1]= j;
+								}
+							}
+						}
+					}
+				});
+				tablero.add(botoiak[i][j], BorderLayout.CENTER);
+			}
+		}
+		return tablero;
+		
+	}
+
+	private JPanel goikoBotoiakJarri() {
+		JPanel botoiak = new JPanel();
+		botoiak.setLayout(new BorderLayout());
+		barkuak = barkuakJarri();
+		norantzak = norantzakJarri();
+		botoiak.add(barkuak, BorderLayout.NORTH);
+		botoiak.add(norantzak, BorderLayout.SOUTH);
+		return botoiak;
+	}
+
+	private JPanel norantzakJarri() {
+		JPanel botoiak = new JPanel();
+		botoiak.setLayout(new GridLayout());
+		 JRadioButton goraButton = new JRadioButton("gora");
+	        goraButton.setMnemonic('b');
+	        goraButton.setActionCommand("gora");
+	        goraButton.setSelected(true);
+	        goraButton.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					kokapena = 'g';
+					
+				}
+			});
+
+	        JRadioButton beheraButton = new JRadioButton("behera");
+	        beheraButton.setMnemonic('c');
+	        beheraButton.setActionCommand("behera");
+	        beheraButton.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					kokapena = 'b';
+					
+				}
+			});
+
+	        JRadioButton ezkerraButton = new JRadioButton("ezkerrera");
+	        ezkerraButton.setMnemonic('d');
+	        ezkerraButton.setActionCommand("ezkerrera");
+	        ezkerraButton.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					kokapena = 'z';
+				}
+			});
+
+	        JRadioButton eskumaButton = new JRadioButton("eskumara");
+	        eskumaButton.setMnemonic('r');
+	        eskumaButton.setActionCommand("eskumara");
+	        eskumaButton.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					kokapena = 's';
+				}
+			});
+	      
+
+
+	        // Group the radio buttons.
+	        ButtonGroup group = new ButtonGroup();
+	        group.add(goraButton);
+	        group.add(beheraButton);
+	        group.add(ezkerraButton);
+	        group.add(eskumaButton);
+	        
+	        botoiak.add(goraButton);
+	        botoiak.add(beheraButton);
+	        botoiak.add(ezkerraButton);
+	        botoiak.add(eskumaButton);
+	        
+	        return botoiak;
+	}
+
+	private JPanel barkuakJarri() {
+		JPanel botoiak = new JPanel();
+		botoiak.setLayout(new GridLayout());
+		JRadioButton hegazkinOntziButton = new JRadioButton("hegazkin-ontzia");
+        hegazkinOntziButton.setMnemonic('b');
+        hegazkinOntziButton.setActionCommand("hegazkin-ontzia");
+        hegazkinOntziButton.setSelected(true);
+        hegazkinOntziButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				aukeratutakoOntzia = "hegazkin-ontzia";
+			}
+		});
+
+        JRadioButton itsaspekoButton = new JRadioButton("itsaspekoa");
+        itsaspekoButton.setMnemonic('c');
+        itsaspekoButton.setActionCommand("itsaspekoa");
+        itsaspekoButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				aukeratutakoOntzia = "itsaspekoa";	
+			}
+		});
+
+        JRadioButton suntsitzaileButton = new JRadioButton("suntsitzailea");
+        suntsitzaileButton.setMnemonic('d');
+        suntsitzaileButton.setActionCommand("suntsitzailea");
+        suntsitzaileButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				aukeratutakoOntzia = "suntsitzailea";
+			}
+		});
+
+        JRadioButton fragataButton = new JRadioButton("fragata");
+        fragataButton.setMnemonic('r');
+        fragataButton.setActionCommand("fragata");
+        fragataButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				aukeratutakoOntzia = "fragata";
+			}
+		});
+        //botoi taldea sortu
+        ButtonGroup group = new ButtonGroup();
+        group.add(hegazkinOntziButton);
+        group.add(itsaspekoButton);
+        group.add(suntsitzaileButton);
+        group.add(fragataButton);
+        
+        //botoiak gehitu
+        botoiak.add(hegazkinOntziButton);
+        botoiak.add(itsaspekoButton);
+        botoiak.add(suntsitzaileButton);
+        botoiak.add(fragataButton);
+        
+        return botoiak;
+	}
+
+}

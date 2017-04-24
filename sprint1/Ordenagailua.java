@@ -26,9 +26,9 @@ public class Ordenagailua extends Jokalaria  {
 				y= this.lortuKoordenatua();
 				horBert= super.nireTablero.norabideaAukeratu(x, y, o);
 				pos= this.lortuPos(horBert);
-	
+				String oIzena= o.getMota();//sumar esto
 			super.flota.kenduOntzia(o);
-			super.nireTablero.kokatu(x, y, o, pos);	
+			super.nireTablero.kokatu(x, y, oIzena, pos);	//cambiar la variable
 	}
 	
 	private int lortuKoordenatua(){

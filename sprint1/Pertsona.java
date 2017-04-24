@@ -6,10 +6,10 @@ public class Pertsona extends Jokalaria {
 	
 	public Pertsona(){
 	}
-	public void ontziakKokatu(){
-		while(!super.flota.isEmpty()){
-			super.nireTablero.kokatu(x,y,o,norabide);
-		}
+	public void ontziakKokatu(){ //miralo naroa
+//		while(!super.flota.isEmpty()){
+//			super.nireTablero.kokatu(x,y,o,norabide);
+//		}
 	}
 	public void ezkutuaJarri(){
 			//banaka jarriko ditu ontziak eskutuan

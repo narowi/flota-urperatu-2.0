@@ -11,6 +11,8 @@ public class Ontzia {
 	protected int konponketaPrezioa;
 	
 	protected Egoera egoera;
+	
+	protected boolean kokatua=false;
 
 
 	public Ontzia(){
@@ -22,7 +24,12 @@ public class Ontzia {
 		return urperatuGabekoZatiKop;
 	}
 
-
+	public void kokatuNaiz(){
+		this.kokatua=true;
+	}
+	public boolean kokatutaAhalNago(){
+		return this.kokatua;
+	}
 
 
 	public boolean urperatutaDago(){
@@ -130,5 +137,8 @@ public class Ontzia {
 		return this.mota;
 	}
 	
+	public boolean berdinaDa(String izena) {
+		return this.mota.equals(izena);
+	}
 
 }

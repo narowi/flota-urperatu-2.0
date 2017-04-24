@@ -37,7 +37,20 @@ public class Flota {
 	}
 
 	public void kenduOntzia(Ontzia pOntzia) {
-		this.f.remove(pOntzia);
+		this.lortuOntzia().kokatuNaiz();
+	}
+	
+	public boolean geratzenDaOntzirik(){
+		boolean bai=false;
+		Iterator<Ontzia> itr =this.getIteradorea();
+		Ontzia o=null;
+		while(!bai && itr.hasNext()){
+			o=itr.next();
+			if(!o.kokatutaAhalNago()){
+				bai=true;
+			}
+		}
+		return bai;
 	}
 
 	public int zenbatOntzi() {
@@ -145,6 +158,23 @@ public class Flota {
 	public void setArmamentua(Armamentua a) {
 		this.armamentua=a;
 		
+	}
+	public Ontzia lortuOntziaStringetik(String izena){
+		boolean aurkitua=false;
+		Ontzia o=null;
+		Iterator<Ontzia> itr =this.getIteradorea();
+		while(itr.hasNext() && !aurkitua){
+			o=itr.next();
+			if(o.berdinaDa(izena)){
+				aurkitua=true;
+			}
+		}
+		if(aurkitua){
+			return o;
+		}
+		else{
+			return null;
+		}
 	}
 }
 

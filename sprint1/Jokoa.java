@@ -27,8 +27,8 @@ public class Jokoa {
 	}
 
 	private void partidaBatJolastu() {
-		per.nireTablero.ontziaKokatu();
-		ord.nireTablero.ontziaKokatu();
+		//per.nireTablero.ontziaKokatu();
+		//ord.nireTablero.ontziaKokatu();
 		per.etsaiarenTableroa=ord.nireTablero;
 		ord.etsaiarenTableroa=per.nireTablero;
 		
@@ -39,6 +39,18 @@ public class Jokoa {
 			return per;
 		}else{
 			return ord;
+		}
+	}
+	
+	public Tablero getTablero(){
+		return per.lortuNireTableroa();
+	}
+
+	public Jokalaria jokalariaLortu() {
+		if((this.txanda)%2==0){
+			return ord;
+		}else{
+			return per;
 		}
 	}
 }
