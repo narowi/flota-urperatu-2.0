@@ -45,6 +45,9 @@ public abstract class Jokalaria {
 		return this.flota.armarikDago(biltegiZenbakikoArma);
 	}
 	
+	public abstract boolean ontziaKonponduNahi(Ontzia o);
+	public abstract void ontziaKonpondu(Ontzia o);
+	
 	//junit
 		public void setFlota(Flota pFlota){
 			this.flota=pFlota;
@@ -61,6 +64,20 @@ public abstract class Jokalaria {
 		}
 		public void markatuIkututa(int x, int y) {
 			this.nireTablero.markatuIkututa(x,y);
+			
+		}
+
+		public boolean diruNahikoa(Ontzia o) {
+			return this.flota.diruNahikoa(o);
+		}
+
+		public void diruaKendu(Ontzia o) {
+			this.flota.diruaKendu(o);
+			
+		}
+
+		public void gehituOntzia(Ontzia o) {
+			this.flota.gehituOntzi(o);
 			
 		}
 	

@@ -100,7 +100,9 @@ public class OrdenagailuaTest {
 		
 		o.tiroEgin();
 		
-		Tablero aurkariarenTableroa=p.lortuNireTableroa();
+		
+		Jokalaria jok= Jokoa.getNireJokoa().aurkariaLortu();
+		Tablero aurkariarenTableroa=jok.lortuNireTableroa();
 		int lehen= 0;
 		int gero= 0;
 		for(int x=0; x < etsaiarenTableroa.getTamaina(); x++){

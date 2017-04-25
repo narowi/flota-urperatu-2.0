@@ -176,5 +176,18 @@ public class Flota {
 			return null;
 		}
 	}
+
+	public boolean diruNahikoa(Ontzia o) {
+		if(o.konponduAhal(this.dirua)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	public void diruaKendu(Ontzia o) {
+		this.dirua=this.dirua- o.konponketaPrezioa;
+		
+	}
 }
 

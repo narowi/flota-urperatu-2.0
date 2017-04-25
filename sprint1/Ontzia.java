@@ -141,4 +141,29 @@ public class Ontzia {
 		return this.mota.equals(izena);
 	}
 
+
+
+	public boolean konponduAhal(int dirua) {
+		if(this.konponketaPrezioa<=dirua){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+
+
+	public void egoeraEsleitu() {
+		if(this.egoera instanceof Urperatuta){
+			if(this.luzera==1){
+				this.egoera = new Osorik();
+			}else{
+				this.egoera=new Ikututa();
+			}	
+		}else if(this.egoera instanceof Ikututa){
+			if(this.luzera==this.urperatuGabekoZatiKop){
+				this.egoera = new Osorik();
+			}
+		}
+	}
 }

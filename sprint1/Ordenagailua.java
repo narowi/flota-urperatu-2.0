@@ -14,9 +14,26 @@ public class Ordenagailua extends Jokalaria  {
 		}
 	}
 	
+	public boolean ontziaKonponduNahi(Ontzia o){
+		if(super.diruNahikoa(o)){
+			return true;
+		}else{
+			return false;
+		}
+	}
 	
-	
-	
+	public void ontziaKonpondu(Ontzia o){
+		if(ontziaKonponduNahi(o)){ //teniendo en cuenta que solo arregla un cacho en cada txanda
+			super.diruaKendu(o); //descontar el dinero que le a costado de su dinero
+			o.konponduOntzia(); //sumar urperatuGabekoZatiKop+1
+			//if(o.urperatutaDago()){
+				//super.gehituOntzia(o); IMPORTANTE! CUANDO HEMOS HUNDIDO UN BARCO NO LO HEMOS QUITADO DE LA LISTA LO QUITAMOS??? SI NO HABRA QUE SABER SI LE QUEDAN BARCOS SI LA EGOERA DE ALGUNO DE ELLOS ES !=URPERATUTA
+			//}
+			o.egoeraEsleitu();
+			
+			//cambiar de egoera al barco
+		}
+	}
 	public void ontziaKokatu(Ontzia o){
 		int x;
 		int y;
