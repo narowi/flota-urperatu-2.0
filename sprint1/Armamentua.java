@@ -30,7 +30,7 @@ public class Armamentua {
 	}
 
 	public void armaKendu(Arma mota) {
-		this.armamentua.remove(mota);
+		
 		if(mota.biltegiZenbakia==0){
 			this.bonba=0;
 		}else if(mota.biltegiZenbakia==1){
@@ -42,6 +42,7 @@ public class Armamentua {
 		}else{
 			this.radar=0;
 		}
+		this.armamentua.remove(mota);
 	}
 
 	public void armaGehitu(String mota) {

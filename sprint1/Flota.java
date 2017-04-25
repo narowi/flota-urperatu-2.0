@@ -98,9 +98,11 @@ public class Flota {
 		ontzi.egoeraAldatu(new EzkutuOsoa());	
 	}
 	
-	public void armaErosi(Arma pArma){
-		if(this.dirua >= pArma.prezioa ){
+	public void armaErosi(Arma pArma){  //try catch bidez tratatu hobeto
+		if(this.dirua >= pArma.prezioa ){ //arma erostea biltegian gelditzen denean, biltegian ez badago ez da hautatzeko aukerarik egongo
+			Biltegia.getNireBiltegia().armasaldu(pArma.biltegiZenbakia);
 			this.armamentua.armaGehituZerrendan(pArma.biltegiZenbakia);  //pasatuko diogu armaren biltegizenbakia
+			this.dirua=this.dirua-pArma.prezioa;
 		}else{
 			System.out.print("Ez duzu dirurik eskatutako arma erosteko");
 		}
@@ -149,6 +151,14 @@ public class Flota {
 	}
 	public boolean armarikDago(int biltegiZenbakikoArma) {
 		return this.armamentua.armarikDago(biltegiZenbakikoArma);
+	}
+	
+	public boolean armaErosiDezake(Arma arma){
+		if(arma.prezioa> this.dirua){
+			return false;
+		}else{
+			return true;
+		}
 	}
 	
 	//junit

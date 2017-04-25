@@ -21,8 +21,12 @@ public class Biltegia {
 		return Biltegia.nireBiltegia;
 	}
 
-	public void armasaldu(int mota){
-		this.nireBiltegia.armamentua.armaKenduKop(mota);  
+	public void armasaldu(int mota){ //try catch bidez hobeto
+		if(this.armamentua.armarikDago(mota)){
+			this.nireBiltegia.armamentua.armaKenduKop(mota); 
+		}else{
+			System.out.println("Ezin baita saldu, ez dago alerik");
+		}
 	}
 
 	public void hasieratu() {
@@ -30,9 +34,5 @@ public class Biltegia {
 		this.armamentua.hasieratu(20, 20, 20, 20, 20);
 		this.armaKopurua= new ArrayList<Integer>();
 	}
-
-	//arma saldu
-
-	//arma erosi
 
 }

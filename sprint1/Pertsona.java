@@ -64,8 +64,13 @@ public class Pertsona extends Jokalaria {
 		
 		return a;
 	}
+	
 	private Kasilla nonTiroEgin() {
 	
 		return null;
+	}
+	
+	public void amraHautatu(){
+		//flotara deia arma aukeratutako arma pasatuz
 	}
 }

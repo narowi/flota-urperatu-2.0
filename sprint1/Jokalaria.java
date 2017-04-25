@@ -18,6 +18,8 @@ public abstract class Jokalaria {
 
 	public abstract void ezkutuaJarri();
 	
+	public abstract void armaHautatu();
+	
 	public void lortuEtsaiarenTableroa(Tablero pTablero){
 		etsaiarenTableroa=pTablero;
 	}

@@ -149,6 +149,9 @@ public class Ordenagailua extends Jokalaria  {
 		}
 	}
 	
+	public void armaHautatu(){
+		//flotara deia arma behin aukeratuta
+	}
 	}
 
 
