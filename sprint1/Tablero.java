@@ -1,10 +1,5 @@
 package sprint1;
 
-
-import ui.KokapenAukerak;
-import ui.OntziMotak;
-import ui.Proba;
-
 public class Tablero {
 	private Kasilla[][] tablero;
 	private static int tamaina;
@@ -175,6 +170,7 @@ public class Tablero {
 			int i;
 			Jokalaria j=Jokoa.getNireJokoa().jokalariaLortu();
 			Ontzia o=j.getListaOntziak().lortuOntziaStringetik(oIzena);
+			System.out.println(o.dagoOsorik());
 			if(norabidea=='s' && eskumaraAhal(x, y, o.getHondoratuGabekoZatiKop())){
 				for(i=x;i<x+o.luzera;i++){
 					tablero[i][y].ontziaJarri(o);

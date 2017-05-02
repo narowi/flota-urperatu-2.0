@@ -19,6 +19,8 @@ public class FlotaJokoa {
 	private JPanel norantzak;
 	private JPanel erdikoBotoiak;
 	private JPanel nireTablero;
+	private JButton[][] tableroNi;
+	private JButton[][] tableroAurk;
 	private JPanel aurkariTablero;
 	private JPanel behekoBotoiak;
 	private JPanel armak;
@@ -94,31 +96,70 @@ public class FlotaJokoa {
 			public void actionPerformed(ActionEvent e) {
 				boolean listo=false;
 				Jokoa.getNireJokoa().getTablero().kokatu(koordenatuak[0], koordenatuak[1], aukeratutakoOntzia, kokapena);
-				while(!listo){
-					int luzera=0;
-					if(aukeratutakoOntzia.equals("fragata")){
-						luzera=1;
-					}
-					else if(aukeratutakoOntzia.equals("itsaspeko")){
-						luzera=3;
-					}
-					else if(aukeratutakoOntzia.equals("suntsitzaile")){
-						luzera=2;
-					}
-					else if(aukeratutakoOntzia.equals("hegazkin-ontzi")){
-						luzera=4;
-					}
-					if(kokapena=='g'){
-						for(int i=koordenatuak[0];i<=koordenatuak[0]+(luzera-1);i++){
-							
-						}
-						
-						
-						
-					}
-				}
+				this.kokatu();
 			}
+
+			private void kokatu() {
+				 boolean listo=false;
+				  int luzera=0;
+					while(!listo){
+						if(aukeratutakoOntzia.equals("Fragata")){
+							luzera=1;
+							listo=true;
+						}
+						else if(aukeratutakoOntzia.equals("Itsaspeko")){
+							luzera=3;
+							listo=true;
+						}
+						else if(aukeratutakoOntzia.equals("Suntsitzaile")){
+							luzera=2;
+							listo=true;
+						}
+						else if(aukeratutakoOntzia.equals("HegazkinOntzi")){
+							luzera=4;
+							listo=true;
+						}
+					}
+					boolean margotua=false;
+					while(!margotua){
+						if(kokapena=='g'){
+							int i=0;
+							while(i<luzera){
+								tableroNi[koordenatuak[0]-i][koordenatuak[1]].setBackground(new Color(210,180,140));
+								i++;
+							}
+							margotua=true;
+						}
+						if(kokapena=='b'){
+							int i=0;
+							while(i<luzera){
+								tableroNi[koordenatuak[0]+i][koordenatuak[1]].setBackground(new Color(210,180,140));
+								i++;
+							}
+							margotua=true;
+						}
+						if(kokapena=='z'){
+							int i=0;
+							while(i<luzera){
+								tableroNi[koordenatuak[0]][koordenatuak[1]-i].setBackground(new Color(210,180,140));
+								i++;
+							}
+							margotua=true;
+						}
+						if(kokapena=='s'){
+							int i=0;
+							while(i<luzera){
+								tableroNi[koordenatuak[0]][koordenatuak[1]+i].setBackground(new Color(210,180,140));
+								i++;
+							}
+							margotua=true;
+						}
+					}
+				
+			}
+		
 		});
+	
 		ezkutuaJarri.addActionListener(new ActionListener() {
 			
 			@Override
@@ -230,20 +271,19 @@ public class FlotaJokoa {
 	private JPanel erdikoBotoiakJarri() {
 		JPanel botoiak = new JPanel();
 		botoiak.setLayout(new BorderLayout());
-		nireTablero = tableroaBete();
-		aurkariTablero = tableroaBete();
+		nireTablero = tableroaBete(1);
+		aurkariTablero = tableroaBete(2);
 		botoiak.add(nireTablero, BorderLayout.NORTH);
 		botoiak.add(new JPanel(), BorderLayout.CENTER);
 		botoiak.add(aurkariTablero, BorderLayout.SOUTH);
 		return botoiak;
 	}
 
-	private JPanel tableroaBete() {
+	private JPanel tableroaBete(int a) {
 		JPanel tablero = new JPanel();
 		tablero.setBorder(new EmptyBorder(20, 20, 20, 20));
 		//tablero.setSize(150, 150);
 		tablero.setLayout(new GridLayout(10, 10));
-		
 		JButton[][] botoiak = new JButton[10][10];
 		for(int i=0;i<10;i++){
 			for(int j=0;j<10;j++){
@@ -251,7 +291,7 @@ public class FlotaJokoa {
 				botoiak[i][j].setText(i + "/" + j);
 				//botoiak[i][j].setText("("+ i + "," + j + ")");
 				//botoiak[i][j].setIcon(new ImageIcon(this.getClass().getResource("/argaziak/ura.jpg")));
-				botoiak[i][j].setBackground(new Color(0,255,255));
+				botoiak[i][j].setBackground(new Color(135,206,250));
 				
 		//AQUI LE METO AL BOTON QUE BUSQUE SUS KOORDENADAS Y RONPO EL WHILE CON LISTO
 				
@@ -270,6 +310,12 @@ public class FlotaJokoa {
 					}
 				});
 				tablero.add(botoiak[i][j], BorderLayout.CENTER);
+				if(a==1){
+					this.tableroNi=botoiak;
+				}
+				else{
+					this.tableroAurk=botoiak;
+				}
 			}
 		}
 		return tablero;
@@ -356,48 +402,48 @@ public class FlotaJokoa {
 	private JPanel barkuakJarri() {
 		JPanel botoiak = new JPanel();
 		botoiak.setLayout(new GridLayout());
-		JRadioButton hegazkinOntziButton = new JRadioButton("hegazkin-ontzia");
+		JRadioButton hegazkinOntziButton = new JRadioButton("HegazkinOntzi");
         hegazkinOntziButton.setMnemonic('b');
-        hegazkinOntziButton.setActionCommand("hegazkin-ontzia");
+        hegazkinOntziButton.setActionCommand("HegazkinOntzi");
         hegazkinOntziButton.setSelected(true);
         hegazkinOntziButton.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				aukeratutakoOntzia = "hegazkin-ontzia";
+				aukeratutakoOntzia = "HegazkinOntzi";
 			}
 		});
 
-        JRadioButton itsaspekoButton = new JRadioButton("itsaspekoa");
+        JRadioButton itsaspekoButton = new JRadioButton("Itsaspeko");
         itsaspekoButton.setMnemonic('c');
-        itsaspekoButton.setActionCommand("itsaspekoa");
+        itsaspekoButton.setActionCommand("Itsaspeko");
         itsaspekoButton.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				aukeratutakoOntzia = "itsaspekoa";	
+				aukeratutakoOntzia = "Itsaspeko";	
 			}
 		});
 
-        JRadioButton suntsitzaileButton = new JRadioButton("suntsitzailea");
+        JRadioButton suntsitzaileButton = new JRadioButton("Suntsitzaile");
         suntsitzaileButton.setMnemonic('d');
-        suntsitzaileButton.setActionCommand("suntsitzailea");
+        suntsitzaileButton.setActionCommand("Suntsitzaile");
         suntsitzaileButton.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				aukeratutakoOntzia = "suntsitzailea";
+				aukeratutakoOntzia = "Suntsitzaile";
 			}
 		});
 
-        JRadioButton fragataButton = new JRadioButton("fragata");
+        JRadioButton fragataButton = new JRadioButton("Fragata");
         fragataButton.setMnemonic('r');
-        fragataButton.setActionCommand("fragata");
+        fragataButton.setActionCommand("Fragata");
         fragataButton.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				aukeratutakoOntzia = "fragata";
+				aukeratutakoOntzia = "Fragata";
 			}
 		});
         //botoi taldea sortu
@@ -415,5 +461,5 @@ public class FlotaJokoa {
         
         return botoiak;
 	}
-
+	
 }

@@ -22,8 +22,10 @@ public class Flota {
 		this.itsaspeko=2;
 		this.suntsitzaile=3;
 		this.fragata=4;
+		this.flotaSortu();
 	}
 	
+
 	private Iterator<Ontzia> getIteradorea(){
 		return this.f.iterator();
 	}
@@ -210,6 +212,12 @@ public class Flota {
 		Ontzia on= this.f.get(o);
 		return on;
 			
+	}
+
+
+	public Arma geratzenZaitArmaHau(String arma) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
 

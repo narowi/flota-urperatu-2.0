@@ -1,6 +1,6 @@
 package sprint1;
 
-import ui.Proba;
+
 
 public class Pertsona extends Jokalaria {
 	
@@ -11,12 +11,9 @@ public class Pertsona extends Jokalaria {
 //			super.nireTablero.kokatu(x,y,o,norabide);
 //		}
 	}
-	public void ezkutuaJarri(){
+	public void ezkutuaJarri(int x,int y){
 			//banaka jarriko ditu ontziak eskutuan
-		Integer[] aux2 = new Integer[2];
-		aux2 = Proba.koordenatuakItzuli();
-		int x=aux2[0];
-		int y=aux2[1];
+		
 		if(super.flota.badagoEzkuturik()){ 
 			Ontzia ontzi=super.nireTablero.itsasontzirikDago(x,y);
 			if(ontzi!=null){
@@ -39,25 +36,31 @@ public class Pertsona extends Jokalaria {
 		return super.lortuNireTableroa();
 	}	
 	
-	public void tiroEgin(){
-		//Pertsonak ikusgarri izango du geratzen zaizkion armak, beraz ez bazaio gelditzen erosiko du
-		
-		//pertsonak tiro egiteko orduan bonba, misila, misil zuzendua erabiliko du, ez beste edozein
-		Arma pArma=this.aukeratuArma();
-		//Pertsonak tableroan klikatuko du zein posiziotan egin nahi duen tiro
-		Kasilla posizioan=this.nonTiroEgin();
-		int x=posizioan.getX();
-		int y=posizioan.getY();
-		
-		if(pArma!=null){
-			this.flota.kenduArmaKopBat(pArma);
-			//Arma misil zuzendua bada aukera bat lortuko du, bestela bere balioa null izango da.
-			pArma.tiroEgin(x,y,aukera);
-			
-//		}else{
-//			System.out.println("Arma barik gelditu zara");
-		}
-	}
+	public void tiroEgin(Kasilla k, String armaNorabide){
+		  int aukera=-1;
+		  String arma;
+		  Arma a;
+		  if (armaNorabide=="misil zuzendua bertikal"){
+		   arma="MisilZuzendua";
+		   aukera=0;
+		  }else if(armaNorabide=="misil zuzendua horizontal"){
+		   arma="MisilZuzendua"; 
+		   aukera=1;
+		  }else if(armaNorabide=="misil zuzendua"){
+		   arma="MisilZuzendua"; 
+		   aukera=2;   
+		  }else{
+		   arma=armaNorabide;
+		  }
+		  
+		 a=this.flota.geratzenZaitArmaHau(arma);
+		 if(a!=null){
+		   this.flota.kenduArmaKopBat(a);
+		   int x=k.getX();
+		   int y=k.getY();
+		   a.tiroEgin(x,y,aukera);
+		  }
+		 }
 	private Arma aukeratuArma() {
 		//Pertsona interfazeko aukeretatik aukeratuko du erabili nahi duen arma
 		Arma a=null;
@@ -72,5 +75,25 @@ public class Pertsona extends Jokalaria {
 	
 	public void amraHautatu(){
 		//flotara deia arma aukeratutako arma pasatuz
+	}
+	@Override
+	public void ezkutuaJarri() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void armaHautatu() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public boolean ontziaKonponduNahi(Ontzia o) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+	public void ontziaKonpondu(String o) {
+		// TODO Auto-generated method stub
+		
 	}
 }

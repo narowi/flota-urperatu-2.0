@@ -1,6 +1,7 @@
 package sprint1;
 
 import java.io.File;
+import ui.*;
 
 public class Jokoa {
 	private Ordenagailua ord;
@@ -27,10 +28,9 @@ public class Jokoa {
 	}
 
 	private void partidaBatJolastu() {
-		//per.nireTablero.ontziaKokatu();
-		//ord.nireTablero.ontziaKokatu();
 		per.etsaiarenTableroa=ord.nireTablero;
 		ord.etsaiarenTableroa=per.nireTablero;
+		new FlotaJokoa().main(null);
 		
 		
 	}

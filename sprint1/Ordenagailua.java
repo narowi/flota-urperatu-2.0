@@ -21,7 +21,9 @@ public class Ordenagailua extends Jokalaria  {
 			return false;
 		}
 	}
-	
+	public void armaHautatu(){
+		//TO DO
+	}
 	public void ontziaKonpondu(String o){
 		int oPos = (int)(Math.random()*super.luzera()-1);
 		Ontzia on = super.bilatuOntzia(oPos);
