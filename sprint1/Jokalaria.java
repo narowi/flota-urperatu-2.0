@@ -48,7 +48,7 @@ public abstract class Jokalaria {
 	}
 	
 	public abstract boolean ontziaKonponduNahi(Ontzia o);
-	public abstract void ontziaKonpondu(Ontzia o);
+	public abstract void ontziaKonpondu(String o);
 	
 	//junit
 		public void setFlota(Flota pFlota){
@@ -81,6 +81,14 @@ public abstract class Jokalaria {
 		public void gehituOntzia(Ontzia o) {
 			this.flota.gehituOntzi(o);
 			
+		}
+
+		public int luzera() {
+			return this.flota.size();
+		}
+
+		public Ontzia bilatuOntzia(int o) {
+			return this.flota.bilatuOntzia(o);
 		}
 	
 }

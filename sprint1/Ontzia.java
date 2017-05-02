@@ -166,4 +166,14 @@ public class Ontzia {
 			}
 		}
 	}
+
+
+
+	public boolean dagoOsorik() {
+		if(this.egoera instanceof Osorik || (this.egoera instanceof EzkutuOsoa && this.luzera == this.urperatuGabekoZatiKop) || (this.egoera instanceof EzkutuBakarra && this.luzera == this.urperatuGabekoZatiKop)  ){
+			return true;
+		}else{
+			return false;
+		}
+	}
 }

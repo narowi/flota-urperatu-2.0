@@ -199,5 +199,17 @@ public class Flota {
 		this.dirua=this.dirua- o.konponketaPrezioa;
 		
 	}
+
+	public int size() {
+		return this.f.size();
+	}
+
+	public Ontzia bilatuOntzia(int o) {
+		boolean aurkitua=false;
+		Iterator<Ontzia> itr =this.getIteradorea();
+		Ontzia on= this.f.get(o);
+		return on;
+			
+	}
 }
 

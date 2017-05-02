@@ -22,16 +22,20 @@ public class Ordenagailua extends Jokalaria  {
 		}
 	}
 	
-	public void ontziaKonpondu(Ontzia o){
-		if(ontziaKonponduNahi(o)){ //teniendo en cuenta que solo arregla un cacho en cada txanda
-			super.diruaKendu(o); //descontar el dinero que le a costado de su dinero
-			o.konponduOntzia(); //sumar urperatuGabekoZatiKop+1
-			//if(o.urperatutaDago()){
-				//super.gehituOntzia(o); IMPORTANTE! CUANDO HEMOS HUNDIDO UN BARCO NO LO HEMOS QUITADO DE LA LISTA LO QUITAMOS??? SI NO HABRA QUE SABER SI LE QUEDAN BARCOS SI LA EGOERA DE ALGUNO DE ELLOS ES !=URPERATUTA
-			//}
-			o.egoeraEsleitu();
-			
-			//cambiar de egoera al barco
+	public void ontziaKonpondu(String o){
+		int oPos = (int)(Math.random()*super.luzera()-1);
+		Ontzia on = super.bilatuOntzia(oPos);
+		if(!on.dagoOsorik()){
+			if(ontziaKonponduNahi(on)){ //teniendo en cuenta que solo arregla un cacho en cada txanda
+				super.diruaKendu(on); //descontar el dinero que le a costado de su dinero
+				on.konponduOntzia(); //sumar urperatuGabekoZatiKop+1
+				//if(o.urperatutaDago()){
+					//super.gehituOntzia(o); IMPORTANTE! CUANDO HEMOS HUNDIDO UN BARCO NO LO HEMOS QUITADO DE LA LISTA LO QUITAMOS??? SI NO HABRA QUE SABER SI LE QUEDAN BARCOS SI LA EGOERA DE ALGUNO DE ELLOS ES !=URPERATUTA
+				//}
+				on.egoeraEsleitu();
+				
+				//cambiar de egoera al barco
+			}
 		}
 	}
 	public void ontziaKokatu(Ontzia o){
@@ -149,9 +153,6 @@ public class Ordenagailua extends Jokalaria  {
 		}
 	}
 	
-	public void armaHautatu(){
-		//flotara deia arma behin aukeratuta
-	}
 	}
 
 
