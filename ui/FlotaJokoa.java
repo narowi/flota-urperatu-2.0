@@ -25,8 +25,8 @@ public class FlotaJokoa {
 	private JPanel behekoBotoiak;
 	private JPanel armak;
 	private JPanel onarpenBotoiak;
-	private String aukeratutakoOntzia;
-	private char kokapena;
+	private String aukeratutakoOntzia="HegazkinOntzi";
+	private char kokapena='g';
 	private String arma;
 	static Integer[] koordenatuak = new Integer[2];
 	
