@@ -5,6 +5,7 @@ public class Bonba extends Arma {
 	public Bonba(){
 		super.biltegiZenbakia=0;
 		super.prezioa=30;
+		super.izena="Bonba";
 	}
 	
 	public  boolean posizioHorretakoArmaDa(int pos){

@@ -90,6 +90,8 @@ public abstract class Jokalaria {
 		public Ontzia bilatuOntzia(int o) {
 			return this.flota.bilatuOntzia(o);
 		}
+		
+		public abstract void armaAukeratuErosteko(String arma);
 	
 }
 		

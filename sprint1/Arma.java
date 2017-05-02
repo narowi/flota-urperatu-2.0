@@ -3,6 +3,7 @@ package sprint1;
 public abstract class Arma {
 	protected int prezioa;
 	protected int biltegiZenbakia;
+	protected String izena;
 	public Arma(){
 	}
 	public abstract void tiroEgin(int x, int y,int aukera);
@@ -21,4 +22,8 @@ public abstract class Arma {
 	public int getBiltegiZenbakia() {
 		return this.biltegiZenbakia;
 	}	
+	
+	public boolean berdinaNaiz(String arma) {
+		return this.izena==arma;
+	}
 }

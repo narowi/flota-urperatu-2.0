@@ -216,8 +216,14 @@ public class Flota {
 
 
 	public Arma geratzenZaitArmaHau(String arma) {
-		// TODO Auto-generated method stub
-		return null;
+		Arma a=null;
+		a=this.armamentua.bilatu(arma);
+		
+		return a;
+	}
+	
+	public Armamentua armamentuaLortu(){
+		return this.armamentua;
 	}
 }
 

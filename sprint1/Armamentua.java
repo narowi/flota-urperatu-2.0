@@ -158,6 +158,21 @@ public class Armamentua {
 		
 	}
 	
+	public Arma bilatu(String arma) {
+		Iterator<Arma> itr= this.getIteradorea();
+		Arma a=null;
+		boolean amaitu=false;
+		
+		while (itr.hasNext() && !amaitu){
+			a=itr.next();
+			if(a.berdinaNaiz(arma)){
+				amaitu=true;
+			}
+			
+		}
+		return a;
+	}
+	
 	//junit
 	
 	public int luzera() {

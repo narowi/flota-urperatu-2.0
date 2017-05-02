@@ -81,9 +81,6 @@ public class Ordenagailua extends Jokalaria  {
 	}
 	
 	
-
-	
-	
 	public void ezkutuaJarri(){
 		
 		while(super.flota.badagoEzkuturik()){
@@ -153,6 +150,32 @@ public class Ordenagailua extends Jokalaria  {
 			System.out.println("aurkariaren ontzi guztiak urperatu dituzu");
 			return null;
 		}
+	}
+	
+	public void armaAukeratuErosteko(){
+		Arma arma=null;
+		int biltegiZenbakikoArma= (int)(Math.random()*5);
+		if (biltegiZenbakikoArma==0){
+			arma= this.flota.armamentuaLortu().armaSortu("Bonba");
+		}else if (biltegiZenbakikoArma==1){
+			arma= this.flota.armamentuaLortu().armaSortu("Ezkutua");
+		}else if (biltegiZenbakikoArma==2){
+			arma= this.flota.armamentuaLortu().armaSortu("Misila");
+		}else if (biltegiZenbakikoArma==3){
+			arma= this.flota.armamentuaLortu().armaSortu("MisilZuzendua");
+		}else if(biltegiZenbakikoArma==4){
+			arma= this.flota.armamentuaLortu().armaSortu("Radar");
+		}
+		
+		if(arma!=null){
+			this.flota.armaErosi(arma);
+		}	
+	}
+
+	@Override
+	public void armaAukeratuErosteko(String arma) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	}

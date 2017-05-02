@@ -43,39 +43,41 @@ public class Pertsona extends Jokalaria {
 		  if (armaNorabide=="misil zuzendua bertikal"){
 		   arma="MisilZuzendua";
 		   aukera=0;
+		   
 		  }else if(armaNorabide=="misil zuzendua horizontal"){
 		   arma="MisilZuzendua"; 
 		   aukera=1;
+		   
 		  }else if(armaNorabide=="misil zuzendua"){
 		   arma="MisilZuzendua"; 
-		   aukera=2;   
+		   aukera=2;  
+		   
 		  }else{
 		   arma=armaNorabide;
 		  }
 		  
 		 a=this.flota.geratzenZaitArmaHau(arma);
 		 if(a!=null){
+			 
 		   this.flota.kenduArmaKopBat(a);
 		   int x=k.getX();
 		   int y=k.getY();
 		   a.tiroEgin(x,y,aukera);
+		   
 		  }
 		 }
-	private Arma aukeratuArma() {
-		//Pertsona interfazeko aukeretatik aukeratuko du erabili nahi duen arma
-		Arma a=null;
+	
+	public void armaAukeratuErosteko(String arma){
 		
-		return a;
+		Arma a=this.flota.armamentuaLortu().armaSortu(arma);
+		this.flota.armaErosi(a);
+		
 	}
 	
-	private Kasilla nonTiroEgin() {
 	
-		return null;
-	}
 	
-	public void amraHautatu(){
-		//flotara deia arma aukeratutako arma pasatuz
-	}
+	
+	
 	@Override
 	public void ezkutuaJarri() {
 		// TODO Auto-generated method stub
@@ -97,3 +99,5 @@ public class Pertsona extends Jokalaria {
 		
 	}
 }
+	
+	

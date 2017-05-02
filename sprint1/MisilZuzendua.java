@@ -4,6 +4,7 @@ public class MisilZuzendua extends Arma {
 	public MisilZuzendua(){
 		super.biltegiZenbakia=3;
 		super.prezioa=60;
+		super.izena="MisilZuzendua";
 	}
 public void tiroEgin(int x, int y,int aukera){
 		
