@@ -166,33 +166,48 @@ public class Tablero {
 	    }	
 	    
 	    
-	    public void kokatu(int x,int y,String oIzena,char norabidea){
+	    public void kokatu(int x,int y,Ontzia o,char norabidea){
 			int i;
-			Jokalaria j=Jokoa.getNireJokoa().jokalariaLortu();
-			Ontzia o=j.getListaOntziak().lortuOntziaStringetik(oIzena);
-			System.out.println(o.dagoOsorik());
-			if(norabidea=='s' && eskumaraAhal(x, y, o.getHondoratuGabekoZatiKop())){
+			//System.out.println("x = "+x);
+			//System.out.println("y = "+y);
+			//System.out.println("izena = "+oIzena);
+			//System.out.println("norabidea = "+norabidea);
+			//System.out.println("jokalaria = "+j);
+			//System.out.println("si es fragata "+o.fragataDa());
+			//System.out.println("gora ahaldu "+goraAhal(x, y, o.getHondoratuGabekoZatiKop()));
+			//System.out.println("coje bien el == "+(norabidea=='g'));
+			if(norabidea=='b' && beheraAhal(x, y, o.getHondoratuGabekoZatiKop())){
 				for(i=x;i<x+o.luzera;i++){
 					tablero[i][y].ontziaJarri(o);
 					tablero[i][y].kenduUra();
+					//System.out.println(o.getHondoratuGabekoZatiKop()+" "+o);
+					o.kokatuNaiz();
+					//System.out.println("hegazkin ontzi esta colocado  "+o.kokatutaAhalNago());
 				}	
 			}
-			if(norabidea=='z' && ezkerreraAhal(x, y, o.getHondoratuGabekoZatiKop())){
-				for(i=x;i<x-o.luzera;i--){
+			if(norabidea=='g' && goraAhal(x, y, o.getHondoratuGabekoZatiKop())){
+				for(i=x;i>x-o.luzera;i--){
 					tablero[i][y].ontziaJarri(o);
 					tablero[i][y].kenduUra();
+					o.kokatuNaiz();
+					//System.out.println("hegazkin ontzi en kokatu  "+o.kokatutaAhalNago());
 				}
 			}
-			if(norabidea=='g' && goraAhal(x, y, o.getHondoratuGabekoZatiKop())){
-				for(i=y;i<y-o.luzera;i--){
+			if(norabidea=='z' && ezkerreraAhal(x, y, o.getHondoratuGabekoZatiKop())){
+				for(i=y;i>y-o.luzera;i--){
+					//System.out.println("hace gora");
 					tablero[x][i].ontziaJarri(o);
 					tablero[x][i].kenduUra();
+					o.kokatuNaiz();
+					//System.out.println("hegazkin ontzi en kokatu  "+o.kokatutaAhalNago());
 				}
 			}
-			if(norabidea=='b' && beheraAhal(x, y, o.getHondoratuGabekoZatiKop())){
+			if(norabidea=='s' && eskumaraAhal(x, y, o.getHondoratuGabekoZatiKop())){
 				for(i=y;i<y+o.luzera;i++){
 					tablero[x][i].ontziaJarri(o);
 					tablero[x][i].kenduUra();
+					o.kokatuNaiz();
+					//System.out.println("hegazkin ontzi en kokatu  "+o.kokatutaAhalNago());
 				}
 			}
 	}

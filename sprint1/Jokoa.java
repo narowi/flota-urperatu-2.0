@@ -84,4 +84,9 @@ public class Jokoa {
 	public boolean ezkutuakErabiltzenJarraituAhal(){
 		return per.ezkutuakJartzenJarraitu();
 	}
+
+	public void kokatu(int x, int y, String aukeratutakoOntzia, char kokapena) {
+		per.OntziaKokatu(x, y, aukeratutakoOntzia, kokapena);
+		
+	}
 }

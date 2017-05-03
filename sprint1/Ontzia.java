@@ -26,6 +26,7 @@ public class Ontzia {
 
 	public void kokatuNaiz(){
 		this.kokatua=true;
+		System.out.println(this.kokatua+" si me he colocado dentro de ontzia");
 	}
 	public boolean kokatutaAhalNago(){
 		return this.kokatua;
@@ -138,6 +139,7 @@ public class Ontzia {
 	}
 	
 	public boolean berdinaDa(String izena) {
+		//System.out.println("tipo de barco ="+this.mota);
 		return this.mota.equals(izena);
 	}
 

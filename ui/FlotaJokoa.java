@@ -95,8 +95,18 @@ public class FlotaJokoa {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				boolean listo=false;
-				Jokoa.getNireJokoa().getTablero().kokatu(koordenatuak[0], koordenatuak[1], aukeratutakoOntzia, kokapena);
+				Jokoa.getNireJokoa().kokatu(koordenatuak[0], koordenatuak[1], aukeratutakoOntzia, kokapena);
 				this.kokatu();
+//				System.out.println(koordenatuak[0]+" =x");
+//				System.out.println("hegazkin  ="+Jokoa.getNireJokoa().hegazkinOntziKokatzenJarraituAhal());
+//				System.out.println("fragata  ="+Jokoa.getNireJokoa().fragataKokatzenJarraituAhal());
+//				System.out.println("suntsitzaile  ="+Jokoa.getNireJokoa().suntsitzaileKokatzenJarraituAhal());
+//				System.out.println("itsaspeko  ="+Jokoa.getNireJokoa().itsaspekoKokatzenJarraituAhal());
+				if(!Jokoa.getNireJokoa().hegazkinOntziKokatzenJarraituAhal() && !Jokoa.getNireJokoa().fragataKokatzenJarraituAhal() && !Jokoa.getNireJokoa().itsaspekoKokatzenJarraituAhal() && !Jokoa.getNireJokoa().suntsitzaileKokatzenJarraituAhal()){
+					goikoBotoiak.setVisible(false);
+					
+//					norantzak.disable();
+				}
 			}
 
 			private void kokatu() {
@@ -158,19 +168,6 @@ public class FlotaJokoa {
 				
 			}
 			
-			private boolean itsaspekoKokatzenJarraituAhal(){
-				return Jokoa.getNireJokoa().itsaspekoKokatzenJarraituAhal();
-			}
-			
-			private boolean fragataKokatzenJarraituAhal(){
-				return Jokoa.getNireJokoa().fragataKokatzenJarraituAhal();
-			}
-			private boolean suntsitzaileKokatzenJarraituAhal(){
-				return Jokoa.getNireJokoa().suntsitzaileKokatzenJarraituAhal();
-			}
-			private boolean hegazkinOntziKokatzenJarraituAhal(){
-				return Jokoa.getNireJokoa().hegazkinOntziKokatzenJarraituAhal();
-			}
 		
 		});
 	

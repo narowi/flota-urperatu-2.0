@@ -5,11 +5,12 @@ package sprint1;
 public class Pertsona extends Jokalaria {
 	
 	public Pertsona(){
+		super();
+		//super.nireTablero=new Tablero();
+		//super.flota=new Flota();
 	}
 	public void ontziakKokatu(){ //miralo naroa
-//		while(!super.flota.isEmpty()){
-//			super.nireTablero.kokatu(x,y,o,norabide);
-//		}
+		
 	}
 	public void ezkutuaJarri(int x,int y){
 			//banaka jarriko ditu ontziak eskutuan
@@ -72,6 +73,15 @@ public class Pertsona extends Jokalaria {
 		Arma a=this.flota.armamentuaLortu().armaSortu(arma);
 		this.flota.armaErosi(a);
 		
+	}
+	public void OntziaKokatu(int x,int y,String ontziMota,char norabide){
+		Ontzia o=this.flota.lortuOntziaStringetik(ontziMota);
+		if(o!=null){
+		nireTablero.kokatu(x, y, o, norabide);
+		}
+		else{
+			System.out.println("no te quedan barcos de es tipo");
+		}
 	}
 	
 	

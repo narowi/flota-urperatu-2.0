@@ -177,7 +177,7 @@ public class Flota {
 		Iterator<Ontzia> itr =this.getIteradorea();
 		while(itr.hasNext() && !aurkitua){
 			o=itr.next();
-			if(o.berdinaDa(izena)){
+			if(o.berdinaDa(izena)&& !o.kokatutaAhalNago()){
 				aurkitua=true;
 			}
 		}
@@ -233,7 +233,7 @@ public class Flota {
 		Ontzia aux=null;
 		while(itr.hasNext()&& !batKokatuGabe){
 			aux=itr.next();
-			if(aux.itsaspekoaDa() && aux.kokatuGabe()){
+			if(aux.itsaspekoaDa() && !aux.kokatutaAhalNago()){
 				batKokatuGabe=true;
 			}
 		}
@@ -246,7 +246,7 @@ public class Flota {
 		Ontzia aux=null;
 		while(itr.hasNext()&& !batKokatuGabe){
 			aux=itr.next();
-			if(aux.fragataDa() && aux.kokatuGabe()){
+			if(aux.fragataDa() && !aux.kokatutaAhalNago()){
 				batKokatuGabe=true;
 			}
 		}
@@ -259,7 +259,9 @@ public class Flota {
 		Ontzia aux=null;
 		while(itr.hasNext()&& !batKokatuGabe){
 			aux=itr.next();
-			if(aux.hegazkinOntziDa() && aux.kokatuGabe()){
+			//System.out.println(aux.hegazkinOntziDa()+"= hegazkin ontzi?");
+			//System.out.println(aux.kokatutaAhalNago()+" =kokatuta nago?");
+			if(aux.hegazkinOntziDa() && !aux.kokatutaAhalNago()){
 				batKokatuGabe=true;
 			}
 		}
@@ -271,7 +273,7 @@ public class Flota {
 		Ontzia aux=null;
 		while(itr.hasNext()&& !batKokatuGabe){
 			aux=itr.next();
-			if(aux.suntsitzaileaDa() && aux.kokatuGabe()){
+			if(aux.suntsitzaileaDa() && !aux.kokatutaAhalNago()){
 				batKokatuGabe=true;
 			}
 		}
