@@ -74,14 +74,17 @@ public class Pertsona extends Jokalaria {
 		this.flota.armaErosi(a);
 		
 	}
-	public void OntziaKokatu(int x,int y,String ontziMota,char norabide){
+	public boolean OntziaKokatu(int x,int y,String ontziMota,char norabide){
+		boolean kokatuDa=false;
 		Ontzia o=this.flota.lortuOntziaStringetik(ontziMota);
 		if(o!=null){
 		nireTablero.kokatu(x, y, o, norabide);
+		kokatuDa=true;
 		}
 		else{
 			System.out.println("no te quedan barcos de es tipo");
 		}
+		return kokatuDa;
 	}
 	
 	

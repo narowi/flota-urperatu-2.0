@@ -95,8 +95,9 @@ public class FlotaJokoa {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				boolean listo=false;
-				Jokoa.getNireJokoa().kokatu(koordenatuak[0], koordenatuak[1], aukeratutakoOntzia, kokapena);
+				if(Jokoa.getNireJokoa().kokatu(koordenatuak[0], koordenatuak[1], aukeratutakoOntzia, kokapena)){
 				this.kokatu();
+				}
 //				System.out.println(koordenatuak[0]+" =x");
 //				System.out.println("hegazkin  ="+Jokoa.getNireJokoa().hegazkinOntziKokatzenJarraituAhal());
 //				System.out.println("fragata  ="+Jokoa.getNireJokoa().fragataKokatzenJarraituAhal());
