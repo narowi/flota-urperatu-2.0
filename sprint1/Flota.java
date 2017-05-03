@@ -277,5 +277,28 @@ public class Flota {
 		}
 		return batKokatuGabe;
 	}
+
+
+	public boolean bobarikJartzenJarraitu() {
+		return this.armamentua.bobarikJartzenJarraitu();
+	}
+	
+
+	public boolean misilakJartzenJarraitu() {
+		return this.armamentua.misilakJartzenJarraitu();
+	}
+
+	public boolean misilZuzenduakJartzenJarraitu() {
+		return this.armamentua.misilZuzenduakJartzenJarraitu();
+	}
+
+	public boolean radarraJartzenJarraitu() {
+		return this.armamentua.radarrakJartzenJarraitu();
+	}
+	
+
+	public boolean ezkutuakJartzenJarraitu() {
+		return this.armamentua.ezkutuakJartzenJarraitu();
+	}
 }
 
