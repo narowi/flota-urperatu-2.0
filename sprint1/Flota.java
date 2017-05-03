@@ -225,5 +225,57 @@ public class Flota {
 	public Armamentua armamentuaLortu(){
 		return this.armamentua;
 	}
+
+
+	public boolean itsaspekoakDaude() {
+		boolean batKokatuGabe=false;
+		Iterator<Ontzia> itr =this.getIteradorea();
+		Ontzia aux=null;
+		while(itr.hasNext()&& !batKokatuGabe){
+			aux=itr.next();
+			if(aux.itsaspekoaDa() && aux.kokatuGabe()){
+				batKokatuGabe=true;
+			}
+		}
+		return batKokatuGabe;
+	}
+	
+	public boolean fragatakDaude() {
+		boolean batKokatuGabe=false;
+		Iterator<Ontzia> itr =this.getIteradorea();
+		Ontzia aux=null;
+		while(itr.hasNext()&& !batKokatuGabe){
+			aux=itr.next();
+			if(aux.fragataDa() && aux.kokatuGabe()){
+				batKokatuGabe=true;
+			}
+		}
+		return batKokatuGabe;
+	}
+	
+	public boolean hegazkinOntziDaude() {
+		boolean batKokatuGabe=false;
+		Iterator<Ontzia> itr =this.getIteradorea();
+		Ontzia aux=null;
+		while(itr.hasNext()&& !batKokatuGabe){
+			aux=itr.next();
+			if(aux.hegazkinOntziDa() && aux.kokatuGabe()){
+				batKokatuGabe=true;
+			}
+		}
+		return batKokatuGabe;
+	}
+	public boolean suntsitzaileDaude() {
+		boolean batKokatuGabe=false;
+		Iterator<Ontzia> itr =this.getIteradorea();
+		Ontzia aux=null;
+		while(itr.hasNext()&& !batKokatuGabe){
+			aux=itr.next();
+			if(aux.suntsitzaileaDa() && aux.kokatuGabe()){
+				batKokatuGabe=true;
+			}
+		}
+		return batKokatuGabe;
+	}
 }
 

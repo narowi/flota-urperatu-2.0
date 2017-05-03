@@ -157,6 +157,20 @@ public class FlotaJokoa {
 					}
 				
 			}
+			
+			private boolean itsaspekoKokatzenJarraituAhal(){
+				return Jokoa.getNireJokoa().itsaspekoKokatzenJarraituAhal();
+			}
+			
+			private boolean fragataKokatzenJarraituAhal(){
+				return Jokoa.getNireJokoa().fragataKokatzenJarraituAhal();
+			}
+			private boolean suntsitzaileKokatzenJarraituAhal(){
+				return Jokoa.getNireJokoa().suntsitzaileKokatzenJarraituAhal();
+			}
+			private boolean hegazkinOntziKokatzenJarraituAhal(){
+				return Jokoa.getNireJokoa().hegazkinOntziKokatzenJarraituAhal();
+			}
 		
 		});
 	

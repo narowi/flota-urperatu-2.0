@@ -176,4 +176,52 @@ public class Ontzia {
 			return false;
 		}
 	}
+
+
+
+	public boolean itsaspekoaDa() {
+		if(this instanceof Itsaspeko){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+
+
+	public boolean kokatuGabe() {
+		if(this.kokatua == false){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+
+
+	public boolean fragataDa() {
+		if(this instanceof Fragata){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+
+
+	public boolean hegazkinOntziDa() {
+		if(this instanceof HegazkinOntzi){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	public boolean suntsitzaileaDa() {
+		if(this instanceof Suntsitzaile){
+			return true;
+		}else{
+			return false;
+		}
+	}
 }

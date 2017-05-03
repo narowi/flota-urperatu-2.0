@@ -98,6 +98,18 @@ public class Pertsona extends Jokalaria {
 		// TODO Auto-generated method stub
 		
 	}
+	public boolean itsaspekoKokatzenJarraituAhal() {
+		return this.flota.itsaspekoakDaude();
+	}
+	public boolean fragataKokatzenJarraituAhal() {
+		return this.flota.fragatakDaude();
+	}
+	public boolean suntsitzaileKokatzenJarraituAhal() {
+		return this.flota.suntsitzaileDaude();
+	}
+	public boolean hegazkinOntziKokatzenJarraituAhal() {
+		return this.flota.hegazkinOntziDaude();
+	}
 }
 	
 	

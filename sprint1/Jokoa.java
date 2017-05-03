@@ -53,4 +53,20 @@ public class Jokoa {
 			return per;
 		}
 	}
+
+	public boolean itsaspekoKokatzenJarraituAhal() {
+		return per.itsaspekoKokatzenJarraituAhal();
+	}
+
+	public boolean fragataKokatzenJarraituAhal() {
+		return per.fragataKokatzenJarraituAhal();
+	}
+
+	public boolean suntsitzaileKokatzenJarraituAhal() {
+		return per.suntsitzaileKokatzenJarraituAhal();
+	}
+
+	public boolean hegazkinOntziKokatzenJarraituAhal() {
+		return per.hegazkinOntziKokatzenJarraituAhal();
+	}
 }
