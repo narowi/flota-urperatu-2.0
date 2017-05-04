@@ -5,7 +5,7 @@ package sprint1;
 public class Pertsona extends Jokalaria {
 	
 	public Pertsona(){
-		super();
+		//super();
 		//super.nireTablero=new Tablero();
 		//super.flota=new Flota();
 	}

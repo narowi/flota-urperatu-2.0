@@ -89,4 +89,16 @@ public class Jokoa {
 		return per.OntziaKokatu(x, y, aukeratutakoOntzia, kokapena);
 		
 	}
+
+	public String zerDaKasillaHau(int x, int y,String norena) {
+		String zerDa=" ";
+		if(norena.equals("pertsona")){
+			zerDa=per.zerDaKasillaHau(x,y);
+		}
+		else{
+			zerDa=ord.zerDaKasillaHau(x, y);
+		}
+		System.out.println(zerDa+" jokoan hau da");
+		return zerDa;
+	}
 }

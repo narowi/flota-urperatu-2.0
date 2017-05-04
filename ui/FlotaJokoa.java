@@ -25,6 +25,9 @@ public class FlotaJokoa {
 	private JPanel behekoBotoiak;
 	private JPanel armak;
 	private JPanel onarpenBotoiak;
+	private JButton ontziaKokatu;
+	private JButton ezkutuaJarri;
+	private JButton tiroEgin;
 	private String aukeratutakoOntzia="HegazkinOntzi";
 	private char kokapena='g';
 	private String arma;
@@ -73,6 +76,23 @@ public class FlotaJokoa {
 		frame.pack();
 		frame.setResizable(false);
 	}
+	private void tableroaEguneratu(String norena){
+		int i=0;
+		while(i<tableroNi.length){
+			System.out.println("tableroa eguneratzen hasi da....");
+			int j=0;
+			while(j<tableroNi.length){
+				System.out.println("ontzia da UIn? "+(Jokoa.getNireJokoa().zerDaKasillaHau(i,j, norena)).equals("ontzia"));
+				if((Jokoa.getNireJokoa().zerDaKasillaHau(i,j,norena)).equals("ontzia")){
+					if(norena.equals("pertsona")){
+						tableroNi[i][j].setBackground(new Color(210,180,140));
+					}
+				}
+				j++;
+			}
+			i++;
+		}
+	}
 
 	private JPanel behekoBotoiakJarri() {
 		JPanel botoiak = new JPanel();
@@ -87,16 +107,17 @@ public class FlotaJokoa {
 	private JPanel onarpenBotoiakJarri() {
 		JPanel botoiak = new JPanel();
 		botoiak.setLayout(new BorderLayout());
-		JButton ontziaKokatu = new JButton("OntziaKokatu");
-		JButton ezkutuaJarri = new JButton("EzkutuaJarri");
-		JButton tiroEgin = new JButton("TiroEgin");
+		ontziaKokatu = new JButton("OntziaKokatu");
+		ezkutuaJarri = new JButton("EzkutuaJarri");
+		tiroEgin = new JButton("TiroEgin");
 		ontziaKokatu.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				boolean listo=false;
 				if(Jokoa.getNireJokoa().kokatu(koordenatuak[0], koordenatuak[1], aukeratutakoOntzia, kokapena)){
-				this.kokatu();
+				//this.kokatu();
+				tableroaEguneratu("pertsona");
 				}
 //				System.out.println(koordenatuak[0]+" =x");
 //				System.out.println("hegazkin  ="+Jokoa.getNireJokoa().hegazkinOntziKokatzenJarraituAhal());
@@ -105,69 +126,68 @@ public class FlotaJokoa {
 //				System.out.println("itsaspeko  ="+Jokoa.getNireJokoa().itsaspekoKokatzenJarraituAhal());
 				if(!Jokoa.getNireJokoa().hegazkinOntziKokatzenJarraituAhal() && !Jokoa.getNireJokoa().fragataKokatzenJarraituAhal() && !Jokoa.getNireJokoa().itsaspekoKokatzenJarraituAhal() && !Jokoa.getNireJokoa().suntsitzaileKokatzenJarraituAhal()){
 					goikoBotoiak.setVisible(false);
-					
-//					norantzak.disable();
+					ontziaKokatu.setVisible(false);
 				}
 			}
 
-			private void kokatu() {
-				 boolean listo=false;
-				  int luzera=0;
-					while(!listo){
-						if(aukeratutakoOntzia.equals("Fragata")){
-							luzera=1;
-							listo=true;
-						}
-						else if(aukeratutakoOntzia.equals("Itsaspeko")){
-							luzera=3;
-							listo=true;
-						}
-						else if(aukeratutakoOntzia.equals("Suntsitzaile")){
-							luzera=2;
-							listo=true;
-						}
-						else if(aukeratutakoOntzia.equals("HegazkinOntzi")){
-							luzera=4;
-							listo=true;
-						}
-					}
-					boolean margotua=false;
-					while(!margotua){
-						if(kokapena=='g'){
-							int i=0;
-							while(i<luzera){
-								tableroNi[koordenatuak[0]-i][koordenatuak[1]].setBackground(new Color(210,180,140));
-								i++;
-							}
-							margotua=true;
-						}
-						if(kokapena=='b'){
-							int i=0;
-							while(i<luzera){
-								tableroNi[koordenatuak[0]+i][koordenatuak[1]].setBackground(new Color(210,180,140));
-								i++;
-							}
-							margotua=true;
-						}
-						if(kokapena=='z'){
-							int i=0;
-							while(i<luzera){
-								tableroNi[koordenatuak[0]][koordenatuak[1]-i].setBackground(new Color(210,180,140));
-								i++;
-							}
-							margotua=true;
-						}
-						if(kokapena=='s'){
-							int i=0;
-							while(i<luzera){
-								tableroNi[koordenatuak[0]][koordenatuak[1]+i].setBackground(new Color(210,180,140));
-								i++;
-							}
-							margotua=true;
-						}
-					}
-				
-			}
+//			private void kokatu() {
+//				 boolean listo=false;
+//				  int luzera=0;
+//					while(!listo){
+//						if(aukeratutakoOntzia.equals("Fragata")){
+//							luzera=1;
+//							listo=true;
+//						}
+//						else if(aukeratutakoOntzia.equals("Itsaspeko")){
+//							luzera=3;
+//							listo=true;
+//						}
+//						else if(aukeratutakoOntzia.equals("Suntsitzaile")){
+//							luzera=2;
+//							listo=true;
+//						}
+//						else if(aukeratutakoOntzia.equals("HegazkinOntzi")){
+//							luzera=4;
+//							listo=true;
+//						}
+//					}
+//					boolean margotua=false;
+//					while(!margotua){
+//						if(kokapena=='g'){
+//							int i=0;
+//							while(i<luzera){
+//								tableroNi[koordenatuak[0]-i][koordenatuak[1]].setBackground(new Color(210,180,140));
+//								i++;
+//							}
+//							margotua=true;
+//						}
+//						if(kokapena=='b'){
+//							int i=0;
+//							while(i<luzera){
+//								tableroNi[koordenatuak[0]+i][koordenatuak[1]].setBackground(new Color(210,180,140));
+//								i++;
+//							}
+//							margotua=true;
+//						}
+//						if(kokapena=='z'){
+//							int i=0;
+//							while(i<luzera){
+//								tableroNi[koordenatuak[0]][koordenatuak[1]-i].setBackground(new Color(210,180,140));
+//								i++;
+//							}
+//							margotua=true;
+//						}
+//						if(kokapena=='s'){
+//							int i=0;
+//							while(i<luzera){
+//								tableroNi[koordenatuak[0]][koordenatuak[1]+i].setBackground(new Color(210,180,140));
+//								i++;
+//							}
+//							margotua=true;
+//						}
+//					}
+		//}
+			
 			
 		
 		});
@@ -177,6 +197,7 @@ public class FlotaJokoa {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
+				
 				
 			}
 		});

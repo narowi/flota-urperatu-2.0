@@ -90,6 +90,22 @@ public abstract class Jokalaria {
 		public Ontzia bilatuOntzia(int o) {
 			return this.flota.bilatuOntzia(o);
 		}
+		public String zerDaKasillaHau(int x,int y){
+			String Da=" ";
+			Ontzia o=nireTablero.itsasontzirikDago(x, y);
+			int ukituGabe=nireTablero.kasillaIkutuGabe(x, y);//mirar que hace
+			System.out.println(ukituGabe+" ukitua nago");
+			boolean urperatua=nireTablero.getKasillaUrperatuta(x, y);
+			System.out.println(urperatua+" urperatua nago");
+			if(o!=null && ukituGabe>0 && !urperatua){
+				Da="ontzia";
+				System.out.println(Da+" da");
+			}
+			else if(urperatua){
+				Da="hondoratua";
+			}
+			return Da;
+		}
 		
 		public abstract void armaAukeratuErosteko(String arma);
 	
