@@ -62,7 +62,12 @@ public class Flota {
 
 	public boolean barkuakEzkutuaDauka(Ontzia ontzia) {
 		Ontzia on=ontzia;
-		return on.ezkutuaDu();
+		boolean du=false;
+		if(on.ezkutuaDu()){
+			du=true;
+			System.out.println("ontziak jadanik badauka ezkutua");
+		}
+		return du;
 	}
 
 
@@ -93,6 +98,9 @@ public class Flota {
 	}
 
 	public int urperatuGabekoKop(Ontzia ontzi) {
+		if(ontzi.getHondoratuGabekoZatiKop()==0){
+			System.out.println("ontzi horretan ezin da ezkuturik jarri urperatua dagoelako");
+		}
 		return ontzi.getHondoratuGabekoZatiKop();
 	}
 

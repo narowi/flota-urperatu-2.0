@@ -101,4 +101,8 @@ public class Jokoa {
 		System.out.println(zerDa+" jokoan hau da");
 		return zerDa;
 	}
+
+	public boolean ezktuaJarri(Integer x, Integer y) {
+		return per.ezkutuaJarri(x, y);
+		}
 }

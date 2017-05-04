@@ -79,13 +79,18 @@ public class FlotaJokoa {
 	private void tableroaEguneratu(String norena){
 		int i=0;
 		while(i<tableroNi.length){
-			System.out.println("tableroa eguneratzen hasi da....");
+			//System.out.println("tableroa eguneratzen hasi da....");
 			int j=0;
 			while(j<tableroNi.length){
 				System.out.println("ontzia da UIn? "+(Jokoa.getNireJokoa().zerDaKasillaHau(i,j, norena)).equals("ontzia"));
 				if((Jokoa.getNireJokoa().zerDaKasillaHau(i,j,norena)).equals("ontzia")){
 					if(norena.equals("pertsona")){
 						tableroNi[i][j].setBackground(new Color(210,180,140));
+					}
+				}
+				else if(Jokoa.getNireJokoa().zerDaKasillaHau(i, j, norena).equals("ezkutua")){
+					if(norena.equals("pertsona")){
+						tableroNi[i][j].setBackground(new Color(160,82,45));
 					}
 				}
 				j++;
@@ -117,7 +122,7 @@ public class FlotaJokoa {
 				boolean listo=false;
 				if(Jokoa.getNireJokoa().kokatu(koordenatuak[0], koordenatuak[1], aukeratutakoOntzia, kokapena)){
 				//this.kokatu();
-				tableroaEguneratu("pertsona");
+				 tableroaEguneratu("pertsona");
 				}
 //				System.out.println(koordenatuak[0]+" =x");
 //				System.out.println("hegazkin  ="+Jokoa.getNireJokoa().hegazkinOntziKokatzenJarraituAhal());
@@ -196,7 +201,9 @@ public class FlotaJokoa {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				frame.dispose();
+				if(Jokoa.getNireJokoa().ezktuaJarri(koordenatuak[0],koordenatuak[1])){
+					tableroaEguneratu("pertsona");
+				}
 				
 				
 			}

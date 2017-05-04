@@ -12,21 +12,25 @@ public class Pertsona extends Jokalaria {
 	public void ontziakKokatu(){ //miralo naroa
 		
 	}
-	public void ezkutuaJarri(int x,int y){
+	public boolean ezkutuaJarri(int x,int y){
 			//banaka jarriko ditu ontziak eskutuan
-		
+		boolean jarri=false;
 		if(super.flota.badagoEzkuturik()){ 
 			Ontzia ontzi=super.nireTablero.itsasontzirikDago(x,y);
 			if(ontzi!=null){
 				if(!super.flota.barkuakEzkutuaDauka(ontzi) && super.flota.urperatuGabekoKop(ontzi)>0) {
-					 
+					 jarri=true;
 					super.flota.egoeraAldatu(ontzi);
 					super.flota.ezkutuKopuruaTxikitu();
 				}
-			}			
+			}
+			else{
+				System.out.println("gelaxka horretan ez dago ontzirik");
+			}
 		}else{
 			System.out.println("Ez duzu ezkutu gehiagorik");
 		}
+		return jarri;
 	}
 	
 	public void lortuEtsaiarenTableroa(Tablero pTablero){

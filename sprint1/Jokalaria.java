@@ -97,9 +97,12 @@ public abstract class Jokalaria {
 			System.out.println(ukituGabe+" ukitua nago");
 			boolean urperatua=nireTablero.getKasillaUrperatuta(x, y);
 			System.out.println(urperatua+" urperatua nago");
-			if(o!=null && ukituGabe>0 && !urperatua){
+			if(o!=null && ukituGabe>0 && !urperatua && !o.ezkutuaDu()){
 				Da="ontzia";
 				System.out.println(Da+" da");
+			}
+			else if(o!=null && o.ezkutuaDu()){
+				Da="ezkutua";
 			}
 			else if(urperatua){
 				Da="hondoratua";

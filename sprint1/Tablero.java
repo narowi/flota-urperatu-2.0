@@ -185,7 +185,7 @@ public class Tablero {
 					//System.out.println("hegazkin ontzi esta colocado  "+o.kokatutaAhalNago());
 				}	
 			}
-			if(norabidea=='g' && goraAhal(x, y, o.getHondoratuGabekoZatiKop())){
+			else if(norabidea=='g' && goraAhal(x, y, o.getHondoratuGabekoZatiKop())){
 				for(i=x;i>x-o.luzera;i--){
 					tablero[i][y].ontziaJarri(o);
 					tablero[i][y].kenduUra();
@@ -193,7 +193,7 @@ public class Tablero {
 					//System.out.println("hegazkin ontzi en kokatu  "+o.kokatutaAhalNago());
 				}
 			}
-			if(norabidea=='z' && ezkerreraAhal(x, y, o.getHondoratuGabekoZatiKop())){
+			else if(norabidea=='z' && ezkerreraAhal(x, y, o.getHondoratuGabekoZatiKop())){
 				for(i=y;i>y-o.luzera;i--){
 					//System.out.println("hace gora");
 					tablero[x][i].ontziaJarri(o);
@@ -202,7 +202,7 @@ public class Tablero {
 					//System.out.println("hegazkin ontzi en kokatu  "+o.kokatutaAhalNago());
 				}
 			}
-			if(norabidea=='s' && eskumaraAhal(x, y, o.getHondoratuGabekoZatiKop())){
+			else if(norabidea=='s' && eskumaraAhal(x, y, o.getHondoratuGabekoZatiKop())){
 				for(i=y;i<y+o.luzera;i++){
 					tablero[x][i].ontziaJarri(o);
 					tablero[x][i].kenduUra();
@@ -210,6 +210,10 @@ public class Tablero {
 					//System.out.println("hegazkin ontzi en kokatu  "+o.kokatutaAhalNago());
 				}
 			}
+			else{
+					System.out.println("ezin da kokatu ");
+			}
+			
 	}
 		public void setBegiratuta(int x, int y, boolean b) {
 			this.tablero[x][y].setBegiratuta(b);
