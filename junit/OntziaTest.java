@@ -35,16 +35,11 @@ private Ontzia o;
 	}
 
 	@Test
-	public void test() {
+	public void jo() {
+		//egoeren funtzionanamendua jo metodoarenak
 		o.egoeraAldatu(new Ikututa());
 		Arma a= new Misila();
 		o.jo(a, false);
-		//Egoera e=new Urperatuta();
-		//System.out.println(o.getEgoera());
-		//System.out.println(o.getEgoera().toString());
-		//System.out.println(e);
-		//System.out.println(e.toString());
-		//assertTrue(o.getEgoera().toString().equals(e.toString()));
 		assertTrue(o.getHondoratuGabekoZatiKop()==0);
 		o.egoeraAldatu(new Osorik());
 		assertTrue(o.getHondoratuGabekoZatiKop()==o.getHondoratuGabekoZatiKop());
@@ -56,125 +51,155 @@ private Ontzia o;
 		o.egoeraAldatu(new Osorik());
 		Arma b = new Bonba();
 		o.jo(b, false); 
-		System.out.println("Egoera Osorik, bonba jo ondoren" + o.getEgoera());
+		assertTrue(o.getEgoera() instanceof  Ikututa);
+		
 		
 		o.egoeraAldatu(new Ikututa());
 		o.jo(b, false); 
-		System.out.println("Egoera Ikututa, bonba jo ondoren"+o.getEgoera());
+		assertTrue(o.getEgoera() instanceof  Urperatuta);
+		
 		
 		o.egoeraAldatu(new EzkutuOsoa());
 		o.jo(b, false); 
-		System.out.println("Egoera EzkutuOsoa, bonba jo ondoren"+o.getEgoera());
+		assertTrue(o.getEgoera() instanceof  EzkutuBakarra);
+		
 		
 		o.egoeraAldatu(new EzkutuBakarra());
 		o.jo(b, false); 
-		System.out.println("Egoera EzkutuBAkarra, bonba jo ondoren"+o.getEgoera());
-		//-----------------------------------
+		assertTrue(o.getEgoera() instanceof  Ikututa);
+		
 		o.jo(a, false); 
-		System.out.println(o.getEgoera());
+		assertTrue(o.getEgoera() instanceof  Urperatuta);
+		
 		
 		o.egoeraAldatu(new Ikututa());
 		o.jo(a, false); 
-		System.out.println("Egoera Ikututa, misila jo ondoren"+o.getEgoera());
+		assertTrue(o.getEgoera() instanceof  Urperatuta);
+		
 		
 		o.egoeraAldatu(new EzkutuOsoa());
 		o.jo(a, false); 
-		System.out.println("Egoera EzkutuOsoa, misila jo ondoren"+o.getEgoera());
+		assertTrue(o.getEgoera() instanceof  Urperatuta);
+		
 		
 		o.egoeraAldatu(new EzkutuBakarra());
 		o.jo(a, false); 
-		System.out.println("Egoera EzkutuBakarra, misila jo ondoren"+o.getEgoera());
+		assertTrue(o.getEgoera() instanceof  Urperatuta);
+		
 		
 		o = new HegazkinOntzi();
-		System.out.println("HegazkinOntzi"+o.getEgoera());
+		assertTrue(o.getEgoera() instanceof  Osorik);
+		
 		
 		o.egoeraAldatu(new Ikututa());
 		o.jo(b, false); 
-		System.out.println("Egoera Ikututa, bonba jo ondoren"+o.getEgoera());
+		assertTrue(o.getEgoera() instanceof  Ikututa);
+		
 		
 		o.egoeraAldatu(new EzkutuOsoa());
 		o.jo(b, false); 
-		System.out.println("Egoera EzkutuOsoa, bonba jo ondoren"+o.getEgoera());
+		assertTrue(o.getEgoera() instanceof  EzkutuBakarra);
+		
 		
 		o.egoeraAldatu(new EzkutuBakarra());
 		o.jo(b, false); 
-		System.out.println("Egoera EzkutuBakarra, bonba jo ondoren"+o.getEgoera());
+		assertTrue(o.getEgoera() instanceof  Ikututa);
+		
 		
 		o.jo(a, false); 
-		System.out.println("Arma misila"+o.getEgoera());
+		assertTrue(o.getEgoera() instanceof  Urperatuta);
+		
 		
 		o.egoeraAldatu(new Ikututa());
 		o.jo(a, false); 
-		System.out.println("Egoera Ikututa, misila jo ondoren"+o.getEgoera());
+		assertTrue(o.getEgoera() instanceof  Urperatuta);
+		
 		
 		o.egoeraAldatu(new EzkutuOsoa());
 		o.jo(a, false); 
-		System.out.println("Egoera EZkutuOsoa, misila jo ondoren"+o.getEgoera());
+		assertTrue(o.getEgoera() instanceof  Urperatuta);
+		
 		
 		o.egoeraAldatu(new EzkutuBakarra());
 		o.jo(a, false); 
-		System.out.println("Egoera EzkutuBakarra, misila jo ondoren"+o.getEgoera());
+		assertTrue(o.getEgoera() instanceof  Urperatuta);
+		
 		
 		o = new Itsaspeko();
-		System.out.println("Itsaspeko"+o.getEgoera());
+		assertTrue(o.getEgoera() instanceof  Osorik);
+		
 		
 		o.egoeraAldatu(new Ikututa());
 		o.jo(b, false); 
-		System.out.println("Egoera Ikututa, bonba jo ondoren"+o.getEgoera());
+		assertTrue(o.getEgoera() instanceof  Ikututa);
+		
 		
 		o.egoeraAldatu(new EzkutuOsoa());
 		o.jo(b, false); 
-		System.out.println("Egoera EzkutuOsoa, bonba jo ondoren"+o.getEgoera());
+		assertTrue(o.getEgoera() instanceof  EzkutuBakarra);
+		
 		
 		o.egoeraAldatu(new EzkutuBakarra());
 		o.jo(b, false); 
-		System.out.println("Egoera EzkutuBakarra, bonba jo ondoren"+o.getEgoera());
+		assertTrue(o.getEgoera() instanceof  Ikututa);
+		
 		
 		o.jo(a, false); 
-		System.out.println(o.getEgoera());
+		assertTrue(o.getEgoera() instanceof  Urperatuta);
+		
 		
 		o.egoeraAldatu(new Ikututa());
 		o.jo(a, false); 
-		System.out.println("Egoera Ikututa, misila jo ondoren"+o.getEgoera());
+		assertTrue(o.getEgoera() instanceof  Urperatuta);
+		
 		
 		o.egoeraAldatu(new EzkutuOsoa());
 		o.jo(a, false); 
-		System.out.println("Egoera EzkutuOsoa, misila jo ondoren"+o.getEgoera());
+		assertTrue(o.getEgoera() instanceof  Urperatuta);
+		
 		
 		o.egoeraAldatu(new EzkutuBakarra());
 		o.jo(a, false); 
-		System.out.println("Egoera EzkutuBakarra, misila jo ondoren"+o.getEgoera());
+		assertTrue(o.getEgoera() instanceof  Urperatuta);
+		
 		
 		o = new Suntsitzaile();
+		assertTrue(o.getEgoera() instanceof  Osorik);
 		
-		System.out.println(o.getEgoera());
 		
 		o.egoeraAldatu(new Ikututa());
 		o.jo(b, false); 
-		System.out.println("Egoera Ikututa, bonba jo ondoren"+o.getEgoera());
+		assertTrue(o.getEgoera() instanceof  Ikututa);
+		
 		
 		o.egoeraAldatu(new EzkutuOsoa());
 		o.jo(b, false); 
-		System.out.println("Egoera EzkutuOsoa, bonba jo ondoren"+o.getEgoera());
+		assertTrue(o.getEgoera() instanceof  EzkutuBakarra);
+		
 		
 		o.egoeraAldatu(new EzkutuBakarra());
 		o.jo(b, false); 
-		System.out.println("Egoera EzkutuBakarra, bonba jo ondoren"+o.getEgoera());
+		assertTrue(o.getEgoera() instanceof  Ikututa);
+		
 		
 		o.jo(a, false); 
-		System.out.println(o.getEgoera());
+		assertTrue(o.getEgoera() instanceof  Urperatuta);
+		
 		
 		o.egoeraAldatu(new Ikututa());
 		o.jo(a, false); 
-		System.out.println("Egoera Ikututa, misila jo ondoren"+o.getEgoera());
+		assertTrue(o.getEgoera() instanceof  Urperatuta);
+		
 		
 		o.egoeraAldatu(new EzkutuOsoa());
 		o.jo(a, false); 
-		System.out.println("Egoera EzkutuOsoa, misila jo ondoren"+o.getEgoera());
+		assertTrue(o.getEgoera() instanceof  Urperatuta);
+		
 		
 		o.egoeraAldatu(new EzkutuBakarra());
 		o.jo(a, false); 
-		System.out.println("Egoera EzkutuBakarra, misila jo ondoren"+o.getEgoera());
+		assertTrue(o.getEgoera() instanceof  Urperatuta);
+		
 	}
 
 }
