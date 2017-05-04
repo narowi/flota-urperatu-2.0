@@ -177,7 +177,7 @@ public class Flota {
 		Iterator<Ontzia> itr =this.getIteradorea();
 		while(itr.hasNext() && !aurkitua){
 			o=itr.next();
-			if(o.berdinaDa(izena)){
+			if(o.berdinaDa(izena)&& !o.kokatutaAhalNago()){
 				aurkitua=true;
 			}
 		}
@@ -224,6 +224,83 @@ public class Flota {
 	
 	public Armamentua armamentuaLortu(){
 		return this.armamentua;
+	}
+
+
+	public boolean itsaspekoakDaude() {
+		boolean batKokatuGabe=false;
+		Iterator<Ontzia> itr =this.getIteradorea();
+		Ontzia aux=null;
+		while(itr.hasNext()&& !batKokatuGabe){
+			aux=itr.next();
+			if(aux.itsaspekoaDa() && !aux.kokatutaAhalNago()){
+				batKokatuGabe=true;
+			}
+		}
+		return batKokatuGabe;
+	}
+	
+	public boolean fragatakDaude() {
+		boolean batKokatuGabe=false;
+		Iterator<Ontzia> itr =this.getIteradorea();
+		Ontzia aux=null;
+		while(itr.hasNext()&& !batKokatuGabe){
+			aux=itr.next();
+			if(aux.fragataDa() && !aux.kokatutaAhalNago()){
+				batKokatuGabe=true;
+			}
+		}
+		return batKokatuGabe;
+	}
+	
+	public boolean hegazkinOntziDaude() {
+		boolean batKokatuGabe=false;
+		Iterator<Ontzia> itr =this.getIteradorea();
+		Ontzia aux=null;
+		while(itr.hasNext()&& !batKokatuGabe){
+			aux=itr.next();
+			//System.out.println(aux.hegazkinOntziDa()+"= hegazkin ontzi?");
+			//System.out.println(aux.kokatutaAhalNago()+" =kokatuta nago?");
+			if(aux.hegazkinOntziDa() && !aux.kokatutaAhalNago()){
+				batKokatuGabe=true;
+			}
+		}
+		return batKokatuGabe;
+	}
+	public boolean suntsitzaileDaude() {
+		boolean batKokatuGabe=false;
+		Iterator<Ontzia> itr =this.getIteradorea();
+		Ontzia aux=null;
+		while(itr.hasNext()&& !batKokatuGabe){
+			aux=itr.next();
+			if(aux.suntsitzaileaDa() && !aux.kokatutaAhalNago()){
+				batKokatuGabe=true;
+			}
+		}
+		return batKokatuGabe;
+	}
+
+
+	public boolean bobarikJartzenJarraitu() {
+		return this.armamentua.bobarikJartzenJarraitu();
+	}
+	
+
+	public boolean misilakJartzenJarraitu() {
+		return this.armamentua.misilakJartzenJarraitu();
+	}
+
+	public boolean misilZuzenduakJartzenJarraitu() {
+		return this.armamentua.misilZuzenduakJartzenJarraitu();
+	}
+
+	public boolean radarraJartzenJarraitu() {
+		return this.armamentua.radarrakJartzenJarraitu();
+	}
+	
+
+	public boolean ezkutuakJartzenJarraitu() {
+		return this.armamentua.ezkutuakJartzenJarraitu();
 	}
 }
 

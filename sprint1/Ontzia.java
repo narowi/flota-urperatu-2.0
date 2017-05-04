@@ -26,6 +26,7 @@ public class Ontzia {
 
 	public void kokatuNaiz(){
 		this.kokatua=true;
+		System.out.println(this.kokatua+" si me he colocado dentro de ontzia");
 	}
 	public boolean kokatutaAhalNago(){
 		return this.kokatua;
@@ -138,6 +139,7 @@ public class Ontzia {
 	}
 	
 	public boolean berdinaDa(String izena) {
+		//System.out.println("tipo de barco ="+this.mota);
 		return this.mota.equals(izena);
 	}
 
@@ -171,6 +173,54 @@ public class Ontzia {
 
 	public boolean dagoOsorik() {
 		if(this.egoera instanceof Osorik || (this.egoera instanceof EzkutuOsoa && this.luzera == this.urperatuGabekoZatiKop) || (this.egoera instanceof EzkutuBakarra && this.luzera == this.urperatuGabekoZatiKop)  ){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+
+
+	public boolean itsaspekoaDa() {
+		if(this instanceof Itsaspeko){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+
+
+	public boolean kokatuGabe() {
+		if(this.kokatua == false){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+
+
+	public boolean fragataDa() {
+		if(this instanceof Fragata){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+
+
+	public boolean hegazkinOntziDa() {
+		if(this instanceof HegazkinOntzi){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	public boolean suntsitzaileaDa() {
+		if(this instanceof Suntsitzaile){
 			return true;
 		}else{
 			return false;

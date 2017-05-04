@@ -4,6 +4,7 @@ public abstract class Arma {
 	protected int prezioa;
 	protected int biltegiZenbakia;
 	protected String izena;
+	protected boolean kokatua=false;
 	public Arma(){
 	}
 	public abstract void tiroEgin(int x, int y,int aukera);
@@ -25,5 +26,49 @@ public abstract class Arma {
 	
 	public boolean berdinaNaiz(String arma) {
 		return this.izena==arma;
+	}
+	public boolean bonbaDa() {
+		if(this instanceof Bonba){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	public boolean misilaDa() {
+		if(this instanceof Misila){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	public boolean misilZuzenduaDa() {
+		if(this instanceof MisilZuzendua){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	public boolean radarraDa() {
+		if(this instanceof Radar){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	public boolean ezkutuaDa() {
+		if(this instanceof Ezkutua){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	public boolean kokatuGabe() {
+		if(this.kokatua == false){
+			return true;
+		}else{
+			return false;
+		}
 	}
 }

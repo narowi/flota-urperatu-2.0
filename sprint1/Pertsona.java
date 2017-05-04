@@ -5,11 +5,12 @@ package sprint1;
 public class Pertsona extends Jokalaria {
 	
 	public Pertsona(){
+		super();
+		//super.nireTablero=new Tablero();
+		//super.flota=new Flota();
 	}
 	public void ontziakKokatu(){ //miralo naroa
-//		while(!super.flota.isEmpty()){
-//			super.nireTablero.kokatu(x,y,o,norabide);
-//		}
+		
 	}
 	public void ezkutuaJarri(int x,int y){
 			//banaka jarriko ditu ontziak eskutuan
@@ -73,6 +74,18 @@ public class Pertsona extends Jokalaria {
 		this.flota.armaErosi(a);
 		
 	}
+	public boolean OntziaKokatu(int x,int y,String ontziMota,char norabide){
+		boolean kokatuDa=false;
+		Ontzia o=this.flota.lortuOntziaStringetik(ontziMota);
+		if(o!=null){
+		nireTablero.kokatu(x, y, o, norabide);
+		kokatuDa=true;
+		}
+		else{
+			System.out.println("no te quedan barcos de es tipo");
+		}
+		return kokatuDa;
+	}
 	
 	
 	
@@ -97,6 +110,34 @@ public class Pertsona extends Jokalaria {
 	public void ontziaKonpondu(String o) {
 		// TODO Auto-generated method stub
 		
+	}
+	public boolean itsaspekoKokatzenJarraituAhal() {
+		return this.flota.itsaspekoakDaude();
+	}
+	public boolean fragataKokatzenJarraituAhal() {
+		return this.flota.fragatakDaude();
+	}
+	public boolean suntsitzaileKokatzenJarraituAhal() {
+		return this.flota.suntsitzaileDaude();
+	}
+	public boolean hegazkinOntziKokatzenJarraituAhal() {
+		return this.flota.hegazkinOntziDaude();
+	}
+	
+	public boolean bobarikJartzenJarraitu(){
+		return this.flota.bobarikJartzenJarraitu();
+	}
+	public boolean misilakJartzenJarraitu() {
+		return this.flota.misilakJartzenJarraitu();
+	}
+	public boolean misilZuzenduakJartzenJarraitu() {
+		return this.flota.misilZuzenduakJartzenJarraitu();
+	}
+	public boolean radarrakJartzenJarraitu() {
+		return this.flota.radarraJartzenJarraitu();
+	}
+	public boolean ezkutuakJartzenJarraitu() {
+		return this.flota.ezkutuakJartzenJarraitu();
 	}
 }
 	

@@ -15,16 +15,18 @@ public class Ordenagailua extends Jokalaria  {
 	}
 	
 	public boolean ontziaKonponduNahi(Ontzia o){
-		if(super.diruNahikoa(o)){
-			return true;
-		}else{
-			return false;
-		}
+			if(super.diruNahikoa(o)){
+				return true;
+			}else{
+				return false;
+			}
 	}
 	public void armaHautatu(){
 		//TO DO
 	}
 	public void ontziaKonpondu(String o){
+		int bai= (int)(Math.random()*2);
+		if(bai==0){
 		int oPos = (int)(Math.random()*super.luzera()-1);
 		Ontzia on = super.bilatuOntzia(oPos);
 		if(!on.dagoOsorik()){
@@ -39,6 +41,9 @@ public class Ordenagailua extends Jokalaria  {
 				//cambiar de egoera al barco
 			}
 		}
+		}else{
+			System.out.println("random aukeratu du ontzia ez konpontzea");
+		}
 	}
 	public void ontziaKokatu(Ontzia o){
 		int x;
@@ -49,9 +54,8 @@ public class Ordenagailua extends Jokalaria  {
 				y= this.lortuKoordenatua();
 				horBert= super.nireTablero.norabideaAukeratu(x, y, o);
 				pos= this.lortuPos(horBert);
-				String oIzena= o.getMota();//sumar esto
 			super.flota.kenduOntzia(o);
-			super.nireTablero.kokatu(x, y, oIzena, pos);	//cambiar la variable
+			super.nireTablero.kokatu(x, y, o, pos);	
 	}
 	
 	private int lortuKoordenatua(){
