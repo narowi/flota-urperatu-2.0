@@ -268,5 +268,8 @@ public class Tablero {
 		public void markatuIkututa(int x, int y) {
 			this.tablero[x][y].markatuIkututa(true);			
 		}
-		
+		public Tablero sortuTableroa() {
+			return new Tablero();
+			
+		}
 }

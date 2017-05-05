@@ -9,13 +9,13 @@ public abstract class Jokalaria {
 	protected int radarKontsultaKop;
 	
 	public Jokalaria(){
-		nireTablero=new Tablero();
+		//nireTablero=new Tablero();
 		flota=new Flota();
 		radarKontsultaKop=2;
 	}
 	
 	public abstract void ontziakKokatu(); 
-
+	public abstract void tiroEgin(Kasilla k, String armaNorabide);
 	public abstract void ezkutuaJarri();
 	
 	public abstract void armaHautatu();
@@ -111,6 +111,22 @@ public abstract class Jokalaria {
 		}
 		
 		public abstract void armaAukeratuErosteko(String arma);
-	
+		public void createTablero(){
+			nireTablero=this.nireTablero.sortuTableroa();
+		}
+		
+		public void etsaiariNireTableroaEsleitu(){
+			this.etsaiarenTableroa=this.nireTablero;
+		}
+		
+		public void flotaSortu(){
+			this.flota.flotaSortu();
+		}
+		public Armamentua armamentuaItzuli() {
+			return this.flota.armamentuaLortu();
+		}
+		public Tablero getTablero(){
+			return this.nireTablero;
+		}
 }
 		

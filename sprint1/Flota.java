@@ -310,5 +310,10 @@ public class Flota {
 	public boolean ezkutuakJartzenJarraitu() {
 		return this.armamentua.ezkutuakJartzenJarraitu();
 	}
+	
+	public void armakEsleitu() {
+		this.armamentua.hasieratu(4, 3, 2, 3, 2);
+		
+	}
 }
 

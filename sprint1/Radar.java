@@ -6,7 +6,7 @@ public class Radar extends Arma {
 		super.prezioa=70;
 		super.izena="Radar";
 	}
-	public void tiroEgin(int x, int y,int aukera){}
+	public void tiroEgin(int x, int y,int aukera,Jokalaria pAurkari){}
 	public  boolean posizioHorretakoArmaDa(int pos){
 		if(pos==this.biltegiZenbakia){
 			return true;

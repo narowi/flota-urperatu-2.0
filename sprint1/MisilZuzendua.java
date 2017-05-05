@@ -6,20 +6,20 @@ public class MisilZuzendua extends Arma {
 		super.prezioa=60;
 		super.izena="MisilZuzendua";
 	}
-public void tiroEgin(int x, int y,int aukera){
+public void tiroEgin(int x, int y,int aukera, Jokalaria pAurkari){
 		
-		//aukera=0-> IH, aukera=1-> EM, aukera=2-> BOOM
-		Jokalaria pAurkari= Jokoa.getNireJokoa().aurkariaLortu();
-		Tablero aurkariarenTableroa =pAurkari.lortuEtsaiarenTableroa2();
+		//aukera=0-> IH vertical, aukera=1-> EM horizontal, aukera=2-> BOOM horizontal+vertical
+		
+		Tablero aurkariarenTableroa = pAurkari.getTablero();
 		aurkariarenTableroa.setBegiratuta(x, y, true);
 		int i=0;
 		boolean kasillaUrperatuta = aurkariarenTableroa.getKasillaUrperatuta(x,y);
 		if(aukera==0){
 			//puede haber mas de uno, while que mire todas las posiciones en horizontal y fija, x+1 hasta llegar a la luzera del tablero, y que urperatutako zatiak sean!=0
-			x=0;
+			y=0;
 			while(i<10){			
 				Ontzia its = aurkariarenTableroa.itsasontzirikDago(x,y);//tengo que ir aumentando la x
-				x++;
+				y++;
 				if(its!=null){
 				
 					its.jo(this,kasillaUrperatuta);
@@ -30,18 +30,19 @@ public void tiroEgin(int x, int y,int aukera){
 			}
 		
 		}else if(aukera==1){
-			y=0;
+			x=0;
 			while(i<10){
 				Ontzia its = aurkariarenTableroa.itsasontzirikDago(x,y);
-				y++;
+				x++;
 				if(its!=null){
 					its.jo(this,kasillaUrperatuta);
 				}
+				i++;
 			}
 		}else{
 			int lagx=0;
 			int lagy=0;
-			//lehenengo horizontalean begiratu
+			//lehenengo bertikalean begiratu
 			while(i<10){
 				Ontzia its = aurkariarenTableroa.itsasontzirikDago(lagx,y);
 				lagx++;
@@ -51,13 +52,14 @@ public void tiroEgin(int x, int y,int aukera){
 				i++;
 			}
 			i=0;
-			//bertikalean begiratu
+			//horizontalean begiratu
 			while(i<10){
 				Ontzia its = aurkariarenTableroa.itsasontzirikDago(x,lagy);
 				lagy++;
 				if(its!=null){
 					its.jo(this,kasillaUrperatuta);
 				}
+				i++;
 			}
 				
 		}	

@@ -108,20 +108,23 @@ public class Ordenagailua extends Jokalaria  {
 	public Tablero lortuNireTableroa(){
 		return super.lortuNireTableroa();
 	}	
-	public void tiroEgin(){ //random
+	public void tiroEgin(Kasilla k, String armaNorabide){ //random
 		int x;
 		int y;
 		Jokalaria pAurkari= Jokoa.getNireJokoa().aurkariaLortu();
-		//Tablero aurkariarenTableroa=pAurkari.lortuNireTableroa();
+		//System.out.println("ord tableroa"+ super.nireTablero);
+		//System.out.println("per tableroa"+ pAurkari.nireTablero);
+		Armamentua armamentua= Jokoa.getNireJokoa().ordArmamentuaLortu();
+		//System.out.println("Ordenagailuaren armamentua" + armamentua.luzera());
 		Arma arma= this.lortuArma();
-		System.out.println(arma);
+		System.out.println(arma); 
 		x=this.lortuKoordenatua();
 		y=this.lortuKoordenatua();
 		pAurkari.markatuIkututa(x,y);
 		if(arma!=null){
 			this.flota.kenduArmaKopBat(arma);
 				int aukera=this.aukeraLortu();
-				arma.tiroEgin(x,y,aukera);
+				arma.tiroEgin(x,y,aukera, pAurkari);
 		}else{
 			System.out.println("arma barik gelditu zara");
 		}
@@ -181,7 +184,9 @@ public class Ordenagailua extends Jokalaria  {
 		// TODO Auto-generated method stub
 		
 	}
-	
+	public int armamentuarenLuzeera() {
+		return this.flota.armamentuarenLuzera();
+	}
 	}
 
 

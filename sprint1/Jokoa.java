@@ -28,11 +28,32 @@ public class Jokoa {
 	}
 
 	private void partidaBatJolastu() {
-		per.etsaiarenTableroa=ord.nireTablero;
-		ord.etsaiarenTableroa=per.nireTablero;
+		//per.etsaiarenTableroa=ord.nireTablero;
+		//ord.etsaiarenTableroa=per.nireTablero;
+		jokoaHasieratu();
+		txanda=0;
+		boolean amaitu=false;
+		while(!amaitu){
+			//ontziak kokatu
+			//depende la txanda hace tiro uno o otro
+		}
+		
+		
+	}
+	
+	private void jokoaHasieratu(){
+		per.createTablero();
+		per.etsaiariNireTableroaEsleitu();
+		ord.createTablero();
+		ord.etsaiariNireTableroaEsleitu();
+		Flota fPers= new Flota();
+		Flota fOrd= new Flota();
+		fPers.armakEsleitu();
+		fOrd.armakEsleitu();
+		per.setFlota(fPers);
+		ord.setFlota(fOrd);
 		new FlotaJokoa().main(null);
-		
-		
+		Biltegia.getNireBiltegia().hasieratu();
 	}
 	public Jokalaria aurkariaLortu() {
 		if((this.txanda)%2==0){
@@ -104,5 +125,25 @@ public class Jokoa {
 
 	public boolean ezktuaJarri(Integer x, Integer y) {
 		return per.ezkutuaJarri(x, y);
+		}
+	
+	//junit
+		public Ordenagailua ordLortu() {
+			return this.ord; 
+		}
+		public Pertsona perLortu(){
+			return this.per;
+		}
+		
+		public Armamentua ordArmamentuaLortu(){
+			return this.ord.armamentuaItzuli();
+		}
+
+		public Tablero ordTableroaLortu() {
+			return this.ord.lortuNireTableroa();
+		}
+		
+		public Tablero perTableroaLortu() {
+			return this.per.lortuNireTableroa();
 		}
 }

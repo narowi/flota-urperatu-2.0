@@ -4,11 +4,15 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import sprint1.*;
+
+
 import sprint1.Armamentua;
 import sprint1.Bonba;
 import sprint1.Flota;
 import sprint1.Fragata;
 import sprint1.Itsaspeko;
+import sprint1.Jokoa;
 import sprint1.MisilZuzendua;
 import sprint1.Misila;
 import sprint1.Ordenagailua;
@@ -18,32 +22,9 @@ import sprint1.Tablero;
 
 public class OrdenagailuaTest {
 	
-	private Ordenagailua o;
-	private Pertsona p;
-	private Flota flota; 
-	private Flota nireFlota;
-	private Itsaspeko o1;
-	private Armamentua armak;
-	private MisilZuzendua mz;
-	private Misila m;
-	private Bonba b;
-	private Fragata o2;
-	private Tablero etsaiarenTableroa;
-	private Tablero nireTableroa;
-	
+		
 	public void setUp() throws Exception{
-		o=new Ordenagailua();
-		p = new Pertsona();
-		flota= new Flota();
-		nireFlota= new Flota();
-		o1=new Itsaspeko();
-		o2=new Fragata();
-		armak=new Armamentua();
-		mz=new MisilZuzendua();
-		m=new Misila();
-		b=new Bonba();
-		etsaiarenTableroa= new Tablero();
-		nireTableroa= new Tablero();
+		Jokoa j= Jokoa.getNireJokoa();
 		
 		
 		
@@ -52,73 +33,56 @@ public class OrdenagailuaTest {
 
 	public void tearDown() throws Exception {
 
-		o=null;
-		p=null;
-		flota= null;
-		nireFlota= null;
-		o1=null;
-		o2=null;
-		armak=null;
-		mz=null;
-		m=null;
-		b=null;
-		p=null;
-		etsaiarenTableroa=null;
-		nireTableroa=null;
+	
 
 	}
+	
+
+		
 
 	@Test
 	public void tiroEgin() {
-		etsaiarenTableroa=new Tablero();
-		nireTableroa=new Tablero();
-		o1= new Itsaspeko();
-		o2 = new Fragata();
-		o= new Ordenagailua();
-		armak=new Armamentua();
-		mz=new MisilZuzendua();
-		m=new Misila();
-		b=new Bonba();
-		flota= new Flota();
-		p= new Pertsona();
-		flota.gehituOntzi(o1);
-		flota.gehituOntzi(o2);
-		//System.out.println("test:" + flota.zenbatOntzi());
-		p.setFlota(flota);
-		//System.out.println("pertsona"+ p.flota.zenbatOntzi());
+		Jokoa j= Jokoa.getNireJokoa();
 	
-		o.setEtsaiarenTablero(etsaiarenTableroa);
-		o.setNireTablero(nireTableroa);
-		p.setEtsaiarenTablero(nireTableroa);
-		p.setNireTablero(etsaiarenTableroa);
-		assertSame(armak.zenbatArma(),0);
-		armak.armaGehitu2(b);
-		armak.armaGehitu2(m);
-		armak.armaGehitu2(mz);
-		assertSame(armak.zenbatArma(),3);
-		o.setArmamentua(armak);
+		Ordenagailua o= j.ordLortu();
+		Pertsona p= j.perLortu();
+		Tablero ot= new Tablero();
+		Tablero pt= new Tablero();
+		o.setNireTablero(ot);
+		System.out.println("ord tableroa" + o.getTablero());
+		p.setNireTablero(pt);
+		System.out.println("per tableroa" + p.getTablero());
+		Armamentua a= j.ordArmamentuaLortu();
+		a.hasieratu(1,1,1,1,1);
+		System.out.println("armamentu" + a.luzera());
+		o.setArmamentua(a);
+		System.out.println("ord amamentu junit"+ o.armamentuarenLuzeera());
 		
 		o.tiroEgin();
-		
-		Tablero aurkariarenTableroa=p.lortuNireTableroa();
+//		Ordenagailua ord= Jokoa.getNireJokoa().ordLortu();
+//		Pertsona p=Jokoa.getNireJokoa().perLortu();
+//		Armamentua a= Jokoa.getNireJokoa().ordArmamentuaLortu();
+//
+//		Tablero nireTablero= ord.lortuNireTableroa();
+//		Tablero etsaiarenTableroa= p.lortuNireTableroa();
 		int lehen= 0;
 		int gero= 0;
-		for(int x=0; x < etsaiarenTableroa.getTamaina(); x++){
-			for(int y=0; y < etsaiarenTableroa.getTamaina(); y++){
-				if(aurkariarenTableroa.getIkutua(x, y)){
+		for(int x=0; x < ot.getTamaina(); x++){
+			for(int y=0; y < ot.getTamaina(); y++){
+				if(pt.getIkutua(x, y)){
 					lehen++;
 				}
 			}
 		}
 		o.tiroEgin();
-		for(int x=0; x < etsaiarenTableroa.getTamaina(); x++){
-			for(int y=0; y < etsaiarenTableroa.getTamaina(); y++){
-				if(aurkariarenTableroa.getIkutua(x, y)){
+		for(int x=0; x < ot.getTamaina(); x++){
+			for(int y=0; y < ot.getTamaina(); y++){
+				if(pt.getIkutua(x, y)){
 					gero++;
 				}
 			}
 		}
-		assertTrue(gero>=lehen);
+		assertTrue(gero>lehen);
 		
 	}
 

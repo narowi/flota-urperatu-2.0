@@ -16,9 +16,8 @@ public class Bonba extends Arma {
 		}
 	}
 	
-	public void tiroEgin(int x, int y,int aukera){
-		Jokalaria pAurkari= Jokoa.getNireJokoa().aurkariaLortu();
-		Tablero aurkariarenTableroa =pAurkari.lortuEtsaiarenTableroa2();
+	public void tiroEgin(int x, int y,int aukera,Jokalaria pAurkari){
+		Tablero aurkariarenTableroa = pAurkari.getTablero();
 		aurkariarenTableroa.setBegiratuta(x, y, true);
 		boolean kasillaUrperatuta = aurkariarenTableroa.getKasillaUrperatuta(x,y);
 		Ontzia o = aurkariarenTableroa.itsasontzirikDago(x,y);

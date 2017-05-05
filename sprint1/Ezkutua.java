@@ -6,7 +6,7 @@ public class Ezkutua extends Arma {
 		super.prezioa=50; //porcada casilla 
 		super.izena="Ezkutua";
 	}
-	public void tiroEgin(int x, int y,int aukera){}
+	public void tiroEgin(int x, int y,int aukera,Jokalaria pAurkari){}
 	public  boolean posizioHorretakoArmaDa(int pos){
 		if(pos==this.biltegiZenbakia){
 			return true;
