@@ -206,6 +206,16 @@ public class Armamentua {
 	public int zenbatArma() {
 		return this.armamentua.size();
 	}
+	
+	public void garbitu(){
+		this.armamentua= new ArrayList<Arma>();	
+		this.bonba=0;
+		this.ezkutua=0;
+		this.misila=0;
+		this.misilzuzendua=0;  //bakoitza mota desberdinetakoa
+		this.radar=0;
+		this.armamentua.clear();
+	}
 
 	public boolean bobarikJartzenJarraitu() {
 		boolean batKokatuGabe=false;
@@ -270,6 +280,14 @@ public class Armamentua {
 			}
 		}
 		return batKokatuGabe;
+	}
+	
+	public boolean armakDaude() {
+		if (this.bonba!=0 || this.ezkutua!=0 || this.misila!=0 || this.misilzuzendua!=0 || this.radar!=0){
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 }

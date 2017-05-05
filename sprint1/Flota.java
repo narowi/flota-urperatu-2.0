@@ -3,6 +3,8 @@ package sprint1;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import ui.WarningKudeatzailea;
+
 
 
 public class Flota {
@@ -115,6 +117,7 @@ public class Flota {
 			this.dirua=this.dirua-pArma.prezioa;
 		}else{
 			System.out.print("Ez duzu dirurik eskatutako arma erosteko");
+			new WarningKudeatzailea("Ez duzu dirurik eskatutako arma erosteko");// new Warning
 		}
 	}
 
