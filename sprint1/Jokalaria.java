@@ -15,7 +15,7 @@ public abstract class Jokalaria {
 	}
 	
 	public abstract void ontziakKokatu(); 
-	public abstract void tiroEgin(Kasilla k, String armaNorabide);
+	//public abstract void tiroEgin(Kasilla k, String armaNorabide);
 	public abstract void ezkutuaJarri();
 	
 	public abstract void armaHautatu();

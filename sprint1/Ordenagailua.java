@@ -108,7 +108,7 @@ public class Ordenagailua extends Jokalaria  {
 	public Tablero lortuNireTableroa(){
 		return super.lortuNireTableroa();
 	}	
-	public void tiroEgin(Kasilla k, String armaNorabide){ //random
+	public void tiroEgin(){ //random
 		int x;
 		int y;
 		Jokalaria pAurkari= Jokoa.getNireJokoa().aurkariaLortu();
