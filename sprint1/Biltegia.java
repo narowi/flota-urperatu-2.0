@@ -28,7 +28,7 @@ public class Biltegia {
 		if(this.e instanceof Ondo){
 			//e= new Ondo();
 			if(this.armamentua.armarikDago(mota)){
-				//Biltegia.nireBiltegia.armamentua.armaKenduKop(mota); 
+				Biltegia.nireBiltegia.armamentua.armaKenduKop(mota); 
 				e.armaSaldu(mota);
 				if (!this.armamentua.armakDaude()){
 					e = new StockGabe();
