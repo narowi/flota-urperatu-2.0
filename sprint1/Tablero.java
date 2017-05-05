@@ -1,5 +1,7 @@
 package sprint1;
 
+import ui.WarningKudeatzailea;
+
 public class Tablero {
 	private Kasilla[][] tablero;
 	private static int tamaina;
@@ -211,7 +213,8 @@ public class Tablero {
 				}
 			}
 			else{
-					System.out.println("ezin da kokatu ");
+					//System.out.println("ezin da kokatu ");
+					new WarningKudeatzailea("ezin da gelaxka horretan kokatu");
 			}
 			
 	}

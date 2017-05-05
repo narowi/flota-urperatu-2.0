@@ -1,5 +1,9 @@
 package sprint1;
 
+import javax.swing.JOptionPane;
+
+import ui.ErroreKudeatzailea;
+import ui.WarningKudeatzailea;
 
 
 public class Pertsona extends Jokalaria {
@@ -25,10 +29,13 @@ public class Pertsona extends Jokalaria {
 				}
 			}
 			else{
-				System.out.println("gelaxka horretan ez dago ontzirik");
+				//System.out.println("gelaxka horretan ez dago ontzirik");
+				new WarningKudeatzailea("ez dago ontzirik gelaxka horretan");
+				
 			}
 		}else{
-			System.out.println("Ez duzu ezkutu gehiagorik");
+			//System.out.println("Ez duzu ezkutu gehiagorik");
+			new ErroreKudeatzailea("ezkuturik ez");
 		}
 		return jarri;
 	}
@@ -86,7 +93,9 @@ public class Pertsona extends Jokalaria {
 		kokatuDa=true;
 		}
 		else{
-			System.out.println("no te quedan barcos de es tipo");
+			//System.out.println("no te quedan barcos de es tipo");
+			new ErroreKudeatzailea("ez dago mota horretako ontzirik");
+			//JOptionPane.showMessageDialog(null, "hdsj", "jshf", JOptionPane.ERROR_MESSAGE);
 		}
 		return kokatuDa;
 	}
