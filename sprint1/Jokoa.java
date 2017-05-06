@@ -30,29 +30,30 @@ public class Jokoa {
 	private void partidaBatJolastu() {
 		//per.etsaiarenTableroa=ord.nireTablero;
 		//ord.etsaiarenTableroa=per.nireTablero;
-		jokoaHasieratu();
+		//jokoaHasieratu();
 		txanda=0;
 		boolean amaitu=false;
-		while(!amaitu){
+		new FlotaJokoa().main(null);
+		//while(!amaitu){
 			//ontziak kokatu
 			//depende la txanda hace tiro uno o otro
-		}
+		//}
 		
 		
 	}
 	
 	private void jokoaHasieratu(){
-		per.createTablero();
-		per.etsaiariNireTableroaEsleitu();
-		ord.createTablero();
-		ord.etsaiariNireTableroaEsleitu();
+		//per.createTablero();
+		//per.etsaiariNireTableroaEsleitu();
+		//ord.createTablero();
+		//ord.etsaiariNireTableroaEsleitu();
 		Flota fPers= new Flota();
 		Flota fOrd= new Flota();
 		fPers.armakEsleitu();
 		fOrd.armakEsleitu();
 		per.setFlota(fPers);
 		ord.setFlota(fOrd);
-		new FlotaJokoa().main(null);
+		
 		Biltegia.getNireBiltegia().hasieratu();
 	}
 	public Jokalaria aurkariaLortu() {

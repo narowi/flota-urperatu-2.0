@@ -9,7 +9,7 @@ public abstract class Jokalaria {
 	protected int radarKontsultaKop;
 	
 	public Jokalaria(){
-		//nireTablero=new Tablero();
+		nireTablero=new Tablero();
 		flota=new Flota();
 		radarKontsultaKop=2;
 	}

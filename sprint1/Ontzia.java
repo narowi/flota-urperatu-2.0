@@ -10,7 +10,7 @@ public class Ontzia {
 
 	protected int konponketaPrezioa;
 	
-	protected Egoera egoera;
+	protected Egoera egoera = new Osorik();
 	
 	protected boolean kokatua=false;
 

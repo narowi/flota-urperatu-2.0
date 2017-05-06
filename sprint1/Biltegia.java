@@ -10,7 +10,7 @@ public class Biltegia {
 	private Armamentua armamentua;
 	private static Biltegia nireBiltegia;
 //	private ArrayList<Integer> armaKopurua;
-	private EgoeraBiltegia e;
+	private EgoeraBiltegia e = new Ondo();
 
 	private Biltegia(){
 		
