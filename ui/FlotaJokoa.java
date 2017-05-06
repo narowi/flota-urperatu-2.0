@@ -212,7 +212,7 @@ public class FlotaJokoa {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				frame.dispose();
+				Jokoa.getNireJokoa().tiroEgin(arma,koordenatuak[0],koordenatuak[1]);
 				
 			}
 		});

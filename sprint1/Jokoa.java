@@ -31,6 +31,8 @@ public class Jokoa {
 		//per.etsaiarenTableroa=ord.nireTablero;
 		//ord.etsaiarenTableroa=per.nireTablero;
 		//jokoaHasieratu();
+		per.setEtsaiarenTablero(ord.getTablero());
+		ord.setEtsaiarenTablero(per.getTablero());
 		txanda=0;
 		boolean amaitu=false;
 		new FlotaJokoa().main(null);
@@ -146,5 +148,10 @@ public class Jokoa {
 		
 		public Tablero perTableroaLortu() {
 			return this.per.lortuNireTableroa();
+		}
+
+		public void tiroEgin(String arma, Integer x, Integer y) {
+			this.per.tiroEgin(arma,x,y);
+			
 		}
 }

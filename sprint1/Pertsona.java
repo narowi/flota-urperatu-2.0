@@ -48,7 +48,7 @@ public class Pertsona extends Jokalaria {
 		return super.lortuNireTableroa();
 	}	
 	
-	public void tiroEgin(Kasilla k, String armaNorabide){
+	public void tiroEgin(String armaNorabide, int x, int y){
 		  int aukera=-1;
 		  String arma;
 		  Arma a;
@@ -69,11 +69,8 @@ public class Pertsona extends Jokalaria {
 		  }
 		  
 		 a=this.flota.geratzenZaitArmaHau(arma);
-		 if(a!=null){
-			 
+		 if(a!=null){ 
 		   this.flota.kenduArmaKopBat(a);
-		   int x=k.getX();
-		   int y=k.getY();
 		   Jokalaria pAurkari= Jokoa.getNireJokoa().aurkariaLortu();
 		   a.tiroEgin(x,y,aukera,pAurkari);
 		   
