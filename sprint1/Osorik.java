@@ -6,8 +6,8 @@ public class Osorik implements Egoera{
 		if(arma instanceof MisilZuzendua || arma instanceof Misila){
 			ontzia.egoeraAldatu(new Urperatuta());
 			ontzia.zatiGuztiakUrperatu();
-			Jokalaria pAurkari= Jokoa.getNireJokoa().aurkariaLortu();
-			pAurkari.getListaOntziak().kenduOntzia(ontzia);
+			//Jokalaria pAurkari= Jokoa.getNireJokoa().aurkariaLortu();
+			//pAurkari.getListaOntziak().kenduOntzia(ontzia);
 		}else{
 			ontzia.egoeraAldatu(new Ikututa());
 			ontzia.kenduZatia();

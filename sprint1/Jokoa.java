@@ -122,7 +122,7 @@ public class Jokoa {
 		else{
 			zerDa=ord.zerDaKasillaHau(x, y);
 		}
-		System.out.println(zerDa+" jokoan hau da");
+		//System.out.println(zerDa+" jokoan hau da");
 		return zerDa;
 	}
 

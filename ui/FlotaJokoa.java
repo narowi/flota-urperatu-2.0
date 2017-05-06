@@ -33,7 +33,6 @@ public class FlotaJokoa {
 	private String arma;
 	static Integer[] koordenatuak = new Integer[2];
 	
-	
 	/**
 	 * Launch the application.
 	 */
