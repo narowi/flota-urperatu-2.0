@@ -27,10 +27,10 @@ public class Biltegia {
 		//if(this.armamentua.armakDaude()){
 		if(this.e instanceof Ondo){
 			//e= new Ondo();
-			if(this.armamentua.armarikDago(mota)){
-				Biltegia.nireBiltegia.armamentua.armaKenduKop(mota); 
+			if(this.armamentua.biltegianArmarikDago(mota)){
+				Biltegia.nireBiltegia.armamentua.biltegiArmaKenduKop(mota); 
 				e.armaSaldu(mota);
-				if (!this.armamentua.armakDaude()){
+				if (!this.armamentua.biltegianArmakDaude()){
 					e = new StockGabe();
 				}
 			}else{
@@ -54,7 +54,7 @@ public class Biltegia {
 	}
 
 	public boolean armakDaude() {
-		return this.armamentua.armakDaude();
+		return this.armamentua.biltegianArmakDaude();
 	}
 
 	public void egoeraAldatu(EgoeraBiltegia egoera) {

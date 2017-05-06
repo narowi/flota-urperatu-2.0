@@ -8,6 +8,7 @@ public class Armamentua {
 
 	private ArrayList<Arma> armamentua;
 	//private ArrayList<Integer> armaKopurua;
+	private int[] biltegikoArmaKop= new int[5];
 
 	private int bonba;
 	private int ezkutua;
@@ -22,6 +23,11 @@ public class Armamentua {
 		this.misila=2;
 		this.misilzuzendua=3;  //bakoitza mota desberdinetakoa
 		this.radar=2;
+		biltegikoArmaKop[0]=10;
+		biltegikoArmaKop[1]=6;
+		biltegikoArmaKop[2]=6;
+		biltegikoArmaKop[3]=4;
+		biltegikoArmaKop[4]=4;
 	}
 
 	public Arma armaSortu(String mota){
@@ -289,5 +295,27 @@ public class Armamentua {
 			return false;
 		}
 	}
+
+	public boolean biltegianArmarikDago(int mota) {
+		if(biltegikoArmaKop[mota]>0){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	public void biltegiArmaKenduKop(int mota) {
+		biltegikoArmaKop[mota]--;
+		
+	}
+
+	public boolean biltegianArmakDaude() {
+		if(biltegikoArmaKop[0]>0 || biltegikoArmaKop[1]>0|| biltegikoArmaKop[2]>0|| biltegikoArmaKop[3]>0|| biltegikoArmaKop[4]>0){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
 
 }
