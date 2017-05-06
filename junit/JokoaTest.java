@@ -38,12 +38,13 @@ public class JokoaTest {
 	public void probaEginJokoaHasieratu() {
 		Flota ordF= new Flota();
 		ordF.armakEsleitu();
+		System.out.println(ordF.armamentuarenLuzera());
 		assertTrue(ordF.size()==10);
 		assertTrue(ordF.armamentuarenLuzera()==14);
 		Ordenagailua o= new Ordenagailua();
 		o.setFlota(ordF);	
 		Biltegia b= Biltegia.getNireBiltegia();
-		b.hasieratu();
+		//b.hasieratu();
 		assertTrue(b.luzera()==18);
 			
 	}

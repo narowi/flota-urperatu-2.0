@@ -57,9 +57,7 @@ Arma a1,a2;
 	@Test
 	public void armaGehituTest() {
 		listaArmak.hasieratu(1, 1, 1, 1, 1);
-		listaArmak.armaGehitu2(a2);
-		assertTrue(listaArmak.armarikDago(a2.getBiltegiZenbakia()));
-		//System.out.println(listaArmak.luzera());
+		listaArmak.armaGehituZerrendan(2);
 		assertEquals(listaArmak.misilKop(), 2);
 	}
 	
@@ -87,7 +85,7 @@ Arma a1,a2;
 	public void armaGehituZerrendanTest() {
 		listaArmak.hasieratu(1, 1, 1, 1, 1);
 		listaArmak.armaGehituZerrendan(2);
-		assertEquals(listaArmak.misilKop(), 3);
+		assertEquals(listaArmak.misilKop(), 2);
 		
 	}
 	
