@@ -102,12 +102,12 @@ public abstract class Jokalaria {
 				System.out.println(Da+" da");
 			}
 			else if(o!=null && o.ezkutuOsoaDu()){
-				Da="ezkutuOsoa";
+				Da="EzkutuOsoa";
 			}
 			else if(urperatua){
 				Da="hondoratua";
 			}else if( o.ezkutuBakarraDu()){
-				Da="ezkutuBakarra";
+				Da="EzkutuBakarra";
 			}
 			return Da;
 		}

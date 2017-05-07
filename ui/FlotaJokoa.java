@@ -90,11 +90,11 @@ public class FlotaJokoa {
 						tableroNi[i][j].setBackground(new Color(210,180,140));
 					}
 				}
-				else if(Jokoa.getNireJokoa().zerDaKasillaHau(i, j, norena).equals("ezkutuOsoa")){
+				else if(Jokoa.getNireJokoa().zerDaKasillaHau(i, j, norena).equals("EzkutuOsoa")){
 					if(norena.equals("pertsona")){
 						tableroNi[i][j].setBackground(new Color(160,82,45));
 					}
-				}else if(Jokoa.getNireJokoa().zerDaKasillaHau(i, j, norena).equals("ezkutuBakarra")){
+				}else if(Jokoa.getNireJokoa().zerDaKasillaHau(i, j, norena).equals("EzkutuBakarra")){
 					if(norena.equals("pertsona")){
 						tableroNi[i][j].setBackground(new Color(255,160,122));
 					}
