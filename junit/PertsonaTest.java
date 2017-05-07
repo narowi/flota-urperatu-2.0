@@ -36,12 +36,13 @@ public class PertsonaTest {
 		p.setNireTablero(pt);
 		System.out.println("per tableroa" + p.getTablero());
 		Armamentua a= j.ordArmamentuaLortu();
-		a.hasieratu(1,1,1,1,1);
+		a.hasieratu(4,1,4,4,1);
 		System.out.println("armamentu " + a.armaMotaKopuru());
 		p.setArmamentua(a);
 		System.out.println("per amamentu "+ p.armamentuarenLuzera());
+		o.ontziakKokatu();
 		
-		p.tiroEgin("Bonba", 1, 1);
+		p.tiroEgin("Bonba", 0, 0);
 		int lehen= 0;
 		int gero= 0;
 		for(int x=0; x < pt.getTamaina(); x++){
