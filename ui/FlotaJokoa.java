@@ -28,9 +28,11 @@ public class FlotaJokoa {
 	private JButton ontziaKokatu;
 	private JButton ezkutuaJarri;
 	private JButton tiroEgin;
+	private JButton erosi;
+	private JButton konpondu;
 	private String aukeratutakoOntzia="HegazkinOntzi";
 	private char kokapena='g';
-	private String arma;
+	private String arma="Bonba";//nose si mayus o minus;
 	static Integer[] koordenatuak = new Integer[2];
 	
 	/**
@@ -61,7 +63,7 @@ public class FlotaJokoa {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(500, 100, 500, 500);
+		frame.setBounds(500, 100, 600, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		content = new JPanel();
 		content.setLayout(new BorderLayout());
@@ -110,89 +112,26 @@ public class FlotaJokoa {
 
 	private JPanel onarpenBotoiakJarri() {
 		JPanel botoiak = new JPanel();
-		botoiak.setLayout(new BorderLayout());
+		botoiak.setLayout(new FlowLayout());
 		ontziaKokatu = new JButton("OntziaKokatu");
 		ezkutuaJarri = new JButton("EzkutuaJarri");
 		tiroEgin = new JButton("TiroEgin");
+		erosi = new JButton("Erosi");
+		konpondu = new JButton("Konpondu");
+		
 		ontziaKokatu.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				boolean listo=false;
 				if(Jokoa.getNireJokoa().kokatu(koordenatuak[0], koordenatuak[1], aukeratutakoOntzia, kokapena)){
-				//this.kokatu();
 				 tableroaEguneratu("pertsona");
 				}
-//				System.out.println(koordenatuak[0]+" =x");
-//				System.out.println("hegazkin  ="+Jokoa.getNireJokoa().hegazkinOntziKokatzenJarraituAhal());
-//				System.out.println("fragata  ="+Jokoa.getNireJokoa().fragataKokatzenJarraituAhal());
-//				System.out.println("suntsitzaile  ="+Jokoa.getNireJokoa().suntsitzaileKokatzenJarraituAhal());
-//				System.out.println("itsaspeko  ="+Jokoa.getNireJokoa().itsaspekoKokatzenJarraituAhal());
 				if(!Jokoa.getNireJokoa().hegazkinOntziKokatzenJarraituAhal() && !Jokoa.getNireJokoa().fragataKokatzenJarraituAhal() && !Jokoa.getNireJokoa().itsaspekoKokatzenJarraituAhal() && !Jokoa.getNireJokoa().suntsitzaileKokatzenJarraituAhal()){
 					goikoBotoiak.setVisible(false);
 					ontziaKokatu.setVisible(false);
 				}
 			}
-
-//			private void kokatu() {
-//				 boolean listo=false;
-//				  int luzera=0;
-//					while(!listo){
-//						if(aukeratutakoOntzia.equals("Fragata")){
-//							luzera=1;
-//							listo=true;
-//						}
-//						else if(aukeratutakoOntzia.equals("Itsaspeko")){
-//							luzera=3;
-//							listo=true;
-//						}
-//						else if(aukeratutakoOntzia.equals("Suntsitzaile")){
-//							luzera=2;
-//							listo=true;
-//						}
-//						else if(aukeratutakoOntzia.equals("HegazkinOntzi")){
-//							luzera=4;
-//							listo=true;
-//						}
-//					}
-//					boolean margotua=false;
-//					while(!margotua){
-//						if(kokapena=='g'){
-//							int i=0;
-//							while(i<luzera){
-//								tableroNi[koordenatuak[0]-i][koordenatuak[1]].setBackground(new Color(210,180,140));
-//								i++;
-//							}
-//							margotua=true;
-//						}
-//						if(kokapena=='b'){
-//							int i=0;
-//							while(i<luzera){
-//								tableroNi[koordenatuak[0]+i][koordenatuak[1]].setBackground(new Color(210,180,140));
-//								i++;
-//							}
-//							margotua=true;
-//						}
-//						if(kokapena=='z'){
-//							int i=0;
-//							while(i<luzera){
-//								tableroNi[koordenatuak[0]][koordenatuak[1]-i].setBackground(new Color(210,180,140));
-//								i++;
-//							}
-//							margotua=true;
-//						}
-//						if(kokapena=='s'){
-//							int i=0;
-//							while(i<luzera){
-//								tableroNi[koordenatuak[0]][koordenatuak[1]+i].setBackground(new Color(210,180,140));
-//								i++;
-//							}
-//							margotua=true;
-//						}
-//					}
-		//}
-			
-			
 		
 		});
 	
@@ -212,19 +151,46 @@ public class FlotaJokoa {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				Jokoa.getNireJokoa().tiroEgin(arma,koordenatuak[0],koordenatuak[1]);
+				//poner para pintar
+			}
+		});
+		
+		erosi.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+//				if(Jokoa.getNireJokoa().ezktuaJarri(koordenatuak[0],koordenatuak[1])){
+//					tableroaEguneratu("pertsona");
+//				}
+				
 				
 			}
 		});
-		botoiak.add(ontziaKokatu, BorderLayout.EAST);
-		botoiak.add(ezkutuaJarri, BorderLayout.CENTER);
-		botoiak.add(tiroEgin, BorderLayout.WEST);
+		
+		konpondu.addActionListener(new ActionListener() {
+			//mirar si al arreglar pasandole (x,y) se suma uno en la cantidad de trozos enteros que le quedan
+			@Override
+			public void actionPerformed(ActionEvent e) {
+//				if(Jokoa.getNireJokoa().ezktuaJarri(koordenatuak[0],koordenatuak[1])){
+//					tableroaEguneratu("pertsona");
+//				}
+				
+				
+			}
+		});
+
+		botoiak.add(ontziaKokatu, FlowLayout.LEFT);
+		botoiak.add(ezkutuaJarri, FlowLayout.LEFT);
+		botoiak.add(tiroEgin, FlowLayout.CENTER);
+		botoiak.add(konpondu, FlowLayout.RIGHT);
+		botoiak.add(erosi, FlowLayout.RIGHT);
 		return botoiak;
 	}
 
 	private JPanel armakJarri() {
 		JPanel botoiak = new JPanel();
 		botoiak.setLayout(new GridLayout());
-		 JRadioButton bonbaButton = new JRadioButton("bonba");
+		 JRadioButton bonbaButton = new JRadioButton("Bonba");
 	        bonbaButton.setMnemonic('b');
 	        bonbaButton.setActionCommand("Bonba");
 	        bonbaButton.setSelected(true);
