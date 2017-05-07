@@ -276,4 +276,6 @@ public class Tablero {
 		public Ontzia lortuOntziaKasillatik(int x, int y) {
 			return tablero[x][y].getOntzia();
 		}
+
+		
 }

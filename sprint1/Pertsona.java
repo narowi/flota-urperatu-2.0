@@ -161,6 +161,7 @@ public class Pertsona extends Jokalaria {
 	public int armamentuarenLuzera() {
 		return this.flota.armamentuarenLuzera();
 	}
+	
 }
 	
 	

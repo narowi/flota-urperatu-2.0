@@ -98,12 +98,12 @@ public class Flota {
 		while(itr.hasNext() && !ezKokatuta){
 			aux=itr.next();
 			
-			if(!aux.ordenagailuaKokatu()){
-				ezKokatuta=true;
-			}
+			//if(!aux.ordenagailuaKokatu()){
+			//	ezKokatuta=true;
+			//}
 		}
 		System.out.println("zein ontzi naiz " + aux);
-		aux.aldatuOrdenagailu();
+		//aux.aldatuOrdenagailu();
 		return aux;
 	}
 

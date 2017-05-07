@@ -27,6 +27,7 @@ public class FlotaJokoa {
 	private JPanel onarpenBotoiak;
 	private JButton ontziaKokatu;
 	private JButton ezkutuaJarri;
+	private JButton radarraKontsultatu;
 	private JButton tiroEgin;
 	private JButton erosi;
 	private JButton konpondu;
@@ -119,6 +120,7 @@ public class FlotaJokoa {
 		botoiak.setLayout(new FlowLayout());
 		ontziaKokatu = new JButton("OntziaKokatu");
 		ezkutuaJarri = new JButton("EzkutuaJarri");
+		radarraKontsultatu = new JButton("RadarraKontsultatu");
 		tiroEgin = new JButton("TiroEgin");
 		erosi = new JButton("Erosi");
 		konpondu = new JButton("Konpondu");
@@ -177,9 +179,20 @@ public class FlotaJokoa {
 			
 			}
 		});
+		
+		radarraKontsultatu.addActionListener(new ActionListener() {
+			//mirar si al arreglar pasandole (x,y) se suma uno en la cantidad de trozos enteros que le quedan
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Jokoa.getNireJokoa().radarraKontsultatu(koordenatuak[0],koordenatuak[1]);
+				
+			
+			}
+		});
 
 		botoiak.add(ontziaKokatu, FlowLayout.LEFT);
 		botoiak.add(ezkutuaJarri, FlowLayout.LEFT);
+		botoiak.add(radarraKontsultatu,FlowLayout.LEFT);
 		botoiak.add(tiroEgin, FlowLayout.CENTER);
 		botoiak.add(konpondu, FlowLayout.RIGHT);
 		botoiak.add(erosi, FlowLayout.RIGHT);
@@ -203,17 +216,17 @@ public class FlotaJokoa {
 			});
 
 
-	        JRadioButton radarButton = new JRadioButton("Radarra");
-	        radarButton.setMnemonic('c');
-	        radarButton.setActionCommand("Radarra");
-	        radarButton.addActionListener(new ActionListener() {
-				
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					arma = "radarra";
-					
-				}
-			});
+//	        JRadioButton radarButton = new JRadioButton("Radarra");
+//	        radarButton.setMnemonic('c');
+//	        radarButton.setActionCommand("Radarra");
+//	        radarButton.addActionListener(new ActionListener() {
+//				
+//				@Override
+//				public void actionPerformed(ActionEvent e) {
+//					arma = "radarra";
+//					
+//				}
+//			});
 	        
 	        JRadioButton misilaButton = new JRadioButton("Misila");
 	        misilaButton.setMnemonic('d');
@@ -280,7 +293,7 @@ public class FlotaJokoa {
 	        // Group the radio buttons.
 	        ButtonGroup group = new ButtonGroup();
 	        group.add(bonbaButton);
-	        group.add(radarButton);
+	        //group.add(radarButton);
 	        group.add(misilaButton);
 	        group.add(misilZuzenduaBertButton);
 	        group.add(misilZuzenduaHorButton);
@@ -289,7 +302,7 @@ public class FlotaJokoa {
 
         //botoiak gehitu
 	        botoiak.add(bonbaButton);
-	        botoiak.add(radarButton);
+	       // botoiak.add(radarButton);
 	        botoiak.add(misilaButton);
 	        botoiak.add(misilZuzenduaBertButton);
 	        botoiak.add(misilZuzenduaHorButton);

@@ -164,4 +164,9 @@ public class Jokoa {
 			this.per.ontziaKonpondu(x,y);
 			
 		}
+
+		public void radarraKontsultatu(int x, int y) {
+			this.per.radarraKontsultatu(x,y);
+			
+		}
 }
