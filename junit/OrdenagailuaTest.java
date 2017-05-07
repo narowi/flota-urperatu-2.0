@@ -86,5 +86,40 @@ public class OrdenagailuaTest {
 		assertTrue(gero>lehen);
 		
 	}
+	
+	
+	@Test
+	public void ontziakKokatuTest(){
+		Jokoa j= Jokoa.getNireJokoa();
+//		Flota ordf=new Flota();
+//		Flota pf= new Flota();
+		Ordenagailua o= j.ordLortu();
+		Pertsona p= j.perLortu();
+		Tablero ot= new Tablero();
+		Tablero pt= new Tablero();
+		int x = -1;
+		int y = -1;
+		o.setNireTablero(ot);
+		System.out.println("ord tableroa" + o.getTablero());
+		p.setNireTablero(pt);
+		System.out.println("per tableroa" + p.getTablero());
+		Armamentua a= j.ordArmamentuaLortu();
+		a.hasieratu(1,1,1,1,1);
+		System.out.println("armamentu" + a.armaMotaKopuru());
+		o.setArmamentua(a);
+		System.out.println("ord amamentu junit"+ o.armamentuarenLuzeera());
+		
+		System.out.println(o.getListaOntziak().size());
+		System.out.println(ot.getTamaina()+ " tableroaren tamaina");
+//		p.setFlota(pf);
+//		o.setFlota(ordf);
+		o.ontziakKokatu();
+		
+		
+		
+		
+//		Ordenagailua ord= Jokoa.getNireJokoa().ordLortu();
+//	
+	}
 
 }
