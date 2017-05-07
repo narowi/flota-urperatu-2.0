@@ -41,7 +41,8 @@ public class Flota {
 	}
 
 	public void kenduOntzia(Ontzia pOntzia) {
-		this.lortuOntzia().kokatuNaiz();
+		//this.lortuOntzia().kokatuNaiz();
+		pOntzia.kokatuNaiz();
 	}
 	
 	public boolean geratzenDaOntzirik(){
@@ -82,20 +83,27 @@ public class Flota {
 		
 	}
 
-	public boolean isEmpty() {
-		if(this.f.size()==0){
-			return true;
-		}else{
-			return false;
-		}
-	}
+//	public boolean isEmpty() {
+//		if(this.f.size()==0){
+//			return true;
+//		}else{
+//			return false;
+//		}
+//	}
 
 	public Ontzia lortuOntzia() {
 		Iterator<Ontzia> itr =this.getIteradorea();
 		Ontzia aux=null;
-		while(itr.hasNext()){
+		boolean ezKokatuta=false;
+		while(itr.hasNext() && !ezKokatuta){
 			aux=itr.next();
+			
+			if(!aux.ordenagailuaKokatu()){
+				ezKokatuta=true;
+			}
 		}
+		System.out.println("zein ontzi naiz " + aux);
+		aux.aldatuOrdenagailu();
 		return aux;
 	}
 
@@ -322,6 +330,20 @@ public class Flota {
 
 	public Arma armaSortu(String arma) {
 		return this.armamentua.armaSortu(arma);
+	}
+
+
+	public boolean ontziGuztiakKokatuta() {
+		boolean batKokatuGabe=false;
+		Iterator<Ontzia> itr= this.getIteradorea();
+		Ontzia aux=null;
+		while(itr.hasNext() && !batKokatuGabe){
+			aux=itr.next();
+			if(!aux.kokatutaAhalNago()){
+				batKokatuGabe=true;
+			}
+		}
+		return batKokatuGabe;
 	}
 
 }
