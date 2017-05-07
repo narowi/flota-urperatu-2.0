@@ -218,8 +218,8 @@ public class Flota {
 	}
 
 	public Ontzia bilatuOntzia(int o) {
-		boolean aurkitua=false;
-		Iterator<Ontzia> itr =this.getIteradorea();
+		//boolean aurkitua=false;
+		//Iterator<Ontzia> itr =this.getIteradorea();
 		Ontzia on= this.f.get(o);
 		return on;
 			
@@ -318,5 +318,11 @@ public class Flota {
 		this.armamentua.hasieratu(4, 3, 2, 3, 2);
 		
 	}
+
+
+	public Arma armaSortu(String arma) {
+		return this.armamentua.armaSortu(arma);
+	}
+
 }
 

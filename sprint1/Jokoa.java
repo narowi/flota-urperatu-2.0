@@ -154,4 +154,14 @@ public class Jokoa {
 			this.per.tiroEgin(arma,x,y);
 			
 		}
+
+		public void armaErosi(String arma) {
+			this.per.armaAukeratuErosteko(arma);
+			
+		}
+
+		public void ontziaKonpondu(int x, int y) {
+			this.per.ontziaKonpondu(x,y);
+			
+		}
 }

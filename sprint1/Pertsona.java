@@ -78,8 +78,8 @@ public class Pertsona extends Jokalaria {
 		 }
 	
 	public void armaAukeratuErosteko(String arma){
-		
-		Arma a=this.flota.armamentuaLortu().armaSortu(arma);
+		//Arma a= this.flota.lortuArmaStringetik(arma);
+		Arma a=this.flota.armaSortu(arma);
 		this.flota.armaErosi(a);
 		
 	}
@@ -112,14 +112,22 @@ public class Pertsona extends Jokalaria {
 		// TODO Auto-generated method stub
 		
 	}
-	@Override
-	public boolean ontziaKonponduNahi(Ontzia o) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-	@Override
-	public void ontziaKonpondu(String o) {
-		// TODO Auto-generated method stub
+	
+	
+	public void ontziaKonpondu(int x, int y) {
+		Ontzia o= super.lortuOntzia(x,y);
+		if(!o.dagoOsorik()){
+			if(diruNahikoa(o)){ //teniendo en cuenta que solo arregla un cacho en cada txanda
+				super.diruaKendu(o); //descontar el dinero que le a costado de su dinero
+				o.konponduOntzia(); //sumar urperatuGabekoZatiKop+1
+				o.egoeraEsleitu();
+				
+			}else{
+				new WarningKudeatzailea("ez duzu diru nahikorik");
+			}
+		}else{
+			new ErroreKudeatzailea("ontzia osorik dago");
+		}
 		
 	}
 	public boolean itsaspekoKokatzenJarraituAhal() {

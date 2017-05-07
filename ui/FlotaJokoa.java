@@ -89,9 +89,13 @@ public class FlotaJokoa {
 						tableroNi[i][j].setBackground(new Color(210,180,140));
 					}
 				}
-				else if(Jokoa.getNireJokoa().zerDaKasillaHau(i, j, norena).equals("ezkutua")){
+				else if(Jokoa.getNireJokoa().zerDaKasillaHau(i, j, norena).equals("ezkutuOsoa")){
 					if(norena.equals("pertsona")){
 						tableroNi[i][j].setBackground(new Color(160,82,45));
+					}
+				}else if(Jokoa.getNireJokoa().zerDaKasillaHau(i, j, norena).equals("ezkutuBakarra")){
+					if(norena.equals("pertsona")){
+						tableroNi[i][j].setBackground(new Color(255,160,122));
 					}
 				}
 				j++;
@@ -159,10 +163,7 @@ public class FlotaJokoa {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-//				if(Jokoa.getNireJokoa().ezktuaJarri(koordenatuak[0],koordenatuak[1])){
-//					tableroaEguneratu("pertsona");
-//				}
-				
+				Jokoa.getNireJokoa().armaErosi(arma);				
 				
 			}
 		});
@@ -171,11 +172,9 @@ public class FlotaJokoa {
 			//mirar si al arreglar pasandole (x,y) se suma uno en la cantidad de trozos enteros que le quedan
 			@Override
 			public void actionPerformed(ActionEvent e) {
-//				if(Jokoa.getNireJokoa().ezktuaJarri(koordenatuak[0],koordenatuak[1])){
-//					tableroaEguneratu("pertsona");
-//				}
-				
-				
+				Jokoa.getNireJokoa().ontziaKonpondu(koordenatuak[0],koordenatuak[1]);
+				tableroaEguneratu("pertsona");	
+			
 			}
 		});
 

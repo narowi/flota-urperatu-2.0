@@ -14,23 +14,23 @@ public class Ordenagailua extends Jokalaria  {
 		}
 	}
 	
-	public boolean ontziaKonponduNahi(Ontzia o){
-			if(super.diruNahikoa(o)){
-				return true;
-			}else{
-				return false;
-			}
-	}
+//	public boolean ontziaKonpontzekoDirua(Ontzia o){
+//			if(super.diruNahikoa(o)){
+//				return true;
+//			}else{
+//				return false;
+//			}
+//	}
 	public void armaHautatu(){
 		//TO DO
 	}
-	public void ontziaKonpondu(String o){
+	public void ontziaKonpondu(int x, int y){
 		int bai= (int)(Math.random()*2);
 		if(bai==0){
 		int oPos = (int)(Math.random()*super.luzera()-1);
 		Ontzia on = super.bilatuOntzia(oPos);
 		if(!on.dagoOsorik()){
-			if(ontziaKonponduNahi(on)){ //teniendo en cuenta que solo arregla un cacho en cada txanda
+			if(diruNahikoa(on)){ //teniendo en cuenta que solo arregla un cacho en cada txanda
 				super.diruaKendu(on); //descontar el dinero que le a costado de su dinero
 				on.konponduOntzia(); //sumar urperatuGabekoZatiKop+1
 				//if(o.urperatutaDago()){

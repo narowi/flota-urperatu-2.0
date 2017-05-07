@@ -47,8 +47,8 @@ public abstract class Jokalaria {
 		return this.flota.armarikDago(biltegiZenbakikoArma);
 	}
 	
-	public abstract boolean ontziaKonponduNahi(Ontzia o);
-	public abstract void ontziaKonpondu(String o);
+	//public abstract boolean ontziaKonpontzekoDirua(Ontzia o);
+	public abstract void ontziaKonpondu(int x, int y);
 	
 	//junit
 		public void setFlota(Flota pFlota){
@@ -97,15 +97,17 @@ public abstract class Jokalaria {
 			System.out.println(ukituGabe+" ukitua nago");
 			boolean urperatua=nireTablero.getKasillaUrperatuta(x, y);
 			System.out.println(urperatua+" urperatua nago");
-			if(o!=null && ukituGabe>0 && !urperatua && !o.ezkutuaDu()){
+			if(o!=null && ukituGabe>0 && !urperatua && !o.ezkutuOsoaDu() &&  !o.ezkutuBakarraDu()){
 				Da="ontzia";
 				System.out.println(Da+" da");
 			}
-			else if(o!=null && o.ezkutuaDu()){
-				Da="ezkutua";
+			else if(o!=null && o.ezkutuOsoaDu()){
+				Da="ezkutuOsoa";
 			}
 			else if(urperatua){
 				Da="hondoratua";
+			}else if( o.ezkutuBakarraDu()){
+				Da="ezkutuBakarra";
 			}
 			return Da;
 		}
@@ -127,6 +129,10 @@ public abstract class Jokalaria {
 		}
 		public Tablero getTablero(){
 			return this.nireTablero;
+		}
+
+		public Ontzia lortuOntzia(int x, int y) {
+			return this.nireTablero.lortuOntziaKasillatik(x,y);
 		}
 }
 		

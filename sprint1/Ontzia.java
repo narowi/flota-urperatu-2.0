@@ -65,8 +65,15 @@ public class Ontzia {
 
 	}
 	
-	public boolean ezkutuaDu(){ 
-		if(this.egoera instanceof EzkutuOsoa || this.egoera instanceof EzkutuBakarra ){
+	public boolean ezkutuOsoaDu(){ 
+		if(this.egoera instanceof EzkutuOsoa){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	public boolean ezkutuBakarraDu(){
+		if(this.egoera instanceof EzkutuBakarra){
 			return true;
 		}else{
 			return false;
@@ -221,6 +228,16 @@ public class Ontzia {
 	
 	public boolean suntsitzaileaDa() {
 		if(this instanceof Suntsitzaile){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+
+
+	public boolean ezkutuaDu() {
+		if(this.egoera instanceof EzkutuBakarra || this.egoera instanceof EzkutuOsoa){
 			return true;
 		}else{
 			return false;
