@@ -89,6 +89,9 @@ public class FlotaJokoa {
 					if(norena.equals("pertsona")){
 						tableroNi[i][j].setBackground(new Color(210,180,140));
 					}
+					else if(norena.equals("ordenagailu")){
+						tableroAurk[i][j].setBackground(new Color(210,180,140));
+					}
 				}
 				else if(Jokoa.getNireJokoa().zerDaKasillaHau(i, j, norena).equals("EzkutuOsoa")){
 					if(norena.equals("pertsona")){
@@ -96,7 +99,7 @@ public class FlotaJokoa {
 					}
 				}else if(Jokoa.getNireJokoa().zerDaKasillaHau(i, j, norena).equals("EzkutuBakarra")){
 					if(norena.equals("pertsona")){
-						tableroNi[i][j].setBackground(new Color(255,160,122));
+						tableroNi[i][j].setBackground(new Color(205,133,63));
 					}
 				}
 				j++;
@@ -184,7 +187,7 @@ public class FlotaJokoa {
 			//mirar si al arreglar pasandole (x,y) se suma uno en la cantidad de trozos enteros que le quedan
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Jokoa.getNireJokoa().radarraKontsultatu(koordenatuak[0],koordenatuak[1]);
+				Jokoa.getNireJokoa().radarraKontsultatu();
 				
 			
 			}

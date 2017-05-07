@@ -33,8 +33,7 @@ public class Jokoa {
 		//jokoaHasieratu();
 		per.setEtsaiarenTablero(ord.getTablero());
 		ord.setEtsaiarenTablero(per.getTablero());
-		txanda=0;
-		boolean amaitu=false;
+		ord.ontziakKokatu();
 		new FlotaJokoa().main(null);
 		//while(!amaitu){
 			//ontziak kokatu
@@ -43,7 +42,7 @@ public class Jokoa {
 		
 		
 	}
-	
+	//JUniterako metodoa
 	private void jokoaHasieratu(){
 		//per.createTablero();
 		//per.etsaiariNireTableroaEsleitu();
@@ -165,8 +164,8 @@ public class Jokoa {
 			
 		}
 
-		public void radarraKontsultatu(int x, int y) {
-			this.per.radarraKontsultatu(x,y);
+		public void radarraKontsultatu() {
+			this.per.radarraKontsultatu();
 			
 		}
 }

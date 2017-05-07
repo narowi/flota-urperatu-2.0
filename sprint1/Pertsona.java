@@ -40,9 +40,9 @@ public class Pertsona extends Jokalaria {
 		return jarri;
 	}
 	
-	public void lortuEtsaiarenTableroa(Tablero pTablero){
-		super.lortuEtsaiarenTableroa(pTablero);
-	}
+//	public void lortuEtsaiarenTableroa(Tablero pTablero){
+//		super.lortuEtsaiarenTableroa(pTablero);
+//	}
 	
 	public Tablero lortuNireTableroa(){
 		return super.lortuNireTableroa();
@@ -161,10 +161,7 @@ public class Pertsona extends Jokalaria {
 	public int armamentuarenLuzera() {
 		return this.flota.armamentuarenLuzera();
 	}
-	public void radarraKontsultatu(int x, int y) {
-		this.lortuEtsaiarenTableroa2().radarraKontsultatu(x,y);
-		aqui que hago eel metodo me a devuelto el array con las  kasillas
-	}
+	
 	
 }
 	

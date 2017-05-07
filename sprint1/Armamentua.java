@@ -28,6 +28,8 @@ public class Armamentua {
 		biltegikoArmaKop[2]=6;
 		biltegikoArmaKop[3]=4;
 		biltegikoArmaKop[4]=4;
+		//se crean las armas olatz????
+		//this.hasieratu(bonba,ezkutua,misila,misilZuzendua,radar)   NO SE SI EN ESE ORDEN
 	}
 
 	public Arma armaSortu(String mota){

@@ -8,7 +8,7 @@ public class Ordenagailua extends Jokalaria  {
 	
 	public void ontziakKokatu(){
 		Ontzia o;
-		while(!super.flota.isEmpty()){
+		while(!super.flota.geratzenDaOntzirik()){
 			o= super.flota.lortuOntzia();
 			ontziaKokatu(o);
 		}
@@ -46,14 +46,21 @@ public class Ordenagailua extends Jokalaria  {
 		}
 	}
 	public void ontziaKokatu(Ontzia o){
-		int x;
-		int y;
+		int x=0;
+		int y=0;
 		char[] horBert;
-		char pos;
+		char pos=' ';
+		boolean listo=false;
+		while(!listo){
 				x=this.lortuKoordenatua();
 				y= this.lortuKoordenatua();
 				horBert= super.nireTablero.norabideaAukeratu(x, y, o);
+				if(horBert[0]=='s'||horBert[1]=='z'||horBert[2]=='g'||horBert[3]=='b'){
 				pos= this.lortuPos(horBert);
+				listo=true;
+				}
+		}
+				
 			super.flota.kenduOntzia(o);
 			super.nireTablero.kokatu(x, y, o, pos);	
 	}
@@ -68,7 +75,7 @@ public class Ordenagailua extends Jokalaria  {
 		boolean zuzena=false;
 		while(!zuzena){
 			 i = (int)(Math.random()*3);
-			if(pos[i]!=0){
+			if(pos[i]=='s'||pos[i]=='z'||pos[i]=='g'||pos[i]=='b'){
 				zuzena=true;
 			}
 		}
@@ -101,9 +108,9 @@ public class Ordenagailua extends Jokalaria  {
 		}
 	}
 	
-	public void lortuEtsaiarenTableroa(Tablero pTablero){
-		super.lortuEtsaiarenTableroa(pTablero);
-	}
+//	public void lortuEtsaiarenTableroa(Tablero pTablero){
+//		super.lortuEtsaiarenTableroa(pTablero);
+//	}
 	
 	public Tablero lortuNireTableroa(){
 		return super.lortuNireTableroa();

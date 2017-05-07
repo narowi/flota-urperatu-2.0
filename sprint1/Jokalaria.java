@@ -1,5 +1,6 @@
 package sprint1;
 
+import ui.WarningKudeatzailea;
 
 public abstract class Jokalaria {
 
@@ -7,11 +8,15 @@ public abstract class Jokalaria {
 	protected Tablero etsaiarenTableroa;
 	protected Flota flota;
 	protected int radarKontsultaKop;
+	protected int radarX;
+	protected int radarY;
 	
 	public Jokalaria(){
 		nireTablero=new Tablero();
 		flota=new Flota();
 		radarKontsultaKop=2;
+		radarX=(int)(Math.random()*(nireTablero.getTamaina()));
+		radarY=(int)(Math.random()*(nireTablero.getTamaina()));
 	}
 	
 	public abstract void ontziakKokatu(); 
@@ -20,13 +25,13 @@ public abstract class Jokalaria {
 	
 	public abstract void armaHautatu();
 	
-	public void lortuEtsaiarenTableroa(Tablero pTablero){
-		etsaiarenTableroa=pTablero;
-	}
+//	public void lortuEtsaiarenTableroa(Tablero pTablero){
+//		etsaiarenTableroa=pTablero;
+//	}
 	public Tablero lortuNireTableroa(){
 		return nireTablero;
 	}
-	public Tablero lortuEtsaiarenTableroa2(){
+	public Tablero lortuEtsaiarenTableroa(){
 		return this.etsaiarenTableroa;
 	}
 
@@ -106,7 +111,8 @@ public abstract class Jokalaria {
 			}
 			else if(urperatua){
 				Da="hondoratua";
-			}else if( o.ezkutuBakarraDu()){
+			}
+			else if( o!=null && o.ezkutuBakarraDu()){
 				Da="EzkutuBakarra";
 			}
 			return Da;
@@ -133,6 +139,17 @@ public abstract class Jokalaria {
 
 		public Ontzia lortuOntzia(int x, int y) {
 			return this.nireTablero.lortuOntziaKasillatik(x,y);
+		}
+		public void radarraKontsultatu() {
+			if(this.radarKontsultaKop>0){
+			etsaiarenTableroa.radarraKontsultatu(radarX, radarY);
+			this.radarKontsultaKop--;
+			radarX=(int)(Math.random()*(nireTablero.getTamaina()));
+			radarY=(int)(Math.random()*(nireTablero.getTamaina()));
+			}
+			else{
+				new WarningKudeatzailea("Ez zaizu kontsultarik geratzen,beste radar bat erosi");
+			}
 		}
 }
 		

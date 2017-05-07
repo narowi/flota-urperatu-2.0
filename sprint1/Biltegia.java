@@ -31,7 +31,7 @@ public class Biltegia {
 			if(this.armamentua.biltegianArmarikDago(mota)){
 				
 				Biltegia.nireBiltegia.armamentua.biltegiArmaKenduKop(mota);
-				
+				//como cojones esta hecho olatz??
 				
 				
 				if (!this.armamentua.biltegianArmakDaude()){

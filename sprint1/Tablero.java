@@ -1,6 +1,7 @@
 package sprint1;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import ui.WarningKudeatzailea;
 
@@ -172,21 +173,11 @@ public class Tablero {
 	    
 	    public void kokatu(int x,int y,Ontzia o,char norabidea){
 			int i;
-			//System.out.println("x = "+x);
-			//System.out.println("y = "+y);
-			//System.out.println("izena = "+oIzena);
-			//System.out.println("norabidea = "+norabidea);
-			//System.out.println("jokalaria = "+j);
-			//System.out.println("si es fragata "+o.fragataDa());
-			//System.out.println("gora ahaldu "+goraAhal(x, y, o.getHondoratuGabekoZatiKop()));
-			//System.out.println("coje bien el == "+(norabidea=='g'));
 			if(norabidea=='b' && beheraAhal(x, y, o.getHondoratuGabekoZatiKop())){
 				for(i=x;i<x+o.luzera;i++){
 					tablero[i][y].ontziaJarri(o);
 					tablero[i][y].kenduUra();
-					//System.out.println(o.getHondoratuGabekoZatiKop()+" "+o);
 					o.kokatuNaiz();
-					//System.out.println("hegazkin ontzi esta colocado  "+o.kokatutaAhalNago());
 				}	
 			}
 			else if(norabidea=='g' && goraAhal(x, y, o.getHondoratuGabekoZatiKop())){
@@ -194,16 +185,13 @@ public class Tablero {
 					tablero[i][y].ontziaJarri(o);
 					tablero[i][y].kenduUra();
 					o.kokatuNaiz();
-					//System.out.println("hegazkin ontzi en kokatu  "+o.kokatutaAhalNago());
 				}
 			}
 			else if(norabidea=='z' && ezkerreraAhal(x, y, o.getHondoratuGabekoZatiKop())){
 				for(i=y;i>y-o.luzera;i--){
-					//System.out.println("hace gora");
 					tablero[x][i].ontziaJarri(o);
 					tablero[x][i].kenduUra();
 					o.kokatuNaiz();
-					//System.out.println("hegazkin ontzi en kokatu  "+o.kokatutaAhalNago());
 				}
 			}
 			else if(norabidea=='s' && eskumaraAhal(x, y, o.getHondoratuGabekoZatiKop())){
@@ -211,11 +199,9 @@ public class Tablero {
 					tablero[x][i].ontziaJarri(o);
 					tablero[x][i].kenduUra();
 					o.kokatuNaiz();
-					//System.out.println("hegazkin ontzi en kokatu  "+o.kokatutaAhalNago());
 				}
 			}
 			else{
-					//System.out.println("ezin da kokatu ");
 					new WarningKudeatzailea("ezin da gelaxka horretan kokatu");
 			}
 			
@@ -279,7 +265,7 @@ public class Tablero {
 			return tablero[x][y].getOntzia();
 		}
 
-		public ArrayList<Kasilla> radarraKontsultatu(int x, int y) {
+		public void radarraKontsultatu(int x, int y) {
 			ArrayList<Kasilla> k= new ArrayList<Kasilla>();
 			boolean begiratuta=false;
 			while(!begiratuta){
@@ -300,8 +286,13 @@ public class Tablero {
 				}
 				begiratuta=true;
 			}
-			return k;
-			
+			if(k.isEmpty()){
+				new WarningKudeatzailea("Radarraren eremuan ez dago ontzirik.");
+			}
+			else{
+				int i=((int)(Math.random()*(k.size())));
+				new WarningKudeatzailea(k.get(i).getX()+".errenkadan eta "+k.get(i).getY()+".zutabean ontzi bat dago.");
+			}
 		}
 
 		
