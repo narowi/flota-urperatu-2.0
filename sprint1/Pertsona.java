@@ -60,7 +60,7 @@ public class Pertsona extends Jokalaria {
 		   arma="MisilZuzendua"; 
 		   aukera=1;
 		   
-		  }else if(armaNorabide=="misil zuzendua"){
+		  }else if(armaNorabide=="misil zuzendua boom"){
 		   arma="MisilZuzendua"; 
 		   aukera=2;  
 		   

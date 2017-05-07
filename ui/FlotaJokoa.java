@@ -228,14 +228,37 @@ public class FlotaJokoa {
 			});
 	        
 
-	        JRadioButton misilZuzenduaButton = new JRadioButton("MisilZuzendua");
-	        misilZuzenduaButton.setMnemonic('r');
-	        misilZuzenduaButton.setActionCommand("MisilZuzendua");
-	        misilZuzenduaButton.addActionListener(new ActionListener() {
+	        JRadioButton misilZuzenduaBertButton = new JRadioButton("Misil zuzendua bertikal");
+	        misilZuzenduaBertButton.setMnemonic('r'); //no se que es esto
+	        misilZuzenduaBertButton.setActionCommand("Misil zuzendua bertikal");
+	        misilZuzenduaBertButton.addActionListener(new ActionListener() {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					arma = "misilZuzendua";
+					arma = "misil zuzendua bertikal";
+					
+				}
+			});
+	        
+	        JRadioButton misilZuzenduaHorButton = new JRadioButton("Misil zuzendua bertikal");
+	        misilZuzenduaHorButton.setMnemonic('r');
+	        misilZuzenduaHorButton.setActionCommand("Misil zuzendua bertikal");
+	        misilZuzenduaHorButton.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					arma = "misil zuzendua bertikal";
+					
+				}
+			});
+	        JRadioButton misilZuzenduaBoomButton = new JRadioButton("Misil zuzendua boom");
+	        misilZuzenduaHorButton.setMnemonic('r');
+	        misilZuzenduaHorButton.setActionCommand("Misil zuzendua boom");
+	        misilZuzenduaHorButton.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					arma = "misil zuzendua boom";
 					
 				}
 			});
@@ -259,14 +282,18 @@ public class FlotaJokoa {
 	        group.add(bonbaButton);
 	        group.add(radarButton);
 	        group.add(misilaButton);
-	        group.add(misilZuzenduaButton);
+	        group.add(misilZuzenduaBertButton);
+	        group.add(misilZuzenduaHorButton);
+	        group.add(misilZuzenduaBoomButton);
 	        group.add(ezkutuaButton);
 
         //botoiak gehitu
 	        botoiak.add(bonbaButton);
 	        botoiak.add(radarButton);
 	        botoiak.add(misilaButton);
-	        botoiak.add(misilZuzenduaButton);
+	        botoiak.add(misilZuzenduaBertButton);
+	        botoiak.add(misilZuzenduaHorButton);
+	        botoiak.add(misilZuzenduaBoomButton);
 	        botoiak.add(ezkutuaButton);
         
         return botoiak;
