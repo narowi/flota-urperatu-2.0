@@ -95,13 +95,13 @@ public class OrdenagailuaTest {
 //		Flota pf= new Flota();
 		Ordenagailua o= j.ordLortu();
 		Pertsona p= j.perLortu();
-		Tablero ot= new Tablero();
-		Tablero pt= new Tablero();
+		//Tablero ot= new Tablero();
+		//Tablero pt= new Tablero();
 		int x = -1;
 		int y = -1;
-		o.setNireTablero(ot);
+		//o.setNireTablero(ot);
 		System.out.println("ord tableroa" + o.getTablero());
-		p.setNireTablero(pt);
+		//p.setNireTablero(pt);
 		System.out.println("per tableroa" + p.getTablero());
 		Armamentua a= j.ordArmamentuaLortu();
 		a.hasieratu(1,1,1,1,1);
@@ -110,7 +110,7 @@ public class OrdenagailuaTest {
 		System.out.println("ord amamentu junit"+ o.armamentuarenLuzeera());
 		
 		System.out.println(o.getListaOntziak().size());
-		System.out.println(ot.getTamaina()+ " tableroaren tamaina");
+		//System.out.println(ot.getTamaina()+ " tableroaren tamaina");
 //		p.setFlota(pf);
 //		o.setFlota(ordf);
 		o.ontziakKokatu();

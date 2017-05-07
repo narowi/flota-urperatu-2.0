@@ -135,6 +135,7 @@ public class FlotaJokoa {
 				boolean listo=false;
 				if(Jokoa.getNireJokoa().kokatu(koordenatuak[0], koordenatuak[1], aukeratutakoOntzia, kokapena)){
 				 tableroaEguneratu("pertsona");
+				 tableroaEguneratu("ordenagailua");
 				}
 				if(!Jokoa.getNireJokoa().hegazkinOntziKokatzenJarraituAhal() && !Jokoa.getNireJokoa().fragataKokatzenJarraituAhal() && !Jokoa.getNireJokoa().itsaspekoKokatzenJarraituAhal() && !Jokoa.getNireJokoa().suntsitzaileKokatzenJarraituAhal()){
 					goikoBotoiak.setVisible(false);

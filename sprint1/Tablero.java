@@ -179,6 +179,7 @@ public class Tablero {
 					tablero[i][y].kenduUra();
 					o.kokatuNaiz();
 				}	
+				System.out.println("ontzia kokatu da"+ o);
 			}
 			else if(norabidea=='g' && goraAhal(x, y, o.getHondoratuGabekoZatiKop())){
 				for(i=x;i>x-o.luzera;i--){
@@ -186,6 +187,7 @@ public class Tablero {
 					tablero[i][y].kenduUra();
 					o.kokatuNaiz();
 				}
+				System.out.println("ontzia kokatu da"+ o);
 			}
 			else if(norabidea=='z' && ezkerreraAhal(x, y, o.getHondoratuGabekoZatiKop())){
 				for(i=y;i>y-o.luzera;i--){
@@ -193,6 +195,7 @@ public class Tablero {
 					tablero[x][i].kenduUra();
 					o.kokatuNaiz();
 				}
+				System.out.println("ontzia kokatu da"+ o);
 			}
 			else if(norabidea=='s' && eskumaraAhal(x, y, o.getHondoratuGabekoZatiKop())){
 				for(i=y;i<y+o.luzera;i++){
@@ -200,6 +203,7 @@ public class Tablero {
 					tablero[x][i].kenduUra();
 					o.kokatuNaiz();
 				}
+				System.out.println("ontzia kokatu da"+ o);
 			}
 			else{
 					new WarningKudeatzailea("ezin da gelaxka horretan kokatu");

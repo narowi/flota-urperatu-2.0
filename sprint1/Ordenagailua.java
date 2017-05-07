@@ -7,10 +7,13 @@ public class Ordenagailua extends Jokalaria  {
 	}
 	
 	public void ontziakKokatu(){
+		System.out.println("sartu naiz ontziak kokatura");
 		Ontzia o;
-		while(!super.flota.geratzenDaOntzirik()){
+		while(super.flota.geratzenDaOntzirik()){
+			System.out.println("sartu naiz whilera");
 			o= super.flota.lortuOntzia();
 			ontziaKokatu(o);
+			System.out.println(o +"ontzia kokatu da");
 		}
 	}
 	
