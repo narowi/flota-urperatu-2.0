@@ -24,20 +24,25 @@ public class Biltegia {
 	}
 
 	public void armasaldu(int mota){ //try catch bidez hobeto
-		//if(this.armamentua.armakDaude()){
+		
 		if(this.e instanceof Ondo){
-			//e= new Ondo();
+			
+			
 			if(this.armamentua.biltegianArmarikDago(mota)){
-				Biltegia.nireBiltegia.armamentua.biltegiArmaKenduKop(mota); 
-				e.armaSaldu(mota);
+				
+				Biltegia.nireBiltegia.armamentua.biltegiArmaKenduKop(mota);
+				
+				
+				
 				if (!this.armamentua.biltegianArmakDaude()){
+				
+					
 					e = new StockGabe();
 				}
 			}else{
 				new WarningKudeatzailea("Ez dago mota horretako alerik");
 			}	
 		}else if(e instanceof StockGabe){
-			//System.out.println("Biltegia hutsik dago");
 			e.armaSaldu(mota);
 			//biltegiari ez bazaio arma bat ere ez gelditzen
 		}
@@ -46,11 +51,12 @@ public class Biltegia {
 	public void hasieratu() {
 		this.armamentua = new Armamentua();
 		this.armamentua.hasieratu(10,6,6,4,4);
+		this.armamentua.hasieratuTesta(10, 6, 6, 4, 4);
 		//this.armaKopurua= new ArrayList<Integer>();
 	}
 
 	public int luzera() {
-		return this.armamentua.luzera();
+		return this.armamentua.armaMotaKopuru();
 	}
 
 	public boolean armakDaude() {
@@ -59,5 +65,14 @@ public class Biltegia {
 
 	public void egoeraAldatu(EgoeraBiltegia egoera) {
 		this.e=egoera;
+	}
+	
+	public boolean motaHorretakoArmarik(int mota){
+		return this.armamentua.armarikDago(mota);
+		
+	}
+	
+	public EgoeraBiltegia getEgoera(){
+		return this.e;
 	}
 }

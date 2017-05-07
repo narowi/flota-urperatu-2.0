@@ -56,9 +56,11 @@ Arma a1,a2;
 	
 	@Test
 	public void armaGehituTest() {
-		listaArmak.hasieratu(1, 1, 1, 1, 1);
+		listaArmak.hasieratuTesta(1, 1, 1, 1, 1);
 		listaArmak.armaGehituZerrendan(2);
 		assertEquals(listaArmak.misilKop(), 2);
+		
+		//arma gehitu zerrendaren berdina egiten deu
 	}
 	
 	@Test
@@ -83,9 +85,23 @@ Arma a1,a2;
 	
 	@Test
 	public void armaGehituZerrendanTest() {
-		listaArmak.hasieratu(1, 1, 1, 1, 1);
+		listaArmak.garbitu();
+		//listaArmak.hasieratu(0, 0, 0, 0, 0);
+		listaArmak.hasieratuTesta(1, 1, 1, 1, 1);
+		assertTrue(listaArmak.armaMotaKopuru()==5);
 		listaArmak.armaGehituZerrendan(2);
 		assertEquals(listaArmak.misilKop(), 2);
+		listaArmak.armaGehituZerrendan(1);
+		assertEquals(listaArmak.ezkutuKop(), 2);
+		listaArmak.armaGehituZerrendan(0);
+		assertEquals(listaArmak.bonbaKop(), 2);
+		
+		listaArmak.armaGehituZerrendan(3);
+		assertEquals(listaArmak.misilZ(), 2);
+		
+		listaArmak.armaGehituZerrendan(4);
+		assertEquals(listaArmak.radarKop(), 2);
+		
 		
 	}
 	

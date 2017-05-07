@@ -152,16 +152,19 @@ public class Armamentua {
 	}
 	
 	public boolean armarikDago(int biltegiZenbakikoArma) {
-		if(biltegiZenbakikoArma==0 && this.bonba>0){
-			return true;
-		}else if(biltegiZenbakikoArma==2 && this.misila>0){
-			return true;
-		}else if(biltegiZenbakikoArma==3 && this.misilzuzendua>0){
-			return true;
-		}else{
-			return false;
+		boolean dago=false;
+		if((biltegiZenbakikoArma==0 && this.bonba>0) || biltegikoArmaKop[0]>0){
+			dago=true;
+		}else if((biltegiZenbakikoArma==2 && this.misila>0) || biltegikoArmaKop[2]>0){
+			dago=true;
+		}else if((biltegiZenbakikoArma==3 && this.misilzuzendua>0) || biltegikoArmaKop[3]>0){
+			dago=true;
+		}else if((biltegiZenbakikoArma==1 && this.ezkutua>0) || biltegikoArmaKop[1]>0) {
+			dago=true;
+		}else if((biltegiZenbakikoArma==4 && this.radar>0) || biltegikoArmaKop[4]>0){
+			dago=true;
 		}
-		
+		return dago;
 	}
 	
 	public Arma bilatu(String arma) {
@@ -181,9 +184,9 @@ public class Armamentua {
 	
 	//junit
 	
-	public int luzera() {
-		return this.armamentua.size();
-	}
+//	public int luzera() {
+//		return this.armamentua.size();
+//	}
 	
 	public void armaGehitu2(Arma a){
 		this.armamentua.add(a);
@@ -209,9 +212,9 @@ public class Armamentua {
 		return this.radar;
 	}
 
-	public int zenbatArma() {
-		return this.armamentua.size();
-	}
+//	public int zenbatArma() {
+//		return this.armamentua.size();
+//	}
 	
 	public void garbitu(){
 		this.armamentua= new ArrayList<Arma>();	
@@ -306,7 +309,7 @@ public class Armamentua {
 
 	public void biltegiArmaKenduKop(int mota) {
 		biltegikoArmaKop[mota]--;
-		
+		this.armaKenduKop(mota);
 	}
 
 	public boolean biltegianArmakDaude() {
@@ -316,6 +319,50 @@ public class Armamentua {
 			return false;
 		}
 	}
+	
+	
+	
+	public void hasieratuTesta(int pBonba, int pEzkutua, int pMisila, int pMisilZuzendua, int pRadar) {
+		this.armamentua.clear();
+		this.armamentua= new ArrayList<Arma>();
+		int i = 0;
+		while(i< pBonba){
+			this.armaGehitu("Bonba");
+			i++;
+		}
+		this.bonba=pBonba;
+		biltegikoArmaKop[0]=pBonba;
+		i=0;
+		while(i< pEzkutua){
+			this.armaGehitu("Ezkutua");
+			i++;
+		}
+		this.ezkutua=pEzkutua;
+		biltegikoArmaKop[1]=pEzkutua;
+		i=0;
+		while(i < pMisila){
+			this.armaGehitu("Misila");
+			i++;
+		}
+		this.misila=pMisila;
+		biltegikoArmaKop[2]=pMisila;
+		i=0;
+		while(i < pMisilZuzendua){
+			this.armaGehitu("MisilZuzendua");
+			i++;
+		}
+		this.misilzuzendua=pMisilZuzendua;
+		biltegikoArmaKop[3]=pMisilZuzendua;
+		i=0;
+		while(i < pRadar){
+			this.armaGehitu("radar");
+			i++;
+		}
+		this.radar=pRadar;
+		biltegikoArmaKop[4]=pRadar;
+		
+	}
+
 	
 
 }

@@ -148,7 +148,7 @@ public class Flota {
 		}	
 	}
 	public int armamentuarenLuzera() {
-		return this.armamentua.luzera();
+		return this.armamentua.armaMotaKopuru();
 	}
 
 	
