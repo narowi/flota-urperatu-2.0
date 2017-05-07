@@ -1,5 +1,7 @@
 package sprint1;
 
+import java.util.ArrayList;
+
 import ui.WarningKudeatzailea;
 
 public class Tablero {
@@ -275,6 +277,31 @@ public class Tablero {
 
 		public Ontzia lortuOntziaKasillatik(int x, int y) {
 			return tablero[x][y].getOntzia();
+		}
+
+		public ArrayList<Kasilla> radarraKontsultatu(int x, int y) {
+			ArrayList<Kasilla> k= new ArrayList<Kasilla>();
+			boolean begiratuta=false;
+			while(!begiratuta){
+				if(this.tablero[x][y].getOntzia()!=null){
+					k.add(tablero[x][y]);
+				}
+				if(this.tablero[x+1][y].getOntzia()!=null){
+					k.add(tablero[x+1][y]);
+				}
+				if(this.tablero[x-1][y].getOntzia()!=null){
+					k.add(tablero[x-1][y]);
+				}
+				if(this.tablero[x][y-1].getOntzia()!=null){
+					k.add(tablero[x][y-1]);
+				}
+				if(this.tablero[x][y+1].getOntzia()!=null){
+					k.add(tablero[x][y+1]);
+				}
+				begiratuta=true;
+			}
+			return k;
+			
 		}
 
 		
