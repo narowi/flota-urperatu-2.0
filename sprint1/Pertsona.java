@@ -74,8 +74,8 @@ public class Pertsona extends Jokalaria {
 		   Jokalaria pAurkari= Jokoa.getNireJokoa().aurkariaLortu();
 		   a.tiroEgin(x,y,aukera,pAurkari);
 		   
-		  }
 		 }
+	}
 	
 	public void armaAukeratuErosteko(String arma){
 		//Arma a= this.flota.lortuArmaStringetik(arma);
@@ -157,6 +157,9 @@ public class Pertsona extends Jokalaria {
 	}
 	public boolean ezkutuakJartzenJarraitu() {
 		return this.flota.ezkutuakJartzenJarraitu();
+	}
+	public int armamentuarenLuzera() {
+		return this.flota.armamentuarenLuzera();
 	}
 }
 	

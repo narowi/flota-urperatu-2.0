@@ -159,7 +159,7 @@ public class Ordenagailua extends Jokalaria  {
 		}
 	}
 	
-	public void armaAukeratuErosteko(){
+	public void armaAukeratuErosteko(String pArma){
 		Arma arma=null;
 		int biltegiZenbakikoArma= (int)(Math.random()*5);
 		if (biltegiZenbakikoArma==0){
@@ -179,11 +179,7 @@ public class Ordenagailua extends Jokalaria  {
 		}	
 	}
 
-	@Override
-	public void armaAukeratuErosteko(String arma) {
-		// TODO Auto-generated method stub
-		
-	}
+
 	public int armamentuarenLuzeera() {
 		return this.flota.armamentuarenLuzera();
 	}
