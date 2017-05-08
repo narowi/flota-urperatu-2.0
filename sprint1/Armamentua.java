@@ -103,31 +103,31 @@ public class Armamentua {
 		}
 	}
 
-	public void hasieratu(int pBonba, int pEzkutua, int pMisila, int pMisilZuzendua, int pRadar) {
+	public void hasieratu() {
 		this.armamentua.clear();
 		this.armamentua= new ArrayList<Arma>();
 		int i = 0;
-		while(i< pBonba){
+		while(i< bonba){
 			this.armaGehitu("Bonba");
 			i++;
 		}
 		i=0;
-		while(i< pEzkutua){
+		while(i< ezkutua){
 			this.armaGehitu("Ezkutua");
 			i++;
 		}
 		i=0;
-		while(i < pMisila){
+		while(i < misila){
 			this.armaGehitu("Misila");
 			i++;
 		}
 		i=0;
-		while(i < pMisilZuzendua){
+		while(i < misilzuzendua){
 			this.armaGehitu("MisilZuzendua");
 			i++;
 		}
 		i=0;
-		while(i < pRadar){
+		while(i < radar){
 			this.armaGehitu("radar");
 			i++;
 		}
@@ -324,44 +324,34 @@ public class Armamentua {
 	
 	
 	
-	public void hasieratuTesta(int pBonba, int pEzkutua, int pMisila, int pMisilZuzendua, int pRadar) {
+	public void hasieratuBiltegi() {
 		this.armamentua.clear();
 		this.armamentua= new ArrayList<Arma>();
 		int i = 0;
-		while(i< pBonba){
+		while(i< biltegikoArmaKop[0]){
 			this.armaGehitu("Bonba");
 			i++;
 		}
-		this.bonba=pBonba;
-		biltegikoArmaKop[0]=pBonba;
 		i=0;
-		while(i< pEzkutua){
+		while(i< biltegikoArmaKop[1]){
 			this.armaGehitu("Ezkutua");
 			i++;
 		}
-		this.ezkutua=pEzkutua;
-		biltegikoArmaKop[1]=pEzkutua;
 		i=0;
-		while(i < pMisila){
+		while(i < biltegikoArmaKop[2]){
 			this.armaGehitu("Misila");
 			i++;
 		}
-		this.misila=pMisila;
-		biltegikoArmaKop[2]=pMisila;
 		i=0;
-		while(i < pMisilZuzendua){
+		while(i < biltegikoArmaKop[3]){
 			this.armaGehitu("MisilZuzendua");
 			i++;
 		}
-		this.misilzuzendua=pMisilZuzendua;
-		biltegikoArmaKop[3]=pMisilZuzendua;
 		i=0;
-		while(i < pRadar){
+		while(i < biltegikoArmaKop[4]){
 			this.armaGehitu("radar");
 			i++;
 		}
-		this.radar=pRadar;
-		biltegikoArmaKop[4]=pRadar;
 		
 	}
 

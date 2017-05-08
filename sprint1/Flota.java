@@ -25,6 +25,7 @@ public class Flota {
 		this.suntsitzaile=3;
 		this.fragata=4;
 		this.flotaSortu();
+		this.armakEsleitu();
 	}
 	
 
@@ -321,7 +322,7 @@ public class Flota {
 	}
 	
 	public void armakEsleitu() {
-		this.armamentua.hasieratu(4, 3, 2, 3, 2);
+		this.armamentua.hasieratu();
 		
 	}
 

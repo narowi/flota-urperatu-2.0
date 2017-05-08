@@ -50,8 +50,7 @@ public class Biltegia {
 
 	public void hasieratu() {
 		this.armamentua = new Armamentua();
-		this.armamentua.hasieratu(10,6,6,4,4);
-		this.armamentua.hasieratuTesta(10, 6, 6, 4, 4);
+		this.armamentua.hasieratuBiltegi();
 		//this.armaKopurua= new ArrayList<Integer>();
 	}
 
