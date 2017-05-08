@@ -180,21 +180,21 @@ public class Pertsona extends Jokalaria {
 		return this.flota.hegazkinOntziDaude();
 	}
 	
-	public boolean bobarikJartzenJarraitu(){
-		return this.flota.bobarikJartzenJarraitu();
-	}
-	public boolean misilakJartzenJarraitu() {
-		return this.flota.misilakJartzenJarraitu();
-	}
-	public boolean misilZuzenduakJartzenJarraitu() {
-		return this.flota.misilZuzenduakJartzenJarraitu();
-	}
-	public boolean radarrakJartzenJarraitu() {
-		return this.flota.radarraJartzenJarraitu();
-	}
-	public boolean ezkutuakJartzenJarraitu() {
-		return this.flota.ezkutuakJartzenJarraitu();
-	}
+//	public boolean bobarikJartzenJarraitu(){
+//		return this.flota.bobarikJartzenJarraitu();
+//	}
+//	public boolean misilakJartzenJarraitu() {
+//		return this.flota.misilakJartzenJarraitu();
+//	}
+//	public boolean misilZuzenduakJartzenJarraitu() {
+//		return this.flota.misilZuzenduakJartzenJarraitu();
+//	}
+//	public boolean radarrakJartzenJarraitu() {
+//		return this.flota.radarraJartzenJarraitu();
+//	}
+//	public boolean ezkutuakJartzenJarraitu() {
+//		return this.flota.ezkutuakJartzenJarraitu();
+//	}
 	public int armamentuarenLuzera() {
 		return this.flota.armamentuarenLuzera();
 	}

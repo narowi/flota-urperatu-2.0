@@ -40,12 +40,12 @@ public class JokoaTest {
 		ordF.armakEsleitu();
 		System.out.println(ordF.armamentuarenLuzera());
 		assertTrue(ordF.size()==10);
-		assertTrue(ordF.armamentuarenLuzera()==14);
+		assertTrue(ordF.armamentuarenLuzera()==7);
 		Ordenagailua o= new Ordenagailua();
 		o.setFlota(ordF);	
 		Biltegia b= Biltegia.getNireBiltegia();
 		//b.hasieratu();
-		assertTrue(b.luzera()==18);
+		assertTrue(b.luzera()==7);
 			
 	}
 

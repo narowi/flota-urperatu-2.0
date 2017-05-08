@@ -312,27 +312,27 @@ public class Flota {
 	}
 
 
-	public boolean bobarikJartzenJarraitu() {
-		return this.armamentua.bobarikJartzenJarraitu();
-	}
+//	public boolean bobarikJartzenJarraitu() {
+//		return this.armamentua.bobarikJartzenJarraitu();
+//	}
 	
 
-	public boolean misilakJartzenJarraitu() {
-		return this.armamentua.misilakJartzenJarraitu();
-	}
-
-	public boolean misilZuzenduakJartzenJarraitu() {
-		return this.armamentua.misilZuzenduakJartzenJarraitu();
-	}
-
-	public boolean radarraJartzenJarraitu() {
-		return this.armamentua.radarrakJartzenJarraitu();
-	}
-	
-
-	public boolean ezkutuakJartzenJarraitu() {
-		return this.armamentua.ezkutuakJartzenJarraitu();
-	}
+//	public boolean misilakJartzenJarraitu() {
+//		return this.armamentua.misilakJartzenJarraitu();
+//	}
+//
+//	public boolean misilZuzenduakJartzenJarraitu() {
+//		return this.armamentua.misilZuzenduakJartzenJarraitu();
+//	}
+//
+//	public boolean radarraJartzenJarraitu() {
+//		return this.armamentua.radarrakJartzenJarraitu();
+//	}
+//	
+//
+//	public boolean ezkutuakJartzenJarraitu() {
+//		return this.armamentua.ezkutuakJartzenJarraitu();
+//	}
 	
 	public void armakEsleitu() {
 		this.armamentua.hasieratu();

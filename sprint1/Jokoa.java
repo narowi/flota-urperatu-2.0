@@ -92,21 +92,21 @@ public class Jokoa {
 	public boolean hegazkinOntziKokatzenJarraituAhal() {
 		return per.hegazkinOntziKokatzenJarraituAhal();
 	}
-	public boolean bonbakErabiltzenJarraituAhal(){
-		return per.bobarikJartzenJarraitu();
-	}
-	public boolean misilakErabiltzenJarraituAhal(){
-		return per.misilakJartzenJarraitu();
-	}
-	public boolean misilZuzenduakErabiltzenJarraituAhal(){
-		return per.misilZuzenduakJartzenJarraitu();
-	}
-	public boolean radarrakErabiltzenJarraituAhal(){
-		return per.radarrakJartzenJarraitu();
-	}
-	public boolean ezkutuakErabiltzenJarraituAhal(){
-		return per.ezkutuakJartzenJarraitu();
-	}
+//	public boolean bonbakErabiltzenJarraituAhal(){
+//		return per.bobarikJartzenJarraitu();
+//	}
+//	public boolean misilakErabiltzenJarraituAhal(){
+//		return per.misilakJartzenJarraitu();
+//	}
+//	public boolean misilZuzenduakErabiltzenJarraituAhal(){
+//		return per.misilZuzenduakJartzenJarraitu();
+//	}
+//	public boolean radarrakErabiltzenJarraituAhal(){
+//		return per.radarrakJartzenJarraitu();
+//	}
+//	public boolean ezkutuakErabiltzenJarraituAhal(){
+//		return per.ezkutuakJartzenJarraitu();
+//	}
 
 	public int kokatu(int x, int y, String aukeratutakoOntzia, char kokapena) {
 		return per.OntziaKokatu(x, y, aukeratutakoOntzia, kokapena);

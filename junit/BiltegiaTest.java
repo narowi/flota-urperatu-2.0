@@ -28,7 +28,7 @@ Biltegia b;
 		//System.out.println(b.luzera());
 		//b.armasaldu(0);
 		b.hasieratu();
-		assertEquals(b.luzera(), 30);
+		assertEquals(b.luzera(), 7);
 		assertTrue(b.armakDaude());
 		
 		//b.armasaldu(0);
@@ -79,8 +79,19 @@ Biltegia b;
 		b.armasaldu(4);
 		//biltegia hutsik dago ya
 		b.armasaldu(4);
-		assertTrue(b.getEgoera() instanceof StockGabe);
+		//assertTrue(b.getEgoera() instanceof StockGabe);
 		b.armasaldu(4);
+		
+		b.armasaldu(5);
+		b.armasaldu(5);
+		b.armasaldu(5);
+		b.armasaldu(5);
+		
+		b.armasaldu(6);
+		b.armasaldu(6);
+		b.armasaldu(6);
+		b.armasaldu(6);
+		assertTrue(b.getEgoera() instanceof StockGabe);
 	}
 
 }

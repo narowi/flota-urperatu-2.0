@@ -272,23 +272,23 @@ public class FlotaJokoa {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					arma = "bonba";
+					arma = "Bonba";
 					
 				}
 			});
 
 
-//	        JRadioButton radarButton = new JRadioButton("Radarra");
-//	        radarButton.setMnemonic('c');
-//	        radarButton.setActionCommand("Radarra");
-//	        radarButton.addActionListener(new ActionListener() {
-//				
-//				@Override
-//				public void actionPerformed(ActionEvent e) {
-//					arma = "radarra";
-//					
-//				}
-//			});
+	        JRadioButton radarButton = new JRadioButton("Radar");
+	        radarButton.setMnemonic('c');
+	        radarButton.setActionCommand("Radar");
+	        radarButton.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					arma = "Radar";
+					
+				}
+			});
 	        
 	        JRadioButton misilaButton = new JRadioButton("Misila");
 	        misilaButton.setMnemonic('d');
@@ -297,43 +297,43 @@ public class FlotaJokoa {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					arma = "misila";
+					arma = "Misila";
 					
 				}
 			});
 	        
 
-	        JRadioButton misilZuzenduaBertButton = new JRadioButton("Misil zuzendua bertikal");
+	        JRadioButton misilZuzenduaBertButton = new JRadioButton("MisilZuzenduaBertikal");
 	        misilZuzenduaBertButton.setMnemonic('r'); //no se que es esto
-	        misilZuzenduaBertButton.setActionCommand("Misil zuzendua bertikal");
+	        misilZuzenduaBertButton.setActionCommand("MisilZuzenduaBertikal");
 	        misilZuzenduaBertButton.addActionListener(new ActionListener() {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					arma = "misil zuzendua bertikal";
+					arma = "MisilZuzenduaBertikal";
 					
 				}
 			});
 	        
-	        JRadioButton misilZuzenduaHorButton = new JRadioButton("Misil zuzendua bertikal");
+	        JRadioButton misilZuzenduaHorButton = new JRadioButton("MisilZuzenduaHorizontal");
 	        misilZuzenduaHorButton.setMnemonic('r');
-	        misilZuzenduaHorButton.setActionCommand("Misil zuzendua bertikal");
+	        misilZuzenduaHorButton.setActionCommand("MisilZuzenduaHorizontal");
 	        misilZuzenduaHorButton.addActionListener(new ActionListener() {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					arma = "misil zuzendua bertikal";
+					arma = "MisilZuzenduaHorizontal";
 					
 				}
 			});
-	        JRadioButton misilZuzenduaBoomButton = new JRadioButton("Misil zuzendua boom");
+	        JRadioButton misilZuzenduaBoomButton = new JRadioButton("MisilZuzenduaBoom");
 	        misilZuzenduaHorButton.setMnemonic('r');
-	        misilZuzenduaHorButton.setActionCommand("Misil zuzendua boom");
+	        misilZuzenduaHorButton.setActionCommand("MisilZuzenduaBoom");
 	        misilZuzenduaHorButton.addActionListener(new ActionListener() {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					arma = "misil zuzendua boom";
+					arma = "MisilZuzenduaBoom";
 					
 				}
 			});
@@ -345,7 +345,7 @@ public class FlotaJokoa {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					arma = "ezkutua";
+					arma = "Ezkutua";
 					
 				}
 			});
@@ -355,7 +355,7 @@ public class FlotaJokoa {
 	        // Group the radio buttons.
 	        ButtonGroup group = new ButtonGroup();
 	        group.add(bonbaButton);
-	        //group.add(radarButton);
+	        group.add(radarButton);
 	        group.add(misilaButton);
 	        group.add(misilZuzenduaBertButton);
 	        group.add(misilZuzenduaHorButton);
@@ -364,7 +364,7 @@ public class FlotaJokoa {
 
         //botoiak gehitu
 	        botoiak.add(bonbaButton);
-	       // botoiak.add(radarButton);
+	        botoiak.add(radarButton);
 	        botoiak.add(misilaButton);
 	        botoiak.add(misilZuzenduaBertButton);
 	        botoiak.add(misilZuzenduaHorButton);

@@ -27,43 +27,43 @@ public abstract class Arma {
 	public boolean berdinaNaiz(String arma) {
 		return this.izena==arma;
 	}
-	public boolean bonbaDa() {
-		if(this instanceof Bonba){
-			return true;
-		}else{
-			return false;
-		}
-	}
+//	public boolean bonbaDa() {
+//		if(this instanceof Bonba){
+//			return true;
+//		}else{
+//			return false;
+//		}
+//	}
 	
-	public boolean misilaDa() {
-		if(this instanceof Misila){
-			return true;
-		}else{
-			return false;
-		}
-	}
-	public boolean misilZuzenduaDa() {
-		if(this instanceof MisilZuzenduaBertikal){
-			return true;
-		}else{
-			return false;
-		}
-	}
-	
-	public boolean radarraDa() {
-		if(this instanceof Radar){
-			return true;
-		}else{
-			return false;
-		}
-	}
-	public boolean ezkutuaDa() {
-		if(this instanceof Ezkutua){
-			return true;
-		}else{
-			return false;
-		}
-	}
+//	public boolean misilaDa() {
+//		if(this instanceof Misila){
+//			return true;
+//		}else{
+//			return false;
+//		}
+//	}
+//	public boolean misilZuzenduaDa() {
+//		if(this instanceof MisilZuzenduaBertikal){
+//			return true;
+//		}else{
+//			return false;
+//		}
+//	}
+//	
+//	public boolean radarraDa() {
+//		if(this instanceof Radar){
+//			return true;
+//		}else{
+//			return false;
+//		}
+//	}
+//	public boolean ezkutuaDa() {
+//		if(this instanceof Ezkutua){
+//			return true;
+//		}else{
+//			return false;
+//		}
+//	}
 	public boolean kokatuGabe() {
 		if(this.kokatua == false){
 			return true;

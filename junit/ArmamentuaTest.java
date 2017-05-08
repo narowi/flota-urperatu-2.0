@@ -97,9 +97,9 @@ Arma a1,a2;
 		listaArmak.armaKenduKop(4);
 		assertTrue(listaArmak.radarKop()==1);
 		listaArmak.armaKenduKop(5);
-		assertTrue(listaArmak.misilZH()==2);
+		assertTrue(listaArmak.misilZH()==3);
 		listaArmak.armaKenduKop(6);
-		assertTrue(listaArmak.misilZBoom()==2);
+		assertTrue(listaArmak.misilZBoom()==3);
 		
 		
 	}
@@ -115,7 +115,8 @@ Arma a1,a2;
 		//listaArmak.garbitu();
 		//listaArmak.hasieratu(0, 0, 0, 0, 0);
 		listaArmak.hasieratu(/*1, 1, 1, 1, 1*/);
-		assertTrue(listaArmak.armaMotaKopuru()==14);
+		System.out.println(listaArmak.armaMotaKopuru());
+		assertTrue(listaArmak.armaMotaKopuru()==7);
 		listaArmak.armaGehituZerrendan(2);
 		assertEquals(listaArmak.misilKop(), 3);
 		listaArmak.armaGehituZerrendan(1);

@@ -152,6 +152,7 @@ public class Armamentua {
 //			}
 //		}
 //		return aux;
+		System.out.println(this.armamentua.get(pos) +  "lortu arma");
 		return this.armamentua.get(pos);
 	}
 	
@@ -262,70 +263,70 @@ public class Armamentua {
 //		this.armamentua.clear();
 //	}
 
-	public boolean bobarikJartzenJarraitu() {
-		boolean batKokatuGabe=false;
-		Iterator<Arma> itr =this.getIteradorea();
-		Arma aux=null;
-		while(itr.hasNext()&& !batKokatuGabe){
-			aux=itr.next();
-			if(aux.bonbaDa() && aux.kokatuGabe()){
-				batKokatuGabe=true;
-			}
-		}
-		return batKokatuGabe;
-	}
+//	public boolean bobarikJartzenJarraitu() {
+//		boolean batKokatuGabe=false;
+//		Iterator<Arma> itr =this.getIteradorea();
+//		Arma aux=null;
+//		while(itr.hasNext()&& !batKokatuGabe){
+//			aux=itr.next();
+//			if(aux.bonbaDa() && aux.kokatuGabe()){
+//				batKokatuGabe=true;
+//			}
+//		}
+//		return batKokatuGabe;
+//	}
 	
-	public boolean misilakJartzenJarraitu() {
-		boolean batKokatuGabe=false;
-		Iterator<Arma> itr =this.getIteradorea();
-		Arma aux=null;
-		while(itr.hasNext()&& !batKokatuGabe){
-			aux=itr.next();
-			if(aux.misilaDa() && aux.kokatuGabe()){
-				batKokatuGabe=true;
-			}
-		}
-		return batKokatuGabe;
-	}
-
-	public boolean misilZuzenduakJartzenJarraitu() {
-		boolean batKokatuGabe=false;
-		Iterator<Arma> itr =this.getIteradorea();
-		Arma aux=null;
-		while(itr.hasNext()&& !batKokatuGabe){
-			aux=itr.next();
-			if(aux.misilZuzenduaDa() && aux.kokatuGabe()){
-				batKokatuGabe=true;
-			}
-		}
-		return batKokatuGabe;
-	}
-
-	public boolean radarrakJartzenJarraitu() {
-		boolean batKokatuGabe=false;
-		Iterator<Arma> itr =this.getIteradorea();
-		Arma aux=null;
-		while(itr.hasNext()&& !batKokatuGabe){
-			aux=itr.next();
-			if(aux.radarraDa() && aux.kokatuGabe()){
-				batKokatuGabe=true;
-			}
-		}
-		return batKokatuGabe;
-	}
-
-	public boolean ezkutuakJartzenJarraitu() {
-		boolean batKokatuGabe=false;
-		Iterator<Arma> itr =this.getIteradorea();
-		Arma aux=null;
-		while(itr.hasNext()&& !batKokatuGabe){
-			aux=itr.next();
-			if(aux.ezkutuaDa() && aux.kokatuGabe()){
-				batKokatuGabe=true;
-			}
-		}
-		return batKokatuGabe;
-	}
+//	public boolean misilakJartzenJarraitu() {
+//		boolean batKokatuGabe=false;
+//		Iterator<Arma> itr =this.getIteradorea();
+//		Arma aux=null;
+//		while(itr.hasNext()&& !batKokatuGabe){
+//			aux=itr.next();
+//			if(aux.misilaDa() && aux.kokatuGabe()){
+//				batKokatuGabe=true;
+//			}
+//		}
+//		return batKokatuGabe;
+//	}
+//
+//	public boolean misilZuzenduakJartzenJarraitu() {
+//		boolean batKokatuGabe=false;
+//		Iterator<Arma> itr =this.getIteradorea();
+//		Arma aux=null;
+//		while(itr.hasNext()&& !batKokatuGabe){
+//			aux=itr.next();
+//			if(aux.misilZuzenduaDa() && aux.kokatuGabe()){
+//				batKokatuGabe=true;
+//			}
+//		}
+//		return batKokatuGabe;
+//	}
+//
+//	public boolean radarrakJartzenJarraitu() {
+//		boolean batKokatuGabe=false;
+//		Iterator<Arma> itr =this.getIteradorea();
+//		Arma aux=null;
+//		while(itr.hasNext()&& !batKokatuGabe){
+//			aux=itr.next();
+//			if(aux.radarraDa() && aux.kokatuGabe()){
+//				batKokatuGabe=true;
+//			}
+//		}
+//		return batKokatuGabe;
+//	}
+//
+//	public boolean ezkutuakJartzenJarraitu() {
+//		boolean batKokatuGabe=false;
+//		Iterator<Arma> itr =this.getIteradorea();
+//		Arma aux=null;
+//		while(itr.hasNext()&& !batKokatuGabe){
+//			aux=itr.next();
+//			if(aux.ezkutuaDa() && aux.kokatuGabe()){
+//				batKokatuGabe=true;
+//			}
+//		}
+//		return batKokatuGabe;
+//	}
 	
 	public boolean armakDaude() {
 		if (this.bonba!=0 || this.ezkutua!=0 || this.misila!=0 || this.misilzuzenduaBertikal!=0 || this.misilzuzenduaHorizontal!=0 || this.misilzuzenduaBoom!=0 || this.radar!=0){
