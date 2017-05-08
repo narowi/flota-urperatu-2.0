@@ -3,7 +3,7 @@ package sprint1;
 
 public class Ikututa implements Egoera {
 		public void jo(Ontzia ontzia, Arma arma, boolean kasillaUrperatuta){ 
-			if(arma instanceof MisilZuzenduaBertikal || arma instanceof Misila){
+			if(arma instanceof MisilZuzenduaBertikal || arma instanceof MisilZuzenduaHorizontal || arma instanceof MisilZuzenduaBoom  || arma instanceof Misila){
 				ontzia.egoeraAldatu(new Urperatuta());
 				ontzia.zatiGuztiakUrperatu();
 				Jokalaria pAurkari= Jokoa.getNireJokoa().aurkariaLortu();

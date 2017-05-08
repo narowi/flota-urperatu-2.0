@@ -133,21 +133,21 @@ public class Ordenagailua extends Jokalaria  {
 		pAurkari.markatuIkututa(x,y);
 		if(arma!=null){
 			this.flota.kenduArmaKopBat(arma);
-				int aukera=this.aukeraLortu();
-				arma.tiroEgin(x,y,aukera, pAurkari);
+				//int aukera=this.aukeraLortu();
+				arma.tiroEgin(x,y, pAurkari);
 		}else{
 			System.out.println("arma barik gelditu zara");
 		}
 	}
 	
 	
-	private int aukeraLortu() {
-		 int i = (int)(Math.random()*3);
-		 return i;
-	}
+//	private int aukeraLortu() {
+//		 int i = (int)(Math.random()*3);
+//		 return i;
+//	}
 
 	private Arma lortuArma(){
-		int biltegiZenbakikoArma= (int)(Math.random()*5);
+		int biltegiZenbakikoArma= (int)(Math.random()*7);
 		boolean armaEgokia=false;
 		//Jokalaria pAurkari= Jokoa.getNireJokoa().aurkariaLortu();
 		//if(pAurkari.getListaOntziak()!=null){

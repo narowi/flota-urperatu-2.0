@@ -1,10 +1,10 @@
 package sprint1;
 
-public class MisilZuzenduaBertikal extends Arma {
-	public MisilZuzenduaBertikal(){
-		super.biltegiZenbakia=3;
+public class MisilZuzenduaHorizontal extends Arma{
+	public MisilZuzenduaHorizontal(){
+		super.biltegiZenbakia=5;
 		super.prezioa=60;
-		super.izena="MisilZuzendua";
+		super.izena="MisilZuzenduaHorizontal";
 	}
 public void tiroEgin(int x, int y, Jokalaria pAurkari){
 		
@@ -15,30 +15,30 @@ public void tiroEgin(int x, int y, Jokalaria pAurkari){
 		int i=0;
 		boolean kasillaUrperatuta = aurkariarenTableroa.getKasillaUrperatuta(x,y);
 //		if(aukera==0){
-			//puede haber mas de uno, while que mire todas las posiciones en horizontal y fija, x+1 hasta llegar a la luzera del tablero, y que urperatutako zatiak sean!=0
-			y=0;
-			while(i<10){			
-				Ontzia its = aurkariarenTableroa.itsasontzirikDago(x,y);//tengo que ir aumentando la x
-				y++;
-				if(its!=null){
-				
-					its.jo(this,kasillaUrperatuta);
-					//junit
-					aurkariarenTableroa.aldatuKasillaUkituta(x,y);
-				}
-				i++;
-			}
-		
-//		}else if(aukera==1){
-//			x=0;
-//			while(i<10){
-//				Ontzia its = aurkariarenTableroa.itsasontzirikDago(x,y);
-//				x++;
+//			//puede haber mas de uno, while que mire todas las posiciones en horizontal y fija, x+1 hasta llegar a la luzera del tablero, y que urperatutako zatiak sean!=0
+//			y=0;
+//			while(i<10){			
+//				Ontzia its = aurkariarenTableroa.itsasontzirikDago(x,y);//tengo que ir aumentando la x
+//				y++;
 //				if(its!=null){
+//				
 //					its.jo(this,kasillaUrperatuta);
+//					//junit
+//					aurkariarenTableroa.aldatuKasillaUkituta(x,y);
 //				}
 //				i++;
 //			}
+//		
+//		}else if(aukera==1){
+			x=0;
+			while(i<10){
+				Ontzia its = aurkariarenTableroa.itsasontzirikDago(x,y);
+				x++;
+				if(its!=null){
+					its.jo(this,kasillaUrperatuta);
+				}
+				i++;
+			}
 //		}else{
 //			int lagx=0;
 //			int lagy=0;
@@ -62,8 +62,8 @@ public void tiroEgin(int x, int y, Jokalaria pAurkari){
 //				i++;
 //			}
 //				
-//		}	
-	}
+}	
+	
 	public  boolean posizioHorretakoArmaDa(int pos){
 		if(pos==this.biltegiZenbakia){
 			return true;
@@ -72,3 +72,4 @@ public void tiroEgin(int x, int y, Jokalaria pAurkari){
 		}
 	}
 }
+

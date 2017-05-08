@@ -13,7 +13,9 @@ public class Armamentua {
 	private int bonba;
 	private int ezkutua;
 	private int misila;
-	private int misilzuzendua;
+	private int misilzuzenduaBertikal;
+	private int misilzuzenduaHorizontal;
+	private int misilzuzenduaBoom;
 	private int radar;
 
 	public Armamentua(){
@@ -21,13 +23,18 @@ public class Armamentua {
 		this.bonba=4;
 		this.ezkutua=3;
 		this.misila=2;
-		this.misilzuzendua=3;  //bakoitza mota desberdinetakoa
+		this.misilzuzenduaBertikal=3;  //bakoitza mota desberdinetakoa
+		this.misilzuzenduaHorizontal=3;
+		this.misilzuzenduaBoom=3;
 		this.radar=2;
-		biltegikoArmaKop[0]=10;
-		biltegikoArmaKop[1]=6;
-		biltegikoArmaKop[2]=6;
-		biltegikoArmaKop[3]=4;
-		biltegikoArmaKop[4]=4;
+		biltegikoArmaKop[0]=10; //bonba
+		biltegikoArmaKop[1]=6; //ezkutua
+		biltegikoArmaKop[2]=6; //misila
+		biltegikoArmaKop[3]=4; //misilzuzenduBertikala
+		biltegikoArmaKop[4]=4; //radar
+		biltegikoArmaKop[5]=4; //misilzuzenduaHorizontal
+		biltegikoArmaKop[5]=4; //boom
+		
 		//se crean las armas olatz????
 		//this.hasieratu(bonba,ezkutua,misila,misilZuzendua,radar)   NO SE SI EN ESE ORDEN
 	}
@@ -46,9 +53,13 @@ public class Armamentua {
 		}else if(mota.biltegiZenbakia==2){
 			this.misila=0;
 		}else if(mota.biltegiZenbakia==3){
-			this.misilzuzendua=0;
-		}else{
+			this.misilzuzenduaBertikal=0;
+		}else if(mota.biltegiZenbakia==4){
 			this.radar=0;
+		}else if(mota.biltegiZenbakia==5){
+			this.misilzuzenduaHorizontal=0;
+		}else if(mota.biltegiZenbakia==6){
+			this.misilzuzenduaBoom=0;
 		}
 		this.armamentua.remove(mota);
 	}
@@ -75,10 +86,14 @@ public class Armamentua {
 			this.ezkutua--;
 		}else if(mota==2 && this.misila>0){
 			this.misila--;
-		}else if(mota==3 && this.misilzuzendua>0){
-			this.misilzuzendua--;
+		}else if(mota==3 && this.misilzuzenduaBertikal>0){
+			this.misilzuzenduaBertikal--;
 		}else if(mota==4 && this.radar>0){
 			this.radar--;
+		}else if(mota==3 && this.misilzuzenduaHorizontal>0){
+			this.misilzuzenduaHorizontal--;
+		}else if(mota==3 && this.misilzuzenduaBoom>0){
+			this.misilzuzenduaBoom--;
 		}else{
 			System.out.println("Arma horren alerik ez da gelditzen");
 		}
@@ -97,9 +112,13 @@ public class Armamentua {
 		}else if(mota==2){
 			this.misila++;
 		}else if(mota==3){
-			this.misilzuzendua++;
+			this.misilzuzenduaBertikal++;
 		}else if(mota==4){
 			this.radar++;
+		}else if(mota==5){
+			this.misilzuzenduaHorizontal++;
+		}else if(mota==6){
+			this.misilzuzenduaBoom++;
 		}
 	}
 
@@ -110,8 +129,10 @@ public class Armamentua {
 		this.armaGehitu("Bonba");
 		this.armaGehitu("Ezkutua");
 		this.armaGehitu("Misila");
-		this.armaGehitu("MisilZuzendua");
+		this.armaGehitu("MisilZuzenduaBertikal");
 		this.armaGehitu("radar");
+		this.armaGehitu("MisilZuzenduaHorizontal");
+		this.armaGehitu("MisilZuzenduaBoom");
 	}
 
 
@@ -140,11 +161,15 @@ public class Armamentua {
 			dago=true;
 		}else if((biltegiZenbakikoArma==2 && this.misila>0)){
 			dago=true;
-		}else if((biltegiZenbakikoArma==3 && this.misilzuzendua>0)){
+		}else if((biltegiZenbakikoArma==3 && this.misilzuzenduaBertikal>0)){
 			dago=true;
 		}else if((biltegiZenbakikoArma==1 && this.ezkutua>0)) {
 			dago=true;
 		}else if((biltegiZenbakikoArma==4 && this.radar>0)){
+			dago=true;
+		}else if((biltegiZenbakikoArma==5 && this.misilzuzenduaHorizontal>0)){
+			dago=true;
+		}else if((biltegiZenbakikoArma==6 && this.misilzuzenduaBoom>0)){
 			dago=true;
 		}
 		return dago;
@@ -162,7 +187,11 @@ public class Armamentua {
 			dago=true;
 		}else if(biltegikoArmaKop[4]>0){
 			dago=true;
-		}
+		}else if(biltegikoArmaKop[5]>0){
+				dago=true;
+		}else if(biltegikoArmaKop[6]>0){
+			dago=true;
+		}	
 		return dago;
 	}
 	
@@ -199,8 +228,16 @@ public class Armamentua {
 		return this.misila;
 	}
 	
-	public int misilZ(){
-		return this.misilzuzendua;
+	public int misilZB(){
+		return this.misilzuzenduaBertikal;
+	}
+	
+	public int misilZH(){
+		return this.misilzuzenduaHorizontal;
+	}
+	
+	public int misilZBoom(){
+		return this.misilzuzenduaBoom;
 	}
 	
 	public int ezkutuKop(){
@@ -215,15 +252,15 @@ public class Armamentua {
 //		return this.armamentua.size();
 //	}
 	
-	public void garbitu(){
-		this.armamentua= new ArrayList<Arma>();	
-		this.bonba=0;
-		this.ezkutua=0;
-		this.misila=0;
-		this.misilzuzendua=0;  //bakoitza mota desberdinetakoa
-		this.radar=0;
-		this.armamentua.clear();
-	}
+//	public void garbitu(){
+//		this.armamentua= new ArrayList<Arma>();	
+//		this.bonba=0;
+//		this.ezkutua=0;
+//		this.misila=0;
+//		this.misilzuzenduaBertikal=0;  //bakoitza mota desberdinetakoa
+//		this.radar=0;
+//		this.armamentua.clear();
+//	}
 
 	public boolean bobarikJartzenJarraitu() {
 		boolean batKokatuGabe=false;
@@ -291,7 +328,7 @@ public class Armamentua {
 	}
 	
 	public boolean armakDaude() {
-		if (this.bonba!=0 || this.ezkutua!=0 || this.misila!=0 || this.misilzuzendua!=0 || this.radar!=0){
+		if (this.bonba!=0 || this.ezkutua!=0 || this.misila!=0 || this.misilzuzenduaBertikal!=0 || this.misilzuzenduaHorizontal!=0 || this.misilzuzenduaBoom!=0 || this.radar!=0){
 			return true;
 		}else{
 			return false;
@@ -312,7 +349,7 @@ public class Armamentua {
 	}
 
 	public boolean biltegianArmakDaude() {
-		if(biltegikoArmaKop[0]>0 || biltegikoArmaKop[1]>0|| biltegikoArmaKop[2]>0|| biltegikoArmaKop[3]>0|| biltegikoArmaKop[4]>0){
+		if(biltegikoArmaKop[0]>0 || biltegikoArmaKop[1]>0|| biltegikoArmaKop[2]>0|| biltegikoArmaKop[3]>0|| biltegikoArmaKop[4]>0 || biltegikoArmaKop[5]>0 || biltegikoArmaKop[6]>0){
 			return true;
 		}else{
 			return false;

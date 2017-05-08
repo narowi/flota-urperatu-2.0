@@ -26,6 +26,8 @@ public class Pertsona extends Jokalaria {
 					 jarri=true;
 					super.flota.egoeraAldatu(ontzi);
 					super.flota.ezkutuKopuruaTxikitu();
+				}else{
+					//ontziak ezkutua du(Warning)
 				}
 			}
 			else{
@@ -49,30 +51,30 @@ public class Pertsona extends Jokalaria {
 	}	
 	
 	public void tiroEgin(String armaNorabide, int x, int y){
-		  int aukera=-1;
+		//  int aukera=-1;
 		  String arma;
 		  Arma a;
-		  if (armaNorabide=="misil zuzendua bertikal"){
-		   arma="MisilZuzendua";
-		   aukera=0;
-		   
-		  }else if(armaNorabide=="misil zuzendua horizontal"){
-		   arma="MisilZuzendua"; 
-		   aukera=1;
-		   
-		  }else if(armaNorabide=="misil zuzendua boom"){
-		   arma="MisilZuzendua"; 
-		   aukera=2;  
-		   
-		  }else{
-		   arma=armaNorabide;
-		  }
-		  
-		 a=this.flota.geratzenZaitArmaHau(arma);
+//		  if (armaNorabide=="misil zuzendua bertikal"){
+//		   arma="MisilZuzenduaBertikal";
+//		   //aukera=0;
+//		   
+//		  }else if(armaNorabide=="misil zuzendua horizontal"){
+//		   arma="MisilZuzenduaHorizontal"; 
+//		  // aukera=1;
+//		   
+//		  }else if(armaNorabide=="misil zuzendua boom"){
+//		   arma="MisilZuzenduaBoom"; 
+//		   //aukera=2;  
+//		   
+//		  }else{
+//		   arma=armaNorabide;
+//		  }
+		 
+		 a=this.flota.geratzenZaitArmaHau(armaNorabide);
 		 if(a!=null){ 
 		   this.flota.kenduArmaKopBat(a);
 		   Jokalaria pAurkari= Jokoa.getNireJokoa().aurkariaLortu();
-		   a.tiroEgin(x,y,aukera,pAurkari);
+		   a.tiroEgin(x,y,pAurkari);
 		   
 		 }
 	}
