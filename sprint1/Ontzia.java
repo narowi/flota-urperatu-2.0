@@ -26,7 +26,7 @@ public class Ontzia {
 
 	public void kokatuNaiz(){
 		this.kokatua=true;
-		System.out.println(this.kokatua+" si me he colocado dentro de ontzia");
+		//System.out.println(this.kokatua+" si me he colocado dentro de ontzia");
 	}
 	public boolean kokatutaAhalNago(){
 		return this.kokatua;

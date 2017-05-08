@@ -69,7 +69,7 @@ public class Flota {
 		boolean du=false;
 		if(on.ezkutuaDu()){
 			du=true;
-			System.out.println("ontziak jadanik badauka ezkutua");
+			//System.out.println("ontziak jadanik badauka ezkutua");
 		}
 		return du;
 	}
@@ -117,16 +117,28 @@ public class Flota {
 		ontzi.egoeraAldatu(new EzkutuOsoa());	
 	}
 	
-	public void armaErosi(int biltegiZenbakia){  //try catch bidez tratatu hobeto
+	public int armaErosi(int biltegiZenbakia){  //try catch bidez tratatu hobeto
+		int w=-1;
 		Arma a= this.armamentua.lortuArma(biltegiZenbakia);
 		if(armamentua.erosiAhalDut(this.dirua,a)){ //arma erostea biltegian gelditzen denean, biltegian ez badago ez da hautatzeko aukerarik egongo
-			Biltegia.getNireBiltegia().armasaldu(biltegiZenbakia);
+			int k=Biltegia.getNireBiltegia().armasaldu(biltegiZenbakia);
+			if(k==0){
 			this.armamentua.armaGehituZerrendan(biltegiZenbakia);  //pasatuko diogu armaren biltegizenbakia
 			this.dirua=this.dirua-a.getPrezioa();
+			w=0;
+			}
+			else if(k==1){
+				w=3;
+			}
+			else if(k==2){
+				w=2;
+			}
 		}else{
-			System.out.print("Ez duzu dirurik eskatutako arma erosteko");
-			new WarningKudeatzailea("Ez duzu dirurik eskatutako arma erosteko");// new Warning
+			w=1;
+			//System.out.print("Ez duzu dirurik eskatutako arma erosteko");
+			//new WarningKudeatzailea("Ez duzu dirurik eskatutako arma erosteko");// new Warning
 		}
+		return w;
 	}
 
 	public void flotaSortu() {

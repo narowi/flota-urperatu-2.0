@@ -108,7 +108,7 @@ public class Jokoa {
 		return per.ezkutuakJartzenJarraitu();
 	}
 
-	public boolean kokatu(int x, int y, String aukeratutakoOntzia, char kokapena) {
+	public int kokatu(int x, int y, String aukeratutakoOntzia, char kokapena) {
 		return per.OntziaKokatu(x, y, aukeratutakoOntzia, kokapena);
 		
 	}
@@ -125,7 +125,7 @@ public class Jokoa {
 		return zerDa;
 	}
 
-	public boolean ezktuaJarri(Integer x, Integer y) {
+	public int ezktuaJarri(Integer x, Integer y) {
 		return per.ezkutuaJarri(x, y);
 		}
 	
@@ -154,8 +154,8 @@ public class Jokoa {
 			
 		}
 
-		public void armaErosi(String arma) {
-			this.per.armaAukeratuErosteko(arma);
+		public int armaErosi(String arma) {
+			return this.per.armaAukeratuErosteko(arma);
 			
 		}
 

@@ -8,7 +8,7 @@ public class Armamentua {
 
 	private ArrayList<Arma> armamentua;
 	//private ArrayList<Integer> armaKopurua;
-	private int[] biltegikoArmaKop= new int[5];
+	private int[] biltegikoArmaKop= new int[7];
 
 	private int bonba;
 	private int ezkutua;
@@ -33,7 +33,7 @@ public class Armamentua {
 		biltegikoArmaKop[3]=4; //misilzuzenduBertikala
 		biltegikoArmaKop[4]=4; //radar
 		biltegikoArmaKop[5]=4; //misilzuzenduaHorizontal
-		biltegikoArmaKop[5]=4; //boom
+		biltegikoArmaKop[6]=4; //boom
 		
 		//se crean las armas olatz????
 		//this.hasieratu(bonba,ezkutua,misila,misilZuzendua,radar)   NO SE SI EN ESE ORDEN

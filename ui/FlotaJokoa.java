@@ -1,14 +1,14 @@
 package ui;
 
 import java.awt.*;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
-import sprint1.Tablero;
-import sprint1.Jokoa;
+import sprint1.*;
 
 public class FlotaJokoa {
 
@@ -132,9 +132,16 @@ public class FlotaJokoa {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				boolean listo=false;
-				if(Jokoa.getNireJokoa().kokatu(koordenatuak[0], koordenatuak[1], aukeratutakoOntzia, kokapena)){
+				int errorea=Jokoa.getNireJokoa().kokatu(koordenatuak[0], koordenatuak[1], aukeratutakoOntzia, kokapena);
+				if(errorea==0){
 				 tableroaEguneratu("pertsona");
 				 tableroaEguneratu("ordenagailua");
+				}
+				else if(errorea==1){
+					new ErroreKudeatzailea("ez dago mota horretako ontzirik");
+				}
+				else if(errorea==2){
+					new WarningKudeatzailea("ezin da gelaxka horretan kokatu");
 				}
 				if(!Jokoa.getNireJokoa().hegazkinOntziKokatzenJarraituAhal() && !Jokoa.getNireJokoa().fragataKokatzenJarraituAhal() && !Jokoa.getNireJokoa().itsaspekoKokatzenJarraituAhal() && !Jokoa.getNireJokoa().suntsitzaileKokatzenJarraituAhal()){
 					goikoBotoiak.setVisible(false);
@@ -148,8 +155,24 @@ public class FlotaJokoa {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if(Jokoa.getNireJokoa().ezktuaJarri(koordenatuak[0],koordenatuak[1])){
+				int i=Jokoa.getNireJokoa().ezktuaJarri(koordenatuak[0],koordenatuak[1]);
+				if(i==0){
 					tableroaEguneratu("pertsona");
+				}
+				else if(i==1){
+					//ura da
+					new WarningKudeatzailea("ez dago ontzirik gelaxka horretan");
+				}
+				else if(i==2){
+					//badauka ezkutua
+					new ErroreKudeatzailea("Ontziak jadanik ezkutua du");
+				}
+				else if(i==3){
+					//ez dauka ezkuturik
+					new ErroreKudeatzailea("ezkuturik ez");
+				}
+				else if(i==4){
+					new ErroreKudeatzailea("ontzia urperatuta dago");
 				}
 				
 				
@@ -168,7 +191,23 @@ public class FlotaJokoa {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Jokoa.getNireJokoa().armaErosi(arma);				
+				int i=Jokoa.getNireJokoa().armaErosi(arma);
+				if(i==0){
+					//ondo erosi
+					new WarningKudeatzailea("Ondo erosi da");
+				}
+				else if(i==1){
+					//ez duzu dirurik
+					new WarningKudeatzailea("Ez duzu dirurik eskatutako arma erosteko");
+				}
+				else if(i==2){
+					//ez dago arma existentziarik
+					new WarningKudeatzailea("Ez dago arma alerik");
+				}
+				else if(i==3){
+					//ez dago mota horretako armarik
+					new WarningKudeatzailea("Ez dago mota horretako alerik");
+				}
 				
 			}
 		});
@@ -177,9 +216,16 @@ public class FlotaJokoa {
 			//mirar si al arreglar pasandole (x,y) se suma uno en la cantidad de trozos enteros que le quedan
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Jokoa.getNireJokoa().ontziaKonpondu(koordenatuak[0],koordenatuak[1]);
+				int i=Jokoa.getNireJokoa().ontziaKonpondu(koordenatuak[0],koordenatuak[1]);
+				if(i==0){
 				tableroaEguneratu("pertsona");	
-			
+				}
+				else if(i==1){
+					//ez du dirurik
+				}
+				else if(i==2){
+					//ontzia osorik
+				}
 			}
 		});
 		
@@ -187,8 +233,16 @@ public class FlotaJokoa {
 			//mirar si al arreglar pasandole (x,y) se suma uno en la cantidad de trozos enteros que le quedan
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Jokoa.getNireJokoa().radarraKontsultatu();
-				
+				int i=Jokoa.getNireJokoa().radarraKontsultatu();
+				if(i==0){
+					// zein kasillatan dauka
+				}
+				else if(i==1){
+					// ez daukazu kontsultarik
+				}
+				else if(i==2){
+					//ez dago ontzirik inguruan
+				}
 			
 			}
 		});
@@ -320,9 +374,9 @@ public class FlotaJokoa {
 		botoiak.setLayout(new BorderLayout());
 		nireTablero = tableroaBete(1);
 		aurkariTablero = tableroaBete(2);
-		botoiak.add(nireTablero, BorderLayout.NORTH);
+		botoiak.add(nireTablero, BorderLayout.SOUTH);
 		botoiak.add(new JPanel(), BorderLayout.CENTER);
-		botoiak.add(aurkariTablero, BorderLayout.SOUTH);
+		botoiak.add(aurkariTablero, BorderLayout.NORTH);
 		return botoiak;
 	}
 

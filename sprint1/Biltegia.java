@@ -23,15 +23,14 @@ public class Biltegia {
 		return Biltegia.nireBiltegia;
 	}
 
-	public void armasaldu(int mota){ //try catch bidez hobeto
-		
+	public int armasaldu(int mota){ //try catch bidez hobeto
+		int w=-1;
 		if(this.e instanceof Ondo){
 			
 			
 			if(this.armamentua.biltegianArmarikDago(mota)){
 				
 				Biltegia.nireBiltegia.armamentua.biltegiArmaKenduKop(mota);
-				//como cojones esta hecho olatz??
 				
 				
 				if (!this.armamentua.biltegianArmakDaude()){
@@ -40,10 +39,11 @@ public class Biltegia {
 					e = new StockGabe();
 				}
 			}else{
-				new WarningKudeatzailea("Ez dago mota horretako alerik");
+				w=1;
+				//new WarningKudeatzailea("Ez dago mota horretako alerik");
 			}	
 		}else if(e instanceof StockGabe){
-			e.armaSaldu(mota);
+			w=2;
 			//biltegiari ez bazaio arma bat ere ez gelditzen
 		}
 	}

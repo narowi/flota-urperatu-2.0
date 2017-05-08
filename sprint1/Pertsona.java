@@ -16,30 +16,37 @@ public class Pertsona extends Jokalaria {
 	public void ontziakKokatu(){ //miralo naroa
 		
 	}
-	public boolean ezkutuaJarri(int x,int y){
+	public int ezkutuaJarri(int x,int y){
 			//banaka jarriko ditu ontziak eskutuan
-		boolean jarri=false;
+		int w=-1;
 		if(super.flota.badagoEzkuturik()){ 
 			Ontzia ontzi=super.nireTablero.itsasontzirikDago(x,y);
 			if(ontzi!=null){
-				if(!super.flota.barkuakEzkutuaDauka(ontzi) && super.flota.urperatuGabekoKop(ontzi)>0) {
-					 jarri=true;
-					super.flota.egoeraAldatu(ontzi);
-					super.flota.ezkutuKopuruaTxikitu();
+				if(!super.flota.barkuakEzkutuaDauka(ontzi)){
+						if(super.flota.urperatuGabekoKop(ontzi)>0) {
+							w=0;
+							super.flota.egoeraAldatu(ontzi);
+							super.flota.ezkutuKopuruaTxikitu();
+						}
+						else{
+							w=4;
+						}
 				}else{
 					//ontziak ezkutua du(Warning)
+					w=2;
 				}
 			}
 			else{
 				//System.out.println("gelaxka horretan ez dago ontzirik");
-				new WarningKudeatzailea("ez dago ontzirik gelaxka horretan");
-				
+				//new WarningKudeatzailea("ez dago ontzirik gelaxka horretan");
+				w=1;
 			}
 		}else{
 			//System.out.println("Ez duzu ezkutu gehiagorik");
-			new ErroreKudeatzailea("ezkuturik ez");
+			//new ErroreKudeatzailea("ezkuturik ez");
+			w=3;
 		}
-		return jarri;
+		return w;
 	}
 	
 //	public void lortuEtsaiarenTableroa(Tablero pTablero){
@@ -79,7 +86,7 @@ public class Pertsona extends Jokalaria {
 		 }
 	}
 	
-	public void armaAukeratuErosteko(String arma){
+	public int armaAukeratuErosteko(String arma){
 		//Arma a= this.flota.lortuArmaStringetik(arma);
 		int i=-1;
 		if(arma.equals("Bonba")){
@@ -90,32 +97,38 @@ public class Pertsona extends Jokalaria {
 		}
 		else if(arma.equals("Misila")){
 			i=2;
-		}else if(arma.equals("misil zuzendua bertikal")){
+		}else if(arma.equals("MisilZuzenduaBertikal")){
 			i=3;
 		}else if(arma.equals("Radar")){
 			i=4;
-		}else if(arma.equals("misil zuzendua horizontal")){
+		}else if(arma.equals("MisilZuzenduaHorizontal")){
 			i=5;
-		}else if(arma.equals("misil zuzendua boom")){
+		}else if(arma.equals("MisilZuzenduaBoom")){
 			i=6;
 		}	
 		
-		this.flota.armaErosi(i);
+		return this.flota.armaErosi(i);
 		
 	}
-	public boolean OntziaKokatu(int x,int y,String ontziMota,char norabide){
-		boolean kokatuDa=false;
+	public int OntziaKokatu(int x,int y,String ontziMota,char norabide){
+		int i=-1;
 		Ontzia o=this.flota.lortuOntziaStringetik(ontziMota);
 		if(o!=null){
-		nireTablero.kokatu(x, y, o, norabide);
-		kokatuDa=true;
+			int n=nireTablero.kokatu(x, y, o, norabide);
+			if(n==1){
+				i=2;
+			}
+			else{
+				i=0;
+			}
 		}
 		else{
-			//System.out.println("no te quedan barcos de es tipo");
-			new ErroreKudeatzailea("ez dago mota horretako ontzirik");
-			//JOptionPane.showMessageDialog(null, "hdsj", "jshf", JOptionPane.ERROR_MESSAGE);
+			i=1;
+//			//System.out.println("no te quedan barcos de es tipo");
+//			new ErroreKudeatzailea("ez dago mota horretako ontzirik");
+//			//JOptionPane.showMessageDialog(null, "hdsj", "jshf", JOptionPane.ERROR_MESSAGE);
 		}
-		return kokatuDa;
+		return i;
 	}
 	
 	
