@@ -27,7 +27,7 @@ public class Ordenagailua extends Jokalaria  {
 	public void armaHautatu(){
 		//TO DO
 	}
-	public void ontziaKonpondu(int x, int y){
+	public int ontziaKonpondu(int x, int y){
 		int bai= (int)(Math.random()*2);
 		if(bai==0){
 		int oPos = (int)(Math.random()*super.luzera()-1);
@@ -46,7 +46,7 @@ public class Ordenagailua extends Jokalaria  {
 		}
 		}else{
 			System.out.println("random aukeratu du ontzia ez konpontzea");
-		}
+		}return 0;
 	}
 	public void ontziaKokatu(Ontzia o){
 		int x=0;
@@ -170,7 +170,7 @@ public class Ordenagailua extends Jokalaria  {
 //		}
 	}
 	
-	public void armaAukeratuErosteko(String pArma){
+	public int armaAukeratuErosteko(String pArma){
 		Arma arma=null;
 		int biltegiZenbakikoArma= (int)(Math.random()*5);
 		
@@ -187,6 +187,7 @@ public class Ordenagailua extends Jokalaria  {
 //		}
 //		
 			this.flota.armaErosi(biltegiZenbakikoArma);
+			return 0;
 		}	
 	
 

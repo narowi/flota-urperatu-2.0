@@ -147,21 +147,25 @@ public class Pertsona extends Jokalaria {
 	}
 	
 	
-	public void ontziaKonpondu(int x, int y) {
+	public int ontziaKonpondu(int x, int y) {
+		int k=-1;
 		Ontzia o= super.lortuOntzia(x,y);
 		if(!o.dagoOsorik()){
 			if(diruNahikoa(o)){ //teniendo en cuenta que solo arregla un cacho en cada txanda
 				super.diruaKendu(o); //descontar el dinero que le a costado de su dinero
 				o.konponduOntzia(); //sumar urperatuGabekoZatiKop+1
 				o.egoeraEsleitu();
+				k=0;
 				
 			}else{
-				new WarningKudeatzailea("ez duzu diru nahikorik");
+				//new WarningKudeatzailea("ez duzu diru nahikorik");
+				k=1;
 			}
 		}else{
-			new ErroreKudeatzailea("ontzia osorik dago");
+			//new ErroreKudeatzailea("ontzia osorik dago");
+			k=2;
 		}
-		
+		return k;
 	}
 	public boolean itsaspekoKokatzenJarraituAhal() {
 		return this.flota.itsaspekoakDaude();

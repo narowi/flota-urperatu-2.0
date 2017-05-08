@@ -53,7 +53,7 @@ public abstract class Jokalaria {
 	}
 	
 	//public abstract boolean ontziaKonpontzekoDirua(Ontzia o);
-	public abstract void ontziaKonpondu(int x, int y);
+	public abstract int ontziaKonpondu(int x, int y);
 	
 	//junit
 		public void setFlota(Flota pFlota){
@@ -115,7 +115,7 @@ public abstract class Jokalaria {
 			return Da;
 		}
 		
-		public abstract void armaAukeratuErosteko(String arma);
+		public abstract int armaAukeratuErosteko(String arma);
 		public void createTablero(){
 			nireTablero=this.nireTablero.sortuTableroa();
 		}
@@ -137,16 +137,20 @@ public abstract class Jokalaria {
 		public Ontzia lortuOntzia(int x, int y) {
 			return this.nireTablero.lortuOntziaKasillatik(x,y);
 		}
-		public void radarraKontsultatu() {
+		public int[] radarraKontsultatu() {
+			int[] i= new int[3];
 			if(this.radarKontsultaKop>0){
-			etsaiarenTableroa.radarraKontsultatu(radarX, radarY);
+			int[] k=etsaiarenTableroa.radarraKontsultatu(radarX, radarY);
 			this.radarKontsultaKop--;
 			radarX=(int)(Math.random()*(nireTablero.getTamaina()));
 			radarY=(int)(Math.random()*(nireTablero.getTamaina()));
+			i=k;
 			}
 			else{
-				new WarningKudeatzailea("Ez zaizu kontsultarik geratzen,beste radar bat erosi");
+				i[0]=1;
+				//new WarningKudeatzailea("Ez zaizu kontsultarik geratzen,beste radar bat erosi");
 			}
+			return i;
 		}
 
 //		public void armaKopTxikitu(int biltegiZenbakikoArma) {

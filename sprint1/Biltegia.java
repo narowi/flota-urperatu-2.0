@@ -46,6 +46,7 @@ public class Biltegia {
 			w=2;
 			//biltegiari ez bazaio arma bat ere ez gelditzen
 		}
+		return w;
 	}
 
 	public void hasieratu() {

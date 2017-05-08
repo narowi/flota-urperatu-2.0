@@ -222,9 +222,11 @@ public class FlotaJokoa {
 				}
 				else if(i==1){
 					//ez du dirurik
+					new WarningKudeatzailea("ez duzu diru nahikorik");
 				}
 				else if(i==2){
 					//ontzia osorik
+					new ErroreKudeatzailea("ontzia osorik dago");
 				}
 			}
 		});
@@ -233,15 +235,18 @@ public class FlotaJokoa {
 			//mirar si al arreglar pasandole (x,y) se suma uno en la cantidad de trozos enteros que le quedan
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				int i=Jokoa.getNireJokoa().radarraKontsultatu();
-				if(i==0){
+				int[] i=Jokoa.getNireJokoa().radarraKontsultatu();
+				if(i[0]==0){
 					// zein kasillatan dauka
+					new WarningKudeatzailea(i[1]+".errenkadan eta "+i[2]+".zutabean ontzi bat dago.");
 				}
-				else if(i==1){
+				else if(i[0]==1){
 					// ez daukazu kontsultarik
+					new WarningKudeatzailea("Ez zaizu kontsultarik geratzen,beste radar bat erosi");
 				}
-				else if(i==2){
+				else if(i[0]==2){
 					//ez dago ontzirik inguruan
+					new WarningKudeatzailea("Radarraren eremuan ez dago ontzirik.");
 				}
 			
 			}

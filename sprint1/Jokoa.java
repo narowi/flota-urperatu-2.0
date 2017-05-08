@@ -159,13 +159,13 @@ public class Jokoa {
 			
 		}
 
-		public void ontziaKonpondu(int x, int y) {
-			this.per.ontziaKonpondu(x,y);
+		public int ontziaKonpondu(int x, int y) {
+			return this.per.ontziaKonpondu(x,y);
 			
 		}
 
-		public void radarraKontsultatu() {
-			this.per.radarraKontsultatu();
+		public int[] radarraKontsultatu() {
+			return this.per.radarraKontsultatu();
 			
 		}
 }

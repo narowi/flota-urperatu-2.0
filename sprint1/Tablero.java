@@ -272,7 +272,8 @@ public class Tablero {
 			return tablero[x][y].getOntzia();
 		}
 
-		public void radarraKontsultatu(int x, int y) {
+		public int[] radarraKontsultatu(int x, int y) {
+			int o[]= new int[3];
 			ArrayList<Kasilla> k= new ArrayList<Kasilla>();
 			boolean begiratuta=false;
 			while(!begiratuta){
@@ -294,12 +295,17 @@ public class Tablero {
 				begiratuta=true;
 			}
 			if(k.isEmpty()){
-				new WarningKudeatzailea("Radarraren eremuan ez dago ontzirik.");
+				//new WarningKudeatzailea("Radarraren eremuan ez dago ontzirik.");
+				o[0]=2;
 			}
 			else{
 				int i=((int)(Math.random()*(k.size())));
-				new WarningKudeatzailea(k.get(i).getX()+".errenkadan eta "+k.get(i).getY()+".zutabean ontzi bat dago.");
+				//new WarningKudeatzailea(k.get(i).getX()+".errenkadan eta "+k.get(i).getY()+".zutabean ontzi bat dago.");
+				o[0]=0;
+				o[1]=k.get(i).getX();
+				o[2]=k.get(i).getY();
 			}
+			return o;
 		}
 
 		
