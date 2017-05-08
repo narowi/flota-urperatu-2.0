@@ -9,7 +9,7 @@ public abstract class Arma {
 	}
 	public abstract void tiroEgin(int x, int y,int aukera,Jokalaria pAurkari);
 	public Boolean ezkutuOsoaKenduBehar() {
-		if(this instanceof MisilZuzendua || this instanceof Misila){
+		if(this instanceof MisilZuzenduaBertikal || this instanceof Misila){
 			return true;
 			
 		}else if(this instanceof Bonba){
@@ -43,7 +43,7 @@ public abstract class Arma {
 		}
 	}
 	public boolean misilZuzenduaDa() {
-		if(this instanceof MisilZuzendua){
+		if(this instanceof MisilZuzenduaBertikal){
 			return true;
 		}else{
 			return false;

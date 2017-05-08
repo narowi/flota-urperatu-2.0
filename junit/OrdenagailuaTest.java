@@ -14,7 +14,7 @@ import sprint1.Flota;
 import sprint1.Fragata;
 import sprint1.Itsaspeko;
 import sprint1.Jokoa;
-import sprint1.MisilZuzendua;
+import sprint1.MisilZuzenduaBertikal;
 import sprint1.Misila;
 import sprint1.Ordenagailua;
 import sprint1.Pertsona;

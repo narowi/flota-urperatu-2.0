@@ -88,9 +88,17 @@ public class Pertsona extends Jokalaria {
 		}
 		else if(arma.equals("Misila")){
 			i=2;
-		}else if(arma.equals("MisilZuzendua")){
+		}else if(arma.equals("misil zuzendua bertikal")){
+			i=3;
+		}else if(arma.equals("Radar")){
+			i=4;
+		}else if(arma.equals("misil zuzendua horizontal")){
+			i=5;
+		}else if(arma.equals("misil zuzendua boom")){
+			i=6;
+		}	
 		
-		this.flota.armaErosi(a.getBiltegiZenbakia());
+		this.flota.armaErosi(i);
 		
 	}
 	public boolean OntziaKokatu(int x,int y,String ontziMota,char norabide){

@@ -20,7 +20,7 @@ public class ArmaFactory {
 		}else if(mota=="Misila"){
 			nireArma= new Misila();
 		}else if(mota=="MisilZuzendua"){
-			nireArma= new MisilZuzendua();
+			nireArma= new MisilZuzenduaBertikal();
 		}else if(mota=="Ezkutua"){
 			nireArma= new Ezkutua();
 		}

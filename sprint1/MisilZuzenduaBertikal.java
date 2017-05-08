@@ -1,7 +1,7 @@
 package sprint1;
 
-public class MisilZuzendua extends Arma {
-	public MisilZuzendua(){
+public class MisilZuzenduaBertikal extends Arma {
+	public MisilZuzenduaBertikal(){
 		super.biltegiZenbakia=3;
 		super.prezioa=60;
 		super.izena="MisilZuzendua";

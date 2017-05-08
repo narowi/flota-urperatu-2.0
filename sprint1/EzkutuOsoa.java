@@ -3,7 +3,7 @@ package sprint1;
 public class EzkutuOsoa implements Egoera{
 	public EzkutuOsoa(){}
 	public void jo(Ontzia ontzia, Arma arma, boolean kasillaUrperatuta){ 
-		if(arma instanceof MisilZuzendua || arma instanceof Misila){
+		if(arma instanceof MisilZuzenduaBertikal || arma instanceof Misila){
 			ontzia.egoeraAldatu(new Urperatuta());
 			//arma.eskutuOsoaKenduBehar() boolean
 			//irsasontzi antesestabastocado() boolran mirar urperatuako zariak y luzera
