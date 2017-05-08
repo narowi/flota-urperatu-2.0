@@ -79,8 +79,18 @@ public class Pertsona extends Jokalaria {
 	
 	public void armaAukeratuErosteko(String arma){
 		//Arma a= this.flota.lortuArmaStringetik(arma);
-		Arma a=this.flota.armaSortu(arma);
-		this.flota.armaErosi(a);
+		int i=-1;
+		if(arma.equals("Bonba")){
+			i=0;
+		}
+		else if(arma.equals("Ezkutua")){
+			i=1;
+		}
+		else if(arma.equals("Misila")){
+			i=2;
+		}else if(arma.equals("MisilZuzendua")){
+		
+		this.flota.armaErosi(a.getBiltegiZenbakia());
 		
 	}
 	public boolean OntziaKokatu(int x,int y,String ontziMota,char norabide){

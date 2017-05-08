@@ -124,7 +124,7 @@ public class Ordenagailua extends Jokalaria  {
 		Jokalaria pAurkari= Jokoa.getNireJokoa().aurkariaLortu();
 		//System.out.println("ord tableroa"+ super.nireTablero);
 		//System.out.println("per tableroa"+ pAurkari.nireTablero);
-		Armamentua armamentua= Jokoa.getNireJokoa().ordArmamentuaLortu();
+		//Armamentua armamentua= Jokoa.getNireJokoa().ordArmamentuaLortu();
 		//System.out.println("Ordenagailuaren armamentua" + armamentua.luzera());
 		Arma arma= this.lortuArma();
 		System.out.println(arma); 
@@ -149,11 +149,12 @@ public class Ordenagailua extends Jokalaria  {
 	private Arma lortuArma(){
 		int biltegiZenbakikoArma= (int)(Math.random()*5);
 		boolean armaEgokia=false;
-		Jokalaria pAurkari= Jokoa.getNireJokoa().aurkariaLortu();
-		if(pAurkari.getListaOntziak()!=null){
+		//Jokalaria pAurkari= Jokoa.getNireJokoa().aurkariaLortu();
+		//if(pAurkari.getListaOntziak()!=null){
 			while(!armaEgokia){
 				if((biltegiZenbakikoArma!=1 && biltegiZenbakikoArma!=4) && super.armarikDago(biltegiZenbakikoArma)){
 					armaEgokia=true;
+					//super.armaKopTxikitu(biltegiZenbakikoArma);
 				}else{
 				 biltegiZenbakikoArma= (int)(Math.random()*5);
 				} 
@@ -163,31 +164,31 @@ public class Ordenagailua extends Jokalaria  {
 			}else{
 				return null;
 			}
-		}else{
-			System.out.println("aurkariaren ontzi guztiak urperatu dituzu");
-			return null;
-		}
+//		//}else{
+//			System.out.println("aurkariaren ontzi guztiak urperatu dituzu");
+//			return null;
+//		}
 	}
 	
 	public void armaAukeratuErosteko(String pArma){
 		Arma arma=null;
 		int biltegiZenbakikoArma= (int)(Math.random()*5);
-		if (biltegiZenbakikoArma==0){
-			arma= this.flota.armamentuaLortu().armaSortu("Bonba");
-		}else if (biltegiZenbakikoArma==1){
-			arma= this.flota.armamentuaLortu().armaSortu("Ezkutua");
-		}else if (biltegiZenbakikoArma==2){
-			arma= this.flota.armamentuaLortu().armaSortu("Misila");
-		}else if (biltegiZenbakikoArma==3){
-			arma= this.flota.armamentuaLortu().armaSortu("MisilZuzendua");
-		}else if(biltegiZenbakikoArma==4){
-			arma= this.flota.armamentuaLortu().armaSortu("Radar");
-		}
 		
-		if(arma!=null){
-			this.flota.armaErosi(arma);
+//		if (biltegiZenbakikoArma==0){
+//			//arma= this.flota.armamentuaLortu().armaSortu("Bonba");
+//		}else if (biltegiZenbakikoArma==1){
+//			//arma= this.flota.armamentuaLortu().armaSortu("Ezkutua");
+//		}else if (biltegiZenbakikoArma==2){
+//			arma= this.flota.armamentuaLortu().armaSortu("Misila");
+//		}else if (biltegiZenbakikoArma==3){
+//			arma= this.flota.armamentuaLortu().armaSortu("MisilZuzendua");
+//		}else if(biltegiZenbakikoArma==4){
+//			arma= this.flota.armamentuaLortu().armaSortu("Radar");
+//		}
+//		
+			this.flota.armaErosi(biltegiZenbakikoArma);
 		}	
-	}
+	
 
 
 	public int armamentuarenLuzeera() {

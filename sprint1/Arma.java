@@ -71,4 +71,15 @@ public abstract class Arma {
 			return false;
 		}
 	}
+	public boolean erosiAhalDut(int dirua) {
+		if(dirua>=this.prezioa){
+		return true;
+		}
+		else{
+			return false;
+		}
+	}
+	public int getPrezioa() {
+		return this.prezioa;
+	}
 }

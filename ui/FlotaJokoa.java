@@ -84,7 +84,6 @@ public class FlotaJokoa {
 			//System.out.println("tableroa eguneratzen hasi da....");
 			int j=0;
 			while(j<tableroNi.length){
-				System.out.println("ontzia da UIn? "+(Jokoa.getNireJokoa().zerDaKasillaHau(i,j, norena)).equals("ontzia"));
 				if((Jokoa.getNireJokoa().zerDaKasillaHau(i,j,norena)).equals("ontzia")){
 					if(norena.equals("pertsona")){
 						tableroNi[i][j].setBackground(new Color(210,180,140));

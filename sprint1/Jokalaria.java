@@ -99,12 +99,9 @@ public abstract class Jokalaria {
 			String Da=" ";
 			Ontzia o=nireTablero.itsasontzirikDago(x, y);
 			int ukituGabe=nireTablero.kasillaIkutuGabe(x, y);//mirar que hace
-			System.out.println(ukituGabe+" ukitua nago");
 			boolean urperatua=nireTablero.getKasillaUrperatuta(x, y);
-			System.out.println(urperatua+" urperatua nago");
 			if(o!=null && ukituGabe>0 && !urperatua && !o.ezkutuOsoaDu() &&  !o.ezkutuBakarraDu()){
 				Da="ontzia";
-				System.out.println(Da+" da");
 			}
 			else if(o!=null && o.ezkutuOsoaDu()){
 				Da="EzkutuOsoa";
@@ -151,5 +148,9 @@ public abstract class Jokalaria {
 				new WarningKudeatzailea("Ez zaizu kontsultarik geratzen,beste radar bat erosi");
 			}
 		}
+
+//		public void armaKopTxikitu(int biltegiZenbakikoArma) {
+//			this.flota.kenduArmaKopBat(biltegiZenbakikoArma);
+//		}
 }
 		

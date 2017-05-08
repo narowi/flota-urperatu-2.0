@@ -50,7 +50,7 @@ public class Biltegia {
 
 	public void hasieratu() {
 		this.armamentua = new Armamentua();
-		this.armamentua.hasieratuBiltegi();
+		armamentua.hasieratu();
 		//this.armaKopurua= new ArrayList<Integer>();
 	}
 

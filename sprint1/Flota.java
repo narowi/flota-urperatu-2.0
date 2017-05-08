@@ -117,11 +117,12 @@ public class Flota {
 		ontzi.egoeraAldatu(new EzkutuOsoa());	
 	}
 	
-	public void armaErosi(Arma pArma){  //try catch bidez tratatu hobeto
-		if(this.dirua >= pArma.prezioa ){ //arma erostea biltegian gelditzen denean, biltegian ez badago ez da hautatzeko aukerarik egongo
-			Biltegia.getNireBiltegia().armasaldu(pArma.biltegiZenbakia);
-			this.armamentua.armaGehituZerrendan(pArma.biltegiZenbakia);  //pasatuko diogu armaren biltegizenbakia
-			this.dirua=this.dirua-pArma.prezioa;
+	public void armaErosi(int biltegiZenbakia){  //try catch bidez tratatu hobeto
+		Arma a= this.armamentua.lortuArma(biltegiZenbakia);
+		if(armamentua.erosiAhalDut(this.dirua,a)){ //arma erostea biltegian gelditzen denean, biltegian ez badago ez da hautatzeko aukerarik egongo
+			Biltegia.getNireBiltegia().armasaldu(biltegiZenbakia);
+			this.armamentua.armaGehituZerrendan(biltegiZenbakia);  //pasatuko diogu armaren biltegizenbakia
+			this.dirua=this.dirua-a.getPrezioa();
 		}else{
 			System.out.print("Ez duzu dirurik eskatutako arma erosteko");
 			new WarningKudeatzailea("Ez duzu dirurik eskatutako arma erosteko");// new Warning
@@ -166,8 +167,8 @@ public class Flota {
 		
 	}
 
-	public void kenduArmaKopBat(Arma arma) {
-		this.armamentua.armaKenduKop(arma.biltegiZenbakia);
+	public void kenduArmaKopBat(Arma a) {
+		this.armamentua.armaKenduKop(a.getBiltegiZenbakia());
 	}
 	public boolean armarikDago(int biltegiZenbakikoArma) {
 		return this.armamentua.armarikDago(biltegiZenbakikoArma);
