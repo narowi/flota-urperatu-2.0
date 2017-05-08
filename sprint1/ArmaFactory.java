@@ -19,11 +19,15 @@ public class ArmaFactory {
 			nireArma= new Bonba();
 		}else if(mota=="Misila"){
 			nireArma= new Misila();
-		}else if(mota=="MisilZuzendua"){
+		}else if(mota=="MisilZuzenduaBertikal"){
 			nireArma= new MisilZuzenduaBertikal();
 		}else if(mota=="Ezkutua"){
 			nireArma= new Ezkutua();
-		}
+		}else if(mota=="MisilZuzenduaHorizontal"){
+			nireArma= new MisilZuzenduaHorizontal();
+		}else if(mota=="MisilZuzenduaBoom"){
+			nireArma= new MisilZuzenduaBoom();
+		}	
 		return nireArma;
 	}
 
