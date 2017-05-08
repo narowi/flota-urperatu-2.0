@@ -130,7 +130,7 @@ public class Armamentua {
 		this.armaGehitu("Ezkutua");
 		this.armaGehitu("Misila");
 		this.armaGehitu("MisilZuzenduaBertikal");
-		this.armaGehitu("radar");
+		this.armaGehitu("Radar");
 		this.armaGehitu("MisilZuzenduaHorizontal");
 		this.armaGehitu("MisilZuzenduaBoom");
 	}

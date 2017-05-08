@@ -32,7 +32,7 @@ public class Biltegia {
 				
 				Biltegia.nireBiltegia.armamentua.biltegiArmaKenduKop(mota);
 				
-				
+				w=0;
 				if (!this.armamentua.biltegianArmakDaude()){
 				
 					
