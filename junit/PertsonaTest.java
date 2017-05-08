@@ -36,11 +36,12 @@ public class PertsonaTest {
 		p.setNireTablero(pt);
 		System.out.println("per tableroa" + p.getTablero());
 		Armamentua a= j.ordArmamentuaLortu();
-		a.hasieratu(4,1,4,4,1);
+		a.hasieratu();
 		System.out.println("armamentu " + a.armaMotaKopuru());
 		p.setArmamentua(a);
 		System.out.println("per amamentu "+ p.armamentuarenLuzera());
-		o.ontziakKokatu();
+		//o.ontziakKokatu();
+		//falta da tiro egiterakoan ontzi baten gainean konprobatzea
 		
 		p.tiroEgin("Bonba", 0, 0);
 		int lehen= 0;
@@ -64,12 +65,12 @@ public class PertsonaTest {
 				}
 			}
 		}
-		System.out.println("lehen balio: " + lehen + "gero balio: " + gero);
+		System.out.println("B lehen balio: " + lehen + "gero balio: " + gero);
 		assertTrue(gero>=lehen);
 		
 		
 		
-		p.tiroEgin("Misila", 1, 1);
+		p.tiroEgin("Misila", 9, 9);
 		
 		lehen= 0;
 		gero= 0;
@@ -80,7 +81,7 @@ public class PertsonaTest {
 				}
 			}
 		}
-		p.tiroEgin("Misila", 1, 1);
+		p.tiroEgin("Misila", 9, 9);
 		
 		for(int x=0; x < pt.getTamaina(); x++){
 			for(int y=0; y < pt.getTamaina(); y++){
@@ -89,10 +90,11 @@ public class PertsonaTest {
 				}
 			}
 		}
+		System.out.println("M lehen balio: " + lehen + "gero balio: " + gero);
 		assertTrue(gero>=lehen);
 
 		
-		p.tiroEgin("misil zuzendua bertikal", 1, 1);
+		p.tiroEgin("misil zuzendua bertikal", 7, 8);
 		
 		lehen= 0;
 		gero= 0;
@@ -103,7 +105,7 @@ public class PertsonaTest {
 				}
 			}
 		}
-		p.tiroEgin("misil zuzendua bertikal", 1, 1);
+		//p.tiroEgin("misil zuzendua bertikal", 1, 1);
 		
 		for(int x=0; x < pt.getTamaina(); x++){
 			for(int y=0; y < pt.getTamaina(); y++){
@@ -112,12 +114,13 @@ public class PertsonaTest {
 				}
 			}
 		}
+		System.out.println("MB lehen balio: " + lehen + "gero balio: " + gero);
 		assertTrue(gero>=lehen);
 
 		
 		//hemetik aurrera ez du armarik
-		p.tiroEgin("misil zuzendua horizontal", 1, 1);
-		System.out.println("Misilik zuzendurik du?");
+		p.tiroEgin("misil zuzendua horizontal", 6, 7);
+		
 		lehen= 0;
 		gero= 0;
 		for(int x=0; x < pt.getTamaina(); x++){
@@ -127,8 +130,8 @@ public class PertsonaTest {
 				}
 			}
 		}
-		p.tiroEgin("misil zuzendua horizontal", 1, 1);
-		System.out.println("Misilik zuzendurik du?");
+	//	p.tiroEgin("misil zuzendua horizontal", 1, 1);
+		
 		for(int x=0; x < pt.getTamaina(); x++){
 			for(int y=0; y < pt.getTamaina(); y++){
 				if(ot.getIkutua(x, y)){
@@ -136,11 +139,12 @@ public class PertsonaTest {
 				}
 			}
 		}
+		System.out.println("MH lehen balio: " + lehen + "gero balio: " + gero);
 		assertTrue(gero>=lehen);
 		
 		
-		p.tiroEgin("misil zuzendua", 1, 1);
-		System.out.println("Misilik zuzendurik du?");
+		p.tiroEgin("misil zuzendua boom", 4, 3);
+		
 		lehen= 0;
 		gero= 0;
 		for(int x=0; x < pt.getTamaina(); x++){
@@ -150,8 +154,8 @@ public class PertsonaTest {
 				}
 			}
 		}
-		p.tiroEgin("misil zuzendua", 1, 1);
-		System.out.println("Misilik zuzendurik du?");
+	//	p.tiroEgin("misil zuzendua", 1, 1);
+		
 		for(int x=0; x < pt.getTamaina(); x++){
 			for(int y=0; y < pt.getTamaina(); y++){
 				if(ot.getIkutua(x, y)){
@@ -159,6 +163,7 @@ public class PertsonaTest {
 				}
 			}
 		}
+		System.out.println("MZ lehen balio: " + lehen + "gero balio: " + gero);
 		assertTrue(gero>=lehen);
 	}
 

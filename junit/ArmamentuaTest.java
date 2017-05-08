@@ -43,12 +43,12 @@ Arma a1,a2;
 		//listaArmak.hasieratu(1, 1, 1, 1, 1);
 		listaArmak.armaGehitu2(a1);
 		listaArmak.armaGehitu2(a2);
-		listaArmak.armaKendu(a1);
-		assertFalse(listaArmak.armarikDago(a1.getBiltegiZenbakia()));
+		listaArmak.armaKenduKop(a1.getBiltegiZenbakia());
+		assertTrue(listaArmak.bonbaKop()==3);
 		assertTrue(listaArmak.armarikDago(a2.getBiltegiZenbakia()));
 		
-		listaArmak.armaKendu(a2);
-		assertFalse(listaArmak.armarikDago(a2.getBiltegiZenbakia()));
+		listaArmak.armaKenduKop(a2.getBiltegiZenbakia());
+		assertTrue(listaArmak.misilKop()==1);
 		
 	
 		
@@ -56,24 +56,44 @@ Arma a1,a2;
 	
 	@Test
 	public void armaGehituTest() {
-		listaArmak.hasieratuTesta(1, 1, 1, 1, 1);
+		listaArmak.hasieratu(/*1, 1, 1, 1, 1*/);
 		listaArmak.armaGehituZerrendan(2);
-		assertEquals(listaArmak.misilKop(), 2);
+		assertEquals(listaArmak.misilKop(), 3);
+		
+		listaArmak.armaGehituZerrendan(0);
+		assertEquals(listaArmak.bonbaKop(), 5);
+		listaArmak.armaGehituZerrendan(1);
+		assertEquals(listaArmak.ezkutuKop(), 4);
+		listaArmak.armaGehituZerrendan(3);
+		assertEquals(listaArmak.misilZ(), 4);
+		listaArmak.armaGehituZerrendan(4);
+		assertEquals(listaArmak.radarKop(), 3);
 		
 		//arma gehitu zerrendaren berdina egiten deu
 	}
 	
 	@Test
 	public void badagoEzkuturikTest() {
-		listaArmak.hasieratu(1, 1, 1, 1, 1);
+		listaArmak.hasieratu(/*1, 1, 1, 1, 1*/);
 		assertTrue(listaArmak.badagoEzkuturik());
 	}
 	
 	@Test
 	public void armaKenduKopTest() {
-		listaArmak.hasieratu(1, 1, 1, 1, 1);
-		listaArmak.armaKendu(a2);
-		assertFalse(listaArmak.armarikDago(a2.getBiltegiZenbakia()));
+		listaArmak.hasieratu(/*1, 1, 1, 1, 1*/);
+		listaArmak.armaKenduKop(a2.getBiltegiZenbakia());
+		assertTrue(listaArmak.misilKop()==1);
+		listaArmak.armaKenduKop(0);
+		assertTrue(listaArmak.bonbaKop()==3);
+		listaArmak.armaKenduKop(1);
+		assertTrue(listaArmak.ezkutuKop()==2);
+		listaArmak.armaKenduKop(2);
+		assertTrue(listaArmak.misilKop()==0);
+		listaArmak.armaKenduKop(3);
+		assertTrue(listaArmak.misilZ()==2);
+		listaArmak.armaKenduKop(4);
+		assertTrue(listaArmak.radarKop()==1);
+		
 		
 	}
 	
@@ -85,22 +105,22 @@ Arma a1,a2;
 	
 	@Test
 	public void armaGehituZerrendanTest() {
-		listaArmak.garbitu();
+		//listaArmak.garbitu();
 		//listaArmak.hasieratu(0, 0, 0, 0, 0);
-		listaArmak.hasieratuTesta(1, 1, 1, 1, 1);
-		assertTrue(listaArmak.armaMotaKopuru()==5);
+		listaArmak.hasieratu(/*1, 1, 1, 1, 1*/);
+		assertTrue(listaArmak.armaMotaKopuru()==14);
 		listaArmak.armaGehituZerrendan(2);
-		assertEquals(listaArmak.misilKop(), 2);
+		assertEquals(listaArmak.misilKop(), 3);
 		listaArmak.armaGehituZerrendan(1);
-		assertEquals(listaArmak.ezkutuKop(), 2);
+		assertEquals(listaArmak.ezkutuKop(), 4);
 		listaArmak.armaGehituZerrendan(0);
-		assertEquals(listaArmak.bonbaKop(), 2);
+		assertEquals(listaArmak.bonbaKop(), 5);
 		
 		listaArmak.armaGehituZerrendan(3);
-		assertEquals(listaArmak.misilZ(), 2);
+		assertEquals(listaArmak.misilZ(), 4);
 		
 		listaArmak.armaGehituZerrendan(4);
-		assertEquals(listaArmak.radarKop(), 2);
+		assertEquals(listaArmak.radarKop(), 3);
 		
 		
 	}
@@ -112,7 +132,7 @@ Arma a1,a2;
 //	
 	@Test
 	public void armarikDagoTest() {
-		listaArmak.hasieratu(1, 1, 1, 1, 1);
+		listaArmak.hasieratu(/*1, 1, 1, 1, 1*/);
 		assertTrue(listaArmak.armarikDago(0));
 		assertTrue(listaArmak.armarikDago(2));
 		assertTrue(listaArmak.armarikDago(3));

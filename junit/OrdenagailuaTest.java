@@ -54,7 +54,7 @@ public class OrdenagailuaTest {
 		p.setNireTablero(pt);
 		System.out.println("per tableroa" + p.getTablero());
 		Armamentua a= j.ordArmamentuaLortu();
-		a.hasieratu(1,1,1,1,1);
+		a.hasieratu();
 		System.out.println("armamentu" + a.armaMotaKopuru());
 		o.setArmamentua(a);
 		System.out.println("ord amamentu junit"+ o.armamentuarenLuzeera());
@@ -104,7 +104,7 @@ public class OrdenagailuaTest {
 		//p.setNireTablero(pt);
 		System.out.println("per tableroa" + p.getTablero());
 		Armamentua a= j.ordArmamentuaLortu();
-		a.hasieratu(1,1,1,1,1);
+		a.hasieratu();
 		System.out.println("armamentu" + a.armaMotaKopuru());
 		o.setArmamentua(a);
 		System.out.println("ord amamentu junit"+ o.armamentuarenLuzeera());
