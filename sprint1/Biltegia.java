@@ -13,7 +13,7 @@ public class Biltegia {
 	private EgoeraBiltegia e = new Ondo();
 
 	private Biltegia(){
-		
+		this.hasieratu();
 	}
 
 	public static Biltegia getNireBiltegia(){
