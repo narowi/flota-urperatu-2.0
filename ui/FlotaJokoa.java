@@ -88,7 +88,7 @@ public class FlotaJokoa {
 					if(norena.equals("pertsona")){
 						tableroNi[i][j].setBackground(new Color(210,180,140));
 					}
-					else if(norena.equals("ordenagailu")){
+					else if(norena.equals("ordenagailua")){
 						tableroAurk[i][j].setBackground(new Color(210,180,140));
 					}
 				}

@@ -3,17 +3,19 @@ package sprint1;
 
 public class Ordenagailua extends Jokalaria  {
 	public Ordenagailua(){
-		
+		super();
 	}
 	
 	public void ontziakKokatu(){
 		System.out.println("sartu naiz ontziak kokatura");
 		Ontzia o;
+		int i=0;
 		while(super.flota.geratzenDaOntzirik()){
 			System.out.println("sartu naiz whilera");
-			o= super.flota.lortuOntzia();
+			o= super.flota.lortuOntzia(i);
 			ontziaKokatu(o);
 			System.out.println(o +"ontzia kokatu da");
+			i++;
 		}
 	}
 	
@@ -55,6 +57,7 @@ public class Ordenagailua extends Jokalaria  {
 		char pos=' ';
 		boolean listo=false;
 		while(!listo){
+			System.out.println("entro en el while de ontziaKokatu");
 				x=this.lortuKoordenatua();
 				y= this.lortuKoordenatua();
 				horBert= super.nireTablero.norabideaAukeratu(x, y, o);

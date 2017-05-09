@@ -92,18 +92,19 @@ public class Flota {
 //		}
 //	}
 
-	public Ontzia lortuOntzia() {
-		Iterator<Ontzia> itr =this.getIteradorea();
-		Ontzia aux=null;
-		boolean ezKokatuta=false;
-		while(itr.hasNext() && !ezKokatuta){
-			aux=itr.next();
-			if(!aux.kokatutaAhalNago()){
-				ezKokatuta=true;
-			}
-		}
-		System.out.println("zein ontzi naiz " + aux);
-		return aux;
+	public Ontzia lortuOntzia(int i) {
+		return f.get(i);
+//		Iterator<Ontzia> itr =this.getIteradorea();
+//		Ontzia aux=null;
+//		boolean ezKokatuta=false;
+//		while(itr.hasNext() && !ezKokatuta){
+//			aux=itr.next();
+//			if(!aux.kokatutaAhalNago()){
+//				ezKokatuta=true;
+//			}
+//		}
+//		System.out.println("zein ontzi naiz " + aux);
+//		return aux;
 	}
 
 	public int urperatuGabekoKop(Ontzia ontzi) {
