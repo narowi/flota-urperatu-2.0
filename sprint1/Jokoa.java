@@ -34,6 +34,7 @@ public class Jokoa {
 		per.setEtsaiarenTablero(ord.getTablero());
 		ord.setEtsaiarenTablero(per.getTablero());
 		ord.ontziakKokatu();
+		ord.ezkutuaJarri();
 		new FlotaJokoa().main(null);
 		//while(!amaitu){
 			//ontziak kokatu

@@ -7,7 +7,7 @@ public abstract class Arma {
 	protected boolean kokatua=false;
 	public Arma(){
 	}
-	public abstract void tiroEgin(int x, int y,Jokalaria pAurkari);
+	public abstract void tiroEgin(int x, int y,Tablero t);
 	public Boolean ezkutuOsoaKenduBehar() {
 		if(this instanceof MisilZuzenduaBertikal || this instanceof Misila){
 			return true;

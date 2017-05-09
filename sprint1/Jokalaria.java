@@ -112,6 +112,12 @@ public abstract class Jokalaria {
 			else if( o!=null && o.ezkutuBakarraDu()){
 				Da="EzkutuBakarra";
 			}
+			else if(o!=null && o.urperatutaDago()){
+				Da="urperatua";
+			}
+			else if(o!=null && ukituGabe==0){
+				Da="ikutua";
+			}
 			return Da;
 		}
 		

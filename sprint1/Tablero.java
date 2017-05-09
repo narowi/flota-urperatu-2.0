@@ -64,14 +64,26 @@ public class Tablero {
 		if(eskumaraAhal(x,y,o.luzera)){
 			ahalDu[0]='s';
 		}
+		else{
+			ahalDu[0]=' ';
+		}
 		if(ezkerreraAhal(x,y,o.luzera)){
 			ahalDu[1]='z';
+		}
+		else{
+			ahalDu[1]=' ';
 		}
 		if(goraAhal(x,y,o.luzera)){
 			ahalDu[2]='g';
 		}
+		else{
+			ahalDu[2]=' ';
+		}
 		if(beheraAhal(x,y,o.luzera)){
 			ahalDu[3]='b';
+		}
+		else{
+			ahalDu[3]=' ';
 		}
 		
 		return ahalDu;

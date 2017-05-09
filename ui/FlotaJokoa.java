@@ -84,7 +84,9 @@ public class FlotaJokoa {
 			//System.out.println("tableroa eguneratzen hasi da....");
 			int j=0;
 			while(j<tableroNi.length){
-				if((Jokoa.getNireJokoa().zerDaKasillaHau(i,j,norena)).equals("ontzia")){
+				String zerDa=(Jokoa.getNireJokoa().zerDaKasillaHau(i,j,norena));
+				System.out.println(zerDa+" x="+i+"y="+j);
+				if(zerDa.equals("ontzia")){
 					if(norena.equals("pertsona")){
 						tableroNi[i][j].setBackground(new Color(210,180,140));
 					}
@@ -92,13 +94,35 @@ public class FlotaJokoa {
 						tableroAurk[i][j].setBackground(new Color(210,180,140));
 					}
 				}
-				else if(Jokoa.getNireJokoa().zerDaKasillaHau(i, j, norena).equals("EzkutuOsoa")){
+				else if(zerDa.equals("EzkutuOsoa")){
 					if(norena.equals("pertsona")){
 						tableroNi[i][j].setBackground(new Color(160,82,45));
 					}
-				}else if(Jokoa.getNireJokoa().zerDaKasillaHau(i, j, norena).equals("EzkutuBakarra")){
+					else if(norena.equals("ordenagailua")){
+						tableroAurk[i][j].setBackground(new Color(160,82,45));
+					}
+				}else if(zerDa.equals("EzkutuBakarra")){
 					if(norena.equals("pertsona")){
 						tableroNi[i][j].setBackground(new Color(205,133,63));
+					}
+					else if(norena.equals("ordenagailua")){
+						tableroAurk[i][j].setBackground(new Color(205,133,63));
+					}
+				}
+				else if(zerDa.equals("hondoratua")){
+					if(norena.equals("pertsona")){
+						tableroNi[i][j].setBackground(new Color(255,0,0));
+					}
+					else if(norena.equals("ordenagailua")){
+						tableroAurk[i][j].setBackground(new Color(255,0,0));
+					}
+				}
+				else if(zerDa.equals("ikutua")){
+					if(norena.equals("pertsona")){
+							tableroNi[i][j].setBackground(new Color(255,0,0));
+					}
+					else if(norena.equals("ordenagailua")){
+							tableroAurk[i][j].setBackground(new Color(255,0,0));
 					}
 				}
 				j++;
@@ -183,6 +207,7 @@ public class FlotaJokoa {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				Jokoa.getNireJokoa().tiroEgin(arma,koordenatuak[0],koordenatuak[1]);
+				tableroaEguneratu("ordenagailua");
 				//poner para pintar
 			}
 		});
