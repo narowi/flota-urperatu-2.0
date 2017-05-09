@@ -119,10 +119,10 @@ public class FlotaJokoa {
 				}
 				else if(zerDa.equals("ikutua")){
 					if(norena.equals("pertsona")){
-							tableroNi[i][j].setBackground(new Color(255,0,0));
+							tableroNi[i][j].setBackground(new Color(240,128,128));
 					}
 					else if(norena.equals("ordenagailua")){
-							tableroAurk[i][j].setBackground(new Color(255,0,0));
+							tableroAurk[i][j].setBackground(new Color(240,128,128));
 					}
 				}
 				j++;
