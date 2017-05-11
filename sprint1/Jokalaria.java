@@ -143,11 +143,17 @@ public abstract class Jokalaria {
 		public int[] radarraKontsultatu() {
 			int[] i= new int[3];
 			if(this.radarKontsultaKop>0){
-			int[] k=etsaiarenTableroa.radarraKontsultatu(radarX, radarY);
-			this.radarKontsultaKop--;
-			radarX=(int)(Math.random()*(nireTablero.getTamaina()));
-			radarY=(int)(Math.random()*(nireTablero.getTamaina()));
-			i=k;
+				System.out.println("radarra x honetan: "+radarX);
+				System.out.println("radarra y honetan: "+radarY);
+				int[] k=etsaiarenTableroa.radarraKontsultatu(radarX, radarY);
+				if(k[0]==0){
+					System.out.println("PIIIIPO");
+					System.out.println("x=" + k[1] + " y=" + k[2]);
+				}
+				this.radarKontsultaKop--;
+				radarX=(int)(Math.random()*(nireTablero.getTamaina()));
+				radarY=(int)(Math.random()*(nireTablero.getTamaina()));
+				i=k;
 			}
 			else{
 				i[0]=1;

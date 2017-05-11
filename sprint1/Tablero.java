@@ -287,25 +287,34 @@ public class Tablero {
 		public int[] radarraKontsultatu(int x, int y) {
 			int o[]= new int[3];
 			ArrayList<Kasilla> k= new ArrayList<Kasilla>();
-			boolean begiratuta=false;
-			while(!begiratuta){
-				if(this.tablero[x][y].getOntzia()!=null){
-					k.add(tablero[x][y]);
+			//boolean begiratuta=false;
+			//while(!begiratuta){
+				for(int j=x-1;j<x+1;j++){
+					for(int l=y-1;l<y+1;l++){
+						if(j<=9 && j>=0 && l<=9 && l>=0){
+							if(tablero[j][l].getOntzia()!=null){
+								k.add(tablero[j][l]);
+							}
+						}
+					}
 				}
-				if(this.tablero[x+1][y].getOntzia()!=null){
-					k.add(tablero[x+1][y]);
-				}
-				if(this.tablero[x-1][y].getOntzia()!=null){
-					k.add(tablero[x-1][y]);
-				}
-				if(this.tablero[x][y-1].getOntzia()!=null){
-					k.add(tablero[x][y-1]);
-				}
-				if(this.tablero[x][y+1].getOntzia()!=null){
-					k.add(tablero[x][y+1]);
-				}
-				begiratuta=true;
-			}
+//				if(this.tablero[x][y].getOntzia()!=null){
+//					k.add(tablero[x][y]);
+//				}
+//				if(this.tablero[x+1][y].getOntzia()!=null){
+//					k.add(tablero[x+1][y]);
+//				}
+//				if(this.tablero[x-1][y].getOntzia()!=null){
+//					k.add(tablero[x-1][y]);
+//				}
+//				if(this.tablero[x][y-1].getOntzia()!=null){
+//					k.add(tablero[x][y-1]);
+//				}
+//				if(this.tablero[x][y+1].getOntzia()!=null){
+//					k.add(tablero[x][y+1]);
+//				}
+				//begiratuta=true;
+			//}
 			if(k.isEmpty()){
 				//new WarningKudeatzailea("Radarraren eremuan ez dago ontzirik.");
 				o[0]=2;
