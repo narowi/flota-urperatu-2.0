@@ -8,9 +8,8 @@ public class MisilZuzenduaBoom extends Arma{
 	}
 public void tiroEgin(int x, int y, Tablero aurkariarenTableroa){
 		
-		//aukera=0-> IH vertical, aukera=1-> EM horizontal, aukera=2-> BOOM horizontal+vertical
+		//aukera=2-> BOOM horizontal+vertical
 		
-		//Tablero aurkariarenTableroa = pAurkari.getTablero();
 		aurkariarenTableroa.setBegiratuta(x, y, true);
 		int i=0;
 		boolean kasillaUrperatuta = aurkariarenTableroa.getKasillaUrperatuta(x,y);

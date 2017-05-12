@@ -9,7 +9,7 @@ public abstract class Arma {
 	}
 	public abstract void tiroEgin(int x, int y,Tablero t);
 	public Boolean ezkutuOsoaKenduBehar() {
-		if(this instanceof MisilZuzenduaBertikal || this instanceof Misila){
+		if(this instanceof MisilZuzenduaBertikal || this instanceof MisilZuzenduaHorizontal ||  this instanceof MisilZuzenduaBoom || this instanceof Misila){
 			return true;
 			
 		}else if(this instanceof Bonba){

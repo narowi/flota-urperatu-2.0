@@ -7,15 +7,11 @@ public class Ordenagailua extends Jokalaria  {
 	}
 	
 	public void ontziakKokatu(){
-		System.out.println("sartu naiz ontziak kokatura");
 		Ontzia o;
 		int i=0;
 		while(super.flota.geratzenDaOntzirik()){
-			System.out.println("sartu naiz whilera");
 			o= super.flota.lortuOntzia(i);
-			System.out.println(o+" ontzia naiz");
 			ontziaKokatu(o);
-			System.out.println(o +"ontzia kokatu da");
 			i++;
 		}
 	}
@@ -58,7 +54,7 @@ public class Ordenagailua extends Jokalaria  {
 		char pos=' ';
 		boolean listo=false;
 		while(!listo){
-			System.out.println("entro en el while de ontziaKokatu");
+			//System.out.println("entro en el while de ontziaKokatu");
 				x=this.lortuKoordenatua();
 				y= this.lortuKoordenatua();
 				horBert= super.nireTablero.norabideaAukeratu(x, y, o);
@@ -70,7 +66,7 @@ public class Ordenagailua extends Jokalaria  {
 				
 			//super.flota.kenduOntzia(o);
 			int k=super.nireTablero.kokatu(x, y, o, pos);
-			System.out.println("ondo kokatu naiz? "+k);
+			//System.out.println("ondo kokatu naiz? "+k);
 	}
 	
 	private int lortuKoordenatua(){
@@ -83,7 +79,7 @@ public class Ordenagailua extends Jokalaria  {
 		boolean zuzena=false;
 		while(!zuzena){
 			 i = (int)(Math.random()*3);
-			 System.out.println(pos[i]);
+			// System.out.println(pos[i]);
 			if(pos[i]=='s'||pos[i]=='z'||pos[i]=='g'||pos[i]=='b'){
 				zuzena=true;
 			}

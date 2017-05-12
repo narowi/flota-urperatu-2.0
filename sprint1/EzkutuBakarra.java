@@ -7,12 +7,14 @@ public class EzkutuBakarra implements Egoera {
 		//irsasontzi antesestabastocado() boolran mirar urperatuako zariak y luzera
 		if(arma instanceof MisilZuzenduaBertikal || arma instanceof MisilZuzenduaHorizontal || arma instanceof MisilZuzenduaBoom || arma instanceof Misila){
 			ontzia.egoeraAldatu(new Urperatuta());
-		}else
-		if(ontzia.lehenIkututa()){
+		}else{
+			if(ontzia.lehenIkututa()){
+		
 			ontzia.egoeraAldatu(new Ikututa());
 			
 		}else{
 			ontzia.egoeraAldatu(new Osorik());
+		}
 		}
 	}
 }

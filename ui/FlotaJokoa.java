@@ -85,7 +85,7 @@ public class FlotaJokoa {
 			int j=0;
 			while(j<tableroNi.length){
 				String zerDa=(Jokoa.getNireJokoa().zerDaKasillaHau(i,j,norena));
-				System.out.println(zerDa+" x="+i+"y="+j);
+				//System.out.println(zerDa+" x="+i+"y="+j);
 				if(zerDa.equals("ontzia")){
 					if(norena.equals("pertsona")){
 						tableroNi[i][j].setBackground(new Color(210,180,140));

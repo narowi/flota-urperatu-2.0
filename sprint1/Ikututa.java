@@ -6,10 +6,10 @@ public class Ikututa implements Egoera {
 			if(arma instanceof MisilZuzenduaBertikal || arma instanceof MisilZuzenduaHorizontal || arma instanceof MisilZuzenduaBoom  || arma instanceof Misila){
 				ontzia.egoeraAldatu(new Urperatuta());
 				ontzia.zatiGuztiakUrperatu();
-				Jokalaria pAurkari= Jokoa.getNireJokoa().aurkariaLortu();
-				pAurkari.getListaOntziak().kenduOntzia(ontzia);
-			}else{
-				if(ontzia.zatirikBizirik()){
+				//Jokalaria pAurkari= Jokoa.getNireJokoa().aurkariaLortu();
+				//pAurkari.getListaOntziak().kenduOntzia(ontzia);
+			}else{ //si en una bonba
+				if(ontzia.zatirikBizirik()){ //> 1
 					ontzia.egoeraAldatu(new Ikututa());
 					//si la x y y no esta urperatuta  
 					if(!kasillaUrperatuta){
@@ -18,8 +18,8 @@ public class Ikututa implements Egoera {
 				}else{
 					ontzia.egoeraAldatu(new Urperatuta());
 					ontzia.zatiGuztiakUrperatu();
-					Jokalaria pAurkari= Jokoa.getNireJokoa().aurkariaLortu();
-					pAurkari.getListaOntziak().kenduOntzia(ontzia);
+					//Jokalaria pAurkari= Jokoa.getNireJokoa().aurkariaLortu();
+					//pAurkari.getListaOntziak().kenduOntzia(ontzia);
 				}
 			}
 		

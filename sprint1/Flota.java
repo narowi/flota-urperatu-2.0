@@ -103,7 +103,7 @@ public class Flota {
 				ezKokatuta=true;
 			}
 		}
-		System.out.println("zein ontzi naiz " + aux);
+		//System.out.println("zein ontzi naiz " + aux);
 		return aux;
 	}
 
