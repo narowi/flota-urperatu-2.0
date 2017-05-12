@@ -100,6 +100,11 @@ public abstract class Jokalaria {
 			Ontzia o=nireTablero.itsasontzirikDago(x, y);
 			int ukituGabe=nireTablero.kasillaIkutuGabe(x, y);//mirar que hace
 			boolean urperatua=nireTablero.getKasillaUrperatuta(x, y);
+			int geratzenDira=-1;
+			if(o!=null){
+				 geratzenDira= o.getHondoratuGabekoZatiKop();
+			}
+			//boolean urperatua = o.urperatutaDago();
 			if(o!=null && ukituGabe>0 && !urperatua && !o.ezkutuOsoaDu() &&  !o.ezkutuBakarraDu()){
 				Da="ontzia";
 			}
@@ -114,6 +119,10 @@ public abstract class Jokalaria {
 			}
 			else if(o!=null && ukituGabe==0){
 				Da="ikutua";
+			}else if(o==null && this.nireTablero.begiratutaDago(x, y)){
+				Da="uraIkutua";
+			}else if(geratzenDira==0){
+				Da="ontziUrperatua";
 			}
 			return Da;
 		}

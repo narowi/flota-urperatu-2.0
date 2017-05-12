@@ -9,58 +9,60 @@ public class MisilZuzenduaBoom extends Arma{
 public void tiroEgin(int x, int y, Tablero aurkariarenTableroa){
 		
 		//aukera=2-> BOOM horizontal+vertical
-		
-		aurkariarenTableroa.setBegiratuta(x, y, true);
-		int i=0;
-		boolean kasillaUrperatuta = aurkariarenTableroa.getKasillaUrperatuta(x,y);
-//		if(aukera==0){
-//			//puede haber mas de uno, while que mire todas las posiciones en horizontal y fija, x+1 hasta llegar a la luzera del tablero, y que urperatutako zatiak sean!=0
-//			y=0;
-//			while(i<10){			
-//				Ontzia its = aurkariarenTableroa.itsasontzirikDago(x,y);//tengo que ir aumentando la x
-//				y++;
-//				if(its!=null){
-//				
-//					its.jo(this,kasillaUrperatuta);
-//					//junit
-//					aurkariarenTableroa.aldatuKasillaUkituta(x,y);
-//				}
-//				i++;
-//			}
 //		
-//		}else if(aukera==1){
-//			x=0;
+//		
+//		int i=0;
+//		boolean kasillaUrperatuta = aurkariarenTableroa.getKasillaUrperatuta(x,y);
+//			int lagx=0;
+//			int lagy=0;
+//			//lehenengo bertikalean begiratu
 //			while(i<10){
-//				Ontzia its = aurkariarenTableroa.itsasontzirikDago(x,y);
-//				x++;
+//				Ontzia its = aurkariarenTableroa.itsasontzirikDago(lagx,y);
+//				aurkariarenTableroa.setBegiratuta(lagx, y, true);
+//				lagx++;
 //				if(its!=null){
 //					its.jo(this,kasillaUrperatuta);
 //				}
 //				i++;
 //			}
-//		}else{
-			int lagx=0;
-			int lagy=0;
-			//lehenengo bertikalean begiratu
-			while(i<10){
-				Ontzia its = aurkariarenTableroa.itsasontzirikDago(lagx,y);
-				lagx++;
-				if(its!=null){
-					its.jo(this,kasillaUrperatuta);
-				}
-				i++;
-			}
-			i=0;
-			//horizontalean begiratu
-			while(i<10){
-				Ontzia its = aurkariarenTableroa.itsasontzirikDago(x,lagy);
-				lagy++;
-				if(its!=null){
-					its.jo(this,kasillaUrperatuta);
-				}
-				i++;
-			}
+//			i=0;
+//			//horizontalean begiratu
+//			while(i<10){
+//				Ontzia its = aurkariarenTableroa.itsasontzirikDago(x,lagy);
+//				aurkariarenTableroa.setBegiratuta(x, lagy, true);
+//				lagy++;
+//				if(its!=null){
+//					its.jo(this,kasillaUrperatuta);
+//				}
+//				i++;
+//			}
 				
+			int i=0;
+			boolean kasillaUrperatuta = aurkariarenTableroa.getKasillaUrperatuta(x,y);
+				int lagx=0;
+				while(i<10){			
+					Ontzia its = aurkariarenTableroa.itsasontzirikDago(lagx,y);//tengo que ir aumentando la x
+					aurkariarenTableroa.setBegiratuta(lagx, y, true);
+					lagx++;
+					if(its!=null){
+					
+						its.jo(this,kasillaUrperatuta);
+						//junit
+						//aurkariarenTableroa.aldatuKasillaUkituta(x,y);
+					}
+					i++;
+				}
+				i=0;
+				int lagy=0;
+				while(i<10){
+					Ontzia its = aurkariarenTableroa.itsasontzirikDago(x,lagy);
+					aurkariarenTableroa.setBegiratuta(x, lagy, true);
+					lagy++;
+					if(its!=null){
+						its.jo(this, kasillaUrperatuta);
+					}
+				i++;
+				}
 //		}	
 	}
 	public  boolean posizioHorretakoArmaDa(int pos){

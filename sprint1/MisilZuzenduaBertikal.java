@@ -9,13 +9,14 @@ public class MisilZuzenduaBertikal extends Arma {
 public void tiroEgin(int x, int y, Tablero aurkariarenTableroa){
 		System.out.println("tiro egin metodoan sartu misilzuz vert klasean");
 		//aukera=0-> IH vertical, aukera=1-> EM horizontal, aukera=2-> BOOM horizontal+vertical
-		aurkariarenTableroa.setBegiratuta(x, y, true);
+		
 		int i=0;
 		boolean kasillaUrperatuta = aurkariarenTableroa.getKasillaUrperatuta(x,y);
-			y=0;
+			x=0;
 			while(i<10){			
 				Ontzia its = aurkariarenTableroa.itsasontzirikDago(x,y);//tengo que ir aumentando la x
-				y++;
+				aurkariarenTableroa.setBegiratuta(x, y, true);
+				x++;
 				if(its!=null){
 				
 					its.jo(this,kasillaUrperatuta);

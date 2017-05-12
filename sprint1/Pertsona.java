@@ -59,7 +59,7 @@ public class Pertsona extends Jokalaria {
 	
 	public void tiroEgin(String armaNorabide, int x, int y){
 		//  int aukera=-1;
-		  String arma;
+		//  String arma;
 		  Arma a;
 //		  if (armaNorabide=="misil zuzendua bertikal"){
 //		   arma="MisilZuzenduaBertikal";

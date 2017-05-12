@@ -124,6 +124,20 @@ public class FlotaJokoa {
 					else if(norena.equals("ordenagailua")){
 							tableroAurk[i][j].setBackground(new Color(240,128,128));
 					}
+				}else if(zerDa.equals("uraIkutua")){
+					if(norena.equals("pertsona")){
+						tableroNi[i][j].setBackground(new Color(70,130,180));
+					}
+					else if(norena.equals("ordenagailua")){
+						tableroAurk[i][j].setBackground(new Color(70,130,180));
+					}
+				}else if(zerDa.equals("ontziUrperatua")){
+					if(norena.equals("pertsona")){
+						tableroNi[i][j].setBackground(new Color(70,225,180));
+					}
+					else if(norena.equals("ordenagailua")){
+						tableroAurk[i][j].setBackground(new Color(70,225,180));
+					}
 				}
 				j++;
 			}
