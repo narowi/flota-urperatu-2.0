@@ -117,7 +117,7 @@ private Ontzia o;
 		
 		o.egoeraAldatu(new EzkutuOsoa());
 		o.jo(a, false); 
-		assertTrue(o.getEgoera() instanceof  Urperatuta);
+		assertTrue(o.getEgoera() instanceof  Ikututa);
 		
 		
 		o.egoeraAldatu(new EzkutuBakarra());
@@ -155,7 +155,7 @@ private Ontzia o;
 		
 		o.egoeraAldatu(new EzkutuOsoa());
 		o.jo(a, false); 
-		assertTrue(o.getEgoera() instanceof  Urperatuta);
+		assertTrue(o.getEgoera() instanceof  Ikututa);
 		
 		
 		o.egoeraAldatu(new EzkutuBakarra());
@@ -193,7 +193,7 @@ private Ontzia o;
 		
 		o.egoeraAldatu(new EzkutuOsoa());
 		o.jo(a, false); 
-		assertTrue(o.getEgoera() instanceof  Urperatuta);
+		assertTrue(o.getEgoera() instanceof  Ikututa);
 		
 		
 		o.egoeraAldatu(new EzkutuBakarra());
