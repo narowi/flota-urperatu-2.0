@@ -96,35 +96,39 @@ public abstract class Jokalaria {
 			return this.flota.bilatuOntzia(o);
 		}
 		public String zerDaKasillaHau(int x,int y){
-			String Da=" ";
-			Ontzia o=nireTablero.itsasontzirikDago(x, y);
-			int ukituGabe=nireTablero.kasillaIkutuGabe(x, y);//mirar que hace
-			boolean urperatua=nireTablero.getKasillaUrperatuta(x, y);
-			int geratzenDira=-1;
-			if(o!=null){
-				 geratzenDira= o.getHondoratuGabekoZatiKop();
+			String da="";
+			Ontzia o= nireTablero.itsasontzirikDago(x, y);
+			boolean tiroEginda = nireTablero.begiratutaDago(x, y);
+			if(o==null){
+				if(!tiroEginda){
+					da="Ura";
+				}
+				else if(tiroEginda){
+					da="UrIkutua";
+				}
 			}
-			//boolean urperatua = o.urperatutaDago();
-			if(o!=null && ukituGabe>0 && !urperatua && !o.ezkutuOsoaDu() &&  !o.ezkutuBakarraDu()){
-				Da="ontzia";
+			else{
+				boolean ezkutuaDu= o.ezkutuOsoaDu();
+				boolean ezkutuBakarraDu= o.ezkutuBakarraDu();
+				boolean ontziaOsorik=o.dagoOsorik();
+				boolean ontziaUrperatua=o.urperatutaDago();
+				if(ontziaOsorik && !ezkutuaDu && !ezkutuBakarraDu){
+					da="Osorik";
+				}
+				else if(!ontziaOsorik && !ontziaUrperatua && !ezkutuaDu && !ezkutuBakarraDu && tiroEginda){
+					da="OIkutua";
+				}
+				else if(ontziaUrperatua){
+					da="OUrperatua";
+				}
+				else if(ezkutuaDu){
+					da="EzkutuOsoa";
+				}
+				else if(ezkutuBakarraDu){
+					da="EzkutuBakarra";
+				}
 			}
-			else if(o!=null && o.ezkutuOsoaDu()){
-				Da="EzkutuOsoa";
-			}
-			else if(urperatua){
-				Da="hondoratua";
-			}
-			else if( o!=null && o.ezkutuBakarraDu()){
-				Da="EzkutuBakarra";
-			}
-			else if(o!=null && ukituGabe==0){
-				Da="ikutua";
-			}else if(o==null && this.nireTablero.begiratutaDago(x, y)){
-				Da="uraIkutua";
-			}else if(geratzenDira==0){
-				Da="ontziUrperatua";
-			}
-			return Da;
+			return da;
 		}
 		
 		public abstract int armaAukeratuErosteko(String arma);

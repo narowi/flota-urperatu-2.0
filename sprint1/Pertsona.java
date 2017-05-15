@@ -78,6 +78,7 @@ public class Pertsona extends Jokalaria {
 //		  }
 		 
 		 a=this.flota.geratzenZaitArmaHau(armaNorabide);
+		 System.out.println("arma honekin tiro"+a);
 		 if(a!=null){ 
 		   this.flota.kenduArmaKopBat(a);
 		   //Jokalaria pAurkari= Jokoa.getNireJokoa().aurkariaLortu();//JUNIT

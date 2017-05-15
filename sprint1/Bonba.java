@@ -27,14 +27,14 @@ public class Bonba extends Arma {
 			//posizio horretan bakarrik izango du eragina
 			//o.joZatia(x,y);
 			
-			if(o.ezkutuaDu()){
+			//if(o.ezkutuaDu()){
 			//egoera begiratu ezkutua badu
-				aurkariarenTableroa.aldatuKasillaUkituta(x, y);
-			}else{
-			//bestela urperatuta
-				o.kenduZatia();
-				aurkariarenTableroa.aldatuKasillaUrperatuta(x,y);
-			}	
+//				aurkariarenTableroa.aldatuKasillaUkituta(x, y);
+//			}else{
+//			//bestela urperatuta
+//				o.kenduZatia();
+//				aurkariarenTableroa.aldatuKasillaUrperatuta(x,y);
+//			}	
 		}
 	}
 }

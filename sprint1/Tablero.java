@@ -252,13 +252,13 @@ public class Tablero {
 			}
 		}
 //junit
-		public int kasillaIkutuGabe(int x, int y) {
-			return this.tablero[x][y].ikutuGabe();
-		}
-
-		public void aldatuKasillaUkituta(int x, int y) {
-			this.tablero[x][y].setIkutuGabe(false);
-		}
+//		public int kasillaIkutuGabe(int x, int y) {
+//			return this.tablero[x][y].ikutuGabe();
+//		}
+//
+//		public void aldatuKasillaUkituta(int x, int y) {
+//			this.tablero[x][y].setIkutuGabe(false);
+//		}
 
 		public void aldatuKasillaUrperatuta(int x, int y) {
 			this.tablero[x][y].setUrperatuta(true);

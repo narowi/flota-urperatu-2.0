@@ -197,6 +197,10 @@ public class Ordenagailua extends Jokalaria  {
 	public int armamentuarenLuzeera() {
 		return this.flota.armamentuarenLuzera();
 	}
+
+	public boolean begiratu(int i, int j) {
+		return super.nireTablero.begiratutaDago(i, j);
+	}
 	}
 
 

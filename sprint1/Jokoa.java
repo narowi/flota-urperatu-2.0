@@ -152,7 +152,29 @@ public class Jokoa {
 
 		public void tiroEgin(String arma, Integer x, Integer y) {
 			this.per.tiroEgin(arma,x,y);
-			
+			this.ordTxanda();
+		}
+
+		private void ordTxanda() {
+			boolean amaitua=false;
+			while(!amaitua){
+			int aukera= (int)(Math.random()*5);
+			if(aukera==0){
+				//tiroegin
+			 }
+			else if(aukera==1){
+				//konpondu
+			}
+			else if(aukera==2){
+				//Erosi
+			}
+			else if(aukera==3){
+				//ezkutua jarri
+			}
+			else if(aukera==4){
+				//radarra kontsultatu
+			}
+			}
 		}
 
 		public int armaErosi(String arma) {
@@ -168,5 +190,14 @@ public class Jokoa {
 		public int[] radarraKontsultatu() {
 			return this.per.radarraKontsultatu();
 			
+		}
+
+		public boolean begiratua(int i, int j, String norena) {
+			if(norena.equals("ordenagailua")){
+				return ord.begiratu(i,j);
+			}
+			else{
+				return true;
+			}
 		}
 }

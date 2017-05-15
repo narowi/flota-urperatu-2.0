@@ -8,7 +8,7 @@ public class Kasilla {
 	 private int x=0;
 	 private int y=0;
 	 private boolean urperatuta=false;
-	 private boolean ikutuGabe=true;
+	 //private boolean ikutuGabe=true;
 	 //junit
 	  private boolean ikututa=false;
 	  
@@ -97,16 +97,16 @@ public class Kasilla {
 	  return this.ikututa;
 	 }
 
-	 public int ikutuGabe() {
-	  if(this.ikutuGabe){
-	   return 1;
-	  }else{
-	   return 0;
-	  }
-	 }
-
-	 public void setIkutuGabe(boolean b) {
-	  this.ikutuGabe=b;
-	 }
+//	 public int ikutuGabe() {
+//	  if(this.ikutuGabe){
+//	   return 1;
+//	  }else{
+//	   return 0;
+//	  }
+//	 }
+//
+//	 public void setIkutuGabe(boolean b) {
+//	  this.ikutuGabe=b;
+//	 }
 
 	}

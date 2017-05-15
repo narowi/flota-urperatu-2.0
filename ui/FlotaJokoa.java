@@ -85,58 +85,61 @@ public class FlotaJokoa {
 			int j=0;
 			while(j<tableroNi.length){
 				String zerDa=(Jokoa.getNireJokoa().zerDaKasillaHau(i,j,norena));
+				boolean begiratua=(Jokoa.getNireJokoa().begiratua(i,j,norena));
 				//System.out.println(zerDa+" x="+i+"y="+j);
-				if(zerDa.equals("ontzia")){
-					if(norena.equals("pertsona")){
-						tableroNi[i][j].setBackground(new Color(210,180,140));
+				if(begiratua){
+					if(zerDa.equals("Osorik")){
+						if(norena.equals("pertsona")){
+							tableroNi[i][j].setBackground(new Color(210,180,140));
+						}
+						else if(norena.equals("ordenagailua")){
+							tableroAurk[i][j].setBackground(new Color(210,180,140));
+						}
 					}
-					else if(norena.equals("ordenagailua")){
-						tableroAurk[i][j].setBackground(new Color(210,180,140));
+					else if(zerDa.equals("EzkutuOsoa")){
+						if(norena.equals("pertsona")){
+							tableroNi[i][j].setBackground(new Color(160,82,45));
+						}
+						else if(norena.equals("ordenagailua")){
+							tableroAurk[i][j].setBackground(new Color(160,82,45));
+						}
+					}else if(zerDa.equals("EzkutuBakarra")){
+						if(norena.equals("pertsona")){
+							tableroNi[i][j].setBackground(new Color(205,133,63));
+						}
+						else if(norena.equals("ordenagailua")){
+							tableroAurk[i][j].setBackground(new Color(205,133,63));
+						}
 					}
-				}
-				else if(zerDa.equals("EzkutuOsoa")){
-					if(norena.equals("pertsona")){
-						tableroNi[i][j].setBackground(new Color(160,82,45));
+					else if(zerDa.equals("OUrperatua")){
+						if(norena.equals("pertsona")){
+							tableroNi[i][j].setBackground(new Color(255,0,0));
+						}
+						else if(norena.equals("ordenagailua")){
+							tableroAurk[i][j].setBackground(new Color(255,0,0));
+						}
 					}
-					else if(norena.equals("ordenagailua")){
-						tableroAurk[i][j].setBackground(new Color(160,82,45));
-					}
-				}else if(zerDa.equals("EzkutuBakarra")){
-					if(norena.equals("pertsona")){
-						tableroNi[i][j].setBackground(new Color(205,133,63));
-					}
-					else if(norena.equals("ordenagailua")){
-						tableroAurk[i][j].setBackground(new Color(205,133,63));
-					}
-				}
-				else if(zerDa.equals("hondoratua")){
-					if(norena.equals("pertsona")){
-						tableroNi[i][j].setBackground(new Color(255,0,0));
-					}
-					else if(norena.equals("ordenagailua")){
-						tableroAurk[i][j].setBackground(new Color(255,0,0));
-					}
-				}
-				else if(zerDa.equals("ikutua")){
-					if(norena.equals("pertsona")){
-							tableroNi[i][j].setBackground(new Color(240,128,128));
-					}
-					else if(norena.equals("ordenagailua")){
-							tableroAurk[i][j].setBackground(new Color(240,128,128));
-					}
-				}else if(zerDa.equals("uraIkutua")){
-					if(norena.equals("pertsona")){
-						tableroNi[i][j].setBackground(new Color(70,130,180));
-					}
-					else if(norena.equals("ordenagailua")){
-						tableroAurk[i][j].setBackground(new Color(70,130,180));
-					}
-				}else if(zerDa.equals("ontziUrperatua")){
-					if(norena.equals("pertsona")){
-						tableroNi[i][j].setBackground(new Color(70,225,180));
-					}
-					else if(norena.equals("ordenagailua")){
-						tableroAurk[i][j].setBackground(new Color(70,225,180));
+					else if(zerDa.equals("OIkutua")){
+						if(norena.equals("pertsona")){
+								tableroNi[i][j].setBackground(new Color(240,128,128));
+						}
+						else if(norena.equals("ordenagailua")){
+								tableroAurk[i][j].setBackground(new Color(240,128,128));
+						}
+					}else if(zerDa.equals("UrIkutua")){
+						if(norena.equals("pertsona")){
+							tableroNi[i][j].setBackground(new Color(70,130,180));
+						}
+						else if(norena.equals("ordenagailua")){
+							tableroAurk[i][j].setBackground(new Color(70,130,180));
+						}
+	//				}else if(zerDa.equals("OUrperatua")){
+	//					if(norena.equals("pertsona")){
+	//						tableroNi[i][j].setBackground(new Color(70,225,180));
+	//					}
+	//					else if(norena.equals("ordenagailua")){
+	//						tableroAurk[i][j].setBackground(new Color(70,225,180));
+	//					}
 					}
 				}
 				j++;
@@ -366,9 +369,9 @@ public class FlotaJokoa {
 				}
 			});
 	        JRadioButton misilZuzenduaBoomButton = new JRadioButton("MisilZuzenduaBoom");
-	        misilZuzenduaHorButton.setMnemonic('r');
-	        misilZuzenduaHorButton.setActionCommand("MisilZuzenduaBoom");
-	        misilZuzenduaHorButton.addActionListener(new ActionListener() {
+	        misilZuzenduaBoomButton.setMnemonic('r');
+	        misilZuzenduaBoomButton.setActionCommand("MisilZuzenduaBoom");
+	        misilZuzenduaBoomButton.addActionListener(new ActionListener() {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {

@@ -21,7 +21,7 @@ public void tiroEgin(int x, int y, Tablero aurkariarenTableroa){
 				
 					its.jo(this,kasillaUrperatuta);
 					//junit
-					aurkariarenTableroa.aldatuKasillaUkituta(x,y);
+					//aurkariarenTableroa.aldatuKasillaUkituta(x,y);
 				}
 				i++;
 			}
