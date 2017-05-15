@@ -38,6 +38,7 @@ public void tiroEgin(int x, int y, Tablero aurkariarenTableroa){
 //			}
 				
 			int i=0;
+			boolean lehenAldia=false;
 			boolean kasillaUrperatuta = aurkariarenTableroa.getKasillaUrperatuta(x,y);
 				int lagx=0;
 				while(i<10){			
@@ -45,21 +46,29 @@ public void tiroEgin(int x, int y, Tablero aurkariarenTableroa){
 					aurkariarenTableroa.setBegiratuta(lagx, y, true);
 					lagx++;
 					if(its!=null){
-					
-						its.jo(this,kasillaUrperatuta);
+						if(!lehenAldia){
+							its.jo(this,kasillaUrperatuta);
+							lehenAldia=true;
+						}
 						//junit
 						//aurkariarenTableroa.aldatuKasillaUkituta(x,y);
 					}
 					i++;
 				}
 				i=0;
+				lehenAldia=false;
 				int lagy=0;
 				while(i<10){
 					Ontzia its = aurkariarenTableroa.itsasontzirikDago(x,lagy);
 					aurkariarenTableroa.setBegiratuta(x, lagy, true);
 					lagy++;
 					if(its!=null){
-						its.jo(this, kasillaUrperatuta);
+						if(!lehenAldia){
+							its.jo(this,kasillaUrperatuta);
+							lehenAldia=true;
+						}
+						//junit
+						//aurkariarenTableroa.aldatuKasillaUkituta(x,y);
 					}
 				i++;
 				}

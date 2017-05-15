@@ -89,7 +89,7 @@ public class FlotaJokoa implements Observer{
 				String zerDa=(Jokoa.getNireJokoa().zerDaKasillaHau(i,j,norena));
 				boolean begiratua=(Jokoa.getNireJokoa().begiratua(i,j,norena));
 				//System.out.println(zerDa+" x="+i+"y="+j);
-				if(begiratua){
+				//if(begiratua){
 					if(zerDa.equals("Osorik")){
 						if(norena.equals("pertsona")){
 							tableroNi[i][j].setBackground(new Color(210,180,140));
@@ -143,7 +143,7 @@ public class FlotaJokoa implements Observer{
 	//						tableroAurk[i][j].setBackground(new Color(70,225,180));
 	//					}
 					}
-				}
+				//}
 				j++;
 			}
 			i++;
@@ -614,7 +614,7 @@ public class FlotaJokoa implements Observer{
 
 	@Override
 	public void update(Observable arg0, Object arg1) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 	

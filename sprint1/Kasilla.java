@@ -1,6 +1,8 @@
 package sprint1;
 
-public class Kasilla {
+import java.util.Observable;
+
+public class Kasilla extends Observable {
 	 private boolean begiratuta=false;
 	 //private boolean ezkutua=false;
 	 private Ontzia ontzi;
@@ -58,7 +60,8 @@ public class Kasilla {
 
 	 public void setBegiratuta(boolean b) {
 	  begiratuta=b;
-	  
+	  setChanged();
+	  notifyObservers();
 	 }
 
 	 public boolean getBegiratuta() {

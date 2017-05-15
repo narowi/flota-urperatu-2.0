@@ -11,6 +11,7 @@ public void tiroEgin(int x, int y, Tablero aurkariarenTableroa){
 		//aukera=0-> IH vertical, aukera=1-> EM horizontal, aukera=2-> BOOM horizontal+vertical
 		
 		int i=0;
+		boolean lehenAldia=false;
 		boolean kasillaUrperatuta = aurkariarenTableroa.getKasillaUrperatuta(x,y);
 			x=0;
 			while(i<10){			
@@ -18,8 +19,10 @@ public void tiroEgin(int x, int y, Tablero aurkariarenTableroa){
 				aurkariarenTableroa.setBegiratuta(x, y, true);
 				x++;
 				if(its!=null){
-				
-					its.jo(this,kasillaUrperatuta);
+					if(!lehenAldia){
+						its.jo(this,kasillaUrperatuta);
+						lehenAldia=true;
+					}
 					//junit
 					//aurkariarenTableroa.aldatuKasillaUkituta(x,y);
 				}

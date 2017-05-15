@@ -152,7 +152,7 @@ public class Jokoa {
 
 		public void tiroEgin(String arma, Integer x, Integer y) {
 			this.per.tiroEgin(arma,x,y);
-			this.ordTxanda();
+			//this.ordTxanda();
 		}
 
 		private void ordTxanda() {

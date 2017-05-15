@@ -113,7 +113,9 @@ public class Ontzia {
 //		
 //	}
 
-
+	public int getLuzera(){
+		return this.luzera;
+	}
 
 	public void jo(Arma arma, boolean kasillaUrperatuta) {
 		this.egoera.jo(this, arma, kasillaUrperatuta);

@@ -6,7 +6,7 @@ import java.util.Random;
 
 import ui.WarningKudeatzailea;
 
-public class Tablero extends Observable{
+public class Tablero{
 	private Kasilla[][] tablero;
 	private static int tamaina;
 	

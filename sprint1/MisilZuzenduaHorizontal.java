@@ -13,6 +13,7 @@ public void tiroEgin(int x, int y, Tablero aurkariarenTableroa){
 		//Tablero aurkariarenTableroa = pAurkari.getTablero();
 		
 		int i=0;
+		boolean lehenAldia=false;
 		boolean kasillaUrperatuta = aurkariarenTableroa.getKasillaUrperatuta(x,y);
 //		if(aukera==0){
 //			//puede haber mas de uno, while que mire todas las posiciones en horizontal y fija, x+1 hasta llegar a la luzera del tablero, y que urperatutako zatiak sean!=0
@@ -35,8 +36,9 @@ public void tiroEgin(int x, int y, Tablero aurkariarenTableroa){
 				Ontzia its = aurkariarenTableroa.itsasontzirikDago(x,y);
 				aurkariarenTableroa.setBegiratuta(x, y, true);
 				y++;
-				if(its!=null){
-					its.jo(this, kasillaUrperatuta);
+				if(!lehenAldia){
+					its.jo(this,kasillaUrperatuta);
+					lehenAldia=true;
 				}
 			i++;
 			}
