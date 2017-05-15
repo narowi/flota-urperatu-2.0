@@ -27,25 +27,38 @@ public class Ordenagailua extends Jokalaria  {
 		//TO DO
 	}
 	public int ontziaKonpondu(int x, int y){
-		int bai= (int)(Math.random()*2);
-		if(bai==0){
-		int oPos = (int)(Math.random()*super.luzera()-1);
-		Ontzia on = super.bilatuOntzia(oPos);
-		if(!on.dagoOsorik()){
-			if(diruNahikoa(on)){ //teniendo en cuenta que solo arregla un cacho en cada txanda
-				super.diruaKendu(on); //descontar el dinero que le a costado de su dinero
-				on.konponduOntzia(); //sumar urperatuGabekoZatiKop+1
-				//if(o.urperatutaDago()){
-					//super.gehituOntzia(o); IMPORTANTE! CUANDO HEMOS HUNDIDO UN BARCO NO LO HEMOS QUITADO DE LA LISTA LO QUITAMOS??? SI NO HABRA QUE SABER SI LE QUEDAN BARCOS SI LA EGOERA DE ALGUNO DE ELLOS ES !=URPERATUTA
-				//}
-				on.egoeraEsleitu();
-				
-				//cambiar de egoera al barco
+		//primero mirar si hay un barco destruido 
+		//int bai= (int)(Math.random()*2);
+		//if(bai==0){
+		boolean listo=false;
+		Ontzia on=null;
+		if(super.flota.badagoOntzirikSuntsituta()){
+			while(!listo){
+				int oPos = (int)(Math.random()*super.luzera()-1);
+				int px= lortuKoordenatua();
+				int py=lortuKoordenatua();
+				on= super.lortuOntzia(px,py);
+				if(!on.dagoOsorik()){
+					listo=true;
+				}
+			}
+			if(listo){
+				if(diruNahikoa(on)){ //teniendo en cuenta que solo arregla un cacho en cada txanda
+					super.diruaKendu(on); //descontar el dinero que le a costado de su dinero
+					on.konponduOntzia(); //sumar urperatuGabekoZatiKop+1
+					//if(o.urperatutaDago()){
+						//super.gehituOntzia(o); IMPORTANTE! CUANDO HEMOS HUNDIDO UN BARCO NO LO HEMOS QUITADO DE LA LISTA LO QUITAMOS??? SI NO HABRA QUE SABER SI LE QUEDAN BARCOS SI LA EGOERA DE ALGUNO DE ELLOS ES !=URPERATUTA
+					//}
+					on.egoeraEsleitu();
+					
+					//cambiar de egoera al barco
+				}
 			}
 		}
-		}else{
-			System.out.println("random aukeratu du ontzia ez konpontzea");
-		}return 0;
+		//}else{
+		//	System.out.println("random aukeratu du ontzia ez konpontzea");
+		//}
+		return 0;
 	}
 	public void ontziaKokatu(Ontzia o){
 		int x=0;

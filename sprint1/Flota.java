@@ -359,5 +359,19 @@ public class Flota {
 		return batKokatuGabe;
 	}
 
+
+	public boolean badagoOntzirikSuntsituta() {
+		boolean badago=false;
+		Iterator<Ontzia> itr= this.getIteradorea();
+		Ontzia aux=null;
+		while(itr.hasNext() && !badago){
+			aux=itr.next();
+			if(!aux.dagoOsorik()){
+				badago=true;
+			}
+		}
+		return badago;
+	}
+
 }
 

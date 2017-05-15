@@ -160,19 +160,19 @@ public class Jokoa {
 			while(!amaitua){
 			int aukera= (int)(Math.random()*5);
 			if(aukera==0){
-				//tiroegin
+				ord.tiroEgin();
 			 }
 			else if(aukera==1){
-				//konpondu
+				ord.ontziaKonpondu(-1, -1);
 			}
 			else if(aukera==2){
-				//Erosi
+				ord.armaAukeratuErosteko(" ");
 			}
 			else if(aukera==3){
-				//ezkutua jarri
+				ord.ezkutuaJarri();
 			}
 			else if(aukera==4){
-				//radarra kontsultatu
+				ord.radarraKontsultatu();
 			}
 			}
 		}
