@@ -113,14 +113,14 @@ public class FlotaJokoa implements Observer{
 							tableroAurk[i][j].setBackground(new Color(205,133,63));
 						}
 					}
-					else if(zerDa.equals("OUrperatua")){
-						if(norena.equals("pertsona")){
-							tableroNi[i][j].setBackground(new Color(255,0,0));
-						}
-						else if(norena.equals("ordenagailua")){
-							tableroAurk[i][j].setBackground(new Color(255,0,0));
-						}
-					}
+					 if(zerDa.equals("OUrperatua")){
+							if(norena.equals("pertsona")){
+								tableroNi[i][j].setBackground(new Color(255,0,0));
+							}
+							else if(norena.equals("ordenagailua")){
+								tableroAurk[i][j].setBackground(new Color(255,0,0));
+							}
+						 }
 					else if(zerDa.equals("OIkutua")){
 						if(norena.equals("pertsona")){
 								tableroNi[i][j].setBackground(new Color(240,128,128));
@@ -142,8 +142,17 @@ public class FlotaJokoa implements Observer{
 	//					else if(norena.equals("ordenagailua")){
 	//						tableroAurk[i][j].setBackground(new Color(70,225,180));
 	//					}
-					}
-				//}
+//					} if(zerDa.equals("OUrperatua")){
+//						if(norena.equals("pertsona")){
+//							tableroNi[i][j].setBackground(new Color(255,0,0));
+//						}
+//						else if(norena.equals("ordenagailua")){
+//							tableroAurk[i][j].setBackground(new Color(255,0,0));
+//						}
+//					}
+				
+				}
+					
 				j++;
 			}
 			i++;

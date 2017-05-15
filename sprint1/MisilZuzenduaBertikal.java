@@ -26,6 +26,9 @@ public void tiroEgin(int x, int y, Tablero aurkariarenTableroa){
 					//junit
 					//aurkariarenTableroa.aldatuKasillaUkituta(x,y);
 				}
+				else{
+					lehenAldia=false;
+				}
 				i++;
 			}
 	}

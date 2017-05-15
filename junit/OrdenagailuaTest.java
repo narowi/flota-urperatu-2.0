@@ -47,11 +47,11 @@ public class OrdenagailuaTest {
 	
 		Ordenagailua o= j.ordLortu();
 		Pertsona p= j.perLortu();
-		Tablero ot= new Tablero();
-		Tablero pt= new Tablero();
-		o.setNireTablero(ot);
+		//Tablero ot= new Tablero();
+		//Tablero pt= new Tablero();
+		Tablero ot=o.getTablero();
 		System.out.println("ord tableroa" + o.getTablero());
-		p.setNireTablero(pt);
+		Tablero pt=p.getTablero();
 		System.out.println("per tableroa" + p.getTablero());
 		Armamentua a= j.ordArmamentuaLortu();
 		a.hasieratu();
