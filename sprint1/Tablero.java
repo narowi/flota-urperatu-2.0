@@ -1,11 +1,12 @@
 package sprint1;
 
 import java.util.ArrayList;
+import java.util.Observable;
 import java.util.Random;
 
 import ui.WarningKudeatzailea;
 
-public class Tablero {
+public class Tablero extends Observable{
 	private Kasilla[][] tablero;
 	private static int tamaina;
 	

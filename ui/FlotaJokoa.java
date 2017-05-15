@@ -4,13 +4,15 @@ import java.awt.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Observable;
+import java.util.Observer;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
 import sprint1.*;
 
-public class FlotaJokoa {
+public class FlotaJokoa implements Observer{
 
 	private JFrame frame;
 	private JPanel content;
@@ -608,6 +610,12 @@ public class FlotaJokoa {
         botoiak.add(fragataButton);
         
         return botoiak;
+	}
+
+	@Override
+	public void update(Observable arg0, Object arg1) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }
