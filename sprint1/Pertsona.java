@@ -57,7 +57,7 @@ public class Pertsona extends Jokalaria {
 		return super.lortuNireTableroa();
 	}	
 	
-	public void tiroEgin(String armaNorabide, int x, int y){
+	public boolean tiroEgin(String armaNorabide, int x, int y){
 		//  int aukera=-1;
 		//  String arma;
 		  Arma a;
@@ -76,16 +76,19 @@ public class Pertsona extends Jokalaria {
 //		  }else{
 //		   arma=armaNorabide;
 //		  }
-		 
+		 boolean ahal=false;
 		 a=this.flota.geratzenZaitArmaHau(armaNorabide);
 		 System.out.println("arma honekin tiro"+a);
-		 if(a!=null){ 
-		   this.flota.kenduArmaKopBat(a);
+		 if(a!=null ){ 
+		   
+			 if(this.flota.kenduArmaKopBat(a)){
 		   //Jokalaria pAurkari= Jokoa.getNireJokoa().aurkariaLortu();//JUNIT
 		   a.tiroEgin(x,y,etsaiarenTableroa);
 		   System.out.println("pertsonak tiro egin du");
-		   
+		   ahal=true;
+			 }
 		 }
+		 return ahal;
 	}
 	
 	public int armaAukeratuErosteko(String arma){

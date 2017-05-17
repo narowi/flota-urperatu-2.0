@@ -43,8 +43,7 @@ public void tiroEgin(int x, int y, Tablero aurkariarenTableroa){
 				int lagx=0;
 				while(i<10){			
 					Ontzia its = aurkariarenTableroa.itsasontzirikDago(lagx,y);//tengo que ir aumentando la x
-					aurkariarenTableroa.setBegiratuta(lagx, y, true);
-					lagx++;
+
 					if(its!=null){
 						if(!lehenAldia){
 							its.jo(this,kasillaUrperatuta);
@@ -56,6 +55,8 @@ public void tiroEgin(int x, int y, Tablero aurkariarenTableroa){
 					else{
 						lehenAldia=false;
 					}
+					aurkariarenTableroa.setBegiratuta(lagx, y, true);
+					lagx++;
 					i++;
 				}
 				i=0;
@@ -63,8 +64,7 @@ public void tiroEgin(int x, int y, Tablero aurkariarenTableroa){
 				int lagy=0;
 				while(i<10){
 					Ontzia its = aurkariarenTableroa.itsasontzirikDago(x,lagy);
-					aurkariarenTableroa.setBegiratuta(x, lagy, true);
-					lagy++;
+
 					if(its!=null){
 						if(!lehenAldia){
 							its.jo(this,kasillaUrperatuta);
@@ -76,6 +76,8 @@ public void tiroEgin(int x, int y, Tablero aurkariarenTableroa){
 					else{
 						lehenAldia=false;
 					}
+					aurkariarenTableroa.setBegiratuta(x, lagy, true);
+					lagy++;
 				i++;
 				}
 //		}	

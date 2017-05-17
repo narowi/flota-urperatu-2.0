@@ -12,7 +12,7 @@ public class Kasilla extends Observable {
 	 private boolean urperatuta=false;
 	 //private boolean ikutuGabe=true;
 	 //junit
-	  private boolean ikututa=false;
+	 // private boolean ikututa=false;
 	  
 	 
 	 //public void setEzkutua(boolean pEzkutua){
@@ -91,14 +91,14 @@ public class Kasilla extends Observable {
 	 public boolean getUrperatuta() {
 	  return this.urperatuta;
 	 }
-	 public void markatuIkututa(boolean b) {
-	  this.ikututa=b;
-	  
-	 }
-
-	 public boolean getIkututa() {
-	  return this.ikututa;
-	 }
+//	 public void markatuIkututa(boolean b) {
+//	  this.ikututa=b;
+//	  
+//	 }
+//
+//	 public boolean getIkututa() {
+//	  return this.ikututa;
+//	 }
 
 //	 public int ikutuGabe() {
 //	  if(this.ikutuGabe){

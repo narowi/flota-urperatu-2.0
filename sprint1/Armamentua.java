@@ -20,7 +20,7 @@ public class Armamentua {
 
 	public Armamentua(){
 		this.armamentua= new ArrayList<Arma>();	
-		this.bonba=4;
+		this.bonba=50;
 		this.ezkutua=3;
 		this.misila=2;
 		this.misilzuzenduaBertikal=3;  //bakoitza mota desberdinetakoa
@@ -78,25 +78,34 @@ public class Armamentua {
 		return badago;
 	}
 	
-	public void armaKenduKop(int mota) {
+	public boolean armaKenduKop(int mota) {
 		//Arma a=bilatuMota(mota);
+		boolean ahal=false;
 		if(mota==0 && this.bonba>0){
 			this.bonba--;
+			ahal=true;
 		}else if(mota==1 && this.ezkutua>0){
 			this.ezkutua--;
+			ahal=true;
 		}else if(mota==2 && this.misila>0){
 			this.misila--;
+			ahal=true;
 		}else if(mota==3 && this.misilzuzenduaBertikal>0){
 			this.misilzuzenduaBertikal--;
+			ahal=true;
 		}else if(mota==4 && this.radar>0){
 			this.radar--;
-		}else if(mota==3 && this.misilzuzenduaHorizontal>0){
+			ahal=true;
+		}else if(mota==5 && this.misilzuzenduaHorizontal>0){
 			this.misilzuzenduaHorizontal--;
-		}else if(mota==3 && this.misilzuzenduaBoom>0){
+			ahal=true;
+		}else if(mota==6&& this.misilzuzenduaBoom>0){
 			this.misilzuzenduaBoom--;
+			ahal=true;
 		}else{
 			System.out.println("Arma horren alerik ez da gelditzen");
 		}
+		return ahal;
 		
 	}
 
@@ -113,8 +122,10 @@ public class Armamentua {
 			this.misila++;
 		}else if(mota==3){
 			this.misilzuzenduaBertikal++;
+			System.out.println(this.misilzuzenduaBertikal+"misilzuzendubertikal geratzen zaizkit");
 		}else if(mota==4){
 			this.radar++;
+			System.out.println(this.radar+"radar geratzen zaizkit");
 		}else if(mota==5){
 			this.misilzuzenduaHorizontal++;
 		}else if(mota==6){

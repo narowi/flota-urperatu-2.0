@@ -69,10 +69,10 @@ public abstract class Jokalaria {
 		public void setNireTablero(Tablero t){
 			this.nireTablero=t;
 		}
-		public void markatuIkututa(int x, int y) {
-			this.nireTablero.markatuIkututa(x,y);
-			
-		}
+//		public void markatuIkututa(int x, int y) {
+//			this.nireTablero.markatuIkututa(x,y);
+//			
+//		}
 
 		public boolean diruNahikoa(Ontzia o) {
 			return this.flota.diruNahikoa(o);
@@ -115,7 +115,7 @@ public abstract class Jokalaria {
 				if(ontziaOsorik && !ezkutuaDu && !ezkutuBakarraDu){
 					da="Osorik";
 				}
-				else if(!ontziaOsorik && !ontziaUrperatua && !ezkutuaDu && !ezkutuBakarraDu && tiroEginda){
+				else if(!ontziaOsorik && !ontziaUrperatua && !ezkutuaDu && !ezkutuBakarraDu ){
 					da="OIkutua";
 				}
 				else if(ontziaUrperatua){
@@ -155,7 +155,7 @@ public abstract class Jokalaria {
 		}
 		public int[] radarraKontsultatu() {
 			int[] i= new int[3];
-			if(this.radarKontsultaKop>0){
+			if(flota.armamentuaLortu().armarikDago(4)){
 				System.out.println("radarra x honetan: "+radarX);
 				System.out.println("radarra y honetan: "+radarY);
 				int[] k=etsaiarenTableroa.radarraKontsultatu(radarX, radarY);
@@ -163,7 +163,7 @@ public abstract class Jokalaria {
 					System.out.println("PIIIIPO");
 					System.out.println("x=" + k[1] + " y=" + k[2]);
 				}
-				this.radarKontsultaKop--;
+				flota.armamentuaLortu().armaKenduKop(4);
 				radarX=(int)(Math.random()*(nireTablero.getTamaina()));
 				radarY=(int)(Math.random()*(nireTablero.getTamaina()));
 				i=k;
@@ -173,6 +173,10 @@ public abstract class Jokalaria {
 				//new WarningKudeatzailea("Ez zaizu kontsultarik geratzen,beste radar bat erosi");
 			}
 			return i;
+		}
+		
+		public boolean itsasontziBizirik(){
+			return flota.itsasontziBizirik();
 		}
 
 //		public void armaKopTxikitu(int biltegiZenbakikoArma) {

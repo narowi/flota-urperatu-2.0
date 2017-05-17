@@ -33,13 +33,15 @@ public class Ordenagailua extends Jokalaria  {
 		boolean listo=false;
 		Ontzia on=null;
 		if(super.flota.badagoOntzirikSuntsituta()){
+			System.out.println("Ordenagailua ontzia konpontzen");
 			while(!listo){
 				int oPos = (int)(Math.random()*super.luzera()-1);
 				int px= lortuKoordenatua();
 				int py=lortuKoordenatua();
 				on= super.lortuOntzia(px,py);
-				if(!on.dagoOsorik()){
+				if(on!=null && !on.dagoOsorik()){
 					listo=true;
+					System.out.println(px+"/"+py);
 				}
 			}
 			if(listo){
@@ -145,7 +147,16 @@ public class Ordenagailua extends Jokalaria  {
 		System.out.println(arma); 
 		x=this.lortuKoordenatua();
 		y=this.lortuKoordenatua();
-		pAurkari.markatuIkututa(x,y);
+		boolean zuzena= false;
+		while(!zuzena){
+			if(etsaiarenTableroa.begiratutaDago(x, y)){
+				x=this.lortuKoordenatua();
+				y=this.lortuKoordenatua();
+			}else{
+				zuzena =true;
+			}
+		}
+		//pAurkari.markatuIkututa(x,y);
 		if(arma!=null){
 			this.flota.kenduArmaKopBat(arma);
 				//int aukera=this.aukeraLortu();
@@ -213,6 +224,10 @@ public class Ordenagailua extends Jokalaria  {
 
 	public boolean begiratu(int i, int j) {
 		return super.nireTablero.begiratutaDago(i, j);
+	}
+
+	public boolean armarikDauka() {
+		return flota.armarikDauka();
 	}
 	}
 

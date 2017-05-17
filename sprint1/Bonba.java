@@ -18,7 +18,7 @@ public class Bonba extends Arma {
 	
 	public void tiroEgin(int x, int y,Tablero aurkariarenTableroa){
 		//Tablero aurkariarenTableroa = pAurkari.getTablero();
-		aurkariarenTableroa.setBegiratuta(x, y, true);
+		//if(aurkariarenTableroa.itsasontzirikDago(x, y).ezkutuaDu() && )
 		boolean kasillaUrperatuta = aurkariarenTableroa.getKasillaUrperatuta(x,y);
 		Ontzia o = aurkariarenTableroa.itsasontzirikDago(x,y);
 		
@@ -36,5 +36,7 @@ public class Bonba extends Arma {
 //				aurkariarenTableroa.aldatuKasillaUrperatuta(x,y);
 //			}	
 		}
+		aurkariarenTableroa.setBegiratuta(x, y, true);
+
 	}
 }

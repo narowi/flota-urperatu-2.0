@@ -44,7 +44,7 @@ Arma a1,a2;
 		listaArmak.armaGehitu2(a1);
 		listaArmak.armaGehitu2(a2);
 		listaArmak.armaKenduKop(a1.getBiltegiZenbakia());
-		assertTrue(listaArmak.bonbaKop()==3);
+		assertTrue(listaArmak.bonbaKop()==49);
 		assertTrue(listaArmak.armarikDago(a2.getBiltegiZenbakia()));
 		
 		listaArmak.armaKenduKop(a2.getBiltegiZenbakia());
@@ -61,7 +61,7 @@ Arma a1,a2;
 		assertEquals(listaArmak.misilKop(), 3);
 		
 		listaArmak.armaGehituZerrendan(0);
-		assertEquals(listaArmak.bonbaKop(), 5);
+		assertEquals(listaArmak.bonbaKop(), 51);
 		listaArmak.armaGehituZerrendan(1);
 		assertEquals(listaArmak.ezkutuKop(), 4);
 		listaArmak.armaGehituZerrendan(3);
@@ -87,7 +87,7 @@ Arma a1,a2;
 		listaArmak.armaKenduKop(a2.getBiltegiZenbakia());
 		assertTrue(listaArmak.misilKop()==1);
 		listaArmak.armaKenduKop(0);
-		assertTrue(listaArmak.bonbaKop()==3);
+		assertTrue(listaArmak.bonbaKop()==49);
 		listaArmak.armaKenduKop(1);
 		assertTrue(listaArmak.ezkutuKop()==2);
 		listaArmak.armaKenduKop(2);
@@ -97,9 +97,9 @@ Arma a1,a2;
 		listaArmak.armaKenduKop(4);
 		assertTrue(listaArmak.radarKop()==1);
 		listaArmak.armaKenduKop(5);
-		assertTrue(listaArmak.misilZH()==3);
+		assertTrue(listaArmak.misilZH()==2);
 		listaArmak.armaKenduKop(6);
-		assertTrue(listaArmak.misilZBoom()==3);
+		assertTrue(listaArmak.misilZBoom()==2);
 		
 		
 	}
@@ -122,7 +122,7 @@ Arma a1,a2;
 		listaArmak.armaGehituZerrendan(1);
 		assertEquals(listaArmak.ezkutuKop(), 4);
 		listaArmak.armaGehituZerrendan(0);
-		assertEquals(listaArmak.bonbaKop(), 5);
+		assertEquals(listaArmak.bonbaKop(), 51);
 		
 		listaArmak.armaGehituZerrendan(3);
 		assertEquals(listaArmak.misilZB(), 4);

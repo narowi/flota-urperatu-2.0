@@ -15,6 +15,7 @@ public class Ikututa implements Egoera {
 					if(!kasillaUrperatuta){
 						ontzia.kenduZatia();
 					}
+					//ontzia.kenduZatia();
 				}else{
 					ontzia.egoeraAldatu(new Urperatuta());
 					ontzia.zatiGuztiakUrperatu();

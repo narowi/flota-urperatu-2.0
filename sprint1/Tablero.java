@@ -6,7 +6,7 @@ import java.util.Random;
 
 import ui.WarningKudeatzailea;
 
-public class Tablero{
+public class Tablero extends Observable{
 	private Kasilla[][] tablero;
 	private static int tamaina;
 	
@@ -228,6 +228,8 @@ public class Tablero{
 	}
 		public void setBegiratuta(int x, int y, boolean b) {
 			this.tablero[x][y].setBegiratuta(b);
+			setChanged();
+			notifyObservers();
 			
 		}
 		public boolean begiratutaDago(int pX, int pY) {
@@ -270,12 +272,12 @@ public class Tablero{
 			return tablero[x][y].getUrperatuta();
 		}
 
-		public boolean getIkutua(int x, int y) {
-			return tablero[x][y].getIkututa();
-		}
-		public void markatuIkututa(int x, int y) {
-			this.tablero[x][y].markatuIkututa(true);			
-		}
+//		public boolean getIkutua(int x, int y) {
+//			return tablero[x][y].getIkututa();
+//		}
+//		public void markatuIkututa(int x, int y) {
+//			this.tablero[x][y].markatuIkututa(true);			
+//		}
 		public Tablero sortuTableroa() {
 			return new Tablero();
 			
@@ -291,9 +293,9 @@ public class Tablero{
 			//boolean begiratuta=false;
 			//while(!begiratuta){
 			int j=x-1;
-				while(j<=x+1){
+				while(j<=x+1 && j<=9 && j>=0){
 					int l=y-1;
-					while(l<=y+1){
+					while(l<=y+1 && l<=9 && l>=0){
 							if(tablero[j][l].getOntzia()!=null){
 								k.add(tablero[j][l]);
 							}

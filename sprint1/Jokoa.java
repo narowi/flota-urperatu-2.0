@@ -8,6 +8,7 @@ public class Jokoa {
 	private Pertsona per;
 	private int txanda;
 	private static Jokoa nireJokoa = null;
+	private String irabazlea="";
 	
 	private Jokoa() {
 		this.ord= new Ordenagailua();
@@ -35,7 +36,7 @@ public class Jokoa {
 		ord.setEtsaiarenTablero(per.getTablero());
 		ord.ontziakKokatu();
 		ord.ezkutuaJarri();
-		new FlotaJokoa().main(null);
+		FlotaJokoa.getFrame();
 		//while(!amaitu){
 			//ontziak kokatu
 			//depende la txanda hace tiro uno o otro
@@ -150,17 +151,32 @@ public class Jokoa {
 			return this.per.lortuNireTableroa();
 		}
 
-		public void tiroEgin(String arma, Integer x, Integer y) {
-			this.per.tiroEgin(arma,x,y);
-			//this.ordTxanda();
+		public boolean tiroEgin(String arma, Integer x, Integer y) {
+			boolean a =  this.per.tiroEgin(arma,x,y);
+			if(a){
+				if(!ord.itsasontziBizirik()){
+					irabazlea = "Jokalaria";
+				}else{
+				//if ordenagailuak not itsasontzi
+					this.ordTxanda();
+					if(!per.itsasontziBizirik()){
+						irabazlea = "Ordenagailua";
+					}
+				}
+			}
+			return a;
 		}
 
 		private void ordTxanda() {
 			boolean amaitua=false;
 			while(!amaitua){
 			int aukera= (int)(Math.random()*5);
+			if(!ord.armarikDauka()){
+				ord.armaAukeratuErosteko(" ");
+			}
 			if(aukera==0){
 				ord.tiroEgin();
+				amaitua=true;
 			 }
 			else if(aukera==1){
 				ord.ontziaKonpondu(-1, -1);
@@ -177,6 +193,7 @@ public class Jokoa {
 			}
 		}
 
+		
 		public int armaErosi(String arma) {
 			return this.per.armaAukeratuErosteko(arma);
 			
@@ -199,5 +216,9 @@ public class Jokoa {
 			else{
 				return true;
 			}
+		}
+		
+		public String getIrabazlea() {
+			return irabazlea;
 		}
 }

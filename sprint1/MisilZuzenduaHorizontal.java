@@ -34,8 +34,7 @@ public void tiroEgin(int x, int y, Tablero aurkariarenTableroa){
 			y=0;
 			while(i<10){
 				Ontzia its = aurkariarenTableroa.itsasontzirikDago(x,y);
-				aurkariarenTableroa.setBegiratuta(x, y, true);
-				y++;
+
 				if(its!=null){
 					if(!lehenAldia){
 						its.jo(this,kasillaUrperatuta);
@@ -45,6 +44,8 @@ public void tiroEgin(int x, int y, Tablero aurkariarenTableroa){
 				else{
 					lehenAldia=false;
 				}
+				aurkariarenTableroa.setBegiratuta(x, y, true);
+				y++;
 			i++;
 			}
 			

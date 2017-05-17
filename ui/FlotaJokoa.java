@@ -12,9 +12,9 @@ import javax.swing.border.EmptyBorder;
 
 import sprint1.*;
 
-public class FlotaJokoa implements Observer{
+public class FlotaJokoa extends JFrame implements Observer{
 
-	private JFrame frame;
+	private static FlotaJokoa frame=null;
 	private JPanel content;
 	private JPanel goikoBotoiak;
 	private JPanel barkuak;
@@ -57,17 +57,27 @@ public class FlotaJokoa implements Observer{
 	/**
 	 * Create the application.
 	 */
-	public FlotaJokoa() {
+	private FlotaJokoa() {
+		super();
 		initialize();
+		Jokoa.getNireJokoa().ordLortu().getTablero().addObserver(this);
+		Jokoa.getNireJokoa().perLortu().getTablero().addObserver(this);
+	}
+	
+	public static FlotaJokoa getFrame(){
+		if(frame==null){
+			frame= new FlotaJokoa();
+		}
+		return frame;
 	}
 
 	/**
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(500, 100, 600, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//frame = FlotaJokoa.getFrame();
+		this.setBounds(500, 100, 600, 300);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		content = new JPanel();
 		content.setLayout(new BorderLayout());
 		goikoBotoiak = goikoBotoiakJarri();
@@ -76,9 +86,17 @@ public class FlotaJokoa implements Observer{
 		content.add(goikoBotoiak, BorderLayout.NORTH);
 		content.add(erdikoBotoiak, BorderLayout.CENTER);
 		content.add(behekoBotoiak, BorderLayout.SOUTH);
-		frame.setContentPane(content);
-		frame.pack();
-		frame.setResizable(false);
+		this.setContentPane(content);
+		this.pack();
+		this.setResizable(false);
+		this.setLocationRelativeTo(null);
+		//armak.setVisible(false);
+		//aurkariTablero.setVisible(false);
+		//radarraKontsultatu.setVisible(false);
+		//tiroEgin.setVisible(false);
+		//erosi.setVisible(false);
+		//konpondu.setVisible(false);
+		this.setVisible(true);
 	}
 	private void tableroaEguneratu(String norena){
 		int i=0;
@@ -89,7 +107,7 @@ public class FlotaJokoa implements Observer{
 				String zerDa=(Jokoa.getNireJokoa().zerDaKasillaHau(i,j,norena));
 				boolean begiratua=(Jokoa.getNireJokoa().begiratua(i,j,norena));
 				//System.out.println(zerDa+" x="+i+"y="+j);
-				//if(begiratua){
+				if(begiratua){
 					if(zerDa.equals("Osorik")){
 						if(norena.equals("pertsona")){
 							tableroNi[i][j].setBackground(new Color(210,180,140));
@@ -149,8 +167,26 @@ public class FlotaJokoa implements Observer{
 //						else if(norena.equals("ordenagailua")){
 //							tableroAurk[i][j].setBackground(new Color(255,0,0));
 //						}
-//					}
+					}
 				
+				}else{
+					
+					 if(zerDa.equals("OUrperatua")){
+							if(norena.equals("pertsona")){
+								tableroNi[i][j].setBackground(new Color(255,0,0));
+							}
+							else if(norena.equals("ordenagailua")){
+								tableroAurk[i][j].setBackground(new Color(255,0,0));
+							}
+						 
+					}else if(zerDa.equals("UrIkutua")){
+						if(norena.equals("pertsona")){
+							tableroNi[i][j].setBackground(new Color(70,130,180));
+						}
+						else if(norena.equals("ordenagailua")){
+							tableroAurk[i][j].setBackground(new Color(70,130,180));
+						}
+					}
 				}
 					
 				j++;
@@ -187,7 +223,7 @@ public class FlotaJokoa implements Observer{
 				int errorea=Jokoa.getNireJokoa().kokatu(koordenatuak[0], koordenatuak[1], aukeratutakoOntzia, kokapena);
 				if(errorea==0){
 				 tableroaEguneratu("pertsona");
-				 tableroaEguneratu("ordenagailua");
+				 //tableroaEguneratu("ordenagailua");
 				}
 				else if(errorea==1){
 					new ErroreKudeatzailea("ez dago mota horretako ontzirik");
@@ -198,6 +234,12 @@ public class FlotaJokoa implements Observer{
 				if(!Jokoa.getNireJokoa().hegazkinOntziKokatzenJarraituAhal() && !Jokoa.getNireJokoa().fragataKokatzenJarraituAhal() && !Jokoa.getNireJokoa().itsaspekoKokatzenJarraituAhal() && !Jokoa.getNireJokoa().suntsitzaileKokatzenJarraituAhal()){
 					goikoBotoiak.setVisible(false);
 					ontziaKokatu.setVisible(false);
+					aurkariTablero.setVisible(true);
+					armak.setVisible(true);
+					radarraKontsultatu.setVisible(true);
+					tiroEgin.setVisible(true);
+					erosi.setVisible(true);
+					konpondu.setVisible(true);
 				}
 			}
 		
@@ -234,9 +276,22 @@ public class FlotaJokoa implements Observer{
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Jokoa.getNireJokoa().tiroEgin(arma,koordenatuak[0],koordenatuak[1]);
-				tableroaEguneratu("ordenagailua");
-				//poner para pintar
+				if(arma.equals("Radar") || arma.equals("Ezkutua")){
+					new ErroreKudeatzailea(arma+ "rekin ezin da tiro egin beheko botoiak erabili. ");
+				}
+				else{
+					if(Jokoa.getNireJokoa().tiroEgin(arma,koordenatuak[0],koordenatuak[1])){
+					//tableroaEguneratu("ordenagailua");
+						String irab = Jokoa.getNireJokoa().getIrabazlea();
+						if(!irab.equals("")){
+							new  WarningKudeatzailea(irab+"k irabazi du.");
+							frame.dispose();
+						}
+					}
+					else{
+						new WarningKudeatzailea("Ez da arma horren alerik geratzen");
+					}
+				}
 			}
 		});
 		
@@ -435,6 +490,7 @@ public class FlotaJokoa implements Observer{
 		botoiak.add(nireTablero, BorderLayout.SOUTH);
 		botoiak.add(new JPanel(), BorderLayout.CENTER);
 		botoiak.add(aurkariTablero, BorderLayout.NORTH);
+		//aurkariTablero.setVisible(false);
 		return botoiak;
 	}
 
@@ -623,7 +679,11 @@ public class FlotaJokoa implements Observer{
 
 	@Override
 	public void update(Observable arg0, Object arg1) {
-		tableroaEguneratu("pertsona");
+		if(Jokoa.getNireJokoa().ordLortu().getTablero()==arg0){
+			tableroaEguneratu("ordenagailua");
+		}else{
+			tableroaEguneratu("pertsona");
+		}
 	}
 	
 }

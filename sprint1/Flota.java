@@ -180,8 +180,8 @@ public class Flota {
 		
 	}
 
-	public void kenduArmaKopBat(Arma a) {
-		this.armamentua.armaKenduKop(a.getBiltegiZenbakia());
+	public boolean kenduArmaKopBat(Arma a) {
+		return this.armamentua.armaKenduKop(a.getBiltegiZenbakia());
 	}
 	public boolean armarikDago(int biltegiZenbakikoArma) {
 		return this.armamentua.armarikDago(biltegiZenbakikoArma);
@@ -371,6 +371,23 @@ public class Flota {
 			}
 		}
 		return badago;
+	}
+
+
+	public boolean itsasontziBizirik() {
+		boolean bizirik = false;
+		Iterator<Ontzia> itr = this.getIteradorea();
+		while(!bizirik && itr.hasNext() ){
+			if(!itr.next().urperatutaDago()){
+				bizirik = true;
+			}
+		}
+		return bizirik;
+	}
+
+
+	public boolean armarikDauka() {
+		return armamentua.armakDaude();
 	}
 
 }
