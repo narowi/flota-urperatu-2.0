@@ -33,12 +33,4 @@ public void tiroEgin(int x, int y, Tablero aurkariarenTableroa){
 				i++;
 			}
 	}
-
-	public  boolean posizioHorretakoArmaDa(int pos){
-		if(pos==this.biltegiZenbakia){
-			return true;
-		}else{
-			return false;
-		}
-	}
 }

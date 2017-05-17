@@ -1,6 +1,6 @@
 package sprint1;
 
-import java.io.File;
+//import java.io.File;
 import ui.*;
 
 public class Jokoa {
@@ -94,21 +94,6 @@ public class Jokoa {
 	public boolean hegazkinOntziKokatzenJarraituAhal() {
 		return per.hegazkinOntziKokatzenJarraituAhal();
 	}
-//	public boolean bonbakErabiltzenJarraituAhal(){
-//		return per.bobarikJartzenJarraitu();
-//	}
-//	public boolean misilakErabiltzenJarraituAhal(){
-//		return per.misilakJartzenJarraitu();
-//	}
-//	public boolean misilZuzenduakErabiltzenJarraituAhal(){
-//		return per.misilZuzenduakJartzenJarraitu();
-//	}
-//	public boolean radarrakErabiltzenJarraituAhal(){
-//		return per.radarrakJartzenJarraitu();
-//	}
-//	public boolean ezkutuakErabiltzenJarraituAhal(){
-//		return per.ezkutuakJartzenJarraitu();
-//	}
 
 	public int kokatu(int x, int y, String aukeratutakoOntzia, char kokapena) {
 		return per.OntziaKokatu(x, y, aukeratutakoOntzia, kokapena);
@@ -131,6 +116,78 @@ public class Jokoa {
 		return per.ezkutuaJarri(x, y);
 		}
 	
+	public boolean tiroEgin(String arma, Integer x, Integer y) {
+		boolean a =  this.per.tiroEgin(arma,x,y);
+		if(a){
+			if(!ord.itsasontziBizirik()){
+				irabazlea = "Jokalaria";
+			}else{
+			//if ordenagailuak not itsasontzi
+				this.ordTxanda();
+				if(!per.itsasontziBizirik()){
+					irabazlea = "Ordenagailua";
+				}
+			}
+		}
+		return a;
+	}
+
+	private void ordTxanda() {
+		boolean amaitua=false;
+		while(!amaitua){
+		int aukera= (int)(Math.random()*5);
+		if(!ord.armarikDauka()){
+			ord.armaAukeratuErosteko(" ");
+		}
+		if(aukera==0){
+			ord.tiroEgin();
+			amaitua=true;
+		 }
+		else if(aukera==1){
+			ord.ontziaKonpondu(-1, -1);
+		}
+		else if(aukera==2){
+			ord.armaAukeratuErosteko(" ");
+		}
+		else if(aukera==3){
+			ord.ezkutuaJarri();
+		}
+		else if(aukera==4){
+			ord.radarraKontsultatu();
+		}
+		}
+	}
+
+	
+	public int armaErosi(String arma) {
+		return this.per.armaAukeratuErosteko(arma);
+		
+	}
+
+	public int ontziaKonpondu(int x, int y) {
+		return this.per.ontziaKonpondu(x,y);
+		
+	}
+
+	public int[] radarraKontsultatu() {
+		return this.per.radarraKontsultatu();
+		
+	}
+
+	public boolean begiratua(int i, int j, String norena) {
+		if(norena.equals("ordenagailua")){
+			return ord.begiratu(i,j);
+		}
+		else{
+			return true;
+		}
+	}
+	
+	public String getIrabazlea() {
+		return irabazlea;
+	}
+
+	
 	//junit
 		public Ordenagailua ordLortu() {
 			return this.ord; 
@@ -149,76 +206,5 @@ public class Jokoa {
 		
 		public Tablero perTableroaLortu() {
 			return this.per.lortuNireTableroa();
-		}
-
-		public boolean tiroEgin(String arma, Integer x, Integer y) {
-			boolean a =  this.per.tiroEgin(arma,x,y);
-			if(a){
-				if(!ord.itsasontziBizirik()){
-					irabazlea = "Jokalaria";
-				}else{
-				//if ordenagailuak not itsasontzi
-					this.ordTxanda();
-					if(!per.itsasontziBizirik()){
-						irabazlea = "Ordenagailua";
-					}
-				}
-			}
-			return a;
-		}
-
-		private void ordTxanda() {
-			boolean amaitua=false;
-			while(!amaitua){
-			int aukera= (int)(Math.random()*5);
-			if(!ord.armarikDauka()){
-				ord.armaAukeratuErosteko(" ");
-			}
-			if(aukera==0){
-				ord.tiroEgin();
-				amaitua=true;
-			 }
-			else if(aukera==1){
-				ord.ontziaKonpondu(-1, -1);
-			}
-			else if(aukera==2){
-				ord.armaAukeratuErosteko(" ");
-			}
-			else if(aukera==3){
-				ord.ezkutuaJarri();
-			}
-			else if(aukera==4){
-				ord.radarraKontsultatu();
-			}
-			}
-		}
-
-		
-		public int armaErosi(String arma) {
-			return this.per.armaAukeratuErosteko(arma);
-			
-		}
-
-		public int ontziaKonpondu(int x, int y) {
-			return this.per.ontziaKonpondu(x,y);
-			
-		}
-
-		public int[] radarraKontsultatu() {
-			return this.per.radarraKontsultatu();
-			
-		}
-
-		public boolean begiratua(int i, int j, String norena) {
-			if(norena.equals("ordenagailua")){
-				return ord.begiratu(i,j);
-			}
-			else{
-				return true;
-			}
-		}
-		
-		public String getIrabazlea() {
-			return irabazlea;
 		}
 }

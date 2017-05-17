@@ -15,22 +15,6 @@ public void tiroEgin(int x, int y, Tablero aurkariarenTableroa){
 		int i=0;
 		boolean lehenAldia=false;
 		boolean kasillaUrperatuta = aurkariarenTableroa.getKasillaUrperatuta(x,y);
-//		if(aukera==0){
-//			//puede haber mas de uno, while que mire todas las posiciones en horizontal y fija, x+1 hasta llegar a la luzera del tablero, y que urperatutako zatiak sean!=0
-//			y=0;
-//			while(i<10){			
-//				Ontzia its = aurkariarenTableroa.itsasontzirikDago(x,y);//tengo que ir aumentando la x
-//				y++;
-//				if(its!=null){
-//				
-//					its.jo(this,kasillaUrperatuta);
-//					//junit
-//					aurkariarenTableroa.aldatuKasillaUkituta(x,y);
-//				}
-//				i++;
-//			}
-//		
-//		}else if(aukera==1){
 			y=0;
 			while(i<10){
 				Ontzia its = aurkariarenTableroa.itsasontzirikDago(x,y);
@@ -51,12 +35,12 @@ public void tiroEgin(int x, int y, Tablero aurkariarenTableroa){
 			
 }	
 	
-	public  boolean posizioHorretakoArmaDa(int pos){
-		if(pos==this.biltegiZenbakia){
-			return true;
-		}else{
-			return false;
-		}
-	}
+//	public  boolean posizioHorretakoArmaDa(int pos){
+//		if(pos==this.biltegiZenbakia){
+//			return true;
+//		}else{
+//			return false;
+//		}
+//	}
 }
 

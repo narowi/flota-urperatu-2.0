@@ -7,7 +7,6 @@ import java.util.Iterator;
 public class Armamentua {
 
 	private ArrayList<Arma> armamentua;
-	//private ArrayList<Integer> armaKopurua;
 	private int[] biltegikoArmaKop= new int[7];
 
 	private int bonba;
@@ -34,9 +33,6 @@ public class Armamentua {
 		biltegikoArmaKop[4]=4; //radar
 		biltegikoArmaKop[5]=4; //misilzuzenduaHorizontal
 		biltegikoArmaKop[6]=4; //boom
-		
-		//se crean las armas olatz????
-		//this.hasieratu(bonba,ezkutua,misila,misilZuzendua,radar)   NO SE SI EN ESE ORDEN
 	}
 
 	public Arma armaSortu(String mota){
@@ -44,25 +40,6 @@ public class Armamentua {
 		return nireArma;
 	}
 
-	public void armaKendu(Arma mota) {
-		
-		if(mota.biltegiZenbakia==0){
-			this.bonba=0;
-		}else if(mota.biltegiZenbakia==1){
-			this.ezkutua=0;
-		}else if(mota.biltegiZenbakia==2){
-			this.misila=0;
-		}else if(mota.biltegiZenbakia==3){
-			this.misilzuzenduaBertikal=0;
-		}else if(mota.biltegiZenbakia==4){
-			this.radar=0;
-		}else if(mota.biltegiZenbakia==5){
-			this.misilzuzenduaHorizontal=0;
-		}else if(mota.biltegiZenbakia==6){
-			this.misilzuzenduaBoom=0;
-		}
-		this.armamentua.remove(mota);
-	}
 
 	public void armaGehitu(String mota) {
 		Arma arma = this.armaSortu(mota);
@@ -136,7 +113,6 @@ public class Armamentua {
 	public void hasieratu() {
 		this.armamentua.clear();
 		this.armamentua= new ArrayList<Arma>();
-		int i = 0;
 		this.armaGehitu("Bonba");
 		this.armaGehitu("Ezkutua");
 		this.armaGehitu("Misila");
@@ -153,16 +129,6 @@ public class Armamentua {
 
 	}
 	public Arma lortuArma(int pos) {
-//		boolean aurkitua=false;
-//		Iterator<Arma>itr=this.getIteradorea();
-//		Arma aux=null;
-//		while(itr.hasNext() && !aurkitua){
-//			aux=itr.next();
-//			if(aux.posizioHorretakoArmaDa(pos)){
-//				aurkitua=true;
-//			}
-//		}
-//		return aux;
 		System.out.println(this.armamentua.get(pos) +  "lortu arma");
 		return this.armamentua.get(pos);
 	}
@@ -187,25 +153,6 @@ public class Armamentua {
 		return dago;
 	}
 	
-	public boolean armarikDagoBiltegian(int biltegiZenbakikoArma){
-		boolean dago=false;
-		if(biltegikoArmaKop[0]>0){
-			dago=true;
-		}else if(biltegikoArmaKop[2]>0){
-			dago=true;
-		}else if(biltegikoArmaKop[3]>0){
-			dago=true;
-		}else if(biltegikoArmaKop[1]>0) {
-			dago=true;
-		}else if(biltegikoArmaKop[4]>0){
-			dago=true;
-		}else if(biltegikoArmaKop[5]>0){
-				dago=true;
-		}else if(biltegikoArmaKop[6]>0){
-			dago=true;
-		}	
-		return dago;
-	}
 	
 	public Arma bilatu(String arma) {
 		Iterator<Arma> itr= this.getIteradorea();
@@ -222,12 +169,39 @@ public class Armamentua {
 		return a;
 	}
 	
+	public boolean armakDaude() {
+		if (this.bonba!=0 || this.ezkutua!=0 || this.misila!=0 || this.misilzuzenduaBertikal!=0 || this.misilzuzenduaHorizontal!=0 || this.misilzuzenduaBoom!=0 || this.radar!=0){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	public boolean biltegianArmarikDago(int mota) {
+		if(biltegikoArmaKop[mota]>0){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	public void biltegiArmaKenduKop(int mota) {
+		biltegikoArmaKop[mota]--;
+	}
+
+	public boolean biltegianArmakDaude() {
+		if(biltegikoArmaKop[0]>0 || biltegikoArmaKop[1]>0|| biltegikoArmaKop[2]>0|| biltegikoArmaKop[3]>0|| biltegikoArmaKop[4]>0 || biltegikoArmaKop[5]>0 || biltegikoArmaKop[6]>0){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	public boolean erosiAhalDut(int dirua, Arma a) {
+		return a.erosiAhalDut(dirua);
+	}
+	
 	//junit
-	
-//	public int luzera() {
-//		return this.armamentua.size();
-//	}
-	
 	public void armaGehitu2(Arma a){
 		this.armamentua.add(a);
 	}
@@ -259,116 +233,6 @@ public class Armamentua {
 	public int radarKop(){
 		return this.radar;
 	}
-
-//	public int zenbatArma() {
-//		return this.armamentua.size();
-//	}
 	
-//	public void garbitu(){
-//		this.armamentua= new ArrayList<Arma>();	
-//		this.bonba=0;
-//		this.ezkutua=0;
-//		this.misila=0;
-//		this.misilzuzenduaBertikal=0;  //bakoitza mota desberdinetakoa
-//		this.radar=0;
-//		this.armamentua.clear();
-//	}
 
-//	public boolean bobarikJartzenJarraitu() {
-//		boolean batKokatuGabe=false;
-//		Iterator<Arma> itr =this.getIteradorea();
-//		Arma aux=null;
-//		while(itr.hasNext()&& !batKokatuGabe){
-//			aux=itr.next();
-//			if(aux.bonbaDa() && aux.kokatuGabe()){
-//				batKokatuGabe=true;
-//			}
-//		}
-//		return batKokatuGabe;
-//	}
-	
-//	public boolean misilakJartzenJarraitu() {
-//		boolean batKokatuGabe=false;
-//		Iterator<Arma> itr =this.getIteradorea();
-//		Arma aux=null;
-//		while(itr.hasNext()&& !batKokatuGabe){
-//			aux=itr.next();
-//			if(aux.misilaDa() && aux.kokatuGabe()){
-//				batKokatuGabe=true;
-//			}
-//		}
-//		return batKokatuGabe;
-//	}
-//
-//	public boolean misilZuzenduakJartzenJarraitu() {
-//		boolean batKokatuGabe=false;
-//		Iterator<Arma> itr =this.getIteradorea();
-//		Arma aux=null;
-//		while(itr.hasNext()&& !batKokatuGabe){
-//			aux=itr.next();
-//			if(aux.misilZuzenduaDa() && aux.kokatuGabe()){
-//				batKokatuGabe=true;
-//			}
-//		}
-//		return batKokatuGabe;
-//	}
-//
-//	public boolean radarrakJartzenJarraitu() {
-//		boolean batKokatuGabe=false;
-//		Iterator<Arma> itr =this.getIteradorea();
-//		Arma aux=null;
-//		while(itr.hasNext()&& !batKokatuGabe){
-//			aux=itr.next();
-//			if(aux.radarraDa() && aux.kokatuGabe()){
-//				batKokatuGabe=true;
-//			}
-//		}
-//		return batKokatuGabe;
-//	}
-//
-//	public boolean ezkutuakJartzenJarraitu() {
-//		boolean batKokatuGabe=false;
-//		Iterator<Arma> itr =this.getIteradorea();
-//		Arma aux=null;
-//		while(itr.hasNext()&& !batKokatuGabe){
-//			aux=itr.next();
-//			if(aux.ezkutuaDa() && aux.kokatuGabe()){
-//				batKokatuGabe=true;
-//			}
-//		}
-//		return batKokatuGabe;
-//	}
-	
-	public boolean armakDaude() {
-		if (this.bonba!=0 || this.ezkutua!=0 || this.misila!=0 || this.misilzuzenduaBertikal!=0 || this.misilzuzenduaHorizontal!=0 || this.misilzuzenduaBoom!=0 || this.radar!=0){
-			return true;
-		}else{
-			return false;
-		}
-	}
-
-	public boolean biltegianArmarikDago(int mota) {
-		if(biltegikoArmaKop[mota]>0){
-			return true;
-		}else{
-			return false;
-		}
-	}
-
-	public void biltegiArmaKenduKop(int mota) {
-		biltegikoArmaKop[mota]--;
-		//this.armaKenduKop(mota);
-	}
-
-	public boolean biltegianArmakDaude() {
-		if(biltegikoArmaKop[0]>0 || biltegikoArmaKop[1]>0|| biltegikoArmaKop[2]>0|| biltegikoArmaKop[3]>0|| biltegikoArmaKop[4]>0 || biltegikoArmaKop[5]>0 || biltegikoArmaKop[6]>0){
-			return true;
-		}else{
-			return false;
-		}
-	}
-
-	public boolean erosiAhalDut(int dirua, Arma a) {
-		return a.erosiAhalDut(dirua);
-	}
 }

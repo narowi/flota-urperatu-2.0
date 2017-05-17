@@ -26,7 +26,7 @@ public class Ontzia {
 
 	public void kokatuNaiz(){
 		this.kokatua=true;
-		//System.out.println(this.kokatua+" si me he colocado dentro de ontzia");
+		
 	}
 	public boolean kokatutaAhalNago(){
 		return this.kokatua;
@@ -66,58 +66,52 @@ public class Ontzia {
 	}
 	
 	public boolean ezkutuOsoaDu(){ 
+		
 		if(this.egoera instanceof EzkutuOsoa){
+		
 			return true;
+		
 		}else{
+		
 			return false;
 		}
 	}
+	
+	
 	public boolean ezkutuBakarraDu(){
+		
 		if(this.egoera instanceof EzkutuBakarra){
+		
 			return true;
+		
 		}else{
+		
 			return false;
 		}
 	}
 
 
 	public void egoeraAldatu(Egoera pEgoera) {
+		
 		egoera=pEgoera;
 		
 	}
 
-	public Egoera getEgoera() {
-		return this.egoera;
-	}
+
 
 	public void zatiGuztiakUrperatu() {
+		
 		this.urperatuGabekoZatiKop=0;
 		
 	}
 
 
-
-
-//	public void egoeraBegiratu(Arma arma) {
-//		if(arma instanceof Bonba && this.getHondoratuGabekoZatiKop()!=1 && this.getEgoera() instanceof EzkutuOsoa){
-//			//si el barco estaba ikututa que siga ikututa y si no ondo
-//			this.egoeraAldatu(new Ikututa());
-//			this.kenduZatia();
-//		}else if(arma instanceof Bonba && this.getHondoratuGabekoZatiKop()==1){
-//			this.egoeraAldatu(new Urperatuta());
-//			this.zatiGuztiakUrperatu();
-//		}else if(arma instanceof Misila){
-//			this.egoeraAldatu(new Urperatuta());
-//			this.zatiGuztiakUrperatu();
-//		}
-//		
+//	public int getLuzera(){
+//		return this.luzera;
 //	}
 
-	public int getLuzera(){
-		return this.luzera;
-	}
-
 	public void jo(Arma arma, boolean kasillaUrperatuta) {
+		
 		this.egoera.jo(this, arma, kasillaUrperatuta);
 		
 	}
@@ -125,9 +119,13 @@ public class Ontzia {
 
 
 	public boolean lehenIkututa() {
+		
 		if(this.urperatuGabekoZatiKop==this.luzera){
+		
 			return false;
+		
 		}else{
+		
 			return true;
 		}
 	}
@@ -135,29 +133,42 @@ public class Ontzia {
 
 
 	public boolean zatirikBizirik() {
+		
 		if(this.urperatuGabekoZatiKop>1){
+		
 			return true;
+		
 		}else{
+		
 			return false;
 		}
 	}
 	
-	//juit
-	public String getMota(){
-		return this.mota;
-	}
-	
 	public boolean berdinaDa(String izena) {
-		//System.out.println("tipo de barco ="+this.mota);
+		
 		return this.mota.equals(izena);
 	}
-
-
-
-	public boolean konponduAhal(int dirua) {
-		if(this.konponketaPrezioa<=dirua){
+	
+	public boolean ezkutuaDu() {
+		
+		if(this.egoera instanceof EzkutuBakarra || this.egoera instanceof EzkutuOsoa){
+		
 			return true;
+		
 		}else{
+		
+			return false;
+		}
+	}
+	
+	public boolean konponduAhal(int dirua) {
+		
+		if(this.konponketaPrezioa<=dirua){
+		
+			return true;
+		
+		}else{
+		
 			return false;
 		}
 	}
@@ -165,14 +176,23 @@ public class Ontzia {
 
 
 	public void egoeraEsleitu() {
+		
 		if(this.egoera instanceof Urperatuta){
+		
 			if(this.luzera==1){
+			
 				this.egoera = new Osorik();
+			
 			}else{
+			
 				this.egoera=new Ikututa();
+			
 			}	
+		
 		}else if(this.egoera instanceof Ikututa){
+		
 			if(this.luzera==this.urperatuGabekoZatiKop){
+			
 				this.egoera = new Osorik();
 			}
 		}
@@ -181,9 +201,13 @@ public class Ontzia {
 
 
 	public boolean dagoOsorik() {
+		
 		if(this.egoera instanceof Osorik || (this.egoera instanceof EzkutuOsoa && this.luzera == this.urperatuGabekoZatiKop) || (this.egoera instanceof EzkutuBakarra && this.luzera == this.urperatuGabekoZatiKop)  ){
+		
 			return true;
+
 		}else{
+		
 			return false;
 		}
 	}
@@ -191,9 +215,13 @@ public class Ontzia {
 
 
 	public boolean itsaspekoaDa() {
+		
 		if(this instanceof Itsaspeko){
+		
 			return true;
+
 		}else{
+		
 			return false;
 		}
 	}
@@ -201,9 +229,13 @@ public class Ontzia {
 
 
 	public boolean kokatuGabe() {
+		
 		if(this.kokatua == false){
+		
 			return true;
+		
 		}else{
+		
 			return false;
 		}
 	}
@@ -211,9 +243,13 @@ public class Ontzia {
 
 
 	public boolean fragataDa() {
+		
 		if(this instanceof Fragata){
+		
 			return true;
+		
 		}else{
+		
 			return false;
 		}
 	}
@@ -221,28 +257,49 @@ public class Ontzia {
 
 
 	public boolean hegazkinOntziDa() {
+		
 		if(this instanceof HegazkinOntzi){
+		
 			return true;
+		
 		}else{
+		
 			return false;
 		}
 	}
 	
 	public boolean suntsitzaileaDa() {
+		
 		if(this instanceof Suntsitzaile){
+		
 			return true;
+		
 		}else{
+		
 			return false;
 		}
 	}
-
-
-
-	public boolean ezkutuaDu() {
-		if(this.egoera instanceof EzkutuBakarra || this.egoera instanceof EzkutuOsoa){
-			return true;
-		}else{
-			return false;
-		}
+	
+	
+	
+	//juit
+	
+	public Egoera getEgoera() {
+		
+		return this.egoera;
 	}
+//	
+//	public String getMota(){
+//		return this.mota;
+//	}
+	
+
+
+
+
+
+
+
+
+
 }

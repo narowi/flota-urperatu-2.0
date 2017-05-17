@@ -8,13 +8,7 @@ public class Misila extends Arma {
 		super.izena="Misila";
 	}
 	
-	public  boolean posizioHorretakoArmaDa(int pos){
-		if(pos==this.biltegiZenbakia){
-			return true;
-		}else{
-			return false;
-		}
-	}
+
 	
 	public void tiroEgin(int x, int y, Tablero aurkariarenTableroa){
 		//Tablero aurkariarenTableroa = pAurkari.getTablero();

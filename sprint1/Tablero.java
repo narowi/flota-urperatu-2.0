@@ -27,32 +27,6 @@ public class Tablero extends Observable{
 		 return tamaina;
 	 }
 
-
-////	public void ontziaKokatu(Ontzia o,int x,int y){
-//		//miradolo bien por que en fin, mas chapuza que otra cosa.
-//		
-//		//ONTZIA ESKURATU
-//		Ontzia o=null;
-//		String aux = OntziMotak.ontziaItzuli();
-//		System.out.println(aux);
-//		o = OntziFactory.getOntziFactory().createOntzia(aux);
-//		
-//		
-//		//KOORDENATUAK LORTU (aqui es donde la matan)
-//		Integer[] aux2 = new Integer[2];
-//		aux2 = Proba.koordenatuakItzuli();
-//		int x=aux2[0];
-//		int y=aux2[1];
-//		char[] norabidePosible=this.norabideaAukeratu(x, y, o);
-//		//aqui llamo a la interfaz otra vez.
-//		char norabidea=KokapenAukerak.kokapena(norabidePosible);
-//		this.kokatu(x, y, o, norabidea);
-//	}
-
-	
-	public Kasilla[][] getNireTableroa(){
-		return this.tablero;
-	}
 	public char getZerNahiz(int x,int y){
 		return tablero[x][y].getZerNahiz();
 	}
@@ -254,6 +228,38 @@ public class Tablero extends Observable{
 
 			}
 		}
+		
+		
+		public int[] radarraKontsultatu(int x, int y) {
+			int o[]= new int[3];
+			ArrayList<Kasilla> k= new ArrayList<Kasilla>();
+			//boolean begiratuta=false;
+			//while(!begiratuta){
+			int j=x-1;
+				while(j<=x+1 && j<=9 && j>=0){
+					int l=y-1;
+					while(l<=y+1 && l<=9 && l>=0){
+							if(tablero[j][l].getOntzia()!=null){
+								k.add(tablero[j][l]);
+							}
+							l++;
+						}
+					j++;
+					}
+
+			if(k.isEmpty()){
+				//new WarningKudeatzailea("Radarraren eremuan ez dago ontzirik.");
+				o[0]=2;
+			}
+			else{
+				int i=((int)(Math.random()*(k.size())));
+				//new WarningKudeatzailea(k.get(i).getX()+".errenkadan eta "+k.get(i).getY()+".zutabean ontzi bat dago.");
+				o[0]=0;
+				o[1]=k.get(i).getX();
+				o[2]=k.get(i).getY();
+			}
+			return o;
+		}
 //junit
 //		public int kasillaIkutuGabe(int x, int y) {
 //			return this.tablero[x][y].ikutuGabe();
@@ -272,9 +278,9 @@ public class Tablero extends Observable{
 			return tablero[x][y].getUrperatuta();
 		}
 
-//		public boolean getIkutua(int x, int y) {
-//			return tablero[x][y].getIkututa();
-//		}
+		public boolean getIkutua(int x, int y) {
+			return tablero[x][y].getIkututa();
+		}
 //		public void markatuIkututa(int x, int y) {
 //			this.tablero[x][y].markatuIkututa(true);			
 //		}
@@ -285,54 +291,5 @@ public class Tablero extends Observable{
 
 		public Ontzia lortuOntziaKasillatik(int x, int y) {
 			return tablero[x][y].getOntzia();
-		}
-
-		public int[] radarraKontsultatu(int x, int y) {
-			int o[]= new int[3];
-			ArrayList<Kasilla> k= new ArrayList<Kasilla>();
-			//boolean begiratuta=false;
-			//while(!begiratuta){
-			int j=x-1;
-				while(j<=x+1 && j<=9 && j>=0){
-					int l=y-1;
-					while(l<=y+1 && l<=9 && l>=0){
-							if(tablero[j][l].getOntzia()!=null){
-								k.add(tablero[j][l]);
-							}
-							l++;
-						}
-					j++;
-					}
-//				if(this.tablero[x][y].getOntzia()!=null){
-//					k.add(tablero[x][y]);
-//				}
-//				if(this.tablero[x+1][y].getOntzia()!=null){
-//					k.add(tablero[x+1][y]);
-//				}
-//				if(this.tablero[x-1][y].getOntzia()!=null){
-//					k.add(tablero[x-1][y]);
-//				}
-//				if(this.tablero[x][y-1].getOntzia()!=null){
-//					k.add(tablero[x][y-1]);
-//				}
-//				if(this.tablero[x][y+1].getOntzia()!=null){
-//					k.add(tablero[x][y+1]);
-//				}
-				//begiratuta=true;
-			//}
-			if(k.isEmpty()){
-				//new WarningKudeatzailea("Radarraren eremuan ez dago ontzirik.");
-				o[0]=2;
-			}
-			else{
-				int i=((int)(Math.random()*(k.size())));
-				//new WarningKudeatzailea(k.get(i).getX()+".errenkadan eta "+k.get(i).getY()+".zutabean ontzi bat dago.");
-				o[0]=0;
-				o[1]=k.get(i).getX();
-				o[2]=k.get(i).getY();
-			}
-			return o;
-		}
-
-		
+		}		
 }

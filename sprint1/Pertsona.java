@@ -53,29 +53,13 @@ public class Pertsona extends Jokalaria {
 //		super.lortuEtsaiarenTableroa(pTablero);
 //	}
 	
-	public Tablero lortuNireTableroa(){
-		return super.lortuNireTableroa();
-	}	
+//	public Tablero lortuNireTableroa(){
+//		return super.lortuNireTableroa();
+//	}	
 	
 	public boolean tiroEgin(String armaNorabide, int x, int y){
-		//  int aukera=-1;
-		//  String arma;
+
 		  Arma a;
-//		  if (armaNorabide=="misil zuzendua bertikal"){
-//		   arma="MisilZuzenduaBertikal";
-//		   //aukera=0;
-//		   
-//		  }else if(armaNorabide=="misil zuzendua horizontal"){
-//		   arma="MisilZuzenduaHorizontal"; 
-//		  // aukera=1;
-//		   
-//		  }else if(armaNorabide=="misil zuzendua boom"){
-//		   arma="MisilZuzenduaBoom"; 
-//		   //aukera=2;  
-//		   
-//		  }else{
-//		   arma=armaNorabide;
-//		  }
 		 boolean ahal=false;
 		 a=this.flota.geratzenZaitArmaHau(armaNorabide);
 		 System.out.println("arma honekin tiro"+a);
@@ -92,7 +76,6 @@ public class Pertsona extends Jokalaria {
 	}
 	
 	public int armaAukeratuErosteko(String arma){
-		//Arma a= this.flota.lortuArmaStringetik(arma);
 		int i=-1;
 		if(arma.equals("Bonba")){
 			i=0;
@@ -137,21 +120,6 @@ public class Pertsona extends Jokalaria {
 	}
 	
 	
-	
-	
-	
-	@Override
-	public void ezkutuaJarri() {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
-	public void armaHautatu() {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	
 	public int ontziaKonpondu(int x, int y) {
 		int k=-1;
 		Ontzia o= super.lortuOntzia(x,y);
@@ -185,21 +153,8 @@ public class Pertsona extends Jokalaria {
 		return this.flota.hegazkinOntziDaude();
 	}
 	
-//	public boolean bobarikJartzenJarraitu(){
-//		return this.flota.bobarikJartzenJarraitu();
-//	}
-//	public boolean misilakJartzenJarraitu() {
-//		return this.flota.misilakJartzenJarraitu();
-//	}
-//	public boolean misilZuzenduakJartzenJarraitu() {
-//		return this.flota.misilZuzenduakJartzenJarraitu();
-//	}
-//	public boolean radarrakJartzenJarraitu() {
-//		return this.flota.radarraJartzenJarraitu();
-//	}
-//	public boolean ezkutuakJartzenJarraitu() {
-//		return this.flota.ezkutuakJartzenJarraitu();
-//	}
+	//JUnit
+	
 	public int armamentuarenLuzera() {
 		return this.flota.armamentuarenLuzera();
 	}

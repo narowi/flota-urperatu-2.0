@@ -9,7 +9,6 @@ import java.util.ArrayList;
 public class Biltegia {
 	private Armamentua armamentua;
 	private static Biltegia nireBiltegia;
-//	private ArrayList<Integer> armaKopurua;
 	private EgoeraBiltegia e = new Ondo();
 
 	private Biltegia(){
@@ -52,12 +51,9 @@ public class Biltegia {
 	public void hasieratu() {
 		this.armamentua = new Armamentua();
 		armamentua.hasieratu();
-		//this.armaKopurua= new ArrayList<Integer>();
 	}
 
-	public int luzera() {
-		return this.armamentua.armaMotaKopuru();
-	}
+
 
 	public boolean armakDaude() {
 		return this.armamentua.biltegianArmakDaude();
@@ -70,6 +66,12 @@ public class Biltegia {
 	public boolean motaHorretakoArmarik(int mota){
 		return this.armamentua.armarikDago(mota);
 		
+	}
+	
+	
+	//Junit
+	public int luzera() {
+		return this.armamentua.armaMotaKopuru();
 	}
 	
 	public EgoeraBiltegia getEgoera(){

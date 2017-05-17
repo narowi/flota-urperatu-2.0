@@ -7,11 +7,4 @@ public class Radar extends Arma {
 		super.izena="Radar";
 	}
 	public void tiroEgin(int x, int y,Tablero aurkariarenTableroa){}
-	public  boolean posizioHorretakoArmaDa(int pos){
-		if(pos==this.biltegiZenbakia){
-			return true;
-		}else{
-			return false;
-		}
-	}
 }

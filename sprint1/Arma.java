@@ -18,7 +18,15 @@ public abstract class Arma {
 			return null;
 		}
 	}
-	public abstract boolean posizioHorretakoArmaDa(int pos);
+	//public abstract boolean posizioHorretakoArmaDa(int pos);
+	
+	public  boolean posizioHorretakoArmaDa(int pos){
+		if(pos==this.biltegiZenbakia){
+			return true;
+		}else{
+			return false;
+		}
+	}
 	
 	public int getBiltegiZenbakia() {
 		return this.biltegiZenbakia;
@@ -27,43 +35,7 @@ public abstract class Arma {
 	public boolean berdinaNaiz(String arma) {
 		return this.izena==arma;
 	}
-//	public boolean bonbaDa() {
-//		if(this instanceof Bonba){
-//			return true;
-//		}else{
-//			return false;
-//		}
-//	}
-	
-//	public boolean misilaDa() {
-//		if(this instanceof Misila){
-//			return true;
-//		}else{
-//			return false;
-//		}
-//	}
-//	public boolean misilZuzenduaDa() {
-//		if(this instanceof MisilZuzenduaBertikal){
-//			return true;
-//		}else{
-//			return false;
-//		}
-//	}
-//	
-//	public boolean radarraDa() {
-//		if(this instanceof Radar){
-//			return true;
-//		}else{
-//			return false;
-//		}
-//	}
-//	public boolean ezkutuaDa() {
-//		if(this instanceof Ezkutua){
-//			return true;
-//		}else{
-//			return false;
-//		}
-//	}
+
 	public boolean kokatuGabe() {
 		if(this.kokatua == false){
 			return true;

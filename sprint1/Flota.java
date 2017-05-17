@@ -59,10 +59,6 @@ public class Flota {
 		return bai;
 	}
 
-	public int zenbatOntzi() {
-		return this.f.size();
-	}
-
 
 	public boolean barkuakEzkutuaDauka(Ontzia ontzia) {
 		Ontzia on=ontzia;
@@ -84,14 +80,6 @@ public class Flota {
 		
 	}
 
-//	public boolean isEmpty() {
-//		if(this.f.size()==0){
-//			return true;
-//		}else{
-//			return false;
-//		}
-//	}
-
 	public Ontzia lortuOntzia(int i) {
 		//return f.get(i);
 		Iterator<Ontzia> itr =this.getIteradorea();
@@ -103,7 +91,6 @@ public class Flota {
 				ezKokatuta=true;
 			}
 		}
-		//System.out.println("zein ontzi naiz " + aux);
 		return aux;
 	}
 
@@ -195,14 +182,14 @@ public class Flota {
 		}
 	}
 	
-	//junit
 	public void gehituOntzi(Ontzia o){
 		this.f.add(o);
 	}
+	
 	public void setArmamentua(Armamentua a) {
 		this.armamentua=a;
-		
 	}
+	
 	public Ontzia lortuOntziaStringetik(String izena){
 		boolean aurkitua=false;
 		Ontzia o=null;
@@ -220,7 +207,7 @@ public class Flota {
 			return null;
 		}
 	}
-
+	
 	public boolean diruNahikoa(Ontzia o) {
 		if(o.konponduAhal(this.dirua)){
 			return true;
@@ -228,37 +215,30 @@ public class Flota {
 			return false;
 		}
 	}
-
+	
 	public void diruaKendu(Ontzia o) {
 		this.dirua=this.dirua- o.konponketaPrezioa;
-		
 	}
-
+	
 	public int size() {
 		return this.f.size();
 	}
-
+	
 	public Ontzia bilatuOntzia(int o) {
-		//boolean aurkitua=false;
-		//Iterator<Ontzia> itr =this.getIteradorea();
 		Ontzia on= this.f.get(o);
-		return on;
-			
+		return on;	
 	}
-
-
+	
 	public Arma geratzenZaitArmaHau(String arma) {
 		Arma a=null;
 		a=this.armamentua.bilatu(arma);
-		
 		return a;
 	}
 	
 	public Armamentua armamentuaLortu(){
 		return this.armamentua;
 	}
-
-
+	
 	public boolean itsaspekoakDaude() {
 		boolean batKokatuGabe=false;
 		Iterator<Ontzia> itr =this.getIteradorea();
@@ -291,8 +271,6 @@ public class Flota {
 		Ontzia aux=null;
 		while(itr.hasNext()&& !batKokatuGabe){
 			aux=itr.next();
-			//System.out.println(aux.hegazkinOntziDa()+"= hegazkin ontzi?");
-			//System.out.println(aux.kokatutaAhalNago()+" =kokatuta nago?");
 			if(aux.hegazkinOntziDa() && !aux.kokatutaAhalNago()){
 				batKokatuGabe=true;
 			}
@@ -311,41 +289,16 @@ public class Flota {
 		}
 		return batKokatuGabe;
 	}
-
-
-//	public boolean bobarikJartzenJarraitu() {
-//		return this.armamentua.bobarikJartzenJarraitu();
-//	}
-	
-
-//	public boolean misilakJartzenJarraitu() {
-//		return this.armamentua.misilakJartzenJarraitu();
-//	}
-//
-//	public boolean misilZuzenduakJartzenJarraitu() {
-//		return this.armamentua.misilZuzenduakJartzenJarraitu();
-//	}
-//
-//	public boolean radarraJartzenJarraitu() {
-//		return this.armamentua.radarrakJartzenJarraitu();
-//	}
-//	
-//
-//	public boolean ezkutuakJartzenJarraitu() {
-//		return this.armamentua.ezkutuakJartzenJarraitu();
-//	}
 	
 	public void armakEsleitu() {
-		this.armamentua.hasieratu();
-		
+		this.armamentua.hasieratu();	
 	}
-
 
 	public Arma armaSortu(String arma) {
 		return this.armamentua.armaSortu(arma);
 	}
-
-
+	
+	
 	public boolean ontziGuztiakKokatuta() {
 		boolean batKokatuGabe=false;
 		Iterator<Ontzia> itr= this.getIteradorea();
@@ -358,8 +311,7 @@ public class Flota {
 		}
 		return batKokatuGabe;
 	}
-
-
+	
 	public boolean badagoOntzirikSuntsituta() {
 		boolean badago=false;
 		Iterator<Ontzia> itr= this.getIteradorea();
@@ -372,8 +324,7 @@ public class Flota {
 		}
 		return badago;
 	}
-
-
+	
 	public boolean itsasontziBizirik() {
 		boolean bizirik = false;
 		Iterator<Ontzia> itr = this.getIteradorea();
@@ -384,11 +335,20 @@ public class Flota {
 		}
 		return bizirik;
 	}
-
+	
 
 	public boolean armarikDauka() {
 		return armamentua.armakDaude();
 	}
+	
+	//junit
+	
+	
+
+
+	
+
+
 
 }
 

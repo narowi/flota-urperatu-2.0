@@ -4,20 +4,15 @@ import java.util.Observable;
 
 public class Kasilla extends Observable {
 	 private boolean begiratuta=false;
-	 //private boolean ezkutua=false;
 	 private Ontzia ontzi;
 	 private boolean ura=true;
 	 private int x=0;
 	 private int y=0;
 	 private boolean urperatuta=false;
-	 //private boolean ikutuGabe=true;
 	 //junit
-	 // private boolean ikututa=false;
+	  private boolean ikututa=false;
 	  
-	 
-	 //public void setEzkutua(boolean pEzkutua){
-	  //ezkutua=pEzkutua;
-	 //}
+
 	 public Kasilla(int i, int j){
 	  x = i;
 	  y = j;
@@ -25,14 +20,6 @@ public class Kasilla extends Observable {
 
 	 public Ontzia getOntzia() {
 	  return this.ontzi;
-	 }
-
-	 public boolean getUra() {
-	  return this.ura; // si ura esta a true es que al lado hay un ontzi
-	 }
-	 
-	 public void setUra(){
-	  this.ura=false;
 	 }
 
 	 public void ontziaJarri(Ontzia o) {
@@ -96,9 +83,9 @@ public class Kasilla extends Observable {
 //	  
 //	 }
 //
-//	 public boolean getIkututa() {
-//	  return this.ikututa;
-//	 }
+	 public boolean getIkututa() {
+	  return this.ikututa;
+	 }
 
 //	 public int ikutuGabe() {
 //	  if(this.ikutuGabe){
