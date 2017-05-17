@@ -18,7 +18,6 @@ public abstract class Arma {
 			return null;
 		}
 	}
-	//public abstract boolean posizioHorretakoArmaDa(int pos);
 	
 	public  boolean posizioHorretakoArmaDa(int pos){
 		if(pos==this.biltegiZenbakia){

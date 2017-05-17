@@ -29,36 +29,17 @@ public class Jokoa {
 	}
 
 	private void partidaBatJolastu() {
-		//per.etsaiarenTableroa=ord.nireTablero;
-		//ord.etsaiarenTableroa=per.nireTablero;
-		//jokoaHasieratu();
+	
 		per.setEtsaiarenTablero(ord.getTablero());
 		ord.setEtsaiarenTablero(per.getTablero());
 		ord.ontziakKokatu();
 		ord.ezkutuaJarri();
 		FlotaJokoa.getFrame();
-		//while(!amaitu){
-			//ontziak kokatu
-			//depende la txanda hace tiro uno o otro
-		//}
+
 		
 		
 	}
-	//JUniterako metodoa
-	private void jokoaHasieratu(){
-		//per.createTablero();
-		//per.etsaiariNireTableroaEsleitu();
-		//ord.createTablero();
-		//ord.etsaiariNireTableroaEsleitu();
-		Flota fPers= new Flota();
-		Flota fOrd= new Flota();
-		fPers.armakEsleitu();
-		fOrd.armakEsleitu();
-		per.setFlota(fPers);
-		ord.setFlota(fOrd);
-		
-		Biltegia.getNireBiltegia().hasieratu();
-	}
+	
 	public Jokalaria aurkariaLortu() {
 		if((this.txanda)%2==0){
 			return per;
@@ -108,7 +89,6 @@ public class Jokoa {
 		else{
 			zerDa=ord.zerDaKasillaHau(x, y);
 		}
-		//System.out.println(zerDa+" jokoan hau da");
 		return zerDa;
 	}
 
@@ -122,7 +102,6 @@ public class Jokoa {
 			if(!ord.itsasontziBizirik()){
 				irabazlea = "Jokalaria";
 			}else{
-			//if ordenagailuak not itsasontzi
 				this.ordTxanda();
 				if(!per.itsasontziBizirik()){
 					irabazlea = "Ordenagailua";
@@ -188,6 +167,19 @@ public class Jokoa {
 	}
 
 	
+	
+	//JUniterako metodoa
+		private void jokoaHasieratu(){
+			Flota fPers= new Flota();
+			Flota fOrd= new Flota();
+			fPers.armakEsleitu();
+			fOrd.armakEsleitu();
+			per.setFlota(fPers);
+			ord.setFlota(fOrd);
+			
+			Biltegia.getNireBiltegia().hasieratu();
+		}
+		
 	//junit
 		public Ordenagailua ordLortu() {
 			return this.ord; 
@@ -207,4 +199,6 @@ public class Jokoa {
 		public Tablero perTableroaLortu() {
 			return this.per.lortuNireTableroa();
 		}
+		
+		
 }

@@ -10,7 +10,6 @@ public void tiroEgin(int x, int y, Tablero aurkariarenTableroa){
 		
 		//aukera=0-> IH vertical, aukera=1-> EM horizontal, aukera=2-> BOOM horizontal+vertical
 		
-		//Tablero aurkariarenTableroa = pAurkari.getTablero();
 		
 		int i=0;
 		boolean lehenAldia=false;

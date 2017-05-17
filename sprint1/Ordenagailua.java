@@ -18,9 +18,6 @@ public class Ordenagailua extends Jokalaria  {
 	
 
 	public int ontziaKonpondu(int x, int y){
-		//primero mirar si hay un barco destruido 
-		//int bai= (int)(Math.random()*2);
-		//if(bai==0){
 		boolean listo=false;
 		Ontzia on=null;
 		if(super.flota.badagoOntzirikSuntsituta()){
@@ -39,9 +36,7 @@ public class Ordenagailua extends Jokalaria  {
 				if(diruNahikoa(on)){ //teniendo en cuenta que solo arregla un cacho en cada txanda
 					super.diruaKendu(on); //descontar el dinero que le a costado de su dinero
 					on.konponduOntzia(); //sumar urperatuGabekoZatiKop+1
-					//if(o.urperatutaDago()){
-						//super.gehituOntzia(o); IMPORTANTE! CUANDO HEMOS HUNDIDO UN BARCO NO LO HEMOS QUITADO DE LA LISTA LO QUITAMOS??? SI NO HABRA QUE SABER SI LE QUEDAN BARCOS SI LA EGOERA DE ALGUNO DE ELLOS ES !=URPERATUTA
-					//}
+					
 					on.egoeraEsleitu();
 					
 					//cambiar de egoera al barco
@@ -79,7 +74,6 @@ public class Ordenagailua extends Jokalaria  {
 		boolean zuzena=false;
 		while(!zuzena){
 			 i = (int)(Math.random()*3);
-			// System.out.println(pos[i]);
 			if(pos[i]=='s'||pos[i]=='z'||pos[i]=='g'||pos[i]=='b'){
 				zuzena=true;
 			}
@@ -144,7 +138,7 @@ public class Ordenagailua extends Jokalaria  {
 	private Arma lortuArma(){
 		int biltegiZenbakikoArma= (int)(Math.random()*7);
 		boolean armaEgokia=false;
-		//Jokalaria pAurkari= Jokoa.getNireJokoa().aurkariaLortu();
+		
 		
 			while(!armaEgokia){
 				if((biltegiZenbakikoArma!=1 && biltegiZenbakikoArma!=4) && super.armarikDago(biltegiZenbakikoArma)){

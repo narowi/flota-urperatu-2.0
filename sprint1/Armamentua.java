@@ -56,7 +56,6 @@ public class Armamentua {
 	}
 	
 	public boolean armaKenduKop(int mota) {
-		//Arma a=bilatuMota(mota);
 		boolean ahal=false;
 		if(mota==0 && this.bonba>0){
 			this.bonba--;
@@ -90,7 +89,6 @@ public class Armamentua {
 		return armamentua.size();
 	}
 	public void armaGehituZerrendan(int mota) {
-		// Biltegian kop-- egin beharko da mota horretako arman
 		if(mota==0){
 			this.bonba++;
 		}else if(mota==1){

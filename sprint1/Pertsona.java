@@ -10,14 +10,13 @@ public class Pertsona extends Jokalaria {
 	
 	public Pertsona(){
 		//super();
-		//super.nireTablero=new Tablero();
-		//super.flota=new Flota();
+		
 	}
-	public void ontziakKokatu(){ //miralo naroa
+	public void ontziakKokatu(){ 
 		
 	}
 	public int ezkutuaJarri(int x,int y){
-			//banaka jarriko ditu ontziak eskutuan
+			
 		int w=-1;
 		if(super.flota.badagoEzkuturik()){ 
 			Ontzia ontzi=super.nireTablero.itsasontzirikDago(x,y);
@@ -37,12 +36,12 @@ public class Pertsona extends Jokalaria {
 				}
 			}
 			else{
-				//System.out.println("gelaxka horretan ez dago ontzirik");
+				
 				//new WarningKudeatzailea("ez dago ontzirik gelaxka horretan");
 				w=1;
 			}
 		}else{
-			//System.out.println("Ez duzu ezkutu gehiagorik");
+			
 			//new ErroreKudeatzailea("ezkuturik ez");
 			w=3;
 		}
@@ -112,7 +111,7 @@ public class Pertsona extends Jokalaria {
 		}
 		else{
 			i=1;
-//			//System.out.println("no te quedan barcos de es tipo");
+
 //			new ErroreKudeatzailea("ez dago mota horretako ontzirik");
 //			//JOptionPane.showMessageDialog(null, "hdsj", "jshf", JOptionPane.ERROR_MESSAGE);
 		}

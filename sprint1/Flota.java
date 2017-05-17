@@ -32,7 +32,7 @@ public class Flota {
 	private Iterator<Ontzia> getIteradorea(){
 		return this.f.iterator();
 	}
-	public Ontzia ontziaSortu(String mota){//solo creas uno 
+	public Ontzia ontziaSortu(String mota){
 		Ontzia nireOntzia = OntziFactory.getOntziFactory().createOntzia(mota);
 		return nireOntzia;
 	}
@@ -42,7 +42,6 @@ public class Flota {
 	}
 
 	public void kenduOntzia(Ontzia pOntzia) {
-		//this.lortuOntzia().kokatuNaiz();
 		pOntzia.kokatuNaiz();
 	}
 	
@@ -65,7 +64,6 @@ public class Flota {
 		boolean du=false;
 		if(on.ezkutuaDu()){
 			du=true;
-			//System.out.println("ontziak jadanik badauka ezkutua");
 		}
 		return du;
 	}
@@ -81,7 +79,6 @@ public class Flota {
 	}
 
 	public Ontzia lortuOntzia(int i) {
-		//return f.get(i);
 		Iterator<Ontzia> itr =this.getIteradorea();
 		Ontzia aux=null;
 		boolean ezKokatuta=false;
@@ -108,10 +105,10 @@ public class Flota {
 	public int armaErosi(int biltegiZenbakia){  //try catch bidez tratatu hobeto
 		int w=-1;
 		Arma a= this.armamentua.lortuArma(biltegiZenbakia);
-		if(armamentua.erosiAhalDut(this.dirua,a)){ //arma erostea biltegian gelditzen denean, biltegian ez badago ez da hautatzeko aukerarik egongo
+		if(armamentua.erosiAhalDut(this.dirua,a)){ 
 			int k=Biltegia.getNireBiltegia().armasaldu(biltegiZenbakia);
 			if(k==0){
-			this.armamentua.armaGehituZerrendan(biltegiZenbakia);  //pasatuko diogu armaren biltegizenbakia
+			this.armamentua.armaGehituZerrendan(biltegiZenbakia);  
 			this.dirua=this.dirua-a.getPrezioa();
 			w=0;
 			}
@@ -123,8 +120,6 @@ public class Flota {
 			}
 		}else{
 			w=1;
-			//System.out.print("Ez duzu dirurik eskatutako arma erosteko");
-			//new WarningKudeatzailea("Ez duzu dirurik eskatutako arma erosteko");// new Warning
 		}
 		return w;
 	}

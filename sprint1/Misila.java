@@ -11,7 +11,6 @@ public class Misila extends Arma {
 
 	
 	public void tiroEgin(int x, int y, Tablero aurkariarenTableroa){
-		//Tablero aurkariarenTableroa = pAurkari.getTablero();
 		boolean kasillaUrperatuta = aurkariarenTableroa.getKasillaUrperatuta(x,y);
 		Ontzia o = aurkariarenTableroa.itsasontzirikDago(x,y);
 		

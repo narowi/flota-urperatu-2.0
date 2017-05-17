@@ -1,6 +1,5 @@
 package sprint1;
 
-//import ui.WarningKudeatzailea;
 
 public abstract class Jokalaria {
 
@@ -165,8 +164,6 @@ public abstract class Jokalaria {
 		public Armamentua armamentuaItzuli() {
 			return this.flota.armamentuaLortu();
 		}
-//		public void armaKopTxikitu(int biltegiZenbakikoArma) {
-//			this.flota.kenduArmaKopBat(biltegiZenbakikoArma);
-//		}
+
 }
 		

@@ -288,10 +288,7 @@ public class Ontzia {
 		
 		return this.egoera;
 	}
-//	
-//	public String getMota(){
-//		return this.mota;
-//	}
+
 	
 
 
