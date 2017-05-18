@@ -20,12 +20,14 @@ public class Ordenagailua extends Jokalaria  {
 	public int ontziaKonpondu(int x, int y){
 		boolean listo=false;
 		Ontzia on=null;
+		int px=-1;
+		int py=-1;
 		if(super.flota.badagoOntzirikSuntsituta()){
 			System.out.println("Ordenagailua ontzia konpontzen");
 			while(!listo){
 				int oPos = (int)(Math.random()*super.luzera()-1);
-				int px= lortuKoordenatua();
-				int py=lortuKoordenatua();
+				px= lortuKoordenatua();
+				py=lortuKoordenatua();
 				on= super.lortuOntzia(px,py);
 				if(on!=null && !on.dagoOsorik()){
 					listo=true;
@@ -38,7 +40,8 @@ public class Ordenagailua extends Jokalaria  {
 					on.konponduOntzia(); //sumar urperatuGabekoZatiKop+1
 					
 					on.egoeraEsleitu();
-					
+					nireTablero.setBegiratuta(px, py, false);
+					System.out.println("KASILLA COMPONDU DU ORDENAGAILUAK "+px+"/"+py);
 					//cambiar de egoera al barco
 				}
 			}

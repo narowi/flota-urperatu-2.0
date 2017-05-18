@@ -127,6 +127,7 @@ public class Pertsona extends Jokalaria {
 				super.diruaKendu(o); //descontar el dinero que le a costado de su dinero
 				o.konponduOntzia(); //sumar urperatuGabekoZatiKop+1
 				o.egoeraEsleitu();
+				nireTablero.setBegiratuta(x, y, false);
 				k=0;
 				
 			}else{
