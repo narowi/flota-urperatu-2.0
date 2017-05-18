@@ -25,7 +25,7 @@ public class OrdenagailuaTest {
 	
 		
 	public void setUp() throws Exception{
-		Jokoa j= Jokoa.getNireJokoa();
+		//Jokoa j= Jokoa.getNireJokoa();
 		
 		
 		
@@ -43,21 +43,14 @@ public class OrdenagailuaTest {
 
 	@Test
 	public void tiroEgin() {
-		Jokoa j= Jokoa.getNireJokoa();
+		//Jokoa j= Jokoa.getNireJokoa();
 	
-		Ordenagailua o= j.ordLortu();
-		Pertsona p= j.perLortu();
-		//Tablero ot= new Tablero();
-		//Tablero pt= new Tablero();
-		Tablero ot=o.getTablero();
-		System.out.println("ord tableroa" + o.getTablero());
-		Tablero pt=p.getTablero();
-		System.out.println("per tableroa" + p.getTablero());
-		Armamentua a= j.ordArmamentuaLortu();
-		a.hasieratu();
-		System.out.println("armamentu" + a.armaMotaKopuru());
-		o.setArmamentua(a);
-		System.out.println("ord amamentu junit"+ o.armamentuarenLuzeera());
+		Ordenagailua o= new Ordenagailua();
+		Pertsona p= new Pertsona();
+		Tablero ot= o.getTablero();
+		Tablero pt= p.getTablero();
+		p.setEtsaiarenTablero(ot);
+		o.setEtsaiarenTablero(pt);
 		
 		o.tiroEgin();
 //		Ordenagailua ord= Jokoa.getNireJokoa().ordLortu();
@@ -83,7 +76,7 @@ public class OrdenagailuaTest {
 				}
 			}
 		}
-		assertTrue(gero>lehen);
+		assertTrue(gero>=lehen);
 		
 	}
 	

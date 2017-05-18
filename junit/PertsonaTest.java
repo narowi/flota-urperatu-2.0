@@ -25,21 +25,26 @@ public class PertsonaTest {
 
 	@Test
 	public void test() {
-		Jokoa j= Jokoa.getNireJokoa();
+		//Jokoa j= Jokoa.getNireJokoa();
 		
-		Ordenagailua o= j.ordLortu();
-		Pertsona p= j.perLortu();
-		Tablero ot= new Tablero();
-		Tablero pt= new Tablero();
-		o.setNireTablero(ot);
-		System.out.println("ord tableroa" + o.getTablero());
-		p.setNireTablero(pt);
-		System.out.println("per tableroa" + p.getTablero());
-		Armamentua a= j.ordArmamentuaLortu();
-		a.hasieratu();
-		System.out.println("armamentu " + a.armaMotaKopuru());
-		p.setArmamentua(a);
-		System.out.println("per amamentu "+ p.armamentuarenLuzera());
+		Ordenagailua o= new Ordenagailua();
+		Pertsona p= new Pertsona();
+		Tablero ot= o.getTablero();
+		Tablero pt= p.getTablero();
+		p.setEtsaiarenTablero(ot);
+		o.setEtsaiarenTablero(pt);
+		
+//		Tablero ot= new Tablero();
+//		Tablero pt= new Tablero();
+//		o.setNireTablero(ot);
+//		System.out.println("ord tableroa" + o.getTablero());
+//		p.setNireTablero(pt);
+//		System.out.println("per tableroa" + p.getTablero());
+//		Armamentua a= new Armamentua();
+//		a.hasieratu();
+//		System.out.println("armamentu " + a.armaMotaKopuru());
+//		p.setArmamentua(a);
+//		System.out.println("per amamentu "+ p.armamentuarenLuzera());
 		//o.ontziakKokatu();
 		//falta da tiro egiterakoan ontzi baten gainean konprobatzea
 		
